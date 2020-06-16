@@ -10,6 +10,9 @@
     <img src="Images/rohan.jpg" alt="drawing" width="100"/>
     
 3. RethimaReddy Polam
+
+    <img src="Images/Rethima.jpeg" alt="Rethima" width="100"/>
+
 4. Kavya Reddy Mylapurapu
 
     <img src="Images/kavya.jpg" alt="drawing" width="100"/>
