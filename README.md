@@ -12,6 +12,9 @@
     <img src="Images/kavya.jpg" alt="drawing" width="100"/>
 
 5. Sravani Jaidi
+
+    <img src="Images/Sravani.jpeg" alt="drawing" width="100"/>
+
 6. Satish Kumar Mandapalli
 
 
