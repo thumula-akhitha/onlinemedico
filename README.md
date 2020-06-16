@@ -8,6 +8,9 @@
 2. Rohan Bhandari
 3. RethimaReddy Polam
 4. Kavya Reddy Mylapurapu
+
+    <img src="Images/kavya.jpg" alt="drawing" width="100"/>
+
 5. Sravani Jaidi
 6. Satish Kumar Mandapalli
 
