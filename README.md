@@ -6,7 +6,9 @@
     <img src="Images/akhitha-picture.jpeg" alt="drawing" width="100"/>
 
 2. Rohan Bhandari
+    
     <img src="Images/rohan.jpg" alt="drawing" width="100"/>
+    
 3. RethimaReddy Polam
 4. Kavya Reddy Mylapurapu
 
