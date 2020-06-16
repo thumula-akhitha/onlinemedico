@@ -2,13 +2,14 @@
 
 ## Team Members
 1. Akhitha Tumula
+
+    <img src="Images/akhitha-picture.jpeg" alt="drawing" width="100"/>
+
 2. Rohan Bhandari
 3. RethimaReddy Polam
 4. Kavya Reddy Mylapurapu
 5. Sravani Jaidi
 6. Satish Kumar Mandapalli
-
-
 
 
 ## Profile Links
