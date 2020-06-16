@@ -19,6 +19,9 @@
     <img src="Images/Sravani.jpeg" alt="drawing" width="100"/>
 
 6. Satish Kumar Mandapalli
+      
+
+      <img src="Images/satishkumar_Photo.jpg" alt="drawing" width="100"/>
 
 
 ## Profile Links
