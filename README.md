@@ -6,10 +6,25 @@
     <img src="Images/akhitha-picture.jpeg" alt="drawing" width="100"/>
 
 2. Rohan Bhandari
+    
+    <img src="Images/rohan.jpg" alt="drawing" width="100"/>
+    
 3. RethimaReddy Polam
+
+    <img src="Images/Rethima.jpeg" alt="Rethima" width="100"/>
+
 4. Kavya Reddy Mylapurapu
+
+    <img src="Images/kavya.jpg" alt="drawing" width="100"/>
+
 5. Sravani Jaidi
+
+    <img src="Images/Sravani.jpeg" alt="drawing" width="100"/>
+
 6. Satish Kumar Mandapalli
+      
+
+      <img src="Images/satishkumar_Photo.jpg" alt="drawing" width="100"/>
 
 
 ## Profile Links
