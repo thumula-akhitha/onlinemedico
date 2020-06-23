@@ -1,7 +1,7 @@
 # OnlineMedico
 
 ## Team Members
-1. Akhitha Tumula
+1. Akhitha Thumula
 
     <img src="Images/akhitha-picture.jpeg" alt="drawing" width="100"/>
 
