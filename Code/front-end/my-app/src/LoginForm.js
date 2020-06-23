@@ -1,38 +1,40 @@
 import React from 'react';
-import InputField from './InputField';
-import SubmitButton from './SubmitButton';
-import UserStore from './UserStore';
-class LoginForm extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            username : '',
-            password: '',
-            buttonDisabled: false 
-        }
-    }
-    setInputValue(property, val){
-        val = val.trim();
-        if(val.length > 12){
-            return;
-        }
-
-    }
-  render(){
-  return (
-    <div className="loginForm">
-      <InputField type="text" 
-      placeholder="Username" 
-      value= {this.state.username ? this.state.username:''}
-      onChange={(val)=> this.setInputValue('username',val)}/>
-      <InputField type="text" 
-      placeholder="Password" 
-      value= {this.state.password ? this.state.password:''}
-      onChange={(val)=> this.setInputValue('username',val)}/>
-      <SubmitButton text='Login'/>      
-    </div>
-  );
+import axios from 'axios'; 
+class LoginForm extends React.Component {
+  render() {
+    return (
+      <div className="loginForm">
+        <form onSubmit={(e) => login (e)}>
+          <h3>Sign In</h3>
+          <div className="form-group">
+            <label>Email</label>
+            <input type="email" className="form-control" id="email" placeholder="Enter your email address" aria-describedby="EmailHelp" />
+          </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input type="password" className="form-control" placeholder="Enter your password" id="password" />
+          </div>
+          <button type="submit" className="btn btn-info">Login</button>
+        </form>
+       
+      </div>
+    );
   }
+}
+function login(e){
+  e.preventDefault();
+  let request = {
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value 
+
+  }
+  axios.get('http://192.168.0.10:3333/login',request)
+  .then(res => {
+    alert(res.data.message);
+  })
+  .catch( err => {
+    console.log(err);
+  })
 }
 
 export default LoginForm;
