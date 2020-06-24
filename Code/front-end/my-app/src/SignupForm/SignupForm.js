@@ -47,7 +47,6 @@ class SignupForm extends React.Component {
                             value={this.state.firstname ? this.state.firstname : ''}
                             onChange={(val) => this.setInputValue('firstname', val)} />
                     </div>
-
                     <div class="col-2">
                         <InputField type="text"
                             placeholder="Lastname"
