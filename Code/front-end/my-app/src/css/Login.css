@@ -1,0 +1,19 @@
+.container{
+    margin-top: 7em;
+}
+
+h3{
+    margin-left:2em;
+}
+
+.loginForm{ 
+  margin-left:25em;
+  width:500px;
+  position: relative;
+  background: linear-gradient(#3caea3,#2d4e4b);
+  border-radius: 10px;
+  padding: 3em;
+}
+.form-control,.btn{
+    width:25em;
+}
