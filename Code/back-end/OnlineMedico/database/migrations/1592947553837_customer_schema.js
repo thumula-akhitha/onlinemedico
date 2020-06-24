@@ -1,36 +1,36 @@
-"use strict";
+'use strict'
 
 /** @type {import('@adonisjs/lucid/src/Schema')} */
-const Schema = use("Schema");
+const Schema = use('Schema')
 
 class CustomerSchema extends Schema {
   up() {
-    this.create("customers", (table) => {
-      table.increments();
-      table.string("firstName", 80).notNullable();
-      table.string("lastName").notNullable();
-      table.integer("contactNumber").notNullable();
-      table.string("email", 60);
-      table.string("password").notNullable();
+    this.create('customers', (table) => {
+      table.increments()
+      table.string('firstName', 80).notNullable()
+      table.string('lastName').notNullable()
+      table.integer('contactNumber').notNullable()
+      table.string('email', 60)
+      table.string('password').notNullable()
       table
-        .integer("addressId")
+        .integer('addressId')
         .unsigned()
         .notNullable()
-        .references("id")
-        .inTable("addresses");
+        .references('id')
+        .inTable('addresses')
       table
-        .integer("cardId")
+        .integer('cardId')
         .unsigned()
         .notNullable()
-        .references("id")
-        .inTable("card_details");
-      table.timestamps();
+        .references('id')
+        .inTable('card_details')
+      table.timestamps()
     });
   }
 
   down() {
-    this.drop("customers");
+    this.drop('customers')
   }
 }
 
-module.exports = CustomerSchema;
+module.exports = CustomerSchema
