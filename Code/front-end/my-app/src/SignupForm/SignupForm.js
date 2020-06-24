@@ -37,16 +37,6 @@ class SignupForm extends React.Component {
                 <form action="" method="post">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"></link>
-
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-              
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-1">
