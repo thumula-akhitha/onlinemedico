@@ -28,9 +28,11 @@ function login(e){
     password: document.getElementById('password').value 
 
   }
-  axios.get('http://192.168.0.10:3333/login',request)
+  console.log(request.email)
+  console.log(request.password)
+  axios.post('http://localhost:3333/onlinemedico/login',request)
   .then(res => {
-    alert(res.data.message);
+    alert(res.data.data);
   })
   .catch( err => {
     console.log(err);
