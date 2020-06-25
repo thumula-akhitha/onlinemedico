@@ -5,7 +5,12 @@
 h3{
     margin-left:2em;
 }
-
+.msg{
+    margin-top:1em;
+}
+.links{
+    margin-left:1em;
+}
 .loginForm{ 
   margin-left:25em;
   width:500px;
@@ -17,3 +22,7 @@ h3{
 .form-control,.btn{
     width:25em;
 }
+
+
+    
+    
