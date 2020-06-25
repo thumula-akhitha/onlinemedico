@@ -20,14 +20,8 @@ render()
 }
 }
 
-function forgotpassword(e) {
-    e.preventDefault();
-    let request = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: document.getElementById('email').value
 
-    }
+    
     axios.post('http://localhost:5000/sendlink', request)
       .then(res => {
         alert(res.data.message);
@@ -37,4 +31,5 @@ function forgotpassword(e) {
       })
   }
 
-export default ForgotPassword;
+export default ForgotPassword
+export default ForgotPassword
