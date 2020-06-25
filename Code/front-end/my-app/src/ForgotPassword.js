@@ -22,14 +22,21 @@ render()
 
 
     
-    axios.post('http://localhost:5000/sendlink', request)
-      .then(res => {
-        alert(res.data.message);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }
+function forgotpassword(e) {
+  e.preventDefault();
+  let request = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: document.getElementById('email').value
 
-export default ForgotPassword
-export default ForgotPassword
+  }
+  axios.post('http://localhost:5000/sendlink', request)
+    .then(res => {
+      alert(res.data.message);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+}
+
+export default ForgotPassword;
