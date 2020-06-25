@@ -12,22 +12,11 @@ class CustomerSchema extends Schema {
       table.integer('contactNumber').notNullable()
       table.string('email', 60)
       table.string('password').notNullable()
-      table
-        .integer('addressId')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('addresses')
-      table
-        .integer('cardId')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('card_details')
+      table.integer('addressId').unsigned().notNullable().references('id').inTable('addresses')
+      table.integer('cardId').unsigned().notNullable().references('id').inTable('card_details')
       table.timestamps()
     });
   }
-
   down() {
     this.drop('customers')
   }

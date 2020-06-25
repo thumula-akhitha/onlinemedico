@@ -5,7 +5,8 @@ const Schema = use('Schema')
 
 class CardDetailSchema extends Schema {
   up() {
-    this.create('card_details', (table) => {
+    this.create('card_details', (table) => 
+    {
       table.increments()
       table.timestamps()
     });
