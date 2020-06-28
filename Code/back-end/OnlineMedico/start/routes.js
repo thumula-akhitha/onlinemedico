@@ -27,5 +27,8 @@ const Route = use('Route')
 Route.group(() => {
   Route.post("/signup", "CustomerController.signup");
   Route.post("/login", "CustomerController.login");
+  Route.post("/forgotpassword", "CustomerController.forgotPassword");
+  Route.post("/newpassword", "CustomerController.newPassword");
+
 }).prefix("/onlinemedico");
 
