@@ -1,33 +1,4 @@
-body, html, #root, .app, .container {
+body, html, #root, .app{
   width: 100%;
   height: 100%;
-}
-.container {
-  margin-inline-start: 20em;
-  margin-top: 10em;
-}
-.logo{
-  
-  float: left;
-    background-color: darkslategrey;
-    padding-left: 80px;
-    padding-top: 80px;
-    width:300px;
-    height:300px;
-}
-h2{
-  position: relative;
-    right: 30px
-}
-.form-control,.btn{
-  width: 20em;
-}
-.loginForm {
-  float:right;
-  width:50em;
- box-sizing: border-box;
- 
-}
-.form-group {
-width: 11em;
 }
