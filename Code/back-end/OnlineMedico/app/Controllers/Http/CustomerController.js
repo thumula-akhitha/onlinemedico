@@ -4,11 +4,15 @@ const Hash = use('Hash')
 const { validateAll } = use("Validator");
 const logger = use("Logger");
 var nodeoutlook = require('nodejs-nodemailer-outlook')
+const nodemailer = require('nodemailer'); 
 
 class CustomerController {
     async signup({ request, response, auth }) {
-         
-        const userData = request.all()
+        console.log("entreedddfdsfsdfsdfsdfsdafsdfasdfsd")
+        console.log(request.body)
+        const userData = request.body
+       
+        console.log(userData)
        // userData.password = await Hash.make(userData.password);
         try {
         const user = await Customer.create(userData)
@@ -48,44 +52,50 @@ class CustomerController {
          
     }
     async forgotPassword({ request, response, auth }) {
-        const {email} = request.only(['email']);
-        const customerRecord =  await Customer.query().where("email", "=", email);
+        console.log(request.body)
+        const {email} = request.body;
+        console.log(email)
+        const customerRecord =  await Customer.query().where("email", "=", email).fetch();
+        console.log(customerRecord.toJSON().length)
         if(customerRecord.toJSON().length>0){
-    const userName = Env.get('MAIL_ID')
-    const password = Env.get('MAIL_PASSWORD')
+   
 
   try{
     console.log('sending Mail')
-    await nodeoutlook.sendEmail({
+    var transporter= nodemailer.createTransport({
+        service: 'gmail',
       auth: {
-        user: userName,
-        pass: password
+        user: 'onlinemedico782@gmail.com',
+        pass: 'OnlineMedico782'
       },
-      tls:{
-        rejectUnauthorized: false
-      },
-      from: userName,
-      to: student_emailid,
+    });
+     var mailOptions= {
+      from: 'onlinemedico782@gmail.com',
+      to: 'mandapallisatish64@gmail.com',
       subject: 'Set Password for Online Medico',
       html: '<p>Click below button to set password </p> <br> <a href="https://www.w3schools.com">Set Password</a>',
-      text: '',
-      onError: (e) => { console.log(e)
-        return response.status(401).json({
-            error: {
-                status: 401,
-                message: "Please check email correctly",
-            },
-        });
-    },
-      onSuccess: (i) => {console.log(i)
-          
-         return response.status(200).json({
-        message: "Mail Sent Successfully",
-    });
-     }
+      text: ''
     }
-    );  
+    await transporter.sendMail(mailOptions,function(error,info){
+        if(error){
+            return response.status(401).json({
+                error: {
+                    status: 401,
+                    message: "Please check email correctly",
+                },
+            });
+        }
+        else {
+            console.log("mail send sucdfsdfsd")
+            return response.json({
+                status: 200,
+                message: "Mail Sent Successfully",
+        })
     }
+})
+     
+    
+} 
     catch(e){
       console.log(e)
     }

@@ -105,13 +105,13 @@ class SignupForm extends React.Component {
           <form onSubmit={(e) => signup(e)} noValidate>
             <div className='fullName'>
               <label htmlFor="fullName">Full Name</label>
-              <input type='text' name='fullName' onChange={this.handleChange} noValidate />
+              <input type='text' name='fullName' id ='fullName'onChange={this.handleChange} noValidate />
               {errors.fullName.length > 0 &&
                 <span className='error'>{errors.fullName}</span>}
             </div>
             <div className='email'>
               <label htmlFor="email">Email</label>
-              <input type='email' name='email' onChange={this.handleChange} noValidate />
+              <input type='email' name='email' id='email' onChange={this.handleChange} noValidate />
               {errors.email.length > 0 &&
                 <span className='error'>{errors.email}</span>}
             </div>
@@ -129,7 +129,7 @@ class SignupForm extends React.Component {
             </div>
             <div className='contactnum'>
               <label htmlFor="contactnum">Contact Number</label>
-              <input type='text' name='contactnum' onChange={this.handleChange} noValidate />
+              <input type='text' name='contactnum' id='contact_number' onChange={this.handleChange} noValidate />
               {errors.contactnum.length > 0 &&
                 <span className='error'>{errors.contactnum}</span>}
             </div>
@@ -155,13 +155,13 @@ class SignupForm extends React.Component {
 
 
 
-function signup(e) {
+async function signup(e) {
   e.preventDefault();
   let request = {
     fullName: document.getElementById('fullName').value,
-    password: document.getElementById('password').value,
+    password: document.getElementById('cpassword').value,
     email: document.getElementById('email').value,
-    contactNumber: document.getElementById('contact_number').value,
+    contactNumber: document.getElementById('contact_number').value
   }
 
 
@@ -170,7 +170,7 @@ function signup(e) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(request)
 };
-fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
+await fetch('http://127.0.0.1:3333/onlinemedico/signup', requestOptions)
     .then(response => response.json())
     .then(data => console.log(data));
 
