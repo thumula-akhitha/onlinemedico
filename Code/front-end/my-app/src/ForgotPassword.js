@@ -20,12 +20,11 @@ render()
 }
 }
 
-function forgotpassword(e) {
-    e.preventDefault();
-    let request = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: document.getElementById('email').value
+async function forgotpassword(e) {
+  e.preventDefault();
+  let request = {
+   
+    email: document.getElementById('email').value
 
     }
     axios.post('http://localhost:5000/sendlink', request)
@@ -36,5 +35,16 @@ function forgotpassword(e) {
         console.log(err);
       })
   }
+
+    
+  axios.post('http://127.0.0.1:3333/onlinemedico/forgotpassword', request)
+    .then(res => {
+      console.log(res)
+      alert(res.data.message);
+    })
+    .catch(err => {
+      alert(err);
+    })
+}
 
 export default ForgotPassword;

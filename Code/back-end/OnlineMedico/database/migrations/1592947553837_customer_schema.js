@@ -4,20 +4,20 @@
 const Schema = use('Schema')
 
 class CustomerSchema extends Schema {
-  up() {
+  up () {
     this.create('customers', (table) => {
-      table.increments()
-      table.string('firstName', 80).notNullable()
-      table.string('lastName').notNullable()
-      table.integer('contactNumber').notNullable()
-      table.string('email', 60)
-      table.string('password').notNullable()
-      table.integer('addressId').unsigned().notNullable().references('id').inTable('addresses')
-      table.integer('cardId').unsigned().notNullable().references('id').inTable('card_details')
-      table.timestamps()
-    });
+      
+        table.increments()
+        table.string('fullName').notNullable()
+         table.integer('contactNumber').notNullable()
+        table.string('email', 60)
+        table.string('password').notNullable()
+        
+        table.timestamps()
+    })
   }
-  down() {
+
+  down () {
     this.drop('customers')
   }
 }
