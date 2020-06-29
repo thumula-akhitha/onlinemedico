@@ -7,6 +7,7 @@ import Login from './LoginForm';
 import signup from './SignupForm';
 import ForgotPassword from './ForgotPassword';
 import * as serviceWorker from './serviceWorker';
+import ResetPasswordPage from './ResetPasswordPage ';
 
 ReactDOM.render(
   <Router>
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Route path="/Login" component={Login}/>
       <Route path="/Signup" component={signup}/>
       <Route path="/ForgotPassword" component={ForgotPassword}/>
+      <Route path="/Reset" component={ResetPasswordPage}/>
     </div>
   </Router>
   ,
