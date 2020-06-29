@@ -10,12 +10,12 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Router>
-    <div>
+    
       <Route path="/" component={App}/>
       <Route path="/Login" component={Login}/>
       <Route path="/Signup" component={signup}/>
       <Route path="/ForgotPassword" component={ForgotPassword}/>
-    </div>
+    
   </Router>
   ,
   document.getElementById('root')

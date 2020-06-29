@@ -4,11 +4,11 @@ import './css/ForgotPassword.css';
 class ForgotPassword extends React.Component{
 render()
 {
- 
-  return (
+ return (
     <div className="home">
       <form onSubmit={(e) => forgotpassword(e)} className="formforgot">
-          <div className="forgot">
+        <div className="forgot">
+        <h4>Password Assistance</h4>
         <label htmlFor="email"> Give your reset link mail: </label>
         <input type="email" className="form-control" id="email" placeholder="Enter your email address" aria-describedby="EmailHelp" />
         <br />
@@ -20,23 +20,21 @@ render()
 }
 }
 
-
-    
 function forgotpassword(e) {
-  e.preventDefault();
-  let request = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: document.getElementById('email').value
+    e.preventDefault();
+    let request = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: document.getElementById('email').value
 
+    }
+    axios.post('http://localhost:5000/sendlink', request)
+      .then(res => {
+        alert(res.data.message);
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
-  axios.post('http://localhost:5000/sendlink', request)
-    .then(res => {
-      alert(res.data.message);
-    })
-    .catch(err => {
-      console.log(err);
-    })
-}
 
 export default ForgotPassword;
