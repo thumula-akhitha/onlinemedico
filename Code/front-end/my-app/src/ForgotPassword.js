@@ -45,6 +45,6 @@ async function forgotpassword(e) {
     .catch(err => {
       alert(err);
     })
-}
+
 
 export default ForgotPassword;

@@ -42,7 +42,7 @@ class SignupForm extends React.Component {
     switch (name) {
       case 'fullName':
         errors.fullName =
-          value.match(/^[a-zA-Z]+$/)
+          value.match(/^[a-zA-Z][a-zA-Z\s]*$/)
             ? ''
             : 'Only letters are allowed';
         break;
