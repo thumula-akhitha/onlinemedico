@@ -73,7 +73,7 @@ class CustomerController {
       from: 'onlinemedico782@gmail.com',
       to: 'mandapallisatish64@gmail.com',
       subject: 'Set Password for Online Medico',
-      html: '<p>Click below button to set password </p> <br> <a href="https://www.w3schools.com">Set Password</a>',
+      html: '<p>Click below button to set password </p> <br> <a href="http://localhost:3000/Reset">Set Password</a>',
       text: ''
     }
     await transporter.sendMail(mailOptions,function(error,info){
@@ -109,6 +109,35 @@ else {
     });
 }
     
+    }
+    async newPassword({ request, response, auth }) {
+        const newPassword = request.body;
+        console.log(newPassword.email)
+       // const customerRecord =  await Customer.query().where("email", "=", newPassword.email).fetch();
+       const customerRecord =  await Customer.findBy('email',newPassword.email)
+        console.log(customerRecord)
+     //  var customerRecordtemp = customerRecord.toJSON()[0]
+       // console.log(customerRecord)
+        console.log(customerRecord.toJSON())
+        if(customerRecord != null){
+            console.log("entered")
+            customerRecord.password = newPassword.newpassword
+          // console.log( customerRecordtemp.password)
+            await customerRecord.save();
+          return response.json({
+            status: 'success',
+            message: "Password updated  successfully"
+        })
+        }
+        else {
+            console.log("else block")
+            return response.status(401).json({
+                error: {
+                    status: 401,
+                    message: "Please check email correctly",
+                },
+            });
+        }
     }
 }
 

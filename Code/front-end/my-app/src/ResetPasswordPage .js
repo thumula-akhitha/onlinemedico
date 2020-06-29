@@ -41,7 +41,7 @@ function resetpassword(e) {
       confirmpassword: document.getElementById('confirmpassword').value  
 
     }
-    axios.get('http://192.168.0.10:3333/login', request)
+    axios.post('http://127.0.0.1:3333/onlinemedico/newpassword', request)
       .then(res => {
         alert(res.data.message);
       })
