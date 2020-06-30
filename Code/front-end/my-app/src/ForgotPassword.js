@@ -34,17 +34,8 @@ async function forgotpassword(e) {
       .catch(err => {
         console.log(err);
       })
-  }
-
-    
-  axios.post('http://127.0.0.1:3333/onlinemedico/forgotpassword', request)
-    .then(res => {
-      console.log(res)
-      alert(res.data.message);
-    })
-    .catch(err => {
-      alert(err);
-    })
+  }  
+  
 
 
 export default ForgotPassword;

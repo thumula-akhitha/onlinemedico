@@ -11,13 +11,11 @@ import ResetPasswordPage from './ResetPasswordPage ';
 
 ReactDOM.render(
   <Router>
-    
       <Route path="/" component={App}/>
       <Route path="/Login" component={Login}/>
       <Route path="/Signup" component={signup}/>
       <Route path="/ForgotPassword" component={ForgotPassword}/>
-      <Route path="/Reset" component={ResetPasswordPage}/>
-    </div>
+      <Route path="/Reset" component={ResetPasswordPage}/>    
   </Router>
   ,
   document.getElementById('root')
