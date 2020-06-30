@@ -86,7 +86,7 @@ class CustomerController {
             });
         }
         else {
-            console.log("mail send sucdfsdfsd")
+            console.log("mail send successfully")
             return response.json({
                 status: 200,
                 message: "Mail Sent Successfully",
