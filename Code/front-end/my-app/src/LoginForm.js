@@ -10,8 +10,8 @@ class LoginForm extends React.Component {
         <div className="row">
           <div className="col-1 logoimg">
             <div className="logo">
-              <img src={logo} alt="logo" />
-              <h3>OnlineMedico</h3>
+              <img src={logo} alt="logo" width="350px" height="350px"/>
+              <h2>OnlineMedico</h2>
             </div>
           </div>
           <div className="col-11">
@@ -19,19 +19,20 @@ class LoginForm extends React.Component {
               <form onSubmit={(e) => login(e)}>
                 <h3>Sign In</h3>
                 <div className="form-group">
-                  <label>Email</label>
-                  <input type="email" className="form-control" id="email" placeholder="Enter your email address" aria-describedby="EmailHelp" />
+                  <label className="label-font">Email</label>
+                  <input type="email" className="form-control" id="email" placeholder="Enter your email address" aria-describedby="EmailHelp" required/>
                 </div>
                 <div className="form-group">
-                  <label>Password</label>
-                  <input type="password" className="form-control" placeholder="Enter your password" id="password" />
+                  <label className="label-font">Password</label>
+                  <input type="password" className="form-control" placeholder="Enter your password" id="password" required/>
                 </div>
                 <button type="submit" className="btn btn-info">Login</button>
                 <p className="msg">
-                 Don't have an account? Create One
-                <Link className="links" to="/Signup">Signup</Link>
+                 <b>Don't have an account?</b>
+                <Link className="links" to="/Signup"><u>Signup</u></Link>
                 </p>
-                <Link to="/ForgotPassword">ForgotPassword</Link>                
+                <Link className="forgot-link" to="/ForgotPassword"><u>Forgot Password?</u></Link>     
+                    
               </form>
             </div>
           </div>
@@ -48,9 +49,9 @@ class LoginForm extends React.Component {
       password: document.getElementById('password').value
 
     }
-    axios.post('http://127.0.0.1:3333/onlinemedico/login', request)
+    axios.get('http://192.168.0.10:3333/login', request)
       .then(res => {
-        alert(res.data.data);
+        alert(res.data.message);
       })
       .catch(err => {
         console.log(err);

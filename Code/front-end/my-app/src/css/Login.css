@@ -1,24 +1,57 @@
 .container{
     margin-top: 7em;
 }
-
+.label-font{
+    color:#2d2c2c;
+   font-size: 20px;
+   font-family: 'Source Serif Pro', serif;
+}
+h2{
+    margin-left: 3em;
+    font-family: 'Piedra', cursive;
+}
 h3{
-    margin-left:2em;
+    color:#2d2c2c;
+    font-family: 'Source Serif Pro', serif;
+}
+::placeholder{
+    font-family: 'Source Serif Pro', serif;
 }
 .msg{
     margin-top:1em;
+    font-family: 'Source Serif Pro', serif;
+    color:white;
 }
 .links{
-    margin-left:1em;
+    margin-left:0.5em;
+    font-weight:bold;
+    font-family: 'Source Serif Pro', serif;
+    font-size: large;
+    color:white;
+}
+.forgot-link{
+    margin-right:75px;
+    font-family: 'Source Serif Pro', serif;
+    color: white;
 }
 .loginForm{ 
   margin-left:25em;
   width:500px;
   position: relative;
-  background: linear-gradient(#3caea3,#5b5f5f);
+  background: linear-gradient(#3beedc,#1b1b1b);
   border-radius: 10px;
   padding: 3em;
 }
 .form-control,.btn{
     width:25em;
+    font-family: 'Source Serif Pro', serif;
+
+    
 }
+.btn{
+    font-size: large;
+    margin-top: 1em;
+}
+
+    
+    
