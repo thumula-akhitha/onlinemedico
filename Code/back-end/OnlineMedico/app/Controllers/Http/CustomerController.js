@@ -44,7 +44,9 @@ else {
             const token = await auth.generate(k.toJSON()[0])
             console.log("dfasjfsdjfasdfds")
         const passwordDb = k.toJSON()[0].password;
-        const isSame = await Hash.verify(password, passwordDb)
+        console.log("dfasjfsdjfasdfdskkl")
+        const isSame = await Hash.verify(request.body.password, passwordDb)
+        console.log("dfasjfsdjfasdfds")
         console.log(isSame)
         if(isSame){
             return response.status(200).json({
@@ -54,7 +56,7 @@ else {
            
         }
         else {
-            return response.status(401).json({
+            return response.json({
                message: "failure"
             });
         }

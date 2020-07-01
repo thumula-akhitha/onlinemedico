@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
       password: document.getElementById('password').value
 
     }
-    axios.get('http://192.168.0.10:3333/login', request)
+    axios.post('http://127.0.0.1:3333/onlinemedico/login', request)
       .then(res => {
         if(res.data.message==="success"){   
           document.getElementById("error").innerHTML = ""  
