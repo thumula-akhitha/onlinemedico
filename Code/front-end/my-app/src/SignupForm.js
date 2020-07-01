@@ -33,8 +33,6 @@ class SignupForm extends React.Component {
       }
     };
   }
-
-
   handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
@@ -80,10 +78,6 @@ class SignupForm extends React.Component {
 
     this.setState({ errors, [name]: value });
   }
-
-
-
-
   handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm(this.state.errors)) {
@@ -112,8 +106,7 @@ axios.post('http://127.0.0.1:3333/onlinemedico/signup', request)
     .then(response => {
       console.log(response.data.message)
       if(response.data.message==="error"){   
-        document.getElementById("error").innerHTML = "Email Already Exists"  
-       
+        document.getElementById("errors").innerHTML = "Email Already Exists"    
       }
       else {
         this.props.history.push('/Home');
@@ -122,8 +115,6 @@ axios.post('http://127.0.0.1:3333/onlinemedico/signup', request)
     })
     
 }
-
-
   render() {
     const { errors } = this.state;
     return (
@@ -161,13 +152,10 @@ axios.post('http://127.0.0.1:3333/onlinemedico/signup', request)
               {errors.contactnum.length > 0 &&
                 <span className='errors'>{errors.contactnum}</span>}
             </div>
-            <div className='accept'>
-            
-              
+            <div className='accept'>  
                 <input className='inputfield' type="checkbox" className='checkbox' required />
                 <p className='formpara'>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
               </div>
-            
             <div className='submit'>
               <button className='createbutton' type="submit">Register</button>
               <p id="errors"></p>
