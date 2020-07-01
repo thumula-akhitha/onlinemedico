@@ -169,7 +169,7 @@ axios.post('http://127.0.0.1:3333/onlinemedico/signup', request)
               </div>
             
             <div className='submit'>
-              <button className='createbutton' type="submit" onClick={this.handleSubmit} required>Register</button>
+              <button className='createbutton' type="submit">Register</button>
               <p id="errors"></p>
               <div className='info'>
                 <p >Already Have an account<Link className="loginlink" to="Login">Sign In</Link></p>

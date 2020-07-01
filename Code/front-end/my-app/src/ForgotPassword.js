@@ -19,11 +19,10 @@ class ForgotPassword extends React.Component{
         if(res.data===""){  
           document.getElementById("error").innerHTML="" 
           document.getElementById("success").innerHTML = "Email Sent Successfully"  
-         // this.props.history.push('/Home');
         }
         else {
           document.getElementById("success").innerHTML=""
-          document.getElementById("error").innerHTML = "Email does not exist"  
+          document.getElementById("error").innerHTML = "Email doesn't exist please provide the correct email address"  
         }
       })
 
@@ -43,7 +42,6 @@ render()
         <label htmlFor="email"> Give your reset link mail: </label>
         <input type="email" className="form-control" id="mail" placeholder="Enter your email address" aria-describedby="EmailHelp" required/>
         <br />
-
         <button type="submit" className="send-btn btn-info">Send Link</button>
         <p id="error"></p>
         <p id="success"></p>
@@ -54,25 +52,7 @@ render()
 }
 }
 
-async function forgotpassword(e) {
-  
-  e.preventDefault();
-  let request = {
-   
-    email: document.getElementById('email').value
 
-    }
-    axios.post('http://localhost:5000/sendlink', request)
-      .then(res => {
-
-        alert(res.data.message);
-      })
-
-      .catch(err => {
-
-        console.log(err);
-      })
-  }  
   
 
 

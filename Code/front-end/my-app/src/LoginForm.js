@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
           document.getElementById("error").innerHTML = "Incorrect username and password"
         }
         else{
-          document.getElementById("error").innerHTML = "Email doesn't exist please check your email address"
+          document.getElementById("error").innerHTML = "Email doesn't exist please enter registered email address"
         }
       })
       .catch(err => {

@@ -134,10 +134,10 @@ else {
         console.log(newPassword.email)
        // const customerRecord =  await Customer.query().where("email", "=", newPassword.email).fetch();
        const customerRecord =  await Customer.findBy('email',newPassword.email)
-        console.log(customerRecord)
+       // console.log(customerRecord)
      //  var customerRecordtemp = customerRecord.toJSON()[0]
        // console.log(customerRecord)
-        console.log(customerRecord.toJSON())
+        //console.log(customerRecord.toJSON())
         if(customerRecord != null){
             console.log("entered")
             customerRecord.password = newPassword.newpassword
@@ -145,16 +145,15 @@ else {
             await customerRecord.save();
           return response.json({
             status: 'success',
-            message: "Password updated  successfully"
+            message: "Password success"
         })
         }
         else {
             console.log("else block")
-            return response.status(401).json({
-                error: {
-                    status: 401,
-                    message: "Please check email correctly",
-                },
+            return response.json({
+               
+                    message: "check email correctly",
+                
             });
         }
     }
