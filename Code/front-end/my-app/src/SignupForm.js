@@ -91,7 +91,25 @@ class SignupForm extends React.Component {
     }
   }
 
+signup(e){
+  e.preventDefault();
+  let request = {
+    fullName: document.getElementById('fullName').value,
+    password: document.getElementById('cpassword').value,
+    email: document.getElementById('email').value,
+    contactNumber: document.getElementById('contact_number').value
+  }
 
+
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(request)
+};
+ fetch('http://127.0.0.1:3333/onlinemedico/signup', requestOptions)
+    .then(response => response.json())
+    .then(data => console.log(data));
+}
 
 
   render() {
