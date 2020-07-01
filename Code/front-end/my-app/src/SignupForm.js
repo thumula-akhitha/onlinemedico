@@ -133,13 +133,13 @@ class SignupForm extends React.Component {
               {errors.contactnum.length > 0 &&
                 <span className='error'>{errors.contactnum}</span>}
             </div>
-
-            <label class="form-check-label">
-              <div>
+            <div className='accept'>
+            
+              
                 <input type="checkbox" className='checkbox' required="required" />
                 <p>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
               </div>
-            </label>
+            
             <div className='submit'>
               <button>Create</button>
               <div className='info'>

@@ -52,6 +52,12 @@ h3{
     font-size: large;
     margin-top: 1em;
 }
+#error{
+    color:rgb(238, 146, 146);
+}
+.login-row{
+    padding:3em;
+}
 
     
     
