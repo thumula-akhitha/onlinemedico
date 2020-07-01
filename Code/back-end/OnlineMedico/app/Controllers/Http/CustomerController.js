@@ -98,6 +98,7 @@ else {
     }
     await transporter.sendMail(mailOptions,function(error,info){
         if(error){
+            console.log("errrorr")
             return response.status(401).json({
                 error: {
                     status: 401,
@@ -106,10 +107,9 @@ else {
             });
         }
         else {
-            console.log("mail send successfully")
+            console.log("mail send successfullyyyyyy")
             return response.json({
-                status: 200,
-                message: "Mail Sent Successfully",
+                 message: "Success",
         })
     }
 })
@@ -121,11 +121,10 @@ else {
     }
 }
 else {
-    return response.status(401).json({
-        error: {
-            status: 401,
-            message: "Please check email correctly",
-        },
+    return response.json({
+        
+            message: "error",
+       
     });
 }
     
