@@ -11,10 +11,10 @@ render()
         <div className="forgot">
         <h4>Password Assistance</h4>
         <label htmlFor="email"> Give your reset link mail: </label>
-        <input type="email" className="form-control" id="email" placeholder="Enter your email address" aria-describedby="EmailHelp" />
+        <input type="email" className="form-control" id="email" placeholder="Enter your email address" aria-describedby="EmailHelp" required/>
         <br />
 
-        <button type="submit" className="btn btn-info">Send Link</button>
+        <button type="submit" className="send-btn btn-info">Send Link</button>
         </div>
       </form>
     </div>
