@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-import axios from 'axios';
 import './css/Signup.css';
 
 
@@ -101,35 +99,35 @@ class SignupForm extends React.Component {
     return (
       <div className='wrapper'>
         <div className='form-wrapper'>
-          <h2>Create Account</h2>
+          <h2 className='heading'>Create Account</h2>
           <form onSubmit={(e) => signup(e)} noValidate>
             <div className='fullName'>
-              <label htmlFor="fullName">Full Name</label>
-              <input type='text' name='fullName' id ='fullName'onChange={this.handleChange} noValidate />
+              <label className='formlabel'>Full Name</label>
+              <input type='text' placeholder='Enter Full Name' name='fullName' id ='fullName'onChange={this.handleChange} noValidate />
               {errors.fullName.length > 0 &&
                 <span className='error'>{errors.fullName}</span>}
             </div>
             <div className='email'>
-              <label htmlFor="email">Email</label>
-              <input type='email' name='email' id='email' onChange={this.handleChange} noValidate />
+              <label className='formlabel'>Email</label>
+              <input type='email' placeholder='Enter email address' name='email' id='email' onChange={this.handleChange} noValidate />
               {errors.email.length > 0 &&
                 <span className='error'>{errors.email}</span>}
             </div>
             <div className='password'>
-              <label htmlFor="password">Password</label>
-              <input type='password' id='password' name='password' onChange={this.handleChange} noValidate />
+              <label className='formlabel'>Password</label>
+              <input type='password' id='password' placeholder='Password' name='password' onChange={this.handleChange} noValidate />
               {errors.password.length > 0 &&
                 <span className='error'>{errors.password}</span>}
             </div>
             <div className='confirmpassword'>
-              <label htmlFor="confirmpassword"> Retype Password</label>
-              <input type='confirmpassword' id='cpassword' name='confirmpassword' onChange={this.handleChange} noValidate />
+              <label className='formlabel'> Retype Password</label>
+              <input type='password' id='cpassword' placeholder='Confirm password' name='confirmpassword' onChange={this.handleChange} noValidate />
               {errors.confirmpwd.length > 0 &&
                 <span className='error'>{errors.confirmpwd}</span>}
             </div>
             <div className='contactnum'>
-              <label htmlFor="contactnum">Contact Number</label>
-              <input type='text' name='contactnum' id='contact_number' onChange={this.handleChange} noValidate />
+              <label className='formlabel'>Contact Number</label>
+              <input type='text' name='contactnum' id='contact_number' placeholder='Enter mobile number' onChange={this.handleChange} noValidate />
               {errors.contactnum.length > 0 &&
                 <span className='error'>{errors.contactnum}</span>}
             </div>
@@ -137,13 +135,13 @@ class SignupForm extends React.Component {
             <label class="form-check-label">
               <div>
                 <input type="checkbox" className='checkbox' required="required" />
-                <p>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
+                <p className='formpara'>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
               </div>
             </label>
             <div className='submit'>
-              <button>Create</button>
+              <button className='createbutton'>Create</button>
               <div className='info'>
-                <p>Already Have an account<Link className="links" to="Login">Sign In</Link></p>
+                <p >Already Have an account<Link className="links" to="Login">Sign In</Link></p>
               </div>
             </div>
           </form>

@@ -1,4 +1,4 @@
 body, html, #root, .app{
   width: 100%;
-  overflow:auto;
+  /* overflow:auto; */
 }
