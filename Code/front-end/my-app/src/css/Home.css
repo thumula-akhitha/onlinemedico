@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+  }
+  
+  body {
+    font: 16px "Roboto", sans-serif;
+  }
+  
+  
+  header {
+    background-color:lightseagreen !important;
+    padding: 10px 0;
+  }
+
+  
+  .container {
+  /*   width: 70%; */
+    margin: 0 auto;
+  }
+  
+  /*.btn {
+    background-color: #270B36;;
+    padding: 8px 0;
+    text-align: center;
+    width: 90px;
+  }*/
+  
+  /*.btn:hover {
+    background: none;
+    border:2px solid #4D0D35;
+    color: #4D0D35;
+  }*/
+  
+  .sign-up a:hover {
+    color: #270B36;
+  }
+  
+  #brand {
+    margin: 0 20px;
+  }
+  
+  #brand span{
+   font: 30px "Abril Fatface", cursive;
+  }
+  .col-4 a{
+      color: lightseagreen;
+  }
+  
+  #brand i {
+    font-size: 2em;
+    margin-right: 5px;
+  }
+  
+  nav {
+    color: #ecf0f1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  nav ul {
+    margin: auto;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+  }
+  
+  nav a {
+    color: black;
+    padding: 3em;
+    text-decoration: none;
+   
+  }
+  
+  nav a:hover {
+    color: rgb(240, 245, 192)
+  }
+  .sign-up {
+    margin-right: 20px;
+  }
+  input{
+      width:30em;
+  }
+  .search-bar{
+      width:100%;
+  }
+  .col-6{
+      padding-top:1em;
+      padding-left:73px;
+  }
+  .search-btn{
+      min-width: 100px;
+      width: 2em;
+      margin-bottom: 1em;
+      padding:0.7em;
+      background-color: lightseagreen;
+  }
+  .col-4{
+      margin-top:0.5em;
+      margin-left:0em;
+  }
+  .col-4 > .btn {
+      width:5em;
+  }
+  .name{
+    font-family: 'Piedra', cursive;
+    font-size: 25px;
+    padding-top:1em;
+  }
+  li{
+     margin:auto;
+  }
+  .col-2{
+      display:flex;
+  }
+  .logo{
+      margin-top:1em;
+      width:40px;
+      height:40px;
+  }
+  .cart-image{
+      width:40px;
+  }
+  .d-block{
+      padding-top:2em;
+      padding-bottom: 2em;
+      margin:auto;
+      width: 80%;
+      height:500px;
+  }
+  
+  .carousel-icon{
+      background-color: darkslategrey;
+      width:30px;
+      height:30px;
+  }
+
+
+ 

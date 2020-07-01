@@ -42,7 +42,7 @@ class SignupForm extends React.Component {
     switch (name) {
       case 'fullName':
         errors.fullName =
-          value.match(/^[a-zA-Z]+$/)
+          value.match(/^[a-zA-Z][a-zA-Z\s]*$/)
             ? ''
             : 'Only letters are allowed';
         break;
@@ -133,13 +133,13 @@ class SignupForm extends React.Component {
               {errors.contactnum.length > 0 &&
                 <span className='error'>{errors.contactnum}</span>}
             </div>
-
-            <label class="form-check-label">
-              <div>
+            <div className='accept'>
+            
+              
                 <input type="checkbox" className='checkbox' required="required" />
                 <p>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
               </div>
-            </label>
+            
             <div className='submit'>
               <button>Create</button>
               <div className='info'>
