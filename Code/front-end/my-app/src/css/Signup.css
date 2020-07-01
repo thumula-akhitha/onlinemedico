@@ -122,7 +122,9 @@ input::placeholder {
   background-color: #4A4E69;
   color: #fefefe;
 } */
-
+#errors{
+  color:red;
+}
 .errors {
   color:#db2269;
   font-size: 0.8em;
