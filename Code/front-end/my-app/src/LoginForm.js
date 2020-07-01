@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
             <div className="loginForm">
               <form onSubmit={this.login}>
                 <h3>Sign In</h3>
-                <div className="form-group">
+                <div className="form-group ">
                   <label className="label-font">Email</label>
                   <input type="email" className="form-control" id="email" placeholder="Enter your email address" aria-describedby="EmailHelp" required/>
                 </div>

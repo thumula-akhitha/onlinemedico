@@ -44,7 +44,7 @@ SILVER PINK: #C9ADA7
     font-family: sans-serif;
     font-style: normal;
     font-size: 13px;
-    margin-left: 20px;
+    margin-left: 25px;
     
 
 }
@@ -121,9 +121,9 @@ input::placeholder {
   color: #fefefe;
 } */
 
-.error {
+.errors {
   color:#db2269;
-  font-size: 0.5em;
+  font-size: 0.8em;
   display: relative;
 }
 
@@ -152,8 +152,6 @@ input::placeholder {
   flex-wrap: wrap;
 }
 .checkbox{
-  margin-left: 1px;
-  left:270px;
   position: absolute;
 }
 .info .p{

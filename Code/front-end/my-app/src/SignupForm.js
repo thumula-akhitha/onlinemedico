@@ -133,44 +133,44 @@ axios.post('http://127.0.0.1:3333/onlinemedico/signup', request)
           <form onSubmit={this.signup} noValidate>
             <div className='fullName'>
               <label className='formlabel'>Full Name</label>
-              <input className='inputfield' type='text' placeholder='Enter Full Name' name='fullName' id ='fullName'onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='text' placeholder='Enter Full Name' name='fullName' id ='fullName'onChange={this.handleChange} required/>
               {errors.fullName.length > 0 &&
-                <span className='error'>{errors.fullName}</span>}
+                <span className='errors'>{errors.fullName}</span>}
             </div>
             <div className='email'>
               <label className='formlabel'>Email</label>
-              <input className='inputfield' type='email' placeholder='Enter email address' name='email' id='email' onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='email' placeholder='Enter email address'  name='email' id='email' onChange={this.handleChange} required />
               {errors.email.length > 0 &&
-                <span className='error'>{errors.email}</span>}
+                <span className='errors'>{errors.email}</span>}
             </div>
             <div className='password'>
               <label className='formlabel'>Password</label>
-              <input className='inputfield' type='password' id='password' placeholder='Password' name='password' onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='password' id='password' placeholder='Password' name='password' onChange={this.handleChange} required />
               {errors.password.length > 0 &&
-                <span className='error'>{errors.password}</span>}
+                <span className='errors'>{errors.password}</span>}
             </div>
             <div className='confirmpassword'>
               <label className='formlabel'> Retype Password</label>
-              <input className='inputfield' type='password' id='cpassword' placeholder='Confirm password' name='confirmpassword' onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='password' id='cpassword' placeholder='Confirm password' name='confirmpassword' onChange={this.handleChange} required />
               {errors.confirmpwd.length > 0 &&
-                <span className='error'>{errors.confirmpwd}</span>}
+                <span className='errors'>{errors.confirmpwd}</span>}
             </div>
             <div className='contactnum'>
               <label className='formlabel'>Contact Number</label>
-              <input className='inputfield' type='text' name='contactnum' id='contact_number' placeholder='Enter mobile number' onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='text' name='contactnum' id='contact_number' placeholder='Enter mobile number' onChange={this.handleChange} required />
               {errors.contactnum.length > 0 &&
-                <span className='error'>{errors.contactnum}</span>}
+                <span className='errors'>{errors.contactnum}</span>}
             </div>
             <div className='accept'>
             
               
-                <input className='inputfield' type="checkbox" className='checkbox' required="required" />
+                <input className='inputfield' type="checkbox" className='checkbox' required />
                 <p className='formpara'>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
               </div>
             
             <div className='submit'>
-              <button className='createbutton'>Create</button>
-              <p id="error"></p>
+              <button className='createbutton' type="submit" onClick={this.handleSubmit} required>Register</button>
+              <p id="errors"></p>
               <div className='info'>
                 <p >Already Have an account<Link className="loginlink" to="Login">Sign In</Link></p>
               </div>
