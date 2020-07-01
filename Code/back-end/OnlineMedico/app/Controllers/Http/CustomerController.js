@@ -8,12 +8,13 @@ const nodemailer = require('nodemailer');
 
 class CustomerController {
     async signup({ request, response, auth }) {
-        console.log("entreedddfdsfsdfsdfsdfsdafsdfasdfsd")
-        console.log(request.body)
+       
         const userData = request.body
        
-        console.log(userData)
-       // userData.password = await Hash.make(userData.password);
+        const customer =  await Customer.query().where("email", "=", userData.email).fetch();
+        console.log(customer.toJSON().length)
+        if(customerRecord.toJSON().length>0){
+        userData.password = await Hash.make(userData.password);
         try {
         const user = await Customer.create(userData)
         return response.json({
@@ -27,26 +28,42 @@ class CustomerController {
             message: 'There was a problem creating the Customer, please try again later.' + error
         })
     }
+}
+else {
+    return response.json({
+               
+        message: "Already email exists"
+    })
+}
     }
     async login({ request, response, auth }) {
-        console.log("login")
-        console.log(request.body)
-        const { username, password} = request.only(["email","password"])
-
-        
-        const k = await Customer.query().where("email", request.body.email).where("password", request.body.password).fetch();
-        console.log(k)
+        const k = await Customer.query().where("email", request.body.email).fetch();
+        console.log(k.toJSON().length)
+      
         if(k.toJSON().length>0){
-            console.log("success")
-            return response.json({
-                status: 'success',
-                data: "user login successfully"
-            })
+            const token = await auth.generate(k.toJSON()[0])
+            console.log("dfasjfsdjfasdfds")
+        const passwordDb = k.toJSON()[0].password;
+        const isSame = await Hash.verify(password, passwordDb)
+        console.log(isSame)
+        if(isSame){
+            return response.status(200).json({
+                message: "success",
+                data: token
+            });
+           
         }
         else {
+            return response.status(401).json({
+               message: "failure"
+            });
+        }
+        }
+        else {
+            console.log("cameeee")
             return response.json({
-                status: 'error',
-                data: "Invalid username and password"
+               
+                message: "email incorrect"
             })
         }
          
@@ -71,7 +88,7 @@ class CustomerController {
     });
      var mailOptions= {
       from: 'onlinemedico782@gmail.com',
-      to: 'mandapallisatish64@gmail.com',
+      to: email,
       subject: 'Set Password for Online Medico',
       html: '<p>Click below button to set password </p> <br> <a href="http://localhost:3000/Reset">Set Password</a>',
       text: ''
@@ -86,7 +103,7 @@ class CustomerController {
             });
         }
         else {
-            console.log("mail send sucdfsdfsd")
+            console.log("mail send successfully")
             return response.json({
                 status: 200,
                 message: "Mail Sent Successfully",
@@ -141,4 +158,4 @@ else {
     }
 }
 
-module.exports = CustomerController
+module.exports = CustomerController 

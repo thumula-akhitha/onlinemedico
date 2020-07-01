@@ -5,13 +5,14 @@ import App from './App';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import Login from './LoginForm';
 import signup from './SignupForm';
+import Home from './Home';
 import ForgotPassword from './ForgotPassword';
 import * as serviceWorker from './serviceWorker';
 import ResetPasswordPage from './ResetPasswordPage ';
 
 ReactDOM.render(
   <Router>
-      <Route path="/" component={App}/>
+      <Route path="/Home" component={Home}/>
       <Route path="/Login" component={Login}/>
       <Route path="/Signup" component={signup}/>
       <Route path="/ForgotPassword" component={ForgotPassword}/>
