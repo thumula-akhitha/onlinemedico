@@ -2,8 +2,8 @@
     margin-top: 7em;
 }
 .label-font{
-    color:#2d2c2c;
-   font-size: 20px;
+   color:#2d2c2c;
+   font-size: 1em;
    font-family: 'Source Serif Pro', serif;
 }
 h2{
@@ -14,9 +14,7 @@ h3{
     color:#2d2c2c;
     font-family: 'Source Serif Pro', serif;
 }
-::placeholder{
-    font-family: 'Source Serif Pro', serif;
-}
+
 .msg{
     margin-top:1em;
     font-family: 'Source Serif Pro', serif;
@@ -42,13 +40,14 @@ h3{
   border-radius: 10px;
   padding: 3em;
 }
-.form-control,.btn{
-    width:25em;
-    font-family: 'Source Serif Pro', serif;
-
-    
+.form-control{
+    font-size:0.9em;
+    font-family: 'Source Serif Pro', serif;    
 }
-.btn{
+.login-btn{
+    padding:0.5em;
+    width: 22.5em;
+    border-radius:10px;
     font-size: large;
     margin-top: 1em;
 }

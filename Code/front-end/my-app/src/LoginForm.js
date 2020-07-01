@@ -56,7 +56,7 @@ class LoginForm extends React.Component {
                   <label className="label-font">Password</label>
                   <input type="password" className="form-control" placeholder="Enter your password" id="password" required/>
                 </div>
-                <button type="submit" className="btn btn-info">Login</button>
+                <button type="submit" className="login-btn btn-info">Login</button>
                 <p id="error"></p>
                 <p className="msg">
                  <b>Don't have an account?</b>

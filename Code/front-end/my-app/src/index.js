@@ -16,8 +16,8 @@ ReactDOM.render(
       <Route path="/Login" component={Login}/>
       <Route path="/Signup" component={signup}/>
       <Route path="/ForgotPassword" component={ForgotPassword}/>
-      <Route path="/Reset" component={ResetPasswordPage}/>    
-  </Router>
+      <Route path="/Reset" component={ResetPasswordPage}/>
+    </Router>
   ,
   document.getElementById('root')
 );
