@@ -121,45 +121,45 @@ signup(e){
           <form onSubmit={(e) => signup(e)} noValidate>
             <div className='fullName'>
               <label className='formlabel'>Full Name</label>
-              <input type='text' placeholder='Enter Full Name' name='fullName' id ='fullName'onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='text' placeholder='Enter Full Name' name='fullName' id ='fullName'onChange={this.handleChange} noValidate />
               {errors.fullName.length > 0 &&
                 <span className='error'>{errors.fullName}</span>}
             </div>
             <div className='email'>
               <label className='formlabel'>Email</label>
-              <input type='email' placeholder='Enter email address' name='email' id='email' onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='email' placeholder='Enter email address' name='email' id='email' onChange={this.handleChange} noValidate />
               {errors.email.length > 0 &&
                 <span className='error'>{errors.email}</span>}
             </div>
             <div className='password'>
               <label className='formlabel'>Password</label>
-              <input type='password' id='password' placeholder='Password' name='password' onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='password' id='password' placeholder='Password' name='password' onChange={this.handleChange} noValidate />
               {errors.password.length > 0 &&
                 <span className='error'>{errors.password}</span>}
             </div>
             <div className='confirmpassword'>
               <label className='formlabel'> Retype Password</label>
-              <input type='password' id='cpassword' placeholder='Confirm password' name='confirmpassword' onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='password' id='cpassword' placeholder='Confirm password' name='confirmpassword' onChange={this.handleChange} noValidate />
               {errors.confirmpwd.length > 0 &&
                 <span className='error'>{errors.confirmpwd}</span>}
             </div>
             <div className='contactnum'>
               <label className='formlabel'>Contact Number</label>
-              <input type='text' name='contactnum' id='contact_number' placeholder='Enter mobile number' onChange={this.handleChange} noValidate />
+              <input className='inputfield' type='text' name='contactnum' id='contact_number' placeholder='Enter mobile number' onChange={this.handleChange} noValidate />
               {errors.contactnum.length > 0 &&
                 <span className='error'>{errors.contactnum}</span>}
             </div>
             <div className='accept'>
             
               
-                <input type="checkbox" className='checkbox' required="required" />
+                <input className='inputfield' type="checkbox" className='checkbox' required="required" />
                 <p className='formpara'>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
               </div>
             
             <div className='submit'>
               <button className='createbutton'>Create</button>
               <div className='info'>
-                <p >Already Have an account<Link className="links" to="Login">Sign In</Link></p>
+                <p >Already Have an account<Link className="loginlink" to="Login">Sign In</Link></p>
               </div>
             </div>
           </form>

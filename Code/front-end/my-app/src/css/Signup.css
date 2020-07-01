@@ -23,6 +23,13 @@ SILVER PINK: #C9ADA7
   align-items: center;
   background-color: lightgray;
 }
+.inputfield{
+  width: 300px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #d6d1d5;
+}
 .createbutton{
   margin-bottom:5px;
 }
@@ -37,6 +44,7 @@ SILVER PINK: #C9ADA7
     font-family: sans-serif;
     font-style: normal;
     font-size: 13px;
+    margin-left: 20px;
     
 
 }
@@ -79,13 +87,13 @@ form {
   font-weight: lighter;
 } */
 
-input {
+/* input {
   padding: 10px 10px;
   border-radius: 5px;
   outline: none;
   border: 1px solid #d6d1d5;
   width: 290px;
-}
+} */
 .heading{
   font-family:sans-serif;
   margin-left: 40px;
@@ -145,8 +153,7 @@ input::placeholder {
 }
 .checkbox{
   margin-left: 1px;
- 
-  left: 281px;
+  left:270px;
   position: absolute;
 }
 .info .p{
@@ -159,7 +166,7 @@ a{
   color:dodgerblue;
   font-family:sans-serif;
 }
-.links{
+.loginlink{
   color:dodgerblue;
   font-family: sans-serif;
 }

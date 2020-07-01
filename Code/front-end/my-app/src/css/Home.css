@@ -86,8 +86,9 @@
   .sign-up {
     margin-right: 20px;
   }
-  input{
+  .typesearch{
       width:30em;
+      padding:10px;
   }
   .search-bar{
       width:100%;
@@ -101,6 +102,7 @@
       width: 2em;
       margin-bottom: 1em;
       padding:0.7em;
+      border-radius: 5px;
       background-color: lightseagreen;
   }
   .col-4{

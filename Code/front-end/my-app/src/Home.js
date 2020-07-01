@@ -16,7 +16,7 @@ class Home extends React.Component {
                     <p className="name">OnlineMedico</p>
                     </div>
                     <div className="col-6">              
-                        <input type="search" placeholder="Search" aria-label="Search" />
+                        <input className='typesearch' type="search" placeholder="Search" aria-label="Search" />
                         <button className="search-btn" type="submit">Search</button>
                         </div>
                     <div className="col-4">
