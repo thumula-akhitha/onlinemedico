@@ -8,31 +8,32 @@ const nodemailer = require('nodemailer');
 
 class CustomerController {
     async signup({ request, response, auth }) {
-       
+       console.log("enteredddddd")
         const userData = request.body
        
         const customer =  await Customer.query().where("email", "=", userData.email).fetch();
         console.log(customer.toJSON().length)
-        if(customerRecord.toJSON().length>0){
+        if(customer.toJSON().length==0){
         userData.password = await Hash.make(userData.password);
         try {
         const user = await Customer.create(userData)
         return response.json({
-            status: 'success',
+            message: 'success',
             data: userData
         })
     }
     catch (error) {
-        return response.status(400).json({
-            status: 'error',
-            message: 'There was a problem creating the Customer, please try again later.' + error
+        return response.json({
+           
+            message: 'There was a problem creating the Customer, please try again later.'
         })
     }
 }
 else {
+    console.log("signup pageee")
     return response.json({
                
-        message: "Already email exists"
+        message: "error"
     })
 }
     }

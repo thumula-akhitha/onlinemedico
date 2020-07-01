@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './css/Signup.css';
 
 
@@ -16,6 +17,7 @@ const validateForm = (errors) => {
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
+    this.signup = this.signup.bind(this);
     this.state = {
       fullName: null,
       email: null,
@@ -100,15 +102,25 @@ signup(e){
     contactNumber: document.getElementById('contact_number').value
   }
 
-
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(request)
-};
- fetch('http://127.0.0.1:3333/onlinemedico/signup', requestOptions)
-    .then(response => response.json())
-    .then(data => console.log(data));
+console.log("kalli")
+//   const requestOptions = {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify(request)
+// };
+axios.post('http://127.0.0.1:3333/onlinemedico/signup', request)
+    .then(response => {
+      console.log(response.data.message)
+      if(response.data.message==="error"){   
+        document.getElementById("error").innerHTML = "Email Already Exists"  
+       
+      }
+      else {
+        this.props.history.push('/Home');
+      }
+      
+    })
+    
 }
 
 
@@ -118,7 +130,7 @@ signup(e){
       <div className='wrapper'>
         <div className='form-wrapper'>
           <h2 className='heading'>Create Account</h2>
-          <form onSubmit={(e) => signup(e)} noValidate>
+          <form onSubmit={this.signup} noValidate>
             <div className='fullName'>
               <label className='formlabel'>Full Name</label>
               <input type='text' placeholder='Enter Full Name' name='fullName' id ='fullName'onChange={this.handleChange} noValidate />
@@ -158,6 +170,7 @@ signup(e){
             
             <div className='submit'>
               <button className='createbutton'>Create</button>
+              <p id="error"></p>
               <div className='info'>
                 <p >Already Have an account<Link className="links" to="Login">Sign In</Link></p>
               </div>

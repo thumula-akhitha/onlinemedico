@@ -108,6 +108,7 @@
       margin-left:0em;
   }
   .col-4 > .btn {
+    margin-left: 130px;
       width:5em;
   }
   .name{
