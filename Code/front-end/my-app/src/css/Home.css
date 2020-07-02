@@ -1,11 +1,7 @@
 * {
     margin: 0;
   }
-  
-  body {
-    font: 16px "Roboto", sans-serif;
-  }
-  
+    
   
   header {
     background-color:lightseagreen !important;
@@ -18,18 +14,6 @@
     margin: 0 auto;
   }
   
-  /*.btn {
-    background-color: #270B36;;
-    padding: 8px 0;
-    text-align: center;
-    width: 90px;
-  }*/
-  
-  /*.btn:hover {
-    background: none;
-    border:2px solid #4D0D35;
-    color: #4D0D35;
-  }*/
   
   .sign-up a:hover {
     color: #270B36;
@@ -65,8 +49,8 @@
   }
   
   nav ul {
-    margin: auto;
-    padding: 0;
+    margin:auto;
+    padding-right:8em;
   }
   
   nav li {
@@ -79,37 +63,43 @@
     text-decoration: none;
    
   }
-  
   nav a:hover {
     color: rgb(240, 245, 192)
   }
-  .sign-up {
+  .sign-up{
     margin-right: 20px;
+    color: lightseagreen;
   }
   .typesearch{
       width:30em;
-      padding:10px;
+      padding:6px;
+      border-radius:5px;
   }
   .search-bar{
       width:100%;
   }
-  .col-6{
+  .col-7{
       padding-top:1em;
-      padding-left:73px;
+      padding-left:111px;
   }
   .search-btn{
+      margin-top:0.5em;
       min-width: 100px;
       width: 2em;
       margin-bottom: 1em;
-      padding:0.7em;
+      padding:6px;
       border-radius: 5px;
       background-color: lightseagreen;
   }
-  .col-4{
-      margin-top:0.5em;
+  .dropdown{
+    padding-left:65px;
+  }
+  .col-3{
+      width: 200px;
+      margin-top:1.4em;
       margin-left:0em;
   }
-  .col-4 > .btn {
+  .col-3 > .btn {
     margin-left: 130px;
       width:5em;
   }
@@ -131,6 +121,7 @@
   }
   .cart-image{
       width:40px;
+      margin-left:15px;
   }
   .d-block{
       padding-top:2em;
