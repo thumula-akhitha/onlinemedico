@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './css/ResetPassword.css';
-import { resetWarningCache } from 'prop-types';
+//import { resetWarningCache } from 'prop-types';
 class ResetPasswordPage extends React.Component {
   constructor(props){
     super(props)
@@ -24,7 +24,7 @@ class ResetPasswordPage extends React.Component {
 
     const { name, value } = event.target;
     let errors = this.state.errors;
-    console.log('qasdwefvc');
+    console.log('test');
 
     switch (name) {
 
@@ -120,7 +120,7 @@ class ResetPasswordPage extends React.Component {
                 <span className='errors'>{errors.confirmpassword}</span>}
                 </div>
                 <button type="submit" className="btn btn-info">Submit</button> 
-                 
+
                 <p id="error"></p>          
               </form>
             </div>
