@@ -9,6 +9,7 @@ class ResetPasswordPage extends React.Component {
     super(props)
     this.resetpassword = this.resetpassword.bind(this);
     this.state = {
+      
       email:null,
       newpassword:null,
       confirmpassword:null,
