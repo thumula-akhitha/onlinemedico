@@ -17,12 +17,14 @@ class ForgotPassword extends React.Component{
       .then(res => {
            console.log(res)
         if(res.data===""){  
-          document.getElementById("error").innerHTML="" 
-          document.getElementById("success").innerHTML = "Email Sent Successfully"  
+          document.getElementById("forgot-error").innerHTML="" 
+          document.getElementById("forgot-success").innerHTML = "Email Sent Successfully" 
+          document.getElementById("mail").value=" " 
         }
         else {
-          document.getElementById("success").innerHTML=""
-          document.getElementById("error").innerHTML = "Email doesn't exist please provide the correct email address"  
+          document.getElementById("forgot-success").innerHTML=""
+          document.getElementById("forgot-error").innerHTML = "Email doesn't exist please provide the correct email address" 
+          document.getElementById("mail").value=" "  
         }
       })
 
@@ -43,8 +45,8 @@ render()
         <input type="email" className="form-control" id="mail" placeholder="Enter your email address" aria-describedby="EmailHelp" required/>
         <br />
         <button type="submit" className="send-btn btn-info">Send Link</button>
-        <p id="error"></p>
-        <p id="success"></p>
+        <p id="forgot-error"></p>
+        <p id="forgot-success"></p>
         </div>
       </form>
     </div>
