@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './css/ResetPassword.css';
+import { Z_BLOCK } from 'zlib';
+import { NONAME } from 'dns';
 class ResetPasswordPage extends React.Component {
   constructor(props){
     super(props)
@@ -29,8 +31,7 @@ class ResetPasswordPage extends React.Component {
 
       case 'newpassword':
         errors.newpassword =
-
-          value.match(/((?=.\d)(?=.[a-zA-Z])(?=.*[@#$%]))/)
+          value.match(/((?=.*\d)(?=.*[a-zA-Z])(?=.*[@#$%]))/)
             ? ''
             : 'Password must contain at least one letter, at least one number and special character';
         break;
@@ -69,11 +70,12 @@ class ResetPasswordPage extends React.Component {
       .then(res => {
         if(res.data.message==="Password success"){  
 
-          document.getElementById("error").innerHTML = ""  
-
-          this.props.history.push('/Login');
+          document.getElementById("error").innerHTML = "" 
+          document.getElementById("resetpara").style.display = "block"
+         // this.props.history.push('/Login');
         }
         else {
+          document.getElementById("resetpara").style.display = "none"
           document.getElementById("error").innerHTML = "Email is not registered"
         }
        
@@ -107,7 +109,7 @@ class ResetPasswordPage extends React.Component {
 
                   <input type="password" className="form-control" placeholder="Enter your new password" id="newpassword" name="newpassword" onChange={this.handleChange} required/>
                   {errors.newpassword.length > 0 &&
-                <span className='errors'>{errors.newpassword}</span>}
+                <span className='reseterror'>{errors.newpassword}</span>}
 
                 </div>
                 <div className="form-group">
@@ -116,13 +118,15 @@ class ResetPasswordPage extends React.Component {
                   <input type="password" className="form-control" placeholder="Confirm your new password" id="confirmpassword" name="confirmpassword" onChange={this.handleChange} required/>
                   {errors.confirmpassword.length > 0 &&
 
-                <span className='errors'>{errors.confirmpassword}</span>}
+                <span className='reseterror'>{errors.confirmpassword}</span>}
                 </div>
                 <button type="submit" className="btn btn-info">Submit</button> 
 
                 <p id="error"></p>          
               </form>
+              
             </div>
+            <p id = "resetpara" className='resetpara' >Password updated successfully  <Link className="resetlink" to="Login">Click here to login</Link></p>
           </div>
         </div>
       </div>
