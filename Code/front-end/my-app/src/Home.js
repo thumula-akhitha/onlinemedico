@@ -11,18 +11,30 @@ class Home extends React.Component {
             <div>
                 <div className="search-bar container-fluid">
                     <div className="row">
-                    <div className="col-2">
-                    <img className="logo" src={logo1} />   
-                    <p className="name">OnlineMedico</p>
-                    </div>
-                    <div className="col-6">              
-                        <input className='typesearch' type="search" placeholder="Search" aria-label="Search" />
-                        <button className="search-btn" type="submit">Search</button>
+                        <div className="col-2">
+                            <img className="logo" src={logo1} />
+                            <p className="name">OnlineMedico</p>
                         </div>
-                    <div className="col-4">
-                    <p className="btn sign-up"><a href="#">MyAccount</a></p>
-                    <img className="cart-image" src={cart} alt="cart slide"/>
-                    </div>
+                        <div className="col-7">
+                            <input className='typesearch' type="search" placeholder="Search" aria-label="Search" />
+                            <button className="search-btn" type="submit">Search</button>
+                        </div>
+                        <div className="col-3">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    MyAccount
+                                 </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Previousorder</a>
+                                    <a class="dropdown-item" href="#">ActiveOrders</a>
+                                    <a class="dropdown-item" href="#">Settings</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                                <img className="cart-image" src={cart} alt="cart slide" />
+                            </div>
+                           
+
+                        </div>
                     </div>
                 </div>
                 <header>

@@ -68,10 +68,8 @@ class CustomerController {
     async forgotPassword({ request, response, auth }) {
         const { email } = request.body;
         const customerRecord = await Customer.query().where("email", "=", email).fetch();
-        console.log(customerRecord.toJSON().length)
         if (customerRecord.toJSON().length > 0) {
             try {
-                console.log('sending Mail')
                 var transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
@@ -83,8 +81,17 @@ class CustomerController {
                     from: 'onlinemedico782@gmail.com',
                     to: email,
                     subject: 'Set Password for Online Medico',
-                    html: '<p>Click below button to set password </p> <br> <a href="http://localhost:3000/Reset">Set Password</a>',
-                    text: ''
+                    html: `<p style="font-size:18px; font-weight:bold;">Hi ${customerRecord.toJSON()[0].fullName},</p><p style="font-size:18px;">You recently requested a new password. Click on the link below to continue your password reset.</p> <a href="http://localhost:3000/Reset" style="background-color: #008CBA;
+                    border: none;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;">Reset Password</a><br/>
+                    <p style="font-size:12px;"> If you did not request a new password, please ignore this message.`,
+                    text: '' 
                 }
                 await transporter.sendMail(mailOptions, function (error, info) {
                     if (error) {
