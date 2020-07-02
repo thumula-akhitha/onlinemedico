@@ -120,23 +120,38 @@ class CustomerController {
             });
         }
     }
+    /* 
+    This method is used to for new password retrival.
+    */
     async newPassword({ request, response, auth }) {
+        // variable to store the body of the request (password)
         const newPassword = request.body;
+        // variable to store mail ID
         const customerRecord = await Customer.findBy('email', newPassword.email)
+        // to check wheather the mail id is emtry or not
         if (customerRecord != null) {
+            // record the new password from the UI
             customerRecord.password = await Hash.make(newPassword.newpassword)
+            // store the new password in database
             await customerRecord.save();
             return response.json({
                 status: 'success',
                 message: "Password success"
             })
-        }
+        } 
+        // end of IF
         else {
             return response.json({
+                // if the newly entered mail ID does not 
+                // match the mail ID's present in 
+                // the database
                 message: "check email correctly",
             });
         }
+        // end of ELSE
     }
+    // end of newPassword method.
 }
+// end of controller class.
 
 module.exports = CustomerController 
