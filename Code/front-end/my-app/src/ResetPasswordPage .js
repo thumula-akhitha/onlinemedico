@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './css/ResetPassword.css';
 import { resetWarningCache } from 'prop-types';
+import { Z_BLOCK } from 'zlib';
+import { NONAME } from 'dns';
 class ResetPasswordPage extends React.Component {
   constructor(props){
     super(props)
@@ -19,10 +21,12 @@ class ResetPasswordPage extends React.Component {
     axios.post('http://127.0.0.1:3333/onlinemedico/newpassword', request)
       .then(res => {
         if(res.data.message==="Password success"){   
-          document.getElementById("error").innerHTML = ""  
-          this.props.history.push('/Login');
+          document.getElementById("error").innerHTML = "" 
+          document.getElementById("resetpara").style.display = "block"
+         // this.props.history.push('/Login');
         }
         else {
+          document.getElementById("resetpara").style.display = "none"
           document.getElementById("error").innerHTML = "Email is not registered"
         }
        
@@ -55,7 +59,9 @@ class ResetPasswordPage extends React.Component {
                 <button type="submit" className="btn btn-info">Submit</button>  
                 <p id="error"></p>          
               </form>
+              
             </div>
+            <p id = "resetpara" className='resetpara' >Password updated successfully  <Link className="resetlink" to="Login">Click here to login</Link></p>
           </div>
         </div>
       </div>
