@@ -107,7 +107,7 @@ axios.post('http://127.0.0.1:3333/onlinemedico/signup', request)
         document.getElementById("errors").innerHTML = "Email Already Exists"    
       }
       else {
-        this.props.history.push('/Home');
+        this.props.history.push('/Login');
       }
       
     })
@@ -119,7 +119,7 @@ axios.post('http://127.0.0.1:3333/onlinemedico/signup', request)
       <div className='wrapper'>
         <div className='form-wrapper'>
           <h2 className='heading'>Create Account</h2>
-          <form onSubmit={this.signup} noValidate>
+          <form onSubmit={this.signup}>
             <div className='fullName'>
               <label className='formlabel'>Full Name</label>
               <input className='inputfield' type='text' placeholder='Enter Full Name' name='fullName' id ='fullName'onChange={this.handleChange} required/>
