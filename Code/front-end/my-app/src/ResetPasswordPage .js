@@ -31,8 +31,7 @@ class ResetPasswordPage extends React.Component {
 
       case 'newpassword':
         errors.newpassword =
-
-          value.match(/((?=.\d)(?=.[a-zA-Z])(?=.*[@#$%]))/)
+          value.match(/((?=.*\d)(?=.*[a-zA-Z])(?=.*[@#$%]))/)
             ? ''
             : 'Password must contain at least one letter, at least one number and special character';
         break;
@@ -110,7 +109,7 @@ class ResetPasswordPage extends React.Component {
 
                   <input type="password" className="form-control" placeholder="Enter your new password" id="newpassword" name="newpassword" onChange={this.handleChange} required/>
                   {errors.newpassword.length > 0 &&
-                <span className='errors'>{errors.newpassword}</span>}
+                <span className='reseterror'>{errors.newpassword}</span>}
 
                 </div>
                 <div className="form-group">
@@ -119,7 +118,7 @@ class ResetPasswordPage extends React.Component {
                   <input type="password" className="form-control" placeholder="Confirm your new password" id="confirmpassword" name="confirmpassword" onChange={this.handleChange} required/>
                   {errors.confirmpassword.length > 0 &&
 
-                <span className='errors'>{errors.confirmpassword}</span>}
+                <span className='reseterror'>{errors.confirmpassword}</span>}
                 </div>
                 <button type="submit" className="btn btn-info">Submit</button> 
 
