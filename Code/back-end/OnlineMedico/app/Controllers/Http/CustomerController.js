@@ -81,7 +81,7 @@ class CustomerController {
                     from: 'onlinemedico782@gmail.com',
                     to: email,
                     subject: 'Set Password for Online Medico',
-                    html: `<p>Hi ${customerRecord.toJSON()[0].fullName},</p><p>You recently requested a new password. Click on the link below to continue your password reset.</p> <a href="http://localhost:3000/Reset" style="background-color: #008CBA;
+                    html: `<p style="font-size:18px; font-weight:bold;">Hi ${customerRecord.toJSON()[0].fullName},</p><p style="font-size:18px;">You recently requested a new password. Click on the link below to continue your password reset.</p> <a href="http://localhost:3000/Reset" style="background-color: #008CBA;
                     border: none;
                     color: white;
                     padding: 15px 32px;
@@ -90,7 +90,7 @@ class CustomerController {
                     display: inline-block;
                     font-size: 16px;
                     margin: 4px 2px;">Reset Password</a><br/>
-                    <p> If you did not request a new password, please ignore this message.`,
+                    <p style="font-size:12px;"> If you did not request a new password, please ignore this message.`,
                     text: '' 
                 }
                 await transporter.sendMail(mailOptions, function (error, info) {
