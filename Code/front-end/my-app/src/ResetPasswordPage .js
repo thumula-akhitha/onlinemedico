@@ -7,7 +7,47 @@ class ResetPasswordPage extends React.Component {
   constructor(props){
     super(props)
     this.resetpassword = this.resetpassword.bind(this);
+    this.state = {
+      email:null,
+      newpassword:null,
+      confirmpassword:null,
+      errors: {
+        email: '',
+        newpassword: '',
+        confirmpassword: ''  
+      }
+    };
+
   }
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let errors = this.state.errors;
+    console.log('qasdwefvc');
+    switch (name) {
+      case 'newpassword':
+        errors.newpassword =
+          value.match(/((?=.\d)(?=.[a-zA-Z])(?=.*[@#$%]))/)
+            ? ''
+            : 'Password must contain at least one letter, at least one number and special character';
+        break;
+      case 'confirmpassword':
+        var conpwd = document.getElementById('confirmpassword').value;
+        var newpwd = document.getElementById('newpassword').value;
+        if (newpwd != conpwd) {
+          console.log(newpwd);
+          console.log(conpwd);
+          errors.confirmpassword = 'Password did not match';
+        }
+        else {
+          errors.confirmpassword = '';
+        }
+        break;
+
+      }
+      this.setState({ errors, [name]: value });
+    }
+
   resetpassword(e){
     e.preventDefault();
     let request = {
@@ -33,6 +73,7 @@ class ResetPasswordPage extends React.Component {
       })
   }
   render() {
+    const { errors } = this.state;
     return (
       <div className="reset-container">
         <div className="row">
@@ -46,11 +87,15 @@ class ResetPasswordPage extends React.Component {
                 </div>
                 <div className="form-group">
                   <label><b>NewPassword</b></label>
-                  <input type="password" className="form-control" placeholder="Enter your new password" id="newpassword" required/>
+                  <input type="password" className="form-control" placeholder="Enter your new password" id="newpassword" name="newpassword" onChange={this.handleChange} required/>
+                  {errors.newpassword.length > 0 &&
+                <span className='errors'>{errors.newpassword}</span>}
                 </div>
                 <div className="form-group">
                   <label><b>ConfirmPassword</b></label>
-                  <input type="password" className="form-control" placeholder="Confirm your new password" id="confirmpassword" required/>
+                  <input type="password" className="form-control" placeholder="Confirm your new password" id="confirmpassword" name="confirmpassword" onChange={this.handleChange} required/>
+                  {errors.confirmpassword.length > 0 &&
+                <span className='errors'>{errors.confirmpassword}</span>}
                 </div>
                 <button type="submit" className="btn btn-info">Submit</button>  
                 <p id="error"></p>          
