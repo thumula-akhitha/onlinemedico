@@ -1,13 +1,16 @@
 import React from 'react';
 import axios from 'axios';
+
 import './css/ForgotPassword.css';
 class ForgotPassword extends React.Component{
   constructor(props){
+
     super(props)
     this.forgotpassword = this.forgotpassword.bind(this);
   }
   forgotpassword(e){
     e.preventDefault();
+
   let request = {
    
     email: document.getElementById('mail').value
@@ -18,13 +21,16 @@ class ForgotPassword extends React.Component{
            console.log(res)
         if(res.data===""){  
           document.getElementById("forgot-error").innerHTML="" 
+
           document.getElementById("forgot-success").innerHTML = "Email Sent Successfully" 
           document.getElementById("mail").value=" " 
+
         }
         else {
           document.getElementById("forgot-success").innerHTML=""
           document.getElementById("forgot-error").innerHTML = "Email doesn't exist please provide the correct email address" 
-          document.getElementById("mail").value=" "  
+          document.getElementById("mail").value=" " 
+
         }
       })
 
@@ -37,6 +43,7 @@ render()
 {
  return (
     <div className="home">
+
       <form onSubmit={this.forgotpassword} className="formforgot">
 
         <div className="forgot">
