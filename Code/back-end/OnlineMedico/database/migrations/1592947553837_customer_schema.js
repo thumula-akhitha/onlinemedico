@@ -9,7 +9,7 @@ class CustomerSchema extends Schema {
       
         table.increments()
         table.string('fullName').notNullable()
-         table.string('contactNumber').notNullable()
+        table.string('contactNumber').notNullable()
         table.string('email', 60)
         table.string('password').notNullable()
         

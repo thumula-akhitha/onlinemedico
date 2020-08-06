@@ -58,7 +58,6 @@ class CustomerController {
             }
         }
         else {
-            console.log("cameeee")
             return response.json({
                 message: "email incorrect"
             })
