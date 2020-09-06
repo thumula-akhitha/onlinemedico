@@ -4,13 +4,23 @@
 const Model = use('Model')
 
 class Customer extends Model {
-  // this will set the ID as the primary key for the customer table.
-    static get primaryKey () {
-      // return ID
+  static get primaryKey () {
+    
         return 'id'
       }
-      // end of static method
+     addresses() {
+      return this.hasMany('App/Models/Address',"id","id")
+     }
+     prescriptions() {
+      return this.hasMany('App/Models/Prescription',"id","id")
+     }
+     orders() {
+      return this.hasMany('App/Models/Order',"id","id")
+     }
+     card_details() {
+      return this.hasMany('App/Models/CardDetail',"id","id")
+     }
 }
-// end of customer class.
+
 
 module.exports = Customer

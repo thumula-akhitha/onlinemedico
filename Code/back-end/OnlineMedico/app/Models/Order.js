@@ -3,16 +3,18 @@
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const Model = use('Model')
 
-class Address extends Model {
-    // this will set the ID as the primary key for the address table.
+class Order extends Model {
     static get primaryKey () {
-        // return ID
+    
         return 'id'
       }
-      user(){
+    user(){
         return this.hasOne("App/Models/Customer", "id", "id")
 }
+order_medicines() {
+    return this.belongsToMany("App/Models/Medicine", "id", "id", "id", "id")
+        .pivotTable('order_medicines').withPivot(["quantity"]);
 }
-// end of address class.
+}
 
-module.exports = Address
+module.exports = Order
