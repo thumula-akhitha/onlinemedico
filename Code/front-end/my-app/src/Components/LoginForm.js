@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-router';
 import { Link } from 'react-router-dom';
-import logo from './images/medicine.png';
-import './css/Login.css';
+import logo from '../images/medicine.png';
+import '../css/Login.css';
 class LoginForm extends React.Component {
   constructor(props){
     super(props)

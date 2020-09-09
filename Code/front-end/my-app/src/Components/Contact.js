@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './images/contact.jpg';
-import './Contact.css';
-import chat from './images/chat.PNG';
-import helpcenter from './images/helpcenter.PNG';
+import logo from '../images/contact.jpg';
+import '../css/Contact.css';
+import chat from '../images/chat.PNG';
+import helpcenter from '../images/helpcenter.PNG';
 
 // import classes from './Contact.css';
 

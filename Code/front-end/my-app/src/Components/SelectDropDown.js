@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import "./DropDown.css";
-import Header from '../Header';
-import Footer from '../Footer';
+import "../css/DropDown.css";
+import Header from './Header';
+import Footer from './Footer';
 import ImageFile from './ImageFile';
 
 class SelectDropDown extends Component {

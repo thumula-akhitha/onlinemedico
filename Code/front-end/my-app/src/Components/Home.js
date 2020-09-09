@@ -1,10 +1,10 @@
 import React from 'react';
-import './css/Home.css';
-import tablets from './images/tablets.jpeg';
-import vitamins from './images/vitamins.jpeg';
-import cough from './images/skincare.jpeg';
-import cart from "./images/cart.PNG";
-import logo1 from './images/logo.PNG';
+import '../css/Home.css';
+import tablets from '../images/tablets.jpeg';
+import vitamins from '../images/vitamins.jpeg';
+import cough from '../images/skincare.jpeg';
+import cart from "../images/cart.PNG";
+import logo1 from '../images/logo.PNG';
 class Home extends React.Component {
     render() {
         return (

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './ImageFile.css';
+import '../css/ImageFile.css';
 
 class ImageFile extends Component {
     state = {

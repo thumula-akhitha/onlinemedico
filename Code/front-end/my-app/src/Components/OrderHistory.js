@@ -3,7 +3,7 @@ import tablet from './images/tablet.jpg';
 import classes from './OrderHistory.css';
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import Review from './Review';
+import Review from '../Review';
 
 
 

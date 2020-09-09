@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './css/ResetPassword.css';
+import '../css/ResetPassword.css';
 import { Z_BLOCK } from 'zlib';
 import { NONAME } from 'dns';
 class ResetPasswordPage extends React.Component {

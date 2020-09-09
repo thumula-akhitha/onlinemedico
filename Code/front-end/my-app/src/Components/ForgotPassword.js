@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import './css/ForgotPassword.css';
+import '../css/ForgotPassword.css';
 class ForgotPassword extends React.Component{
   constructor(props){
 
