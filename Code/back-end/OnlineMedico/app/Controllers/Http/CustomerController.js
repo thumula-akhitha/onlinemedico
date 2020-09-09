@@ -1,5 +1,7 @@
 'use strict'
 const Customer = use("App/Models/Customer");
+const Address = use("App/Models/Address");
+const CardDetail = use("App/Models/CardDetail");
 const Hash = use('Hash')
 const getStream = use('get-stream')
 const Helpers = use('Helpers');
@@ -9,6 +11,7 @@ var nodeoutlook = require('nodejs-nodemailer-outlook')
 const nodemailer = require('nodemailer');
 
 class CustomerController {
+    //This route is used for signup 
     async signup({ request, response, auth }) {
         const userData = request.body
         const customer = await Customer.query().where("email", "=", userData.email).fetch();
@@ -34,8 +37,10 @@ class CustomerController {
             })
         }
     }
+    //This method is used for login 
     async login({ request, response, auth }) {
-        const k = await Customer.query().where("email", request.body.email).fetch();
+        const customerData = await Customer.query().where("email", request.body.email) .with("addresses")
+        .with("prescriptions").with("orders").with("card_details").fetch();
         console.log(k.toJSON().length)
 
         if (k.toJSON().length > 0) {
@@ -49,7 +54,8 @@ class CustomerController {
             if (isSame) {
                 return response.status(200).json({
                     message: "success",
-                    data: token
+                    authentication: token,
+                    data: customerData
                 });
 
             }
@@ -66,6 +72,8 @@ class CustomerController {
         }
 
     }
+
+    // This method is used to generate email when user forgots password.
     async forgotPassword({ request, response, auth }) {
         const { email } = request.body;
         const customerRecord = await Customer.query().where("email", "=", email).fetch();
@@ -151,29 +159,23 @@ class CustomerController {
     }
     // end of ELSE
 }
-// end of newPassword method.
 
+async addAddress({ auth, request, response, params }) {
 
-async fileUploader({ request, response, auth }) {
-    console.log(request.body)
-    console.log(request)
-const scenarioFiles = []
-  request.multipart.file('file', {}, async function (file) {
-      const fileContent = await getStream.buffer(file.stream)
-      console.log(file)
-  	scenarioFiles.push({
-  	  fileContent: fileContent,
-  	  name: file.clientName,
-  	  type: `${file.type}/${this.subtype}`
-  	})
-  })
-
-  await request.multipart.process()
-
-  // now all files have been processed
-  await use('Database').table('files').insert(scenarioFiles)
-    return 'File uploaded';
+    const address = request.all();
+    address.customerId = params.customerId
+    addressData = await Address.create(address);
+    return response.status(200).json(addressData);
 }
+async addCard({ auth, request, response, params }) {
+
+    const card = request.all();
+    card.customerId = params.customerId
+    cardData = await CardDetail.create(card);
+    return response.status(200).json(cardData);
+}
+
+
 }
 // end of controller class.
 

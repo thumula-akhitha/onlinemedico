@@ -29,8 +29,8 @@ Route.group(() => {
   Route.post("/login", "CustomerController.login");
   Route.post("/forgotpassword", "CustomerController.forgotPassword");
   Route.post("/newpassword", "CustomerController.newPassword");
-  Route.post("/address/:customerId", "CustomerController.newPassword");
-  Route.post("/card-details/:customerId", "CustomerController.newPassword");
+  Route.post("/address/:customerId", "CustomerController.addAddress");
+  Route.post("/card-details/:customerId", "CustomerController.addCard");
   Route.get("/address/:customerId", "CustomerController.newPassword");
   Route.get("/card-details/:customerId", "CustomerController.newPassword");
 }).prefix("/onlinemedico/user");
@@ -50,7 +50,7 @@ Route.group(() => {
   Route.get("/order/:orderId", "CustomerController.forgotPassword");
   Route.post("/updateOrders/:orderId", "CustomerController.newPassword");
   Route.delete("/orders/:orderId", "CustomerController.newPassword");
-}).prefix("/onlinemedico/order");
+}).prefix("/onlinemedico");
 
 /*
 |--------------------------------------------------------------------------
@@ -61,11 +61,11 @@ Route.group(() => {
 | 
 */
 Route.group(() => {
-  Route.post("/uploadPrescription", "CustomerController.signup");
-  Route.get("/prescriptionDetails", "CustomerController.login");
-  Route.post("/updatePrescription/:PrescriptionId", "CustomerController.forgotPassword");
-  Route.delete("/prescription/:PrescriptionId", "CustomerController.newPassword");
-}).prefix("/onlinemedico/prescription");
+  Route.post("/uploadPrescription", "PrescriptionController.fileUploader");
+  Route.get("/prescriptionDetails", "PrescriptionController.login");
+  Route.post("/updatePrescription/:PrescriptionId", "PrescriptionController.forgotPassword");
+  Route.delete("/prescription/:PrescriptionId", "PrescriptionController.newPassword");
+}).prefix("/onlinemedico");
 
 
 
@@ -80,8 +80,9 @@ Route.group(() => {
 */
 
 Route.group(() => {
-  Route.post("/addMedicine", "CustomerController.signup");
-  Route.get("/medicines", "CustomerController.login");
-  Route.post("/updateMedicine/:medicineId", "CustomerController.forgotPassword");
-  Route.delete("/medicine/:medicineId", "CustomerController.newPassword");
-}).prefix("/onlinemedico/prescription");
+  Route.post("/addMedicine", "MedicineController.addMedicine");
+  Route.get("/medicines", "MedicineController.getMedicines");
+  Route.post("/updateMedicine/:medicineId", "MedicineController.updateMedicine");
+  Route.delete("/medicine/:medicineId", "MedicineController.newPassword");
+  Route.get("search/:medicineCode", "MedicineController.searchProduct");
+}).prefix("/onlinemedico");
