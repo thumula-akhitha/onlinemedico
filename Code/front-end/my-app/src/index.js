@@ -6,9 +6,12 @@ import {BrowserRouter as Router,Route} from 'react-router-dom';
 import Login from './LoginForm';
 import signup from './SignupForm';
 import Home from './Home';
+import logout from './Logout';
 import ForgotPassword from './ForgotPassword';
 import * as serviceWorker from './serviceWorker';
+import file from './File/ImageFile';
 import ResetPasswordPage from './ResetPasswordPage ';
+import selectdropdown from './File/SelectDropDown';
 
 ReactDOM.render(
   <Router>
@@ -17,6 +20,9 @@ ReactDOM.render(
       <Route path="/Signup" component={signup}/>
       <Route path="/ForgotPassword" component={ForgotPassword}/>
       <Route path="/Reset" component={ResetPasswordPage}/>
+      <Route path="/logout" component={logout}/>
+      <Route path="/image-file" component={file}/>
+      <Route path="/dropdown" component={selectdropdown}/>
     </Router>
   ,
   document.getElementById('root')

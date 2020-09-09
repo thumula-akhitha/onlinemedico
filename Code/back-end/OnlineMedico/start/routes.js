@@ -15,6 +15,7 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const multer = use("multer");
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +26,14 @@ const Route = use('Route')
 | 
 */
 Route.group(() => {
+  const upload = multer();
+  
   console.log("enteredddd")
   Route.post("/signup", "CustomerController.signup");
   Route.post("/login", "CustomerController.login");
   Route.post("/forgotpassword", "CustomerController.forgotPassword");
   Route.post("/newpassword", "CustomerController.newPassword");
+  Route.post("/image-file", "CustomerController.fileUploader");
 
 }).prefix("/onlinemedico");
 

@@ -28,7 +28,7 @@ class Home extends React.Component {
                                     <a class="dropdown-item" href="#">Previousorder</a>
                                     <a class="dropdown-item" href="#">ActiveOrders</a>
                                     <a class="dropdown-item" href="#">Settings</a>
-                                    <a class="dropdown-item" href="#">Logout</a>
+                                    <a class="dropdown-item" href="http://localhost:3000/Logout">Logout</a>
                                 </div>
                                 <img className="cart-image" src={cart} alt="cart slide" />
                             </div>
