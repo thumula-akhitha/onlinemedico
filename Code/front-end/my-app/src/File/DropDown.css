@@ -5,3 +5,8 @@
     margin-top:30px;
     margin-left:500px;
 }
+.dp-button{
+    width:100px;
+    border-radius:5px;
+    background-color: beige;
+}

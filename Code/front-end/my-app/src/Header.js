@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Header.css';
+//import './Header.css';
 import './css/Home.css';
 import cart from "./images/cart.PNG";
 import logo1 from './images/logo.PNG';
@@ -37,12 +37,12 @@ class Header extends Component {
                     <p className="name">OnlineMedico</p>
                         <ul>
                             <li><a href="#">Products</a></li>
-                            <li><a href="#">Upload Presciption</a></li>
-                            <li><a href="#">Locations</a></li>
-                            <li><a href="#">ContactUs</a></li>
+                            <li><a href="http://localhost:3000/dropdown">Upload Presciption</a></li>
+                            <li><a href="http://localhost:3000/checkout">Order Details</a></li>
+                            <li><a href="http://localhost:3000/contact">ContactUs</a></li>
                         </ul>
                        
-                            <input className='typesearch' type="search" placeholder="Search" aria-label="Search" />
+                            <input id="search-id" className='typesearch' type="search" placeholder="Search" aria-label="Search" />
                            
                             {/* <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

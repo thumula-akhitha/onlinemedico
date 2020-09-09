@@ -1,4 +1,5 @@
 body, html, #root, .app{
   width: 100%;
+  max-height: fit-content;
   /* overflow:auto; */
 }

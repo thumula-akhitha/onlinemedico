@@ -20,18 +20,14 @@ class SelectDropDown extends Component {
 
     render() {
         return (
-            <div> 
-                
-                
-                
+            <div>          
                <div className="btn-group drop-btn">
                     <label>Enter your Prescription Details:</label>
-                    <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button className="dp-button" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Click Me<span className="sr-only">Toggle Dropdown</span>
                     </button>
                     <div className="dropdown-menu">
                         <a className="dropdown-item" onClick={this.FileUploader}>upload prescription</a>
-                        <a className="dropdown-item">Another action</a> 
                     </div>
                     
                 </div>
