@@ -12,17 +12,25 @@ import * as serviceWorker from './serviceWorker';
 import file from './File/ImageFile';
 import ResetPasswordPage from './ResetPasswordPage ';
 import selectdropdown from './File/SelectDropDown';
-
+import Shipping from './shipping';
+import Header from './Header';
+import Footer from './Footer';
+import Contact from './Contact';
 ReactDOM.render(
   <Router>
+    <Header/>
       <Route path="/Home" component={Home}/>
       <Route path="/Login" component={Login}/>
       <Route path="/Signup" component={signup}/>
       <Route path="/ForgotPassword" component={ForgotPassword}/>
+      <Route path="/checkout" component={Shipping}/>
       <Route path="/Reset" component={ResetPasswordPage}/>
       <Route path="/logout" component={logout}/>
       <Route path="/image-file" component={file}/>
       <Route path="/dropdown" component={selectdropdown}/>
+      <Route path="/header" component={Header}/>
+      <Route path="/contact" component={Contact}/>
+      <Footer/>
     </Router>
   ,
   document.getElementById('root')

@@ -50,6 +50,7 @@ class ImageFile extends Component {
             uploadbutton = <button className="btn btn-outline-primary FileLabel" onClick={() => { this.fileuploader() }}>upload</button>
         }
         return (
+            
             <div className="image-div">
                 <input className="image-text form-control form-control-lg" type="text" value={this.state.FileName || ''} placeholder="example.png" />
                 <input type="file" style={{ display: "none" }} key="" onChange={this.fileSelectHandler} ref={fileInput => this.fileInput = fileInput} />
@@ -71,8 +72,8 @@ class ImageFile extends Component {
                     {uploadbutton}
                 </div>
                 </div>
+                
 
-           
 
                         
         )

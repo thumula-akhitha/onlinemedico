@@ -9,16 +9,14 @@ class CardDetailSchema extends Schema {
     this.create('card_details', (table) => 
     {
       table.increments()
-      // this will store the card type in the database
       table.string('cardType').notNullable()
-      //this will store the card number in the database
+      table.string('cardHolderName').notNullable()
       table.string('cardNumber').notNullable()
-      //this will store the valid month in the database
       table.string('validMonth').notNullable()
-      //this will store the valid year in the database
       table.string('validYear').notNullable()
-      //this will store the security number in the database
       table.string('securityNumber').notNullable()
+      table.integer('customerId', 10).unsigned().notNullable()
+      table.foreign('customerId').references('customers.id').onDelete('cascade')
       table.timestamps()
     });
   }

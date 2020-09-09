@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "./DropDown.css";
+import Header from '../Header';
+import Footer from '../Footer';
 import ImageFile from './ImageFile';
 
 class SelectDropDown extends Component {
@@ -18,7 +20,10 @@ class SelectDropDown extends Component {
 
     render() {
         return (
-            <div>
+            <div> 
+                
+                
+                
                <div className="btn-group drop-btn">
                     <label>Enter your Prescription Details:</label>
                     <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,6 +39,10 @@ class SelectDropDown extends Component {
                 <div className="DropImageFile">
                         {this.state.up ? <ImageFile/> : null}
                     </div>
+
+                    <div>
+                    
+                </div>
             </div>
         )
     }
