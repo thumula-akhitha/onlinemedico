@@ -1,0 +1,157 @@
+
+/* dropdown */
+.dropbtn {
+    padding: 10px;
+    margin-right: 3%;
+    border: none;
+    cursor: pointer;
+    background-color:rgb(32, 119, 119);
+    color: white;
+    font-weight: 800;
+    border-radius: 100px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 80%;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    right: 0;
+    display: none;
+    position: relative;
+    background-color: rgb(32, 119, 119);
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 6px 8px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #2a8a7d;
+  }
+  
+  /* header */
+  .footer-ul {
+    list-style-type: none;
+    /* margin: 0;
+    padding: 0; */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(32, 119, 119);
+  }
+  
+  .websiteName {
+      font-weight: bold;
+      font-size: xx-large;
+      /* margin: 0;  */
+      padding-left: 8%;
+      /* overflow: hidden; */
+      color: white;
+      text-decoration: underline;
+      display : flex;
+      align-self: start;
+      background-color: rgb(32, 119, 119);
+  
+  }
+  .footer-li {
+    float: left;
+  }
+  
+  .footer-li a {
+    display: block;
+    color: white;
+    font-style: bold;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 16px;
+    text-decoration: none;
+  }
+  
+  .Header .footer-li a:hover {
+    background-color:rgb(32, 119, 119);
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  
+  .AdminHeader .footer-li a:hover {
+    background-color:rgb(32, 119, 119);
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  
+  .Footer .footer-li a:hover {
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+  
+  }
+  
+  .Header .footer-ul li:nth-last-child(1) li:last-child{
+    float: right;
+  }
+  
+  .search {
+    list-style-type: none;
+    display:flex;
+    justify-content: end;
+  }
+  
+  .searchButton{
+    color: white;
+    font-weight: 700;
+    background-color: black;
+    border-radius: 12px;
+    height: 2.6em;  
+  }
+  
+  .textBox {
+    margin-left: 20%;
+    /* margin-top: 0.9%; */
+    padding: 2.5%;
+    /* margin-bottom: 1%; */
+    align-items: center;
+    border-radius: 12px;
+    height: 2.5em;
+  }
+  
+  
+  .websiteNameFooter {
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 8%;
+    overflow: hidden;
+    color: white;
+    text-decoration: underline;
+    display : flex;
+    align-self: start;
+    background-color: rgb(32, 119, 119);
+  }
+  
+  
+  
+  .content {
+    flex: 1 0 auto;
+  }
+  
