@@ -39,31 +39,31 @@ class CustomerController {
     }
     //This method is used for login 
     async login({ request, response, auth }) {
-        const customerData = await Customer.query().where("email", request.body.email) .with("addresses")
-        .with("prescriptions").with("orders").with("card_details").fetch();
-        console.log(k.toJSON().length)
+        const customerData = await Customer.query().where("email", request.body.email).where("password", request.body.password) .with("addresses")
+       .with("orders").with("card_details").fetch();
+        //console.log(k.toJSON().length)
 
-        if (k.toJSON().length > 0) {
-            const token = await auth.generate(k.toJSON()[0])
+        if (customerData.toJSON().length > 0) {
+            const token = await auth.generate(customerData.toJSON()[0])
 
-            const passwordDb = k.toJSON()[0].password;
+            // const passwordDb = customerData.toJSON()[0].password;
 
-            const isSame = await Hash.verify(request.body.password, passwordDb)
+            // const isSame = await Hash.verify(request.body.password, passwordDb)
 
-            console.log(isSame)
-            if (isSame) {
+            // console.log(isSame)
+            // if (isSame) {
                 return response.status(200).json({
                     message: "success",
                     authentication: token,
                     data: customerData
                 });
 
-            }
-            else {
-                return response.json({
-                    message: "failure"
-                });
-            }
+            // }
+            // else {
+            //     return response.json({
+            //         message: "failure"
+            //     });
+            // }
         }
         else {
             return response.json({

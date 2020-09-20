@@ -5,11 +5,16 @@ import vitamins from '../images/vitamins.jpeg';
 import cough from '../images/skincare.jpeg';
 import cart from "../images/cart.PNG";
 import logo1 from '../images/logo.PNG';
+import {DataContext} from './ContextData.js'
 class Home extends React.Component {
+   
     render() {
+       
+
         return (
+            
             <div>
-                <div className="search-bar container-fluid">
+                {/* <div className="search-bar container-fluid">
                     <div className="row">
                         <div className="col-2">
                             <img className="logo" src={logo1} />
@@ -28,16 +33,16 @@ class Home extends React.Component {
                                     <a class="dropdown-item" href="#">Previousorder</a>
                                     <a class="dropdown-item" href="#">ActiveOrders</a>
                                     <a class="dropdown-item" href="#">Settings</a>
-                                    <a class="dropdown-item" href="http://localhost:3000/Logout">Logout</a>
+                                    <a class="dropdown-item" href="/Logout">Logout</a>
                                 </div>
                                 <img className="cart-image" src={cart} alt="cart slide" />
-                            </div>
+                            </div> 
                            
 
                         </div>
                     </div>
-                </div>
-                <header>
+                </div> */}
+                {/* <header>
                     <nav>
                         <ul>
                             <li><a href="#">Products</a></li>
@@ -48,7 +53,7 @@ class Home extends React.Component {
                         </ul>
                     </nav>
 
-                </header>
+                </header> */}
                 <div>
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div className="carousel-inner">

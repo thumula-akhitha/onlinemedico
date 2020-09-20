@@ -3,23 +3,41 @@ import axios from 'axios';
 import {Redirect} from 'react-router';
 import { Link } from 'react-router-dom';
 import logo from '../images/medicine.png';
+
 import '../css/Login.css';
+import {DataContext} from './ContextData.js'
 class LoginForm extends React.Component {
+  static contextType = DataContext;
   constructor(props){
     super(props)
     this.login = this.login.bind(this);
+    
+    this.state = {
+      user : []
+    }
   }
   login(e){
+
     e.preventDefault();
+    
     let request = {
       email: document.getElementById('email').value,
       password: document.getElementById('password').value
 
     }
-    axios.post('http://127.0.0.1:3333/onlinemedico/login', request)
+    axios.post('/user/login', request)
       .then(res => {
         if(res.data.message==="success"){   
           document.getElementById("error").innerHTML = ""  
+          axios.defaults.headers.common["Authorization"] = res.data.authentication.token
+         console.log(res.data.data);
+          this.setState({
+            user : res.data.data
+          })
+          
+         // this.context.login(this.state.user);
+          console.log("this is from parent "+ window.$name)
+          console.log("staate value  "+this.state.user)
           this.props.history.push('/Home');
         }
         else if(res.data.message==="failure") {
@@ -36,6 +54,7 @@ class LoginForm extends React.Component {
   }
   render() {
     return (
+      
       <div className="container">
         <div className="row login-row">
           <div className="col-1 logoimg">
@@ -69,6 +88,7 @@ class LoginForm extends React.Component {
           </div>
         </div>
       </div>
+      
     );
   }
 }

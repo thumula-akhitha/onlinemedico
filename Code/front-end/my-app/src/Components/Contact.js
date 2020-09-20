@@ -3,6 +3,7 @@ import logo from '../images/contact.jpg';
 import '../css/Contact.css';
 import chat from '../images/chat.PNG';
 import helpcenter from '../images/helpcenter.PNG';
+import {UserDetails} from './ContextData.js'
 
 // import classes from './Contact.css';
 
@@ -16,7 +17,9 @@ const ImgStyle = {
 
 }
 class Contact extends Component {
+  
   render() {
+    
     return (
       <div className='container-fluid'>
         <div className='contact'>

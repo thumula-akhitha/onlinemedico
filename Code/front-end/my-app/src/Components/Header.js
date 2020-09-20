@@ -1,10 +1,19 @@
 import React, { Component } from "react";
-//import './Header.css';
+import '../css/Header.css';
 import '../css/Home.css';
+import {Link} from 'react-router-dom'
 import cart from "../images/cart.PNG";
+
+import icon from "../images/Icon.PNG";
+import {DataContext} from './ContextData'
 import logo1 from '../images/logo.PNG';
+
 class Header extends Component {
+  static contextType = DataContext;
   render() {
+    
+   //const {toggle} =this.state;
+    const {cart} = this.context;
     return (
       <div className="Header">
         {/* <ul className="header-ul">
@@ -36,14 +45,33 @@ class Header extends Component {
                     <nav>
                     <p className="name">OnlineMedico</p>
                         <ul>
-                            <li><a href="#">Products</a></li>
-                            <li><a href="/dropdown">Upload Presciption</a></li>
-                            <li><a href="/checkout">Order Details</a></li>
-                            <li><a href="/contact">ContactUs</a></li>
+                            <li><Link to="/product">Products</Link></li>
+                            <li><Link to="/dropdown">Upload Presciption</Link></li>
+                            <li><Link to="/checkout">Order Details</Link></li>
+                            <li><Link to="/contact">ContactUs</Link></li>
                         </ul>
+                        <div className="dropdown">
+                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    MyAccount
+                                 </button>
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a className="dropdown-item" >
+                                    Previousorder
+                                    </a>
+                                    <a className="dropdown-item" href="#">ActiveOrders</a>
+                                    <a className="dropdown-item" href="#">Settings</a>
+                                    <a className="dropdown-item" href="/Logout">Logout</a>
+                                </div>
+                                <div className="nav-cart">
+                                <span>{cart.length}</span>
+                                <Link to="/cart">
+                                <img className="cart-image" src={icon} alt="cart slide" />
+                                </Link>
+                                </div>
+                                </div>
                        
-                            <input id="search-id" className='typesearch' type="search" placeholder="Search" aria-label="Search" />
-                           
+                            {/* <input id="search-id" className='typesearch' type="search" placeholder="Search" aria-label="Search" />
+                            */}
                             {/* <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     MyAccount

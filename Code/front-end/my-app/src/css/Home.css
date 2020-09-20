@@ -5,13 +5,14 @@ header {
   background-color:lightseagreen !important;
   padding: 10px 0;
 }
-
+.dropdown{
+right: 66px;
+}
 
 .container {
 /*   width: 70%; */
   margin: 0 auto;
 }
-
 
 .sign-up a:hover {
   color: #270B36;
