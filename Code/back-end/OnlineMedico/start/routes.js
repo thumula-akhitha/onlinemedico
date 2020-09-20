@@ -18,7 +18,7 @@ const Route = use('Route')
 
 /*
 |--------------------------------------------------------------------------
-| Customer Routes
+| Authentication Routes
 |--------------------------------------------------------------------------
 |
 | Https routes used too authenticate user login and logout
@@ -29,11 +29,25 @@ Route.group(() => {
   Route.post("/login", "CustomerController.login");
   Route.post("/forgotpassword", "CustomerController.forgotPassword");
   Route.post("/newpassword", "CustomerController.newPassword");
+}).prefix("/onlinemedico/user");
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Customer Routes
+|--------------------------------------------------------------------------
+|
+| Https routes used too authenticate user login and logout
+| 
+*/
+Route.group(() => {
+  
   Route.post("/address/:customerId", "CustomerController.addAddress");
   Route.post("/card-details/:customerId", "CustomerController.addCard");
   Route.get("/address/:customerId", "CustomerController.newPassword");
   Route.get("/card-details/:customerId", "CustomerController.newPassword");
-}).prefix("/onlinemedico/user");
+}).prefix("/onlinemedico/user").middleware("auth");
 
 /*
 |--------------------------------------------------------------------------
