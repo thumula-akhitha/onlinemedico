@@ -1,0 +1,202 @@
+.shipping {
+    background-color: whitesmoke;
+  }
+  
+  .heading {
+    text-align: center;
+    font-weight: 800;
+    font-size: 35px;
+  }
+  
+  .contact-form {
+    background-color: lightgrey;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    padding: 10px;
+  }
+  .contact-form div {
+    margin: 5px;
+  }
+  .contact-form .text {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: brown;
+    font-weight: 400;
+  
+    text-align: center;
+  }
+  
+  .place {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  
+    justify-content: left;
+    align-items: left;
+    padding: 0;
+    /* margin: 2px; */
+  }
+  
+  /* .place input {
+    width: 50%;
+  } */
+  input {
+    padding: 10px;
+    outline: #2d2d2d;
+    border: 1px solid;
+    border-radius: 2px;
+    width: 90%;
+  }
+  label {
+    color: #123456;
+    font-family: Verdana;
+    font-weight: 400;
+    font-style: oblique;
+  }
+  .submit-button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    color: white;
+    background-color: rgb(14, 93, 14);
+    border: 1px solid #2d2d2d;
+    font-size: 20px;
+    border-radius: 2px;
+    font-weight: 200;
+  }
+  .primary {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: row;
+  }
+  .primary label {
+    color: #123456;
+    font-family: Verdana;
+    font-weight: 200;
+    font-style: oblique;
+    margin: 0;
+  }
+  .primary input {
+    margin: auto 3px;
+    padding: 1px;
+    width: auto;
+  }
+  .main-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .address-list {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    height: 400px;
+    margin-left: 0;
+    overflow-y: scroll;
+    align-items: left;
+    justify-content: left;
+  }
+  .address-list .address-card {
+    margin: 2px;
+  }
+  .address-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    border-radius:10px;
+    background: whitesmoke;
+    height: auto;
+    align-items: left;
+  }
+  .edit-row {
+    text-align: keft;
+    justify-content: center;
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .edit-row span {
+    margin: 1px;
+    background: #2d2d2d;
+    color: white;
+    padding: 2px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .radio-class {
+    justify-content: center;
+    padding-top: 50px;
+    margin: 5px;
+    width: 10%;
+  }
+  .radio-class input {
+    width: auto;
+  }
+  .address-info {
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: left; */
+    width: 85%;
+  }
+  
+  .endbuttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .checkout {
+    width: 100%;
+  }
+  .secondpart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .end-back button {
+    padding: 15px;
+    border: 2px solid rgb(126, 89, 82);
+    text-align: center;
+    width: 150px;
+    margin: 2px;
+    background-color: lightgray;
+    color: rgb(10, 1, 1);
+    font-weight: bold;
+  }
+  .checkout button {
+    padding: 15px;
+    border: 2px solid;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    background-color: #2aac4a;
+    font-weight: bold;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .main-info {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .main-info {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+    }
+  }
+  
