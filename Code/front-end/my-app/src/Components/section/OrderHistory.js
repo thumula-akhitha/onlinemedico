@@ -1,18 +1,17 @@
 import React, { Component,useState } from 'react';
-import tablet from './images/tablet.jpg';
-import classes from './OrderHistory.css';
+import  '../css/OrderHistory.css';
 import { Card } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
-import Review from './Review';
-import Tracking from './Tracking';
-import ReturnItem from './ReturnItem';
+//import { Button } from 'react-bootstrap';
+// import Review from './Review';
+import Tracking from './Tracking ';
+// import ReturnItem from './ReturnItem';
 
 
 
 const OrderHistory = (props) => {
     const cardInfo = [
         {
-            image: require("./images/tablet.jpg"),
+            image: require("../images/tablet.jpg"),
             title: "IRESSA",
             text: "Cold tablet",
             sold: 'Walmart',
@@ -31,33 +30,33 @@ const OrderHistory = (props) => {
     {
         return <Tracking trackingArray= {cardInfo}/>
     }
-    if(returnItem == true){
-        return <ReturnItem returnArray = {cardInfo}/>
-    }
-    if(reviewStatus==true){
-        return <Review orderedArray = { cardInfo }/>
-    }
+    // if(returnItem == true){
+    //     return <ReturnItem returnArray = {cardInfo}/>
+    // }
+    // if(reviewStatus==true){
+    //     return <Review orderedArray = { cardInfo }/>
+    // }
     else{
     // const renderCard = (card, index) => {
         return (
-            cardInfo.map((card,index) =>(
-                <Card className={classes.order}>
+            cardInfo.map((cd,index) =>(
+                <Card className="order">
                 <Card.Header>
                     <div className='row'>
                         <div className='col-3'>
                             < div className='row'>
-                                <p className={classes.orderedOn}>Order Placed on</p>
+                                <p className='orderedOn'>Order Placed on</p>
                             </div>
                             <div className='row'>
-                                <p className={classes.orderDate}>{card.date}</p>
+                                <p className='orderDate'>{cd.date}</p>
                             </div>
                         </div>
                         <div className='col-3'>
                             <div className='row'>
-                                <p className={classes.total}>Total</p>
+                                <p className='total'>Total</p>
                             </div>
                             <div className='row'>
-                                <p className={classes.totalPrice}>{card.price}</p>
+                                <p className='totalPrice'>{cd.price}</p>
                             </div>
                         </div>
                         <div className='col-3'>
@@ -65,55 +64,55 @@ const OrderHistory = (props) => {
                                 <p >SHIP TO </p>
                             </div>
                             <div className='row'>
-                                <p className={classes.custName}> {card.name}</p>
+                                <p className='custName'> {cd.name}</p>
                             </div>
                         </div>
                         <div className='col-3'>
                             <div className='row'>
-                                <p className={classes.orderDate}>Order# {card.orderId} </p>
+                                <p className='orderDate'>Order# {cd.orderId} </p>
                             </div>
                             <div className='row'>
-                                <p className={classes.reciept}>Order Details </p>
+                                <p className='reciept'>Order Details </p>
                             </div>
                         </div>
 
                     </div>
                 </Card.Header>
                 <Card.Body>
-                    <p className={classes.status}>{card.status}</p>
+                    <p className='status'>{cd.status}</p>
                     <div className='row'>
-                        <div className='col-3'>
-                            <Card.Img className={classes.orderItem} src={card.image}/>
-                        </div>
                         <div className='col-4'>
-                            <Card.Title className={classes.orderTitle}>{card.title}</Card.Title>
-                            <Card.Text> {card.text} </Card.Text>
-                            <p>Sold by:{card.sold}</p>
-                            <p>Return eligible for 30 days after order</p>
-                            <p className={classes.cost}>{card.price}</p>
-                            <button className={classes.buyAgainBtn}>Buy it again</button>
+                            <Card.Img className='orderItem' src={cd.image}/>
                         </div>
-                        <div className='col-5'>
+                        <div className='col-3'>
+                            <Card.Title className='orderTitle'>{cd.title}</Card.Title>
+                            <Card.Text> {cd.text} </Card.Text>
+                            <p>Sold by:{cd.sold}</p>
+                            <p>Return eligible for 30 days after order</p>
+                            <p className='cost'>{cd.price}</p>
+                            <button type="button" className="btn btn-primary buyAgainBtn">Buy it again</button>
+                        </div>
+                        <div className='col-5 track-col-5'>
                             <div className='row'>
-                                <button className={classes.track}
+                            <button type="button" className='btn btn-primary track'
                                 onClick={() => setTrackStatus(true)}
                                 >Track package</button>
                             </div>
                             <div className='row'>
-                                <button className={classes.replace} 
+                                <button type="button" className='btn btn-primary replace' 
                                  onClick={()=>setReturnItem(true)}
                                 >Return or replace items</button>
                             </div>
                             <div className='row'>
-                                <button className={classes.view} >View your order</button>
+                                <button type="button" className='btn btn-primary view' >View your order</button>
                             </div>
                             <div className='row'>
-                                <button className={classes.review} 
+                                <button type="button" className='btn btn-primary review' 
                                 onClick={()=>setReviewStatus(true)}
                                 >Write a product review</button>
                             </div>
                             <div className='row'>
-                                <button className={classes.cancel} >Edit/Cancel order</button>
+                                <button type="button" className='btn btn-primary cancel'>Edit/Cancel order</button>
                             </div>
 
                         </div>

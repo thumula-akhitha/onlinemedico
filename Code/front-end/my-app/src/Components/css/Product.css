@@ -4,10 +4,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.card :disabled{
+#card :disabled{
     display:flex;
 }
-.card{
+#card{
     display:block;
     min-width: 300px;
     min-height: 400px;
@@ -19,10 +19,10 @@
     transition: 0.5s linear;  
     
 }
-.card:hover{
+#card:hover{
     box-shadow: none;
 }
-.card img{
+#card img{
     max-width: 300px;
     width: 100%;
     height: 100%;
@@ -30,27 +30,27 @@
     display: block;
     object-fit: cover;
 }
-.card h3{
+#card h3{
     margin: 10px 0;
     font-family: 'Open Sans', sans-serif;
 }
 
-.card h3 a{
+#card h3 a{
     text-decoration: none;
     color: #333;
     font-family: 'Open Sans', sans-serif;
 }
-.card h3 a:hover{
+#card h3 a:hover{
     color: crimson;
 }
-.card span{
+#card span{
     color: crimson;
 }
-.card p{
+#card p{
     margin: 10px 0;
     font-family: 'Open Sans', sans-serif;
 }
-.card button{
+#card .productButton{
     border: none;
     outline: none;
     background: rgba(3, 165, 94, 0.678);
@@ -66,6 +66,6 @@
     font-weight: bold;
 }
 
-.card button:hover{
+#card button:hover{
     background:rgb(76, 199, 193);
 }

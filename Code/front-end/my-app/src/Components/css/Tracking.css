@@ -1,0 +1,28 @@
+.trackcard{
+    width: 54em;
+    margin-left: 16em;
+    margin-top: 5em;
+    height: 26em;
+  
+}
+.header{
+    height: 55px;
+}
+.titleTrack{
+    margin-top: 2em;
+    font-size: 0em; 
+    font-family: serif;
+    margin-left: 5em;
+}
+.instructions{
+    padding-left: 21em;
+    padding-top: 2em;
+    font-size: 17px;
+    font-family: emoji;
+    font-weight: bold;
+}
+.backButton {
+    margin-right:5em;
+} 
+ 
+    

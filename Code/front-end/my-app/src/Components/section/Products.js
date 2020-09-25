@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {DataContext} from '../Context'
 import '../css/Product.css'
+import Star from './StarComponent'
 
 export class Products extends Component {
 
@@ -13,7 +14,7 @@ export class Products extends Component {
             <div id="product">
                {
                    products.map(product =>(
-                       <div className="card" key={product.id}>
+                       <div id="card" key={product.id}>
                            <Link to={`/product/${product.id}`}>
                                <img src={product.src} alt=""/>
                            </Link>
@@ -22,8 +23,10 @@ export class Products extends Component {
                                    <Link to={`/product/${product.id}`}>{product.title}</Link>
                                </h3>
                                <span>${product.price}</span>
+                                <span><Star /></span>
                                <p>{product.description}</p>
-                               <button onClick={()=> addCart(product.id)}>Add to cart</button>
+
+                               <button className="productButton" onClick={()=> addCart(product.id)}>Add to cart</button>
                            </div>
                        </div>
                    ))
