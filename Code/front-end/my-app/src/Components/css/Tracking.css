@@ -10,7 +10,7 @@
 }
 .titleTrack{
     margin-top: 2em;
-    /* font-size: 0em; */
+    font-size: 0em; 
     font-family: serif;
     margin-left: 5em;
 }
@@ -23,6 +23,6 @@
 }
 .backButton {
     margin-right:5em;
-}
-
+} 
+ 
     

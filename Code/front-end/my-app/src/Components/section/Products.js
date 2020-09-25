@@ -14,7 +14,7 @@ export class Products extends Component {
             <div id="product">
                {
                    products.map(product =>(
-                       <div className="card" key={product.id}>
+                       <div id="card" key={product.id}>
                            <Link to={`/product/${product.id}`}>
                                <img src={product.src} alt=""/>
                            </Link>
@@ -26,7 +26,7 @@ export class Products extends Component {
                                 <span><Star /></span>
                                <p>{product.description}</p>
 
-                               <button onClick={()=> addCart(product.id)}>Add to cart</button>
+                               <button className="productButton" onClick={()=> addCart(product.id)}>Add to cart</button>
                            </div>
                        </div>
                    ))

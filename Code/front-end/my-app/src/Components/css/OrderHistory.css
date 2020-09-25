@@ -19,7 +19,7 @@
     top: 15em;   
 }
 .cost{
-    color: tomato;
+    color:tomato;
 }
 .custName{
     color:blue;
@@ -44,6 +44,9 @@
     background-color: revert;
     color:black;
   
+}
+.track-col-5{
+    padding-left:80px;
 }
 p{
     margin-bottom: 0rem; 

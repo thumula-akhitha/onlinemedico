@@ -7,7 +7,9 @@ import Payment from './section/Payment';
 import Contact from './section/Contact';
 import Shipping from './section/Shipping';
 import Upload from './section/SelectDropDown';
-import star from './section/StarComponent';
+import Star from './section/StarComponent';
+import OrderHistory from './section/OrderHistory';
+import Admin from './section/Admin';
 
 export class Section extends Component {
     render() {
@@ -21,7 +23,10 @@ export class Section extends Component {
                 <Route path="/contact" component={Contact}/>
                 <Route path="/upload" component={Upload} exact/>
                 <Route path="/shipping" component={Shipping}/>
-                <Route path="/star" component={star}/>
+                <Route path="/star" component={Star}/>
+                <Route path="/history" component={OrderHistory}/>
+                <Route path="/admin" component={Admin}/>
+
 
             </section>
         )
