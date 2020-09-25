@@ -6,7 +6,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import classes from '../css/Tracking.css';
+import '../css/Tracking.css';
 
 const getSteps = () => {
     const items = ['Order confirmed', 'In transit', 'Delivered']
@@ -57,15 +57,15 @@ const tracking = (props) => {
     };
     return (
         track.map((card, index) => (
-            <Card className={classes.trackcard}>
-                <Card.Header className={classes.header} as="h5">Order Tracking :
-         {props.trackingArray.map(orderedNo => { return (`${orderedNo.orderId}`) }
-                )}
+            <Card className='trackcard'>
+                <Card.Header className='header' as="h5">Order Tracking :
+         {/* {props.trackingArray.map(orderedNo => { return (`${orderedNo.orderId}`) }
+                )} */}
                 </Card.Header>
-                <Card.Title className={classes.titleTrack}>
+                <Card.Title className='titleTrack'>
                     <div className='row'>
                         <div className={'col '
-                            + classes.shop}>
+                            + 'shop'}>
                             <div className='row'>
                                 <p>Shipped Via</p>
                             </div>
@@ -91,7 +91,7 @@ const tracking = (props) => {
                         </div>
                     </div>
                 </Card.Title>
-                <Card.Text className={classes.trackOrder}>
+                <Card.Text className='trackOrder'>
                     <Stepper activeStep={activeStep} alternativeLabel>
                         {steps.map((label) => (
                             <Step key={label}>
@@ -103,17 +103,17 @@ const tracking = (props) => {
                     <div>
                         {activeStep === steps.length ? (
                             <div>
-                                <p className={classes.instructions}>All steps completed</p>
+                                <p className='instructions'>All steps completed</p>
                                 <Button onClick={handleReset}>Reset</Button>
                             </div>
                         ) : (
                                 <div>
-                                    <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                                    <Typography className='instructions'>{getStepContent(activeStep)}</Typography>
                                     <div>
                                         <Button
                                             disabled={activeStep === 0}
                                             onClick={handleBack}
-                                            className={classes.backButton}
+                                            className='backButton'
                                         >
                                             Back
               </Button>

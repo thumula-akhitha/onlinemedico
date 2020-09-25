@@ -7,11 +7,11 @@ import '../css/Admin.css';;
 class Admin extends Component {
     constructor() {
         super();
-    this.productCode= React.createRef();
-    this.productName= React.createRef();
-    this.productCost= React.createRef();
-    this.productQuantity= React.createRef(); 
-    this.productDesc= React.createRef(); 
+         this.productCode=React.createRef();
+         this.productName=React.createRef();
+        this.productCost=React.createRef();
+    this.productQuantity=React.createRef(); 
+    this.productDesc=React.createRef(); 
         this.state = {
             showForm: false,
 
@@ -27,12 +27,12 @@ class Admin extends Component {
             productDesc: this.productDesc.current.value
           }
           console.log(addProduct.productCost);
-    axios.defaults.headers.post['Content-Type'] = 'application/json';
-    axios.post(`http://127.0.0.1:3333/onlinemedico/user/addProduct`,addProduct)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      }) 
+        axios.defaults.headers.post['Content-Type']='application/json';
+        axios.post(`http://127.0.0.1:3333/onlinemedico/user/addProduct`,addProduct)
+        .then(res=>{
+        console.log(res);
+        console.log(res.data);
+    }) 
       }
     render() {
         if (this.state.showForm == true) {

@@ -35,14 +35,21 @@
 .orderTitle{
     margin-top:1em;
 }
+
 .buyAgainBtn{
-    width:10em;
+    height: 53px;
+    width: 12em;
     margin-top: 1em;
 }
+.card-header .row {
+    padding:0px !important
+}
 .track{
-    width:18em;
+    width: 18em;
     background-color: revert;
-    color:black;
+    color: black;
+    height: 47px;
+    border-color: lightgray;
   
 }
 .track-col-5{
@@ -55,25 +62,32 @@ p{
 .review{
     width:18em;
     background-color: revert;
-    margin-top: 1em;
+    height: 50px;
     color:black;
+    border-color: lightgray;
 }
 
 .cancel{
     width:18em;
     background-color:revert;
-    margin-top: 1em;
     color:black;
+    height: 50px;
+    border-color: lightgray;
 }
 .view{
     width:18em;
     background-color: revert;
-    margin-top: 1em;
-    color:black; 
+    height: 50px;
+    color:black;
+    border-color: lightgray; 
 }
 .replace{
     width:18em;
     background-color:revert;
-    margin-top: 1em;
+    height: 50px;
     color:black;
+    border-color: lightgray;
+}
+.total{
+    
 }

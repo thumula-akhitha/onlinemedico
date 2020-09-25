@@ -53,7 +53,7 @@ const OrderHistory = (props) => {
                         </div>
                         <div className='col-3'>
                             <div className='row'>
-                                <p className='total'>Total</p>
+                                <p>Total</p>
                             </div>
                             <div className='row'>
                                 <p className='totalPrice'>{cd.price}</p>

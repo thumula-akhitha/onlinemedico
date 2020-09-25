@@ -20,7 +20,7 @@ class Contact extends Component {
     return (
       <div className='container-fluid'>
         <div className='contact'>
-          <p className='para'>Need Help?</p>
+          <p className='parahelp'>Need Help?</p>
           <p className='help'>We're here for you</p>
           <img src={logo} style={ImgStyle} alt="logo" />
         </div>

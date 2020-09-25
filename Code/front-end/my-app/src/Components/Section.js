@@ -10,6 +10,8 @@ import Upload from './section/SelectDropDown';
 import Star from './section/StarComponent';
 import OrderHistory from './section/OrderHistory';
 import Admin from './section/Admin';
+import Tracking from './section/Tracking ';
+// import Tracking from './section/Tracking';
 
 export class Section extends Component {
     render() {
@@ -26,6 +28,8 @@ export class Section extends Component {
                 <Route path="/star" component={Star}/>
                 <Route path="/history" component={OrderHistory}/>
                 <Route path="/admin" component={Admin}/>
+                <Route path="/track" component={Tracking}/>
+
 
 
             </section>
