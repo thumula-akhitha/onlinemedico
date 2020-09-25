@@ -1,0 +1,46 @@
+.cardText{
+    border-style: groove;
+    width:57em;
+    margin-left: 8em !important;
+    padding-top: 70px;
+    padding-left: 158px;
+    padding-right: 348px;
+}
+.admnaddItem{
+    width: 11em;
+    height: 3em;
+    margin-left: 32em;
+    margin-top: 6em;
+    background-color: #4dd689;
+    border-style: hidden;
+}
+.addTitle{
+    margin-left: 20em;
+    padding-top: 3em;
+    margin-bottom: 2em;
+    font-family: serif;
+    font-weight: bold;
+}
+.itemDesc{
+    width: 21em;
+}
+.itemQuantity{
+    width: 21em;
+}
+.itemCode{
+    width: 21em;
+}
+.itemCost{
+    width: 21em;
+}
+.itemname{
+    width: 21em;
+}
+.addbtn{
+    padding-left: 7px;
+    width: 8em;
+    margin-left: 7em !important;
+    /* padding-top: 0em; */
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
