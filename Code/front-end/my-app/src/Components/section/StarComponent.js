@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
-import classes from './StarComponent.css';
-import { Link } from 'react-router-dom'
-import Rating from '@material-ui/lab/Rating';
+import classes from '../css/StarComponent.css';
+
 
 
 class StarComponent extends Component {
@@ -41,14 +40,7 @@ class StarComponent extends Component {
           onStarClick={this.onStarClick.bind(this)}
           emptyStarColor='darkgrey'
         />
-        <div className='row'>
-          <div className='col'>
-            <p>submitting {this.state.rating} stars</p>
-          </div>
-          {/* <div className='col'>
-            <p><a href='#' onClick={this.clearRating.bind(this)}>clear</a></p>
-          </div> */}
-        </div>
+        
 
       </div>
     );
