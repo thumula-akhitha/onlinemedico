@@ -174,6 +174,16 @@ async addCard({ auth, request, response, params }) {
     cardData = await CardDetail.create(card);
     return response.status(200).json(cardData);
 }
+async addProduct({ auth, request, response, params }) {
+    console.log(request.body);
+    await use('Database').table('addProduct').insert(request.body)
+    return 'added products';
+
+}
+
+
+
+
 
 
 }
