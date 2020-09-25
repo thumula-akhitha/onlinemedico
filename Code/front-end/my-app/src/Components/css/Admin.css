@@ -38,9 +38,12 @@
 }
 .addbtn{
     padding-left: 7px;
-    width: 8em;
-    margin-left: 7em !important;
+    width: 12em;
+    margin-left: 13em !important;
     /* padding-top: 0em; */
+    height: 3em;
+    background: #439894;
+    border-style: hidden;
     margin-top: 2em;
     margin-bottom: 3em;
 }
