@@ -41,8 +41,8 @@ export class Cart extends Component {
                     }
                     
                     <div className="total">
-                        <Link to="/payment">Payment</Link>
-                        <h3>Total: ${Math.round(total)}</h3>
+                    <Link to="/shipping">Checkout</Link>
+                        <h3>Total: ${Math.floor(total* 100) / 100}</h3>
                     </div>
                     </div> 
                 )

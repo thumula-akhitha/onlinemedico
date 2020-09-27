@@ -1,9 +1,47 @@
 import React, { Component } from 'react';
+import { v1 as uuidv } from "uuid";
 export const DataContext = React.createContext();
 export class DataProvider extends Component{
-    state={            
-        cart: [],
+    constructor() {
+        super();
+        this.state = {
+            id: uuidv(),
+            canedit: false,
+            addr: {
+                firstname: "",
+                mobile: "",
+                address1: "",
+                address2: "",
+                state: "",
+                zip: ""
+            },
+            cart: [],
         total: 0,
+        addresses: [
+            {
+                id: '123',
+                newAddress: {
+                    firstname: 'John',
+                    mobile: '9898989898',
+                    address1: '1121 N College Dr',
+                    address2: 'Apt L',
+                    state: 'Maryville',
+                    zip: '64468'
+                }
+            },
+            {
+                id: '234',
+                newAddress: {
+                    firstname: 'Kevin',
+                    mobile: '0000000000',
+                    address1: '8445 Walbrook Dr ',
+                    address2: 'Apt M',
+                    state: 'TN',
+                    zip: '37923'
+                }
+            }
+        ],
+        selectedAddress:{},
             products:[
                 {   id:'1',
                     title:'paracetamol',
@@ -80,23 +118,104 @@ export class DataProvider extends Component{
             ],
             
         }
-    
-    
-     addCart = (id) =>{
-        const {products, cart} = this.state;
-        const check = cart.every(item =>{
+        this.handleChangeAddress = this.handleChangeAddress.bind(this);
+
+    }
+    addCart = (id) => {
+        const { products, cart } = this.state;
+        const check = cart.every(item => {
             return item.id !== id
         })
-        if(check){
-            const data = products.filter(product =>{
+        if (check) {
+            const data = products.filter(product => {
                 return product.id === id
             })
-            this.setState({cart: [...cart,...data]})
-        }else{
+            this.setState({ cart: [...cart, ...data] })
+        } else {
             alert("The product has been added to cart.")
         }
     };
+    handleChangeAddress = (e) => {
+        const { addr } = this.state;
+        console.log(e.target.name, e.target.value);
+        const value = e.target.value;
+        // setAddr({ ...addr, [e.target.name]: value });
+        this.setState({
+            addr: { ...addr, [e.target.name]: value }
 
+        })
+        console.log(addr);
+    };
+    handleSelectAddress=(sid)=>{
+        const {addresses,selectedAddress}=this.state;
+        const selectedAddr=addresses.find(addr=>addr.id===sid);
+     //   console.log(selectedAddr);
+        this.setState({selectedAddress:selectedAddr});
+console.log(selectedAddress);
+    }
+    addAddress = () => {
+        const { addresses, id, addr, canedit } = this.state;
+        const newaddr = {
+            id: id,
+            newAddress: addr
+
+        };
+        console.log(newaddr);
+
+        if (newaddr != null) {
+
+            // const fa1 = this.addresses;
+            // fa1.push(firstaddress);  
+            // this.setState({addresses:fa1}); 
+            this.setState({ addresses: [...addresses, newaddr], canedit: false });
+
+            // this.setState({canedit:false});
+            this.setState({addr:{
+                ...addr,
+                firstname: "",
+                mobile: "",
+                address1: "",
+                address2: "",
+                state: "",
+                zip: ""
+           
+            }})
+
+        }
+    };
+    editAddress = (editingId) => {
+
+        const { addr, canedit, addresses ,id} = this.state;
+        console.log(editingId)
+        const filteredAddress = addresses.filter((item) => item.id !== editingId);       
+        this.setState({ addresses: filteredAddress});
+        //this.setState({id:id1})
+        const editingItem = addresses.find(address => address.id === editingId );
+        this.setState({ id: [...id,editingId ]});
+        // console.log(editingItem.newAddress);
+       // console.log(filteredAddress);
+        //console.log(editingItem);
+        this.setState({
+            addr: {
+                ...addr,
+                firstname: editingItem.newAddress.firstname,
+                mobile: editingItem.newAddress.mobile,
+                address1: editingItem.newAddress.address1,
+                address2: editingItem.newAddress.address2,
+                state: editingItem.newAddress.state,
+                zip: editingItem.newAddress.zip
+            }
+        });
+        this.setState({ canedit: true });
+
+
+    };
+    deleteAddress = (id) => {
+        console.log(id);
+        const { addresses } = this.state;
+        const deletingAddress = addresses.filter((item) => item.id !== id);
+        this.setState({ addresses: deletingAddress });
+    };
     reduction = id =>{
         const { cart } = this.state;
         cart.forEach(item =>{
@@ -163,11 +282,12 @@ export class DataProvider extends Component{
    
 
     render() {
-        const {products,cart,total} = this.state;
-        const {addCart,reduction,increase,removeProduct,getTotal} = this;
+        const {products,cart,total,addresses, addr, id, canedit,selectedAddress} = this.state;
+        const {addCart,reduction,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress} = this;
         return (
             <DataContext.Provider 
-            value={{products, addCart, cart, reduction,increase,removeProduct,total,getTotal}}>
+            value={{products, addCart, cart, reduction,increase,removeProduct,total,getTotal,
+                addAddress, addresses, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress}}>
                 {this.props.children}
             </DataContext.Provider>
         )

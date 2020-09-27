@@ -1,28 +1,33 @@
 import React from "react";
 
 const SelectAddress = (props) => {
-  const { address, remove, editAddress } = props;
+  const { address, handleEdit, handleRemove ,handleSelectAddress} = props;
   return (
     <div className="address-card">
       <div className="radio-class">
-        <input type="radio" name="select-address" />
+        <input 
+        type="radio" 
+        name="select-address" 
+        onChange={(()=>handleSelectAddress(address.id))}
+        />
+        
       </div>
       <div className="address-info">
         <div>
           <p>
-            {address.name},{address.phone},
+            {address.newAddress.firstname},{address.newAddress.mobile},
           </p>
           <p>
-            {address.address1},{address.address2}
+            {address.newAddress.address1},{address.newAddress.address2}
           </p>
           <p>
-            {address.State},{address.zip}
+            {address.newAddress.State},{address.newAddress.zip}
           </p>
         </div>
         <div className="edit-row">
-          <span onClick={(e) => editAddress(address.id)}>Edit</span>
+          <span onClick={() => handleEdit(address.id)}>Edit</span>
 
-          <span onClick={(e) => remove(address.id)}>Remove</span>
+          <span onClick={() => handleRemove(address.id)}>Remove</span>
         </div>
       </div>
     </div>
