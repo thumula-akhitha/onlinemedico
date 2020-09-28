@@ -32,9 +32,19 @@ import {cart} from "./Cart";
             <CartItem key={t.id} thing={t} />
           ))}
           <tr>
-            <td colSpan="3">Total: </td>
+            <td colSpan="3">Tax (5%): </td>
             
-            <td> ${Math.floor(total* 100) / 100}</td>
+            <td> ${Math.floor(total* 5) / 100}</td>
+
+            
+            
+          </tr>
+          <tr>
+            <td colSpan="3">Total(with tax): </td>
+            
+            <td> ${(Math.floor(total* 100) / 100)+(Math.floor(total* 5) / 100)}</td>
+
+            
             
           </tr>
         </tbody>
