@@ -5,6 +5,7 @@ import { v1 as uuidv } from "uuid";
 import Card from "./cards";
 import Address from "./address";
 import NewCard from "./newCard";
+import {Link} from 'react-router-dom';
 ///import {DataContext} from '../Context';
 const Checkout = (props) => {
   //const dataContext = useContext(DataContext);
@@ -115,9 +116,9 @@ const Checkout = (props) => {
               )}
             </div>
             <div className="block">
-              <button>
-                <i className="fa fa-check"></i>Make Payment
-              </button>
+            <Link to="/track"><button>
+            <i className="fa fa-check"></i>Make Payment
+              </button></Link> 
             </div>
           </div>
         </div>
