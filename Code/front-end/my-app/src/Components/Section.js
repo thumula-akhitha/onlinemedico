@@ -3,7 +3,7 @@ import Products from './section/Products';
 import Details from './section/Details';
 import {Route} from "react-router-dom";
 import Cart from './section/Cart';
-import Payment from './section/Payment';
+
 import Contact from './section/Contact';
 import Shipping from './section/Shipping';
 import Upload from './section/SelectDropDown';
