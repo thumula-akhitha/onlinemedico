@@ -9,30 +9,40 @@ import Shipping from './section/Shipping';
 import Upload from './section/SelectDropDown';
 import Star from './section/StarComponent';
 import OrderHistory from './section/OrderHistory';
-import Admin from './section/Admin';
+import AdminPage from '../Components/section/Admin/AdminPage';
+import Admin from '../Components/section/Admin/Admin';
 import Tracking from './section/Tracking ';
-// import Tracking from './section/Tracking';
+import Header from '../Components/Header'
+import Footer from '../Components/Footer'
+import Login from '../Components/section/LoginForm';
+import SignIn from '../Components/section/SignupForm';
+import Forgot from '../Components/section/ForgotPassword';
+import Reset from '../Components/section/ResetPasswordPage';
 
 export class Section extends Component {
     render() {
         return (
-            <section>
-                <Route path="/" component={Products} exact />
-                <Route path="/product" component={Products} exact />
-                <Route path="/product/:id" component={Details} />
-                <Route path="/cart" component={Cart} />
-                <Route path="/payment" component={Payment} />
-                <Route path="/contact" component={Contact}/>
-                <Route path="/upload" component={Upload} exact/>
-                <Route path="/shipping" component={Shipping}/>
-                <Route path="/star" component={Star}/>
-                <Route path="/history" component={OrderHistory}/>
-                <Route path="/admin" component={Admin}/>
-                <Route path="/track" component={Tracking}/>
-
-
-
+            <section >
+                <Route path="/onlinemedico" component={Header}  />
+                <Route path="/mainadmin" component={Admin}  />                             
+                <Route path="/onlinemedico/product" component={Products} exact />
+                <Route path="/onlinemedico/product/:id" component={Details} />
+                <Route path="/onlinemedico/cart" component={Cart} />
+                <Route path="/onlinemedico/payment" component={Payment} />
+                <Route path="/onlinemedico/contact" component={Contact}/>
+                <Route path="/onlinemedico/upload" component={Upload} exact/>
+                <Route path="/onlinemedico/shipping" component={Shipping}/>
+                <Route path="/onlinemedico/star" component={Star}/>
+                <Route path="/onlinemedico/history" component={OrderHistory}/>
+                <Route path="/onlinemedico/admin" component={AdminPage}/>
+                <Route path="/onlinemedico/track" component={Tracking}/>
+                <Route path="/onlinemedico/login" component={Login}/>
+                <Route path="/onlinemedico/sign" component={SignIn}/>
+                <Route path="/onlinemedico/forgot" component={Forgot}/>
+                <Route path="/onlinemedico/reset" component={Reset}/>
+                <Route path="/onlinemedico" component={Footer}  />
             </section>
+            
         )
     }
 }

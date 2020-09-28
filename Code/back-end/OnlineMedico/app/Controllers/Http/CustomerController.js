@@ -39,9 +39,13 @@ class CustomerController {
     }
     //This method is used for login 
     async login({ request, response, auth }) {
-        const customerData = await Customer.query().where("email", request.body.email).where("password", request.body.password) .with("addresses")
-       .with("orders").with("card_details").fetch();
+        console.log("dfadfas")
+        const customerData = await Customer.query().where("email", request.body.email).where("password", request.body.password) 
+        //.with("addresses")
+       //.with("orders").with("card_details")
+       .fetch();
         //console.log(k.toJSON().length)
+        console.log(customerData.toJSON())
 
         if (customerData.toJSON().length > 0) {
             const token = await auth.generate(customerData.toJSON()[0])
@@ -52,11 +56,23 @@ class CustomerController {
 
             // console.log(isSame)
             // if (isSame) {
+                if(customerData.toJSON()[0].role == "admin")
+                {
+                    console.log("admin pageeeee")
+                return response.status(200).json({
+                    message: "Adminsuccess",
+                    authentication: token,
+                    data: customerData
+                });
+            }
+            else {
+                    
                 return response.status(200).json({
                     message: "success",
                     authentication: token,
                     data: customerData
                 });
+            }
 
             // }
             // else {

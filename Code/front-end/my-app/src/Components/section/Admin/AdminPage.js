@@ -1,17 +1,17 @@
 import { Card } from 'react-bootstrap';
 import React, { Component} from 'react';
 import axios from 'axios';
-import '../css/Admin.css';;
+import '../../css/Admin.css';
 
 
-class Admin extends Component {
+class AdminPage extends Component {
     constructor() {
         super();
          this.productCode=React.createRef();
          this.productName=React.createRef();
         this.productCost=React.createRef();
-    this.productQuantity=React.createRef(); 
-    this.productDesc=React.createRef(); 
+        this.productQuantity=React.createRef(); 
+        this.productDesc=React.createRef(); 
         this.state = {
             showForm: false,
 
@@ -46,9 +46,7 @@ class Admin extends Component {
                                 <label>Enter product Code</label>
                             </div>
                             <div className='col'>
-                                <input type='text' className='itemCode' ref={this.productCode} 
- 
- />
+                                <input type='text' className='itemCode' ref={this.productCode} />
                             </div>
                         </div>
                         <div className='row'>
@@ -101,4 +99,4 @@ class Admin extends Component {
     }
 
 }
-export default Admin
+export default AdminPage
