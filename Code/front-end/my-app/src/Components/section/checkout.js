@@ -116,7 +116,7 @@ const Checkout = (props) => {
               )}
             </div>
             <div className="block">
-            <Link to="/track"><button>
+            <Link to="/onlinemedico/track"><button>
             <i className="fa fa-check"></i>Make Payment
               </button></Link> 
             </div>
