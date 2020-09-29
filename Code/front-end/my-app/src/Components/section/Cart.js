@@ -41,7 +41,7 @@ export class Cart extends Component {
                     }
                     
                     <div className="total">
-                    <Link to="/shipping">Checkout</Link>
+                    <Link to="/onlinemedico/shipping">Checkout</Link>
                     
                         <h3>Total: ${Math.floor(total* 100) / 100}</h3>
 

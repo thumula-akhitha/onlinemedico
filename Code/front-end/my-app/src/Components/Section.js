@@ -3,7 +3,6 @@ import Products from './section/Products';
 import Details from './section/Details';
 import {Route} from "react-router-dom";
 import Cart from './section/Cart';
-
 import Contact from './section/Contact';
 import Shipping from './section/Shipping';
 import Upload from './section/SelectDropDown';
@@ -18,6 +17,8 @@ import Login from '../Components/section/LoginForm';
 import SignIn from '../Components/section/SignupForm';
 import Forgot from '../Components/section/ForgotPassword';
 import Reset from '../Components/section/ResetPasswordPage';
+import Checkout from '../Components/section/checkout';
+import CheckoutCart from '../Components/section/checkoutcart';
 
 export class Section extends Component {
     render() {
@@ -28,7 +29,6 @@ export class Section extends Component {
                 <Route path="/onlinemedico/product" component={Products} exact />
                 <Route path="/onlinemedico/product/:id" component={Details} />
                 <Route path="/onlinemedico/cart" component={Cart} />
-                <Route path="/onlinemedico/payment" component={Payment} />
                 <Route path="/onlinemedico/contact" component={Contact}/>
                 <Route path="/onlinemedico/upload" component={Upload} exact/>
                 <Route path="/onlinemedico/shipping" component={Shipping}/>
@@ -40,7 +40,9 @@ export class Section extends Component {
                 <Route path="/onlinemedico/sign" component={SignIn}/>
                 <Route path="/onlinemedico/forgot" component={Forgot}/>
                 <Route path="/onlinemedico/reset" component={Reset}/>
-                <Route path="/onlinemedico" component={Footer}  />
+                <Route path="/onlinemedico" component={Footer}/>
+                <Route path="/onlinemedico/checkout" component={Checkout}/>
+                <Route path="/onlinemedico/checkcart" component={CheckoutCart}/>
             </section>
             
         )

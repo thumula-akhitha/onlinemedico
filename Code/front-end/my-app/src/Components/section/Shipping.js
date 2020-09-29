@@ -129,7 +129,7 @@ const Shipping = (props) => {
           </div>
           <div className="endbuttons">
             <div className="checkout">
-            <Link to="/checkout"><button>Payment</button></Link>
+            <Link to="/onlinemedico/checkout"><button>Payment</button></Link>
               {/* <button>Checkout</button> */}
             </div>
           </div>
