@@ -23,8 +23,9 @@ import CheckoutCart from '../Components/section/checkoutcart';
 export class Section extends Component {
     render() {
         return (
-            <section >
-                <Route path="/onlinemedico" component={Header}  />
+            <div>
+            <Route path="/onlinemedico" component={Header}  />
+            <section >              
                 <Route path="/mainadmin" component={Admin}  />                             
                 <Route path="/onlinemedico/product" component={Products} exact />
                 <Route path="/onlinemedico/product/:id" component={Details} />
@@ -40,11 +41,12 @@ export class Section extends Component {
                 <Route path="/onlinemedico/sign" component={SignIn}/>
                 <Route path="/onlinemedico/forgot" component={Forgot}/>
                 <Route path="/onlinemedico/reset" component={Reset}/>
-                <Route path="/onlinemedico" component={Footer}/>
+               
                 <Route path="/onlinemedico/checkout" component={Checkout}/>
                 <Route path="/onlinemedico/checkcart" component={CheckoutCart}/>
             </section>
-            
+            <Route path="/onlinemedico" component={Footer}/> 
+            </div>
         )
     }
 }
