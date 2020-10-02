@@ -1,7 +1,3 @@
-.shipping {
-    background-color: whitesmoke;
-  }
-  
   .heading {
     text-align: center;
     font-weight: 800;
@@ -9,31 +5,32 @@
   }
   
   .contact-form {
-    background-color: lightgrey;
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
+
+    border-radius: 10px;
+    width: 40em;
+    background-image: linear-gradient(rgb(120, 170, 165), rgb(209, 196, 196));
+    height: auto;    
     justify-content: left;
     align-items: left;
     padding: 10px;
   }
-  .contact-form div {
-    margin: 5px;
+  
+  #addressdiv{
+    margin-top: 1em;
+    margin-left: 5em;
   }
   .contact-form .text {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: brown;
     font-weight: 400;
-  
-    text-align: center;
+    width: 32em;
+    height: 2em;
+    margin-left:9em; 
   }
   
   .place {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-  
+    flex-wrap: wrap;  
     justify-content: left;
     align-items: left;
     padding: 0;
@@ -43,31 +40,35 @@
   /* .place input {
     width: 50%;
   } */
-  input {
+  #custext {
     padding: 10px;
     outline: #2d2d2d;
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: 5px solid;
     width: 90%;
   }
-  label {
+  #cuslabel {
+    width : 14em;
     color: #123456;
-    font-family: Verdana;
     font-weight: 400;
     font-style: oblique;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    font-weight: bold;  
+  }
+  #cuscheckout{
+    width:1em;
+  }
+  .cusdiv{
+    margin-bottom: 0.5em;
+    display:inline-flex
   }
   .submit-button button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 5px;
-    color: white;
-    background-color: rgb(14, 93, 14);
-    border: 1px solid #2d2d2d;
-    font-size: 20px;
-    border-radius: 2px;
-    font-weight: 200;
+    height: 3em;
+    width: 28em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    font-weight: bold;  
   }
   .primary {
     display: flex;
@@ -75,12 +76,12 @@
     align-items: left;
     flex-direction: row;
   }
-  .primary label {
-    color: #123456;
-    font-family: Verdana;
-    font-weight: 200;
-    font-style: oblique;
-    margin: 0;
+  #cusdefault{
+    margin-top: 7px;
+    margin-left: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    font-weight: bold;  
   }
   .primary input {
     margin: auto 3px;
@@ -109,44 +110,49 @@
     margin: 2px;
   }
   .address-card {
+    width: 27em;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(195, 218, 205), rgb(241, 236, 236));
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 1px solid black;
-    border-radius:10px;
-    background: whitesmoke;
-    height: auto;
+    height: 9em;
     align-items: left;
+  }
+  #addressess{
+    width:21em;
+    margin-top:0.9em
+  }
+  #address-p{
+    font-size:1em;
+    font-weight: bold;
   }
   .edit-row {
     text-align: keft;
     justify-content: center;
     font-size: 10px;
     margin-bottom: 2px;
+    margin-top: 0.9em;
   }
   .edit-row span {
+    border-radius: 5px;
+    font-size: 17px;
     margin: 1px;
-    background: #2d2d2d;
-    color: white;
-    padding: 2px;
+    background: #76d489;
+    color: black;
+    padding: 10px;
     cursor: pointer;
     font-weight: bold;
+
   }
   .radio-class {
-    justify-content: center;
-    padding-top: 50px;
-    margin: 5px;
-    width: 10%;
+    margin: 8px;
+    width: 30px;
   }
   .radio-class input {
     width: auto;
   }
   .address-info {
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: left; */
     width: 85%;
   }
   
@@ -165,6 +171,10 @@
     justify-content: space-evenly;
     align-items: center;
   }
+  .secondpart h2{
+    color: brown;
+    font-weight: 400;
+  }
   .end-back button {
     padding: 15px;
     border: 2px solid rgb(126, 89, 82);
@@ -176,12 +186,11 @@
     font-weight: bold;
   }
   .checkout button {
+    margin-bottom: 10px;
     padding: 15px;
     border: 2px solid;
     text-align: center;
     width: 100%;
-    margin-top: 10px;
-    background-color: #2aac4a;
     font-weight: bold;
   }
   

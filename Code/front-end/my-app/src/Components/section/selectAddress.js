@@ -13,14 +13,14 @@ const SelectAddress = (props) => {
         
       </div>
       <div className="address-info">
-        <div>
-          <p>
+        <div id="addressess">
+          <p id="address-p">
             {address.newAddress.firstname},{address.newAddress.mobile},
           </p>
-          <p>
+          <p id="address-p">
             {address.newAddress.address1},{address.newAddress.address2}
           </p>
-          <p>
+          <p id="address-p">
             {address.newAddress.State},{address.newAddress.zip}
           </p>
         </div>
