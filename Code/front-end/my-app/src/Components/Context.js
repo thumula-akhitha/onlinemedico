@@ -42,80 +42,7 @@ export class DataProvider extends Component{
             }
         ],
         selectedAddress:{},
-            products:[
-                {   id:'1',
-                    title:'paracetamol',
-                    price:'4.99',
-                    src:'https://cdn.shopify.com/s/files/1/1346/8165/products/1129154_1400x.jpg?v=1575891053',
-                    description:'Fever and bodypains',
-                    count: 1
-                },
-                {
-                    id:'2',
-                    title:'nytQuill',
-                    price:'11.99',
-                    src:"https://cdn.shopify.com/s/files/1/0086/7821/1642/products/IMG_1449_480x480.jpg?v=1580943657",
-                    description:"Fever and bodypains",
-                    count: 1,
-                },
-                {
-                    id:'3',
-                    title:'paracetamol',
-                    price:'4.99',
-                    src:'https://cdn.shopify.com/s/files/1/1346/8165/products/1129154_1400x.jpg?v=1575891053',
-                    description:'Fever and bodypains',
-                    count: 1,
-                },
-                {
-                    id:'4',
-                    title:'nytQuill',
-                    price:'11.99',
-                    src:'https://cdn.shopify.com/s/files/1/0086/7821/1642/products/IMG_1449_480x480.jpg?v=1580943657',
-                    description:'Fever and bodypains',
-                    count: 1,
-                },
-                {
-                    id:'5',
-                    title:'nytQuill',
-                    price:'11.99',
-                    src:'https://cdn.shopify.com/s/files/1/0086/7821/1642/products/IMG_1449_480x480.jpg?v=1580943657',
-                    description:'Fever and bodypains',
-                    count: 1,
-                },
-                {
-                    id:'6',
-                    title:'paracetamol',
-                    price:'4.99',
-                    src:'https://cdn.shopify.com/s/files/1/1346/8165/products/1129154_1400x.jpg?v=1575891053',
-                    description:'Fever and bodypains',
-                    count: 1,
-                },
-                {
-                    id:'7',
-                    title:'paracetamol',
-                    price:'4.99',
-                    src:'https://cdn.shopify.com/s/files/1/1346/8165/products/1129154_1400x.jpg?v=1575891053',
-                    description:'Fever and bodypains',
-                    count: 1,
-                },
-                {
-                    id:'8',
-                    title:'nytQuill',
-                    price:'11.99',
-                    src:"https://cdn.shopify.com/s/files/1/0086/7821/1642/products/IMG_1449_480x480.jpg?v=1580943657",
-                    description:"Fever and bodypains",
-                    count: 1,
-                },
-                {
-                    id:'9',
-                    title:'paracetamol',
-                    price:'4.99',
-                    src:'https://cdn.shopify.com/s/files/1/1346/8165/products/1129154_1400x.jpg?v=1575891053',
-                    description:'Fever and bodypains',
-                    count: 1
-                },
-                
-            ],
+            products:[ ],
             
         }
         this.handleChangeAddress = this.handleChangeAddress.bind(this);
@@ -135,6 +62,18 @@ export class DataProvider extends Component{
             alert("The product has been added to cart.")
         }
     };
+    addProduct = (k) => {
+        console.log("context add product page")
+        console.log(k);
+        this.setState({
+            products:k
+        })
+    };
+    updateProducts = (k) => {
+        this.setState({
+            products: [...this.state.products, k]
+          })
+    }
     handleChangeAddress = (e) => {
         const { addr } = this.state;
         console.log(e.target.name, e.target.value);
@@ -283,11 +222,11 @@ console.log(selectedAddress);
 
     render() {
         const {products,cart,total,addresses, addr, id, canedit,selectedAddress} = this.state;
-        const {addCart,reduction,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress} = this;
+        const {addCart,reduction,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addProduct,updateProducts} = this;
         return (
             <DataContext.Provider 
             value={{products, addCart, cart, reduction,increase,removeProduct,total,getTotal,
-                addAddress, addresses, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress}}>
+                addAddress, addresses, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts}}>
                 {this.props.children}
             </DataContext.Provider>
         )

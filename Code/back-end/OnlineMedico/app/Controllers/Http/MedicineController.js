@@ -5,32 +5,32 @@ const _ = use("lodash");
 class MedicineController {
     //This function is used for search/filter medicines by user.
     async searchProduct({ params, request, response }) {
-
-        const queryParam = request.all();
+            console.log(params.medicineCode)
+       // const queryParam = request.all();
         let product;
-        console.log(queryParam.search)
-        if (queryParam && queryParam.search) {
+       // console.log(queryParam.search)
+        // if (queryParam && queryParam.search) {
             product = await Medicine.query()
                
                 .where(function () {
-                    this.where('name', 'like', '%' + queryParam.search + '%')
-                        .orWhere('description', 'like', '%' + queryParam.search + '%')
+                    this.where('title', 'like', '%' + params.medicineCode + '%')
+                        .orWhere('description', 'like', '%' + params.medicineCode + '%')
                 })
                 .fetch();
-        } else {
-            const courses = await Medicine.query()
-            .where('medicineId', params.MedicineCode)
-            .fetch();
-        }
+    //    // } else {
+    //         const courses = await Medicine.query()
+    //         .where('medicineId', params.MedicineCode)
+    //         .fetch();
+    //     }
 
         // console.log(courses.rows)
-        if (courses == null) {
-            logger.error("CourseController-searchCourse, course not found");
-            return response.status(404).json({
-                message: "Medicine not found",
-            });
-        }
-        logger.debug("CourseController-searchCourse, Succesfully retrived Products");
+        // if (courses == null) {
+        //     logger.error("CourseController-searchCourse, course not found");
+        //     return response.status(404).json({
+        //         message: "Medicine not found",
+        //     });
+        // }
+       // logger.debug("CourseController-searchCourse, Succesfully retrived Products");
         return response.ok(product);
     }
 //Adds the medicine to database
@@ -41,7 +41,9 @@ class MedicineController {
     }
     // Returns all medicines
     async getMedicines({ auth, request, response, params }) {
-           const medicine = Medicine.all();
+        console.log("cameee")
+           const medicine = await Medicine.all();
+           console.log(medicine)
 
            return response.status(200).json(medicine);
     }

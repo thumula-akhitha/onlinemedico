@@ -192,7 +192,7 @@ async addCard({ auth, request, response, params }) {
 }
 async addProduct({ auth, request, response, params }) {
     console.log(request.body);
-    await use('Database').table('addProduct').insert(request.body)
+    await use('Database').table('medicines').insert(request.body)
     return 'added products';
 
 }

@@ -7,7 +7,7 @@ import '../../css/Admin.css';
 class AdminPage extends Component {
     constructor() {
         super();
-         this.productCode=React.createRef();
+         this.prodctLink=React.createRef();
          this.productName=React.createRef();
         this.productCost=React.createRef();
         this.productQuantity=React.createRef(); 
@@ -18,13 +18,13 @@ class AdminPage extends Component {
         };
     }
       addedAlert(){
-          console.log(this.productCode.current.value)
+         // console.log(this.productCode.current.value)
           const addProduct={
-            productCode: this.productCode.current.value,
-            productName: this.productName.current.value,
-            productCost: this.productCost.current.value,
-            productQuantity: this.productQuantity.current.value,
-            productDesc: this.productDesc.current.value
+            src: this.prodctLink.current.value,
+            title: this.productName.current.value,
+            price: this.productCost.current.value,
+            count: this.productQuantity.current.value,
+            description: this.productDesc.current.value
           }
           console.log(addProduct.productCost);
         axios.defaults.headers.post['Content-Type']='application/json';
@@ -41,14 +41,7 @@ class AdminPage extends Component {
                     <Card.Title className='addTitle'>Enter Product Details to add into the database</Card.Title>
                     <Card.Text className='cardText'>
                         {/* <div className={classes.addItem}> */}
-                        <div className='row'>
-                            <div className='col'>
-                                <label>Enter product Code</label>
-                            </div>
-                            <div className='col'>
-                                <input type='text' className='itemCode' ref={this.productCode} />
-                            </div>
-                        </div>
+                        
                         <div className='row'>
                             <div className='col'>
                                 <label>Enter product name</label>
@@ -79,6 +72,14 @@ class AdminPage extends Component {
                             </div>
                             <div className='col'>
                                 <input type='text' className='itemDesc' ref={this.productDesc}  />
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='col'>
+                                <label>Enter Image Link:</label>
+                            </div>
+                            <div className='col'>
+                                <input type='text' className='itemQuantity' ref={this.prodctLink}  />
                             </div>
                         </div>
                         <button className='addbtn'

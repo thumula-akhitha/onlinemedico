@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Products from './section/Products';
 import Details from './section/Details';
-import {Route} from "react-router-dom";
+import {Route,Redirect} from "react-router-dom";
 import Cart from './section/Cart';
 import Contact from './section/Contact';
 import Shipping from './section/Shipping';
@@ -24,6 +24,9 @@ export class Section extends Component {
     render() {
         return (
             <section >
+                 <Route exact path="/">
+                     <Redirect to="/login" />
+                 </Route>
                 <Route path="/onlinemedico" component={Header}  />
                 <Route path="/mainadmin" component={Admin}  />                             
                 <Route path="/onlinemedico/product" component={Products} exact />
@@ -36,7 +39,7 @@ export class Section extends Component {
                 <Route path="/onlinemedico/history" component={OrderHistory}/>
                 <Route path="/onlinemedico/admin" component={AdminPage}/>
                 <Route path="/onlinemedico/track" component={Tracking}/>
-                <Route path="/onlinemedico/login" component={Login}/>
+                <Route path="/login" component={Login}/>
                 <Route path="/onlinemedico/sign" component={SignIn}/>
                 <Route path="/onlinemedico/forgot" component={Forgot}/>
                 <Route path="/onlinemedico/reset" component={Reset}/>

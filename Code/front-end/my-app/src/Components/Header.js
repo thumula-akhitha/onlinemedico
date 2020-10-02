@@ -39,7 +39,7 @@ export class Header extends Component {
                         <li><Link to="/onlinemedico/product">Product</Link></li>
                         <li><Link to="/onlinemedico/contact">Contact</Link></li>
                         <li><Link to="/onlinemedico/upload">UploadPrescription</Link></li>
-                        <li><Link to="/onlinemedico/login">Login / Register</Link></li>
+                        {/* <li><Link to="/onlinemedico/login">Login / Register</Link></li> */}
                         <li className="close" onClick={this.menuToggle}>
                             <img src={Close} alt="" width="20"/>
                         </li>

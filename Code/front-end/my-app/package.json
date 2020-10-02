@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "adonis-websocket": "^1.0.4",
     "autoprefixer": "7.1.6",
     "axios": "^0.20.0",
     "babel-core": "6.26.0",
