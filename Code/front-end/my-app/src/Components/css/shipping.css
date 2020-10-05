@@ -1,211 +1,219 @@
-  .heading {
-    text-align: center;
-    font-weight: 800;
-    font-size: 35px;
-  }
+.heading {
+  text-align: center;
+  font-size: 25px;
+  font-weight:800;
+  background: #66ccaf;
+  color: black;
+  margin-bottom:20px;
+ 
   
-  .contact-form {
+}
+.shipping {
+  background: whitesmoke;
+  font-family: sans-serif;
+  margin-bottom: 30px;
+  font-weight: bolder;
+  height : 650px;
+}
+.contact-form {
+  border-radius: 10px;
+  width: 40em;
+  background-image: linear-gradient(rgb(120, 170, 165), rgb(209, 196, 196));
+  height: auto;
+  justify-content: left;
+  align-items: left;
+  padding: 10px;
+}
 
-    border-radius: 10px;
-    width: 40em;
-    background-image: linear-gradient(rgb(120, 170, 165), rgb(209, 196, 196));
-    height: auto;    
-    justify-content: left;
-    align-items: left;
-    padding: 10px;
-  }
-  
-  #addressdiv{
-    margin-top: 1em;
-    margin-left: 5em;
-  }
-  .contact-form .text {
-    color: brown;
-    font-weight: 400;
-    width: 32em;
-    height: 2em;
-    margin-left:9em; 
-  }
-  
-  .place {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;  
-    justify-content: left;
-    align-items: left;
-    padding: 0;
-    /* margin: 2px; */
-  }
-  
-  /* .place input {
+#addressdiv {
+  margin-top: 1em;
+  margin-left: 5em;
+}
+.contact-form .text {
+  color: brown;
+  font-weight: 400;
+  width: 32em;
+  height: 2em;
+  margin-left: 9em;
+}
+
+.place {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: left;
+  padding: 0;
+  /* margin: 2px; */
+}
+
+/* .place input {
     width: 50%;
   } */
-  #custext {
-    padding: 10px;
-    outline: #2d2d2d;
-    border: 1px solid;
-    border-radius: 5px solid;
-    width: 90%;
-  }
-  #cuslabel {
-    width : 14em;
-    color: #123456;
-    font-weight: 400;
-    font-style: oblique;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
-    font-weight: bold;  
-  }
-  #cuscheckout{
-    width:1em;
-  }
-  .cusdiv{
-    margin-bottom: 0.5em;
-    display:inline-flex
-  }
-  .submit-button button {
-    height: 3em;
-    width: 28em;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
-    font-weight: bold;  
-  }
-  .primary {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    flex-direction: row;
-  }
-  #cusdefault{
-    margin-top: 7px;
-    margin-left: 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
-    font-weight: bold;  
-  }
-  .primary input {
-    margin: auto 3px;
-    padding: 1px;
-    width: auto;
-  }
+#custext {
+  padding: 10px;
+  outline: #2d2d2d;
+  border: 1px solid;
+  border-radius: 5px solid;
+  width: 90%;
+}
+#cuslabel {
+  width: 14em;
+  color: #123456;
+  font-weight: 400;
+  font-style: oblique;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+#cuscheckout {
+  width: 1em;
+}
+.cusdiv {
+  margin-bottom: 0.5em;
+  display: inline-flex;
+}
+.submit-button button {
+  height: 3em;
+  width: 28em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+.primary {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: row;
+}
+#cusdefault {
+  margin-top: 7px;
+  margin-left: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+.primary input {
+  margin: auto 3px;
+  padding: 1px;
+  width: auto;
+}
+.main-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.address-list {
+  display: flex;
+  flex-direction: column;
+
+  height: 400px;
+  margin-left: 0;
+  overflow-y: scroll;
+  align-items: left;
+  justify-content: left;
+}
+.address-list .address-card {
+  margin: 2px;
+}
+.address-card {
+  width: 27em;
+  border-radius: 10px;
+  background-image: linear-gradient(rgb(195, 218, 205), rgb(241, 236, 236));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 9em;
+  align-items: left;
+}
+#addressess {
+  width: 21em;
+  margin-top: 0.9em;
+}
+#address-p {
+  font-size: 1em;
+  font-weight: bold;
+}
+.edit-row {
+  text-align: keft;
+  justify-content: center;
+  font-size: 10px;
+  margin-bottom: 2px;
+  margin-top: 0.9em;
+}
+.edit-row span {
+  border-radius: 5px;
+  font-size: 17px;
+  margin: 1px;
+  background: #76d489;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.radio-class {
+  margin: 8px;
+  width: 30px;
+}
+.radio-class input {
+  width: auto;
+}
+.address-info {
+  width: 85%;
+}
+
+.endbuttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.checkout {
+  width: 100%;
+}
+.secondpart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.secondpart h2 {
+  color: brown;
+  font-weight: 400;
+}
+.end-back button {
+  padding: 15px;
+  border: 2px solid rgb(126, 89, 82);
+  text-align: center;
+  width: 150px;
+  margin: 2px;
+  background-color: lightgray;
+  color: rgb(10, 1, 1);
+  font-weight: bold;
+}
+.checkout button {
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 2px solid;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 400px) {
   .main-info {
     display: flex;
-    flex-direction: row;
-    flex-wrap: row-reverse;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .address-list {
-    display: flex;
-    flex-direction: column;
-    height: 350px;
-    height: 400px;
-    margin-left: 0;
-    overflow-y: scroll;
-    align-items: left;
-    justify-content: left;
-  }
-  .address-list .address-card {
-    margin: 2px;
-  }
-  .address-card {
-    width: 27em;
-    border-radius: 10px;
-    background-image: linear-gradient(rgb(195, 218, 205), rgb(241, 236, 236));
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 9em;
-    align-items: left;
-  }
-  #addressess{
-    width:21em;
-    margin-top:0.9em
-  }
-  #address-p{
-    font-size:1em;
-    font-weight: bold;
-  }
-  .edit-row {
-    text-align: keft;
-    justify-content: center;
-    font-size: 10px;
-    margin-bottom: 2px;
-    margin-top: 0.9em;
-  }
-  .edit-row span {
-    border-radius: 5px;
-    font-size: 17px;
-    margin: 1px;
-    background: #76d489;
-    color: black;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: bold;
-
-  }
-  .radio-class {
-    margin: 8px;
-    width: 30px;
-  }
-  .radio-class input {
-    width: auto;
-  }
-  .address-info {
-    width: 85%;
-  }
-  
-  .endbuttons {
-    display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
-    width: 100%;
   }
-  .checkout {
-    width: 100%;
-  }
-  .secondpart {
+}
+@media only screen and (max-width: 400px) {
+  .main-info {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
   }
-  .secondpart h2{
-    color: brown;
-    font-weight: 400;
-  }
-  .end-back button {
-    padding: 15px;
-    border: 2px solid rgb(126, 89, 82);
-    text-align: center;
-    width: 150px;
-    margin: 2px;
-    background-color: lightgray;
-    color: rgb(10, 1, 1);
-    font-weight: bold;
-  }
-  .checkout button {
-    margin-bottom: 10px;
-    padding: 15px;
-    border: 2px solid;
-    text-align: center;
-    width: 100%;
-    font-weight: bold;
-  }
-  
-  @media only screen and (max-width: 400px) {
-    .main-info {
-      display: flex;
-      flex-direction: row-reverse;
-      flex-wrap: wrap;
-    }
-  }
-  @media only screen and (max-width: 400px) {
-    .main-info {
-      display: flex;
-      flex-direction: row-reverse;
-      flex-wrap: wrap;
-    }
-  }
-  
+}
