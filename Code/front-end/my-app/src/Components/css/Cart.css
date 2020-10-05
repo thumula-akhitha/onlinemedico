@@ -16,11 +16,11 @@ section .cart{
 }
 .delete{
     position: absolute;
-    top:0;
-    right: 5px;
     color: crimson;
     cursor: pointer;
     font-weight: 900;
+    top: 11px;
+    right: 24px;
 }
 .total{
     width: 100%;
@@ -39,4 +39,41 @@ section .cart{
 .total h3{
     margin-right: 50px;
     color: crimson;
+}
+.itemTitle{
+    margin-left: -75px;
+    margin-bottom: -7px;
+    /* padding-top: 35px; */
+    margin-top: 54px;
+}
+#chechkOutbtn
+{
+    margin-left: 4em;
+    width: 8em;
+}
+.itemCostTotal
+{
+    
+    position: absolute;
+    right: 185px;
+    top: 164px;
+}
+.productDesc
+{
+    /* position: absolute;
+    right: 21em;
+    top: 56px; */
+    margin-left: -88px !important;
+}
+.amount{
+    /* position: absolute;
+    right: 339px; */
+    margin-left: -94px;
+    margin-top: 31px;
+}
+.productCart
+{
+    margin-left: 4em;
+    margin-right: 4em;
+    margin-top: 3em !important;
 }

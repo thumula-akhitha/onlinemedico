@@ -89,24 +89,7 @@ class Contact extends Component {
             </div>
           </div>
         </div>
-        <div className='footer'>
-          <div>
-            <div>
-              <h4> SIGN ME UP</h4>
-              <p>Be the first to know more about the products and offers</p>
-            </div>
-            <div>
-              <div className='btnIn'>
-                <input className='signupemail' type="text" id="enter" placeholder='email here' />
-                <button className='clearbtn' id="clear">SignUp</button>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
       </div>
-
 
     );
   }

@@ -12,10 +12,6 @@ class AdminPage extends Component {
         this.productCost=React.createRef();
         this.productQuantity=React.createRef(); 
         this.productDesc=React.createRef(); 
-        this.state = {
-            showForm: false,
-
-        };
     }
       addedAlert(){
          // console.log(this.productCode.current.value)
@@ -35,19 +31,18 @@ class AdminPage extends Component {
     }) 
       }
     render() {
-        if (this.state.showForm == true) {
             return (
                 <Card>
                     <Card.Title className='addTitle'>Enter Product Details to add into the database</Card.Title>
                     <Card.Text className='cardText'>
                         {/* <div className={classes.addItem}> */}
-                        
+                        <form>
                         <div className='row'>
                             <div className='col'>
                                 <label>Enter product name</label>
                             </div>
                             <div className='col'>
-                                <input type='text' className='itemname' ref={this.productName} />
+                                <input type='text' className='itemname' ref={this.productName} required/>
                             </div>
                         </div>
                         <div className='row'>
@@ -55,15 +50,15 @@ class AdminPage extends Component {
                                 <label>Enter product cost</label>
                             </div>
                             <div className='col'>
-                                <input type='text' className='itemCost' ref={this.productCost} />
+                                <input type='text' className='itemCost' ref={this.productCost} required/>
                             </div>
                         </div>
                         <div className='row'>
                             <div className='col'>
-                                <label>Enter product Quntity</label>
+                                <label>Enter product Quantity</label>
                             </div>
                             <div className='col'>
-                                <input type='text' className='itemQuantity' ref={this.productQuantity}  />
+                                <input type='text' className='itemQuantity' ref={this.productQuantity} required/>
                             </div>
                         </div>
                         <div className='row'>
@@ -71,7 +66,7 @@ class AdminPage extends Component {
                                 <label>Enter product Description</label>
                             </div>
                             <div className='col'>
-                                <input type='text' className='itemDesc' ref={this.productDesc}  />
+                                <input type='text' className='itemDesc' ref={this.productDesc} required/>
                             </div>
                         </div>
                         <div className='row'>
@@ -79,24 +74,15 @@ class AdminPage extends Component {
                                 <label>Enter Image Link:</label>
                             </div>
                             <div className='col'>
-                                <input type='text' className='itemQuantity' ref={this.prodctLink}  />
+                                <input type='text' className='itemQuantity' ref={this.prodctLink}  required/>
                             </div>
                         </div>
                         <button className='addbtn'
                         onClick={()=>this.addedAlert()}>Add Item</button>
-
+                        </form>
                     </Card.Text>
                 </Card>
             )
-        }
-        return (
-            <div>
-                <button className='admnaddItem'
-                    onClick={() => this.setState({ showForm: true })}
-                >Add New Item</button>
-            </div>
-        )
-       
     }
 
 }

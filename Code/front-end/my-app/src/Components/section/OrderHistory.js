@@ -4,6 +4,7 @@ import { Card } from 'react-bootstrap';
 //import { Button } from 'react-bootstrap';
 // import Review from './Review';
 import Tracking from './Tracking ';
+import {Link} from 'react-router-dom';
 // import ReturnItem from './ReturnItem';
 
 
@@ -72,7 +73,8 @@ const OrderHistory = (props) => {
                                 <p className='orderDate'>Order# {cd.orderId} </p>
                             </div>
                             <div className='row'>
-                                <p className='reciept'>Order Details </p>
+                            <Link to="/onlinemedico/orderDetails" className='reciept'>Order Details</Link>
+                                {/* <p className='reciept'>Order Details </p> */}
                             </div>
                         </div>
 

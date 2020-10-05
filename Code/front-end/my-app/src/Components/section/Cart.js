@@ -20,14 +20,14 @@ export class Cart extends Component {
                 <div>              
                     {
                         cart.map(item =>(
-                            <div className="details cart" key={item.id}>
+                            <div className="details cart productCart" key={item.id}>
                                 <img src={item.src} alt=""/>
                                 <div className="box">
                                     <div className="row">
-                                        <h2>{item.title}</h2>
-                                        <span>${item.price * item.count}</span>
+                                        <h2 className='itemTitle'>{item.title}</h2>
+                                        <span className='itemCostTotal'>${item.price * item.count}</span>
                                     </div>
-                                    <p>{item.description}</p>
+                                    <p className='productDesc'>{item.description}</p>
                                     <p>{item.content}</p>
                                     <div className="amount">
                                         <button className="count" onClick={() => reduction(item.id)}> - </button>
@@ -42,7 +42,7 @@ export class Cart extends Component {
                     
                     <div className="total">
                     <Link to="/onlinemedico/shipping">
-                    <button type="button" class="btn btn-success">Checkout</button>
+                    <button type="button" id='chechkOutbtn'class="btn btn-success">Checkout</button>
                     </Link>                    
                     <h3>Total: ${Math.floor(total* 100) / 100}</h3>
                     </div>

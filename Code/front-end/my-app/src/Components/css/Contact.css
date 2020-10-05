@@ -140,13 +140,7 @@ font-size: 35px;
   .comment{
     padding-right:2em;
   }
-  .footer{
-    padding-left: 4em;
-    padding-top: 3em;
-    border-bottom: 1px solid lightgrey;
-    display:flex;
-
-  }
+  
   .buttonIn { 
     width: 300px; 
     position: relative; 

@@ -52,6 +52,7 @@ SILVER PINK: #C9ADA7
 }
 
 .form-wrapper {
+  height: 41em;
   width: 500px;
   max-width: 80%;
   min-width: 100px;
@@ -96,7 +97,7 @@ form {
   border: 1px solid #d6d1d5;
   width: 290px;
 } */
-.heading{
+.signheading{
   font-family:sans-serif;
   margin-left: 40px;
   margin-bottom: 30px;
