@@ -14,24 +14,13 @@ class ImageFile extends Component {
         })
     }
     fileuploader = () => {
-        const config = {
-        //     headers : {
-        //         'Content-Type':'multipart/form-data'
-        //   }
-
-        }
-        console.log(document.getElementById('exampleInputEmail1').value)
-        console.log(document.getElementById('dob').value)
         let request = {
             email: document.getElementById('exampleInputEmail1').value,
             dob: document.getElementById('dob').value
         }
         const data = new FormData();
-        //data.append('name', this.state.selectedFile.name);
         data.append("file",this.state.selectedFile)
         data.append("name",request)
-
-        console.log(this.state.FileName,this.state.selectedFile)
         axios.post('http://127.0.0.1:3333/onlinemedico/uploadPrescription', data, 
             {
                 onUploadProgress: progressEvent => {
@@ -46,15 +35,13 @@ class ImageFile extends Component {
         let uploadbutton = null;      
         if (this.state.selectedFile) {
             console.log('please enter all values')
-            uploadbutton = <button className="btn btn-outline-primary FileLabel" onClick={() => { this.fileuploader() }}>upload</button>
+            uploadbutton = <button className="btn up-btn FileLabel" onClick={() => { this.fileuploader() }}>upload</button>
         }
-        return (
-            
+        return (            
             <div className="image-div">
-                <input className="image-text form-control form-control-lg" type="text" value={this.state.FileName || ''} placeholder="example.png" />
+                <input className="image-text form-control form-control-lg" type="text" value={this.state.FileName || ''} placeholder="prescription.png" />
                 <input type="file" style={{ display: "none" }} key="" onChange={this.fileSelectHandler} ref={fileInput => this.fileInput = fileInput} />
-                <button className="select-btn btn btn-primary" onClick={() => this.fileInput.click()}>Select A File</button>
-                
+                <button className="up-btn btn" onClick={() => this.fileInput.click()}>Select A File</button>                
                 <div className="FileLabel">
                 <div>
                     <label className="image-label">Enter FullName</label>
@@ -71,13 +58,8 @@ class ImageFile extends Component {
                     {uploadbutton}
                 </div>
                 </div>
-                
-
-
                         
         )
-
-
     }
 }
 

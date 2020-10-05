@@ -1,14 +1,17 @@
-
 .image-text{
     width: 500px;
     margin: none;
     display: table-cell;
-    height:2em;
+    height: 3em;
        
 }
 .image-div{
-    margin-left: 311px;
-    margin-top: 100px;
+    margin-left: 200px;
+    margin-top: 50px;
+    background: linear-gradient(#b1dae7,#a89d9d);
+    border-radius: 10px;
+    width : 50em;
+    padding : 4em;
 }
 .FileLabel{
     width: 500px;
@@ -24,8 +27,15 @@
 }
 
 .upload-btn{
-    width: 500px;
-    margin-top: 20px; 
-
+    width: 20px;
+    margin-top: 30px; 
+}
+.up-btn{
+    background: rgb(4, 117, 68);
+    color:white
+}
+.up-btn:hover{
+    background:rgb(71, 136, 133);
+    color:white;
 }
 

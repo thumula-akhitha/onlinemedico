@@ -102,3 +102,11 @@ Route.group(() => {
   Route.delete("/medicine/:medicineId", "MedicineController.newPassword");
   Route.get("/search/:medicineCode", "MedicineController.searchProduct");
 }).prefix("/onlinemedico");
+
+
+
+//Shipping address route
+
+Route.group(() => {
+  Route.post("/shippingaddress", "CustomerController.addShippingAddress");
+}).prefix("/onlinemedico");
