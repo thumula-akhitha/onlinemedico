@@ -1,0 +1,35 @@
+.orderHeader{
+    background-color: #727272;
+    font-size: .875rem;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #fff;
+    padding: 10px 10px;
+    vertical-align: middle;
+
+}
+.orderNumber{
+    text-decoration: underline;
+    color: #006c7c;
+}
+.orderDetails{
+    padding: 10px !important;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    vertical-align: middle;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    cursor: pointer;
+}
+#orderContainer{
+    background-color: white !important;
+}
+#orderImage{
+    height: 60px;
+    width: 80px;;
+}

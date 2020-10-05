@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/checkout.css";
+import {FaShoppingCart,FaMoneyBill,FaCreditCard, FaCheck} from "react-icons/fa" 
 import CheckoutCart from "./checkoutcart";
 import { v1 as uuidv } from "uuid";
 import Card from "./cards";
@@ -19,15 +20,6 @@ const Checkout = (props) => {
     cvv: ""
   });
   const [id, setId] = useState(uuidv());
-  // const things = [
-  //   {
-  //     id: Math.floor(Math.random() * 100) + 1,
-  //     item: "Advil PM",
-  //     image: "https://via.placeholder.com/60x60",
-  //     price: 200,
-  //     quantity: 4
-  //   }
-  // ];
 
   const handleChange = (e) => {
     var value = e.target.value;
@@ -59,38 +51,28 @@ const Checkout = (props) => {
     });
   };
   return (
-   // const {cart,increase,reduction,removeProduct,total} = this.context;
     <div className="checkout">
       <div className="mainheading">
         <h2>Checkout</h2>
       </div>
       <div className="first-block">
-        <Address/>
-        <div className="cart">
-          <div className="address-heading">
-            <hr />
-            <span id="heading">
-              <i className="fa fa-shopping-cart"></i>Items Selected
+        <div className="row" style={{marginTop:"3em"}}>
+        <div className="check-cart col-7">
+            <span className="address-heading">
+            <i className="logo-heading"><FaShoppingCart/></i>Orders Summary
             </span>
-            <hr />
-          </div>
           <CheckoutCart/>
+        </div>
+        <Address/>
         </div>
         <div className="payments">
           <div className="address-heading">
-            <hr />
-            <span id="heading">
-              <i className="fa fa-money"></i>Payments
+            <span>
+              <i className="logo-heading"><FaMoneyBill/></i>Payments
             </span>
-            <hr />
           </div>
-          <div className="cards">
+          <div className="cards" style={{marginTop:"1em"}}>
             <div className="cards-info">
-              <div>
-                <hr />
-                Add New Card
-                <hr />
-              </div>
               <NewCard
                 card={card}
                 handleChange={handleChange}
@@ -98,12 +80,10 @@ const Checkout = (props) => {
               />
             </div>
             <div className="allCards">
-              <div className="address-heading">
-                <hr />
-                <span id="heading">
-                  <i className="fa fa-credit-card"></i>Select Card
+              <div className="credit-heading">
+                <span>
+                  <i className="logo-heading"><FaCreditCard/></i>Select Card
                 </span>
-                <hr />
               </div>
               {values.length > 0 ? (
                 values.map((v) => (
@@ -111,13 +91,13 @@ const Checkout = (props) => {
                 ))
               ) : (
                 <div className="address-list2">
-                  <span>No Addresses Were Added</span>
+                  <span style={{margin:"8em"}}>No Addresses Were Added</span>
                 </div>
               )}
             </div>
             <div className="block">
             <Link to="/onlinemedico/track"><button>
-            <i className="fa fa-check"></i>Make Payment
+              Make Payment
               </button></Link> 
             </div>
           </div>

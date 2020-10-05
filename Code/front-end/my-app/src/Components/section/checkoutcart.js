@@ -9,19 +9,14 @@ import {cart} from "./Cart";
   componentDidMount(){
       this.context.getTotal();
   }
-  
-  
- // const { total } = require('./Cart.js')
   render(){
     const {cart,total}=this.context;
-    ////const {things}=this.props;
-  
   return (
     
     <div>
-      <table>
-        <tbody>
-          <tr>
+      <table cellpadding="5">
+        <tbody className="check-table">
+          <tr cellspacing="4">
             {/* <td>Product</td> */}
             <td>Name</td>
             <td>Quantity</td>
@@ -32,27 +27,20 @@ import {cart} from "./Cart";
             <CartItem key={t.id} thing={t} />
           ))}
           <tr>
-            <td colSpan="3">Tax (5%): </td>
-            
-            <td> ${Math.floor(total* 5) / 100}</td>
-
-            
-            
+            <td colSpan="3">Tax (5%): </td>            
+            <td> ${Math.floor(total* 5) / 100}</td>            
           </tr>
           <tr>
             <td colSpan="3">Total(with tax): </td>
             
             <td> ${(Math.floor(total* 100) / 100)+(Math.floor(total* 5) / 100)}</td>
 
-            
-            
           </tr>
         </tbody>
       </table>
     </div>
   )
-          }
-         // }        
+}        
 };
 
 export default CheckoutCart;

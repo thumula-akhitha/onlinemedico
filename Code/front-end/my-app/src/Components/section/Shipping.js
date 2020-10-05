@@ -3,7 +3,6 @@ import "../css/shipping.css";
 import NewAddress from "./newAddress";
 import SelectAddress from "./selectAddress";
 import {DataContext} from '../Context';
-import { v1 as uuidv } from "uuid";
 import {Link} from 'react-router-dom';
 const Shipping = (props) => {
   const dataContext = useContext(DataContext);
@@ -43,7 +42,7 @@ const Shipping = (props) => {
         />
         <div className="secondpart">
           <div className={addresses.length > 0 ? "address-list" : "address-list1"}>
-            <h2>Select Address for delivery</h2>
+            <h4 style={{color:"crimson"}}>Select Address for delivery</h4>
             {addresses.length > 0 ? (
               addresses.map((v) => (
                 <SelectAddress
