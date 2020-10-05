@@ -60,4 +60,3 @@ render(){
 }
 }
 export default OrderDetails;
-  
