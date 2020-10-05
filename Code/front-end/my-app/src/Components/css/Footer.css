@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
 
 .footer-distributed{
-	background: #666;
+	/* background: #3f6c79; */
+	background: #585757;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -9,9 +10,62 @@
 	font: bold 16px sans-serif;
 	padding-left: 20px;
     padding-top: 20px;
-    font-family: 'emoji';
+	font-family: 'emoji';
+	padding-left: 67px;
+}
+.firsttoknow{
+	color: lightgray;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 15px;
 }
 
+.btnIn{
+	margin-left: 593px;
+	margin-top: -70px;
+  }
+  .clearbtn{
+	top: 0;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	color: white;
+	width: 69px;
+	background-color: #1e90ff;
+	position: relative;
+    right: 22em;
+    top: 21px;
+    height: 42px;
+  }
+.signMeUp{
+	color: white;
+	font-family: fantasy;
+    font-weight: 100;
+    font-size: 21px;
+}
+  /* .footerHEading{
+    padding-left: 4em;
+    padding-top: 3em;
+    border-bottom: 1px solid lightgrey;
+    display:flex;
+
+  } */
+  .signupemail{
+
+    padding: 12px;
+    padding-left:2em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+	resize: vertical;
+	position: relative;
+    right: 37em;
+    width: 15em;
+    top: 5em;
+
+  }
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right{
@@ -52,12 +106,33 @@
 	text-decoration: none;
 	color:  inherit;
 }
+.worksTime{
 
+	margin-top: -35px;
+	margin-left: 785px;
+}
+.workingHours{
+	font-family: sans-serif;
+    font-weight: 100;
+	color: lightgray;
+	font-size: 15px;
+}
+.timings{
+	color: lightgray;
+	margin-top: 9px;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 15px;
+
+}
 .footer-distributed .footer-company-name{
-	color:  #222;
+	/* color:  #222; */
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
+	color: lightgray;
+	margin-left: 31em;
+    margin-top: 2em;
 }
 
 /* Footer Center */
@@ -98,10 +173,15 @@
 	font-size:14px;
 	line-height:2;
 }
+.medicoLogo
+{
+	font-family: emoji;
+    color: darkgreen;
+}
 
 .footer-distributed .footer-center p a{
-	color:  lightseagreen;
-	text-decoration: none;;
+	color:  lightgray;
+	text-decoration: none;
 }
 
 .footer-distributed .footer-links a:before {
@@ -124,24 +204,46 @@
 	width: 20%;
 }
 
+.aboutCompany{
+	font-family: fantasy;
+    /* font-weight: 100; */
+	padding-top: 0px;
+	font-size: 21px;
+    font-weight: 100;
+    margin-top: 6px;
+}
 .footer-distributed .footer-company-about{
 	line-height: 20px;
 	color:  #92999f;
-	font-size: 13px;
+	/* font-size: 13px; */
 	font-weight: normal;
 	margin: 0;
+	font-family: fantasy;
+    /* font-weight: 100; */
+	padding-top: 0px;
+	font-size: 21px;
+    font-weight: 100;
+    margin-top: 6px;
 }
 
 .footer-distributed .footer-company-about span{
 	display: block;
 	color:  #ffffff;
-	font-size: 14px;
-	font-weight: bold;
 	margin-bottom: 20px;
+	font-family: fantasy;
+    /* font-weight: 100; */
+    padding-top: 0px;
+    font-size: 21px;
+    font-weight: 100;
+    margin-top: 6px;
+	
 }
 
 .footer-distributed .footer-icons{
-	margin-top: 25px;
+	position: absolute;
+    /* left: 106px; */
+    /* top: 92em; */
+    left: 9em;
 }
 
 .footer-distributed .footer-icons a{
@@ -149,17 +251,69 @@
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color:  #33383b;
-	border-radius: 2px;
-
+	background-color:  #359ad6;
+	border-radius: 17px;
 	font-size: 20px;
 	color: #ffffff;
 	text-align: center;
 	line-height: 35px;
-
-	margin-right: 3px;
+	margin-right: 9px;
 	margin-bottom: 5px;
 }
+.footer-distributed
+{
+	padding-top: 39px;
+	height: 16em;
+}
+.footer-right{
+	margin-left: -65px;
+}
+.footerMobile{
+	margin-bottom: 13px;
+	color: lightgray;
+}
+.mobilePara{
+	margin-left: 11px;
+	color: lightgray;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 15px;
+}
+.mailPara{
+	color: lightgray;
+	margin-left: 11px;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 15px;
+}
+.locationPara{
+	margin-left: 11px;
+	color: lightgray;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 15px;
+}
+.location{
+	margin-bottom: 10px;
+	margin-top: 11px;
+	color: lightgray;
+}
+.MyAccountList{
+	list-style-type: none;
+	margin-bottom:12px;
+	font-size: 14px;
+}
+.contactList{
+	color: white;
+	font-weight: 100;
+	color: lightgray;
+}
+.footer-distributed .footer-center .contactheader
+{
+	font-family: fantasy;
+    font-size: 20px;
+}
+
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
