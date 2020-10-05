@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Products from './section/Products';
 import Details from './section/Details';
-import {Route} from "react-router-dom";
+import {Route,Redirect} from "react-router-dom";
 import Cart from './section/Cart';
 import Contact from './section/Contact';
 import Shipping from './section/Shipping';
@@ -23,9 +23,11 @@ import CheckoutCart from '../Components/section/checkoutcart';
 export class Section extends Component {
     render() {
         return (
-            <div>
-            <Route path="/onlinemedico" component={Header}  />
-            <section >              
+            <section >
+                 <Route exact path="/">
+                     <Redirect to="/login" />
+                 </Route>
+                <Route path="/onlinemedico" component={Header}  />
                 <Route path="/mainadmin" component={Admin}  />                             
                 <Route path="/onlinemedico/product" component={Products} exact />
                 <Route path="/onlinemedico/product/:id" component={Details} />
@@ -37,16 +39,15 @@ export class Section extends Component {
                 <Route path="/onlinemedico/history" component={OrderHistory}/>
                 <Route path="/onlinemedico/admin" component={AdminPage}/>
                 <Route path="/onlinemedico/track" component={Tracking}/>
-                <Route path="/onlinemedico/login" component={Login}/>
+                <Route path="/login" component={Login}/>
                 <Route path="/onlinemedico/sign" component={SignIn}/>
                 <Route path="/onlinemedico/forgot" component={Forgot}/>
                 <Route path="/onlinemedico/reset" component={Reset}/>
-               
+                <Route path="/onlinemedico" component={Footer}/>
                 <Route path="/onlinemedico/checkout" component={Checkout}/>
                 <Route path="/onlinemedico/checkcart" component={CheckoutCart}/>
             </section>
-            <Route path="/onlinemedico" component={Footer}/> 
-            </div>
+            
         )
     }
 }

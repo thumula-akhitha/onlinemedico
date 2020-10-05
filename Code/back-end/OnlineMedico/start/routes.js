@@ -100,5 +100,5 @@ Route.group(() => {
   Route.get("/medicines", "MedicineController.getMedicines");
   Route.post("/updateMedicine/:medicineId", "MedicineController.updateMedicine");
   Route.delete("/medicine/:medicineId", "MedicineController.newPassword");
-  Route.get("search/:medicineCode", "MedicineController.searchProduct");
+  Route.get("/search/:medicineCode", "MedicineController.searchProduct");
 }).prefix("/onlinemedico");
