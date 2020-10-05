@@ -202,6 +202,12 @@ async addShippingAddress({request, response }) {
     await use('Database').table('shipping_addresses').insert(request.body)
     return 'added shippingaddress';
 }
+async contactUs({ request, response, auth }) {
+    console.log("cameeeee")
+    console.log(request.body)
+    await use('Database').table('contact').insert(request.body)
+        return 'File uploaded';
+}
 
 }
 // end of controller class.

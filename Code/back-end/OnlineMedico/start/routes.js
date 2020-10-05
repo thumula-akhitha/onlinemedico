@@ -48,6 +48,7 @@ Route.group(() => {
   Route.get("/address/:customerId", "CustomerController.newPassword");
   Route.get("/card-details/:customerId", "CustomerController.newPassword");
   Route.post("/addProduct", "CustomerController.addProduct");
+  Route.post("/contactUs", "CustomerController.contactUs");
 
 }).prefix("/onlinemedico/user")//.middleware("auth");
 

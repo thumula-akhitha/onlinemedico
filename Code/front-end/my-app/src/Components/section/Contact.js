@@ -3,6 +3,7 @@ import logo from '../images/contact.jpg';
 import '../css/Contact.css';
 import chat from '../images/chat.PNG';
 import helpcenter from '../images/helpcenter.PNG';
+import axios from 'axios';
 
 // import classes from './Contact.css';
 
@@ -16,6 +17,29 @@ const ImgStyle = {
 
 }
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.firstName = React.createRef();
+    this.lastName = React.createRef();
+    this.emailId = React.createRef();
+    this.comment = React.createRef();
+  }
+  handleClick() {
+    console.log("entereddd");
+    const user ={
+      firstName : this.firstName.current.value,
+      lastName : this.lastName.current.value,
+      emailId : this.emailId.current.value,
+      comment : this.comment.current.value
+    }
+    console.log(this.firstName.current.value)
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
+    axios.post(`http://127.0.0.1:3333/onlinemedico/user/contactUs`, user )
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  }
   render() {
     return (
       <div className='container-fluid'>
