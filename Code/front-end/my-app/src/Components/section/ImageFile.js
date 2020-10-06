@@ -28,6 +28,7 @@ class ImageFile extends Component {
             dob: document.getElementById('dob').value,
             fullname: document.getElementById('examplename').value
         }
+        console.log(fullname);
         const data = new FormData();
         data.append("file",this.state.selectedFile)
         data.append("name",request)
