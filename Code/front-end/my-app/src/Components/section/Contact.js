@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../images/contact.jpg';
 import '../css/Contact.css';
 import chat from '../images/chat.PNG';
+import ChatIn from './Chat/Chat';
 import helpcenter from '../images/helpcenter.PNG';
 import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
@@ -124,6 +125,7 @@ class Contact extends Component {
             </div>
           </div>
         </div>
+<ChatIn></ChatIn>
       </div>
        
     );
