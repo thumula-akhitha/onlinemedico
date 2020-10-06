@@ -1,0 +1,33 @@
+.returnItemHeader{
+    width: 69em;
+    margin-left: 2em;
+    padding-left: 18em;
+    padding-right: 31em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+   
+
+}
+.refundDetails{
+    width:20em;
+}
+.returnReason{
+    width:20em;
+}
+.returnPara{
+    margin-left: 8em;
+    margin-top: 2em;
+    font-size: 19px;
+    color: red;
+}
+
+.nextbtn{
+    height: 3em;
+    border-style: none;
+    border-radius: 7px;
+    width: 11em;
+    background-color: mediumseagreen;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 14em;
+}
