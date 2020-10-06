@@ -1,18 +1,33 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import regeneratorRuntime from "regenerator-runtime";
+import "babel-polyfill";
+import {DataContext} from '../../Context'
 import Ws from '@adonisjs/websocket-client'
-import './App.css'
+
 import {Launcher} from 'react-chat-window'
-class App extends React.Component {
-  
+class Chat extends React.Component {
+  static contextType = DataContext;
   constructor(props){
     super(props);
     this.state = {
-        value : ['this is start chat'],
+      count:0,
+      temp:false,
+        value : [{
+          author: 'them',
+          type: 'text',
+          data: {
+            text: 'Hi, Welcome to OnlineMedico.'
+          }
+        }
+       
+      
+      
+      ],
         name :" "
     }
-    this.prodctLink=React.createRef();
-    this.productChat=React.createRef();
+    
+    // this.prodctLink=React.createRef();
+    // this.productChat=React.createRef();
     this.ws = Ws('ws://localhost:3333')
      this.ws.connect()
     this.ws.on('open', () => {
@@ -20,25 +35,69 @@ class App extends React.Component {
       console.log("entered open function")
     })
 }
-addName(){
+componentDidMount(){
+  const {name} = this.context;
 
-    this.chat= this.ws.subscribe(`chat:${this.prodctLink.current.value}`)
-    this.chat.on('message', (message) => {
-      console.log("message " +message.value)
-      const a =  [...this.state.value, message.value]
-      this.setState({
-          value: a,
-          name : message.name
-      })
-      })
+  console.log("from chat window");
+  console.log(name)
+  this.chat= this.ws.subscribe(`chat:${name}`)
+  this.chat.on('message', (message) => {
+    console.log("messageeeeee " +message.value)
+    const m = this.state.count+1;
+    const a = {}
+  a.author = 'them';
+  a.type = 'text';
+  a.data={}
+  a.data.text = message.value
+ // const k2  = this.state.value.push(a)
+// const a =  [...this.state.value, a]
+    this.setState({
+        value:  [...this.state.value, a],
+        name : message.name,
+        count:m
+    })
+    })
+}
+addName(){
+            
+  console.log("cameeee")
+  this.setState({
+    count:0,
+    temp: !this.state.temp
+  })
+  return;
+  //   this.chat= this.ws.subscribe(`chat:${this.prodctLink.current.value}`)
+  //   this.chat.on('message', (message) => {
+  //     console.log("messageeeeee " +message.value)
+      
+  //     const a = {}
+  //   a.author = 'them';
+  //   a.type = 'text';
+  //   a.data={}
+  //   a.data.text = message.value
+  //  // const k2  = this.state.value.push(a)
+  // // const a =  [...this.state.value, a]
+  //     this.setState({
+  //         value:  [...this.state.value, a],
+  //         name : message.name
+  //     })
+  //     })
    
 }
 handleChange(event) {
+  const {name} = this.context;
+  console.log("valueee" + event.data.text)
     this.chat.emit('message', {
-      name : this.prodctLink.current.value,
-      value:this.productChat.current.value,
+      name : name,
+      value:event.data.text,
       first: this.state.name
     })
+  //  const k1  = this.state.value.push(event)
+    this.setState({
+      value: [...this.state.value,event],
+      
+  })
+    
  
     // 
   }
@@ -58,17 +117,23 @@ render() {
 //   </div>
 // </div>
 <div>
+{/* <input type="text" placeholder="enter email" ref={this.prodctLink}/>
+    <button className="productButton" onClick={()=>{this.addName()} }>Add to cart</button> */}
+<div>
       <Launcher
         agentProfile={{
           teamName: 'react-chat-window',
           imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
         }}
-        onMessageWasSent={()=>{this.handleChange()}}
+        onMessageWasSent={(e)=>{this.handleChange(e)}}
         messageList={this.state.value}
+        handleClick={()=>{this.addName()} }
+        isOpen = {this.state.temp}
+        newMessagesCount = {this.state.count}
         showEmoji
       />
     </div>
-
+    </div>
   )
 }
 
@@ -76,4 +141,4 @@ render() {
 
  
 
-export default App;
+export default Chat;

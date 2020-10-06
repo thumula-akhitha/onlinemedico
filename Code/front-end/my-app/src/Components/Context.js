@@ -6,6 +6,7 @@ export class DataProvider extends Component{
         super();
         this.state = {
             id: uuidv(),
+            name : "admin",
             canedit: false,
             addr: {
                 firstname: "",
@@ -141,6 +142,14 @@ export class DataProvider extends Component{
         this.setState({
             products:k
         })
+    };
+    addName = (k) => {
+        console.log("context add name page")
+        console.log(k);
+        this.setState({
+            name:k
+        })
+        console.log(this.state.name)
     };
     updateProducts = (k) => {
         this.setState({
@@ -294,12 +303,12 @@ console.log(selectedAddress);
    
 
     render() {
-        const {products,cart,total,addresses, addr, id, canedit,selectedAddress} = this.state;
-        const {addCart,reduction,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addProduct,updateProducts} = this;
+        const {products,cart,total,addresses, addr, id, canedit,selectedAddress,name} = this.state;
+        const {addCart,reduction,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addProduct,updateProducts,addName} = this;
         return (
             <DataContext.Provider 
-            value={{products, addCart, cart, reduction,increase,removeProduct,total,getTotal,
-                addAddress, addresses, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts}}>
+            value={{products, addCart, cart, reduction,increase,removeProduct,total,getTotal,name,
+                addAddress, addresses, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts,addName}}>
                 {this.props.children}
             </DataContext.Provider>
         )

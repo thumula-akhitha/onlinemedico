@@ -10,6 +10,7 @@ import Star from './section/StarComponent';
 import OrderHistory from './section/OrderHistory';
 import AdminPage from '../Components/section/Admin/AdminPage';
 import Admin from '../Components/section/Admin/Admin';
+import Chat from '../Components/section/Chat/Chat';
 import Tracking from './section/Tracking ';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
@@ -29,6 +30,7 @@ export class Section extends Component {
             <div>	
             <Route path="/onlinemedico" component={Header}  />
             <Route path="/mainadmin" component={Admin}  />  
+            
             <Route path="/" exact>
                      <Redirect to="/login" />
             </Route> 
@@ -42,6 +44,7 @@ export class Section extends Component {
                 <Route path="/onlinemedico/star" component={Star}/>
                 <Route path="/onlinemedico/history" component={OrderHistory}/>
                 <Route path="/onlinemedico/admin" component={AdminPage}/>
+                <Route path="/onlinemedico/ChatUs" component={Chat}/>
                 <Route path="/onlinemedico/track" component={Tracking}/>
                 <Route path="/login" component={Login}/>
                 <Route path="/onlinemedico/sign" component={SignIn}/>

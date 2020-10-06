@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {DataContext} from '../Context'
 import logo from "../images/medicine.png";
 import "../css/Login.css";
 import AdminHeader from "../section/Admin/AdminHeader";
@@ -9,6 +10,7 @@ class LoginForm extends React.Component {
     super(props);
     this.login = this.login.bind(this);
   }
+  static contextType = DataContext;
   login(e) {
     e.preventDefault();
     let request = {
@@ -18,12 +20,17 @@ class LoginForm extends React.Component {
     axios
       .post("http://127.0.0.1:3333/onlinemedico/user/login", request)
       .then((res) => {
+        console.log(res.data.data)
         if (res.data.message === "success") {
           document.getElementById("error").innerHTML = "";
-          this.props.history.push("/");
+          const {addName} = this.context;
+          addName(res.data.data[0].firstName);
+          this.props.history.push("/onlinemedico/product");
         }
-        if (res.data.message === "Adminsuccess") {
+       else if (res.data.message === "Adminsuccess") {
           //document.getElementById("error").innerHTML = ""
+          const {addName} = this.context;
+          addName(res.data.data[0].firstName);
           this.props.history.push("/mainadmin");
         } else if (res.data.message === "failure") {
           document.getElementById("error").innerHTML =
@@ -33,10 +40,10 @@ class LoginForm extends React.Component {
             "Email doesn't exist please enter registered email address";
         }
       })
-      .catch((err) => {
-        document.getElementById("error").innerHTML = "";
-        console.log(err);
-      });
+      // .catch((err) => {
+      //   document.getElementById("error").innerHTML = "";
+      //   console.log(err);
+      // });
   }
   render() {
     return (
