@@ -65,13 +65,12 @@ class ResetPasswordPage extends React.Component {
       confirmpassword: document.getElementById('confirmpassword').value  
 
     }
-    axios.post('http://127.0.0.1:3333/onlinemedico/newpassword', request)
+    axios.post('http://127.0.0.1:3333/onlinemedico/user/newpassword', request)
       .then(res => {
         if(res.data.message==="Password success"){  
-
           document.getElementById("error").innerHTML = "" 
           document.getElementById("resetpara").style.display = "block"
-         // this.props.history.push('/Login');
+          this.props.history.push('/Login');
         }
         else {
           document.getElementById("resetpara").style.display = "none"

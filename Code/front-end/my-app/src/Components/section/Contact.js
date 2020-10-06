@@ -4,6 +4,9 @@ import '../css/Contact.css';
 import chat from '../images/chat.PNG';
 import helpcenter from '../images/helpcenter.PNG';
 import axios from 'axios';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
+
 
 // import classes from './Contact.css';
 
@@ -24,7 +27,7 @@ class Contact extends Component {
     this.emailId = React.createRef();
     this.comment = React.createRef();
   }
-  handleClick() {
+   handleClick = () => {
     console.log("entereddd");
     const user ={
       firstName : this.firstName.current.value,
@@ -39,6 +42,13 @@ class Contact extends Component {
         console.log(res);
         console.log(res.data);
       })
+      NotificationManager.info('Our Team will contact you soon','we have received your message',8000);
+      setTimeout(()=>{
+      this.firstName.current.value=" ";
+      this.lastName.current.value=" ";
+      this.emailId.current.value=" ";
+      this.comment.current.value=" ";
+    },8000);
   }
   render() {
     return (
@@ -57,7 +67,7 @@ class Contact extends Component {
                     <label className="fname">First Name</label>
                   </div>
                   <div class="col-70">
-                    <input className="firstname" type="text" id="fname" name="firstname" placeholder="Your name.." />
+                    <input className="firstname" type="text" id="fname" name="firstname" placeholder="Your name.." ref={this.firstName} required/>
                   </div>
                 </div>
                 <div class="row">
@@ -65,7 +75,7 @@ class Contact extends Component {
                     <label className="lname">Last Name</label>
                   </div>
                   <div class="col-80">
-                    <input className='lastName' type="text" id="lname" name="lastname" placeholder="Your last name.." />
+                    <input className='lastName' type="text" id="lname" name="lastname" placeholder="Your last name.." ref={this.lastName} required/>
                   </div>
                 </div>
                 <div class="row">
@@ -73,7 +83,7 @@ class Contact extends Component {
                     <label className='email'>Email ID</label>
                   </div>
                   <div class="col-80">
-                    <input className='emailid' type='text' id='email' name='email' placeholder='Email' />
+                    <input className='emailid' type='text' id='email' name='email' placeholder='Email' ref={this.emailId} required />
                   </div>
                 </div>
                 <div class="row">
@@ -81,12 +91,13 @@ class Contact extends Component {
                     <label className='comment'>Comment</label>
                   </div>
                   <div class="col-80">
-                    <textarea className='commentArea' id="comment" name="Comment" placeholder="Your comments here.." ></textarea>
+                    <textarea className='commentArea' id="comment" name="Comment" placeholder="Your comments here.." ref={this.comment}></textarea>
                   </div>
                 </div>
                 <div class="row">
-                  <input className='contactSubmit' type="submit" value="Submit" />
+                  <input className='contactSubmit' type="submit" value="Submit" onClick={this.handleClick} />
                 </div>
+                <NotificationContainer/>
               </div>
             </div>
             <div className="col-4">
@@ -114,7 +125,7 @@ class Contact extends Component {
           </div>
         </div>
       </div>
-
+       
     );
   }
 

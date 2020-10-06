@@ -2,6 +2,8 @@ import { Card } from 'react-bootstrap';
 import React, { Component} from 'react';
 import axios from 'axios';
 import '../../css/Admin.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 class AdminPage extends Component {
@@ -29,6 +31,8 @@ class AdminPage extends Component {
         console.log(res);
         console.log(res.data);
     }) 
+        NotificationManager.success(' ','Added product to the products', 11000);
+
       }
     render() {
             return (
@@ -81,7 +85,9 @@ class AdminPage extends Component {
                         onClick={()=>this.addedAlert()}>Add Item</button>
                         </form>
                     </Card.Text>
+                    <NotificationContainer/>
                 </Card>
+                
             )
     }
 

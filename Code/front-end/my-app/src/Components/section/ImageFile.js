@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../css/ImageFile.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 class ImageFile extends Component {
     state = {
@@ -14,6 +18,10 @@ class ImageFile extends Component {
         })
     }
     fileuploader = () => {
+        confirmAlert({
+            title: 'Confirm to submit',
+            message: 'Are you sure to do this.',
+          });
         let request = {
             email: document.getElementById('exampleInputEmail1').value,
             dob: document.getElementById('dob').value
@@ -30,6 +38,12 @@ class ImageFile extends Component {
             .then(res => {
                 console.log(res);
             }).catch(err=> console.log("error occurred"))
+
+      NotificationManager.success('we have received your prescription','you will get an message from us regarding accepting of your prescription',8000);
+      setTimeout(()=>{
+        document.getElementById('exampleInputEmail1').value = " ",
+        document.getElementById('dob').value = " "
+    },8000);
     }
     render() {
         let uploadbutton = null;      

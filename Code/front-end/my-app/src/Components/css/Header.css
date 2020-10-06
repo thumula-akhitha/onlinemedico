@@ -6,7 +6,7 @@ header{
     overflow: hidden;
     /* background-color: #a5f0d8; */
     /* background: #585757 */
-    background: #43614a
+    background: #afd9d0
 
 }
 
@@ -50,7 +50,7 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     text-transform: uppercase;
-    color: lightgray;
+    color: white;
     padding: 0 15px;
 }
 nav ul li a:hover{

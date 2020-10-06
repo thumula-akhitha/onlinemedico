@@ -205,9 +205,61 @@ async addShippingAddress({request, response }) {
 async contactUs({ request, response, auth }) {
     console.log("cameeeee")
     console.log(request.body)
-    await use('Database').table('contact').insert(request.body)
+    await use('Database').table('contactuses').insert(request.body)
         return 'File uploaded';
 }
+
+
+// This function sends an confirmation email to the user regarding upload prescription
+
+async uploadConfirmation({ request, response, auth }) {
+    const { email } = request.body;
+    const customerRecord = await Customer.query().where("email", "=", email).fetch();
+    if (customerRecord.toJSON().length > 0) {
+        try {
+            var transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'onlinemedico782@gmail.com',
+                    pass: 'OnlineMedico782'
+                },
+            });
+            var mailOptions = {
+                from: 'onlinemedico782@gmail.com',
+                to: email,
+                subject: 'Confirmation regarding your prescription',
+                html: `<p style="font-size:18px; font-weight:bold;">Hi ${customerRecord.toJSON()[0].fullName},</p><p style="font-size:18px;">your prescription is approved and order has been placed successfully</p>`,
+                text: '' 
+            }
+            await transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    return response.status(401).json({
+                        error: {
+                            status: 401,
+                            message: "Please check email correctly",
+                        },
+                    });
+                }
+                else {
+                    return response.json({
+                        message: "Success",
+                    })
+                }
+            })
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
+    else {
+        return response.json({
+            message: "error",
+
+        });
+    }
+}
+
+
 
 }
 // end of controller class.
