@@ -28,9 +28,13 @@ class ImageFile extends Component {
             dob: document.getElementById('dob').value,
             fullname: document.getElementById('examplename').value
         }
+        let k = document.getElementById('exampleInputEmail1').value;
+        let k1 = document.getElementById('dob').value;
+        console.log(fullname);
         const data = new FormData();
         data.append("file",this.state.selectedFile)
-        data.append("name",request)
+        data.append("name",k)
+        data.append("date",k1)
         axios.post('http://127.0.0.1:3333/onlinemedico/uploadPrescription', data, 
             {
                 onUploadProgress: progressEvent => {
