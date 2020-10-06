@@ -10,7 +10,13 @@ class PastOrder extends Component {
     super(props);
 
   }
+//    orderGenerator = () => {
+//     axios.post('http://127.0.0.1:3333/onlinemedico/ordered','') 
+//         .then(response => {
+//             console.log(response);
+//         }).catch(err=> console.log("error occurred"))
 
+// }
   render() {
     return (
       <Container id="orderContainer">

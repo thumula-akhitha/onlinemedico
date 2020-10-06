@@ -17,6 +17,7 @@ class ImageFile extends Component {
             FileName: event.target.files[0].name,            
         })
     }
+    
     fileuploader = () => {
         confirmAlert({
             title: 'Confirm to submit',
@@ -24,7 +25,8 @@ class ImageFile extends Component {
           });
         let request = {
             email: document.getElementById('exampleInputEmail1').value,
-            dob: document.getElementById('dob').value
+            dob: document.getElementById('dob').value,
+            fullname: document.getElementById('examplename').value
         }
         const data = new FormData();
         data.append("file",this.state.selectedFile)
@@ -58,9 +60,13 @@ class ImageFile extends Component {
                 <button className="up-btn btn" onClick={() => this.fileInput.click()}>Select A File</button>                
                 <div className="FileLabel">
                 <div>
-                    <label className="image-label">Enter FullName</label>
+                    <label className="image-label">Enter Email</label>
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required/>
                     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div>
+                    <label className="image-label">Enter FullName</label>
+                    <input type="text" className="form-control" id="examplename" aria-describedby="Fullname" placeholder="Enter FullName" required/>
                 </div>
                 <div className="form-group">
                     <label className="image-label">DOB</label>
@@ -71,6 +77,7 @@ class ImageFile extends Component {
                 <div className="upload-btn">
                     {uploadbutton}
                 </div>
+                <button onClick={this.orderGenerator}>clickme!</button>
                 </div>
                         
         )
