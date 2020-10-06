@@ -44,77 +44,70 @@ export class DataProvider extends Component{
         ],
         selectedAddress:{},
         products:[
-            {   id:'1',
-                title:'paracetamol',
-                price:'4.99',
-                src:'https://i.dailymail.co.uk/1s/2020/08/03/13/31507884-0-image-a-18_1596458510405.jpg',
-                description:'Fever and bodypains',
-                count: 1
-            },
-            {
-                id:'2',
-                title:'nytQuill',
-                price:'11.99',
-                src:"https://coupons.hunt4freebies.com/wp-content/uploads/2017/12/DayQuil-NyQuil.png",
-                description:"Fever and bodypains",
-                count: 1,
-            },
-            {
-                id:'3',
-                title:'Cetirizine',
-                price:'4.99',
-                src:"https://content.jdmagicbox.com/quickquotes/images_main/cetirizine-dihydrochloride-tablets-ip-10mg-347254771-dnps5.jpg",
-                description:'fever,allergy symptoms',
-                count: 1,
-            },
-            {
-                id:'4',
-                title:'Meftal',
-                price:'11.99',
-                src:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROD1ZbcFjU9mwn5q1YpcXIYb3E59W-9HNBfg&usqp=CAU',
-                description:'To treat of abdominal pain',
-                count: 1,
-            },
-            {
-                id:'5',
-                title:'Equaline',
-                price:'11.99',
-                src:'https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00041163488403/0105747a6381ae2fc1c6f294baffca9c_large.png&width=512&type=webp&quality=40',
-                description:'Headache Reliever',
-                count: 1,
-            },
-            {
-                id:'6',
-                title:'Migraine',
-                price:'4.99',
-                src:'https://www.dollargeneral.com/media/catalog/product/cache/6e5ff7de2a46bb5e4325e62839d28016/d/g/dghl_migraine_relief_50ct_2.jpg',
-                description:'Migraine Reliever',
-                count: 1,
-            },
-            {
-                id:'7',
-                title:'Koflet',
-                price:'4.99',
-                src:'https://www.dowa.co/content/images/thumbs/0005440_koflet-syrup-200-ml_600.jpeg',
-                description:'Cough Syrup',
-                count: 1,
-            },
-            {
-                id:'8',
-                title:'Panado',
-                price:'11.99',
-                src:"https://cdn-prd-02.pnp.co.za/sys-master/images/h58/he0/9268395573278/silo-6009695584769-front-317817_400Wx400H",
-                description:"rapid pain,fever reliever",
-                count: 1,
-            },
-            {
-                id:'9',
-                title:'Hyaluronic Acid',
-                price:'4.99',
-                src:'https://skinbeautysolutions.com/wp-content/uploads/2018/11/1oz-hyaluronic-skin-serum-ha-skin-serum-for-face-repair-pills.jpg',
-                description:'treats burns,wounds,skin ulcers',
-                count: 1
-            },
+            // {   id:'11',
+            //     title:'paracetamol',
+            //     price:'4.99',
+            //     src:'https://i.dailymail.co.uk/1s/2020/08/03/13/31507884-0-image-a-18_1596458510405.jpg',
+            //     description:'Fever and bodypains',
+            //     count: 1
+            // },
+            // {
+            //     id:'12',
+            //     title:'nytQuill',
+            //     price:'11.99',
+            //     src:"https://coupons.hunt4freebies.com/wp-content/uploads/2017/12/DayQuil-NyQuil.png",
+            //     description:"Fever and bodypains",
+            //     count: 1,
+            // },
+            // {
+            //     id:'13',
+            //     title:'Cetirizine',
+            //     price:'4.99',
+            //     src:"https://content.jdmagicbox.com/quickquotes/images_main/cetirizine-dihydrochloride-tablets-ip-10mg-347254771-dnps5.jpg",
+            //     description:'fever,allergy symptoms',
+            //     count: 1,
+            // },
+            // {
+            //     id:'14',
+            //     title:'Meftal',
+            //     price:'11.99',
+            //     src:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROD1ZbcFjU9mwn5q1YpcXIYb3E59W-9HNBfg&usqp=CAU',
+            //     description:'To treat of abdominal pain',
+            //     count: 1,
+            // },
+            // {
+            //     id:'15',
+            //     title:'Equaline',
+            //     price:'11.99',
+            //     src:'https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00041163488403/0105747a6381ae2fc1c6f294baffca9c_large.png&width=512&type=webp&quality=40',
+            //     description:'Headache Reliever',
+            //     count: 1,
+            // },
+            // {
+            //     id:'16',
+            //     title:'Migraine',
+            //     price:'4.99',
+            //     src:'https://www.dollargeneral.com/media/catalog/product/cache/6e5ff7de2a46bb5e4325e62839d28016/d/g/dghl_migraine_relief_50ct_2.jpg',
+            //     description:'Migraine Reliever',
+            //     count: 1,
+            // },
+            // {
+            //     id:'17',
+            //     title:'Koflet',
+            //     price:'4.99',
+            //     src:'https://www.dowa.co/content/images/thumbs/0005440_koflet-syrup-200-ml_600.jpeg',
+            //     description:'Cough Syrup',
+            //     count: 1,
+            // },
+            // {
+            //     id:'18',
+            //     title:'Panado',
+            //     price:'11.99',
+            //     src:"https://cdn-prd-02.pnp.co.za/sys-master/images/h58/he0/9268395573278/silo-6009695584769-front-317817_400Wx400H",
+            //     description:"rapid pain,fever reliever",
+            //     count: 1,
+            // },
+            
             
         ],
             
@@ -123,6 +116,7 @@ export class DataProvider extends Component{
 
     }
     addCart = (id) => {
+        alert("Product is added to cart")
         const { products, cart } = this.state;
         const check = cart.every(item => {
             return item.id !== id
@@ -140,6 +134,7 @@ export class DataProvider extends Component{
         console.log("context add product page")
         console.log(k);
         this.setState({
+            //products:[...this.state.products,...k]
             products:k
         })
     };
@@ -286,19 +281,19 @@ console.log(selectedAddress);
     };
     
     componentDidUpdate(){
-        localStorage.setItem('dataCart', JSON.stringify(this.state.cart))
-        localStorage.setItem('dataTotal', JSON.stringify(this.state.total))
+      //  localStorage.setItem('dataCart', JSON.stringify(this.state.cart))
+       // localStorage.setItem('dataTotal', JSON.stringify(this.state.total))
     };
 
     componentDidMount(){
-        const dataCart = JSON.parse(localStorage.getItem('dataCart'));
-        if(dataCart !== null){
-            this.setState({cart: dataCart});
-        }
-        const dataTotal = JSON.parse(localStorage.getItem('dataTotal'));
-        if(dataTotal !== null){
-            this.setState({total: dataTotal});
-        }
+        // const dataCart = JSON.parse(localStorage.getItem('dataCart'));
+        // if(dataCart !== null){
+        //     this.setState({cart: dataCart});
+        // }
+        // const dataTotal = JSON.parse(localStorage.getItem('dataTotal'));
+        // if(dataTotal !== null){
+        //     this.setState({total: dataTotal});
+        // }
     }
    
 
