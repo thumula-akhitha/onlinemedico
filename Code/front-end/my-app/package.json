@@ -111,6 +111,9 @@
   "babel": {
     "presets": [
       "react-app"
+      "react-app",
+      "es2015",
+      "stage-0"
     ],
     "plugins": [
       "babel-plugin-transform-runtime"

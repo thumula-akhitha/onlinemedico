@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import regeneratorRuntime from "regenerator-runtime";
 import "babel-polyfill";
+import './Chat.css';
 import {DataContext} from '../../Context'
 import Ws from '@adonisjs/websocket-client'
 
