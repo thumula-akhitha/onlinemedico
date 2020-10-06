@@ -7,10 +7,12 @@ import Card from "./cards";
 import Address from "./address";
 import NewCard from "./newCard";
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 ///import {DataContext} from '../Context';
+ 
 const Checkout = (props) => {
-  //const dataContext = useContext(DataContext);
-  //const {selectedAddress}=dataContext;
+  
+ 
   const [values, setValues] = useState([]);
   const [card, setCard] = useState({
     nameOnCard: "",
@@ -35,6 +37,7 @@ const Checkout = (props) => {
       id: id,
       CardAdded: card
     };
+   
 
     // console.log(newCard);
     const updatelist = [...values, newCard];
@@ -50,6 +53,8 @@ const Checkout = (props) => {
       cvv: ""
     });
   };
+  
+   
   return (
     <div className="checkout">
       <div className="mainheading">
@@ -99,6 +104,7 @@ const Checkout = (props) => {
             <Link to="/onlinemedico/track"><button>
               Make Payment
               </button></Link> 
+             
             </div>
           </div>
         </div>

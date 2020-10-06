@@ -1,0 +1,176 @@
+.baby{
+    color: black;
+    font-family: serif;
+    position: absolute;
+     /* top: 8em; */
+     font-size: 37px;
+     margin-left: 10em;
+     margin-top: 370px;
+     font-weight: bolder;
+ } 
+ .walmrt{
+   width: 10em;
+   height: 95px;
+   margin-top: 19px;
+ }
+ .walgreens
+ {
+   width: 10em;
+     height: 6em;
+     margin-top: 18px;
+ }
+ .cvs{
+   width: 10em;
+   height: 6em;
+   margin-top: 18px;
+ }
+ .storesLogo
+ {
+   margin-left: 7em;
+   margin-right: 10em;
+   margin-top: 2em;
+   margin-bottom: 3em;
+   background-color: cadetblue;
+ }
+ .accept
+ {
+   margin-left: 16em;
+   margin-top: 3em;
+   font-weight: 900;
+   font-size: 20px;
+ }
+ .hyvee{
+   width: 9em;
+     height: 6em;
+     margin-top: 18px;
+ }
+ .target{
+   width: 10em;
+     height: 5em;
+     margin-top: 12px;
+ }
+ .minute{
+   width: 10em;
+   height: 6em;
+   margin-top: 18px;
+ }
+ .babyCareDesc{
+   position: absolute;
+     margin-top: 430px;
+     margin-left: 13em;
+     font-size: 20px;
+ }
+ .carousel-inner{
+   height: 30em;
+ }
+ .babyCare
+ {
+    margin-bottom: 54em;
+    top: 4em;
+    font-weight: bolder;
+    color: black;
+    font-family: serif;
+ }
+ .skincare
+ {
+    top: 137px;
+    font-family: serif;
+    font-size: 24px;}
+ .carousal-caption
+ {
+    margin-bottom: 25em;
+    margin-left: 42em;
+ }
+ #viewMore{
+   margin-top: 2em;
+   border-radius: 2em;
+   width: 9em;
+   padding: 10px;
+ }
+ #shopbtn
+ {
+   margin-top: 2em;
+   border-radius: 2em;
+   width: 9em;
+   padding: 11px;
+    
+ }
+ #BabyCareBtn
+ {
+   position: absolute;
+     top: 30em;
+     margin-top: 2em;
+     border-radius: 2em;
+     width: 8em;
+     padding: 9px;
+ }
+ .quickImg{
+   width: 8em;
+   margin-left: 4em
+ }
+ .Delivery{
+   width: 8em;
+   height: 100px;
+   margin-top: 21px;
+ }
+ .service{
+   background-color: lavender;
+   margin-right: 4em;
+   margin-left: 2em;
+   
+ }
+ .careImage
+ {
+   margin-left: 4em;
+     height: 7em;
+     width: 9em;
+ 
+ }
+ .TrackImg{
+   width: 9em;
+   height: 109px;
+   margin-top: 21px;
+ }
+ .quickDesc
+ {
+   margin-left: 3em;
+   margin-bottom: 1em;
+   font-weight: bold;
+   font-size: 19px;
+   margin-top: 28px;
+ }
+ .deliveryDesc{
+   font-size: 19px;
+   font-weight: bold;
+   margin-top: 29px;
+ }
+ .careDesc{
+   font-size: 19px;
+   font-weight: bold;
+   margin-left: 53px;
+   margin-bottom: 1em;
+ 
+ }
+ .trackDesc{
+   font-size: 19px;
+   font-weight: bold;
+ 
+ }
+ .serviceHeader
+ {
+   margin-top: 2em;
+   font-size: 2em;
+   margin-left: 4em;
+   font-weight: bold;
+   margin-bottom: 29px;
+ }
+ .servicesDesc
+ {
+   margin-left: 2em;
+   font-size: 19px;
+ }
+ .servicesPara
+ {
+   background-color: lavender;
+   margin-left: 54px;
+ }

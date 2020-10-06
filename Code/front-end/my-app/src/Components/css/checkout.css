@@ -7,15 +7,17 @@
   height: auto;
 }
 .mainheading {
-  background: #2d2d2d;
   text-align: center;
   width: 100%;
   padding: 1px;
   margin-bottom: 2px;
+  height: 1em;
 }
 .mainheading h2 {
-  color: whitesmoke;
+  background: #66ccaf;
+  color: black;
   font-size: 30px;
+  padding: 0.1em
 }
 
 .first-block {
@@ -26,23 +28,25 @@
   height: auto;
 }
 .address-card {
+  margin-top: 14px;
+  margin-bottom: 15px;
   text-align: center;
+  margin-left: 1em;
 }
 .address-card p {
   font-size: 15px;
 }
-td {
-  text-align: left;
-  color: #123456;
-  font-size: 20px;
-  width: auto;
-  padding: 2px;
-}
 .address-heading {
   text-align: center;
   font-size: 20px;
-  padding: 5px;
+  font-weight: bold;padding : 5px;
+}
+.credit-heading {
+  text-align: center;
+  font-size: 20px;
   font-weight: bold;
+  background-color: #a3beab;
+  padding: 10px 30px;
 }
 #email {
   color: black;
@@ -63,11 +67,19 @@ td {
 .cartitem div {
   margin: 5px;
 }
+.logo-heading{
+  margin-right:0.5em;
+}
 
-.cart {
+.check-cart {
   text-align: center;
   margin-top: 1px;
+  margin-left: 2em;
+  height: 20em;
+  background-image: linear-gradient(rgb(120, 170, 165), rgb(209, 196, 196));
+  border-radius:10px;
 }
+
 td {
   margin: 0;
   width: 25px;
@@ -78,11 +90,17 @@ td img {
   width: auto;
 }
 tr {
-  background: lightgray;
+  font-weight:bolder;
 }
-.cart table {
+.check-cart table{
   width: 100%;
   margin: 2px;
+  height: 15em;
+  
+}
+.check-table{
+  background-image: linear-gradient(rgb(120, 170, 165), rgb(209, 196, 196));
+  border-radius:10px;
 }
 .block {
   display: flex;
@@ -92,9 +110,9 @@ tr {
   margin: 10px;
 }
 .block button {
-  background-color: #123456;
+  background-color:#2edbaa;
   padding: 15px;
-  color: white;
+  color: black;
   font-size: 15px;
   border: none;
   width: 200px;
@@ -123,29 +141,32 @@ input[type="number"] {
   padding: 10px;
   background: #010701;
   border: none;
-  width: 100px;
   color: whitesmoke;
   font-weight: bold;
 }
 .allCards {
   overflow-y: scroll;
-  height: 250px;
+  height:33em;
+  width: 32em;
+  margin-left:4.5em;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  border-radius : 5px;
 }
-.cardDetails {
+#cardDetails {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
   border-radius: 5px;
-  /* width: 250px; */
+  background-image: linear-gradient(rgb(165, 209, 184), rgb(241, 236, 236));
+  width: 19em;
   padding: 5px;
-  margin: 1px;
-  background: #3367a3;
+  margin: 1em;
 }
 
-.cardDetails p {
+#cardDetails p {
   margin: 0;
   font-weight: bold;
-  color: whitesmoke;
+  color: black;
 }
 .addCardButton button {
   text-align: center;
@@ -160,4 +181,10 @@ input[type="radio"] {
 }
 .cardSelect {
   padding-top: 50px;
+}
+.cardSelect button{
+    color: red;
+    width: 23px;
+    padding: 0.2em;
+    border: 1px transparent;
 }

@@ -23,6 +23,7 @@ import CheckoutCart from '../Components/section/checkoutcart';
 import Logout from '../Components/section/Logout';
 import OrderDetails from '../Components/section/OrderDetails'; 
 import PastOrder from '../Components/section/PastOrder';
+import Home from '../Components/section/Home';
 
 export class Section extends Component {
     render() {
@@ -34,7 +35,8 @@ export class Section extends Component {
             <Route path="/" exact>
                      <Redirect to="/login" />
             </Route> 
-            <section >                                                         
+            <section >  
+                <Route path="/onlinemedico/home" component={Home} />                                                       
                 <Route path="/onlinemedico/product" component={Products} exact />
                 <Route path="/onlinemedico/product/:id" component={Details} />
                 <Route path="/onlinemedico/cart" component={Cart} />
