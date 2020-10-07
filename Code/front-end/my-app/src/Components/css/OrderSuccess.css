@@ -16,7 +16,7 @@
 }
 .deliveryDate{
     position: absolute;
-    top: 12em;
+    top: 321px;
     left: 37em;
     font-size: 21px;
 }
@@ -26,4 +26,25 @@
     top: 18em;
     font-size: 21px;
     left: 37em;
+}
+.thanksAddrs
+{
+    margin-left: 39em;
+    margin-top: -131px;
+}
+.orderdet{
+        color: #0066ff;
+}
+
+.confirmPara{
+    font-size: 20px;
+}
+.successImg{
+    width: 42px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.OrderHeading{
+    background-color: ghostwhite;
+    height:29em;
 }
