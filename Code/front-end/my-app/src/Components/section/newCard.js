@@ -122,7 +122,6 @@ const NewCard = ({ card, handleChange, handleSubmit }) => {
                 id="btn-block"
                 className="btn btn-lg"
                 type="submit"
-                onClick={this.addshipping}
               >
                 Add Card
               </button>

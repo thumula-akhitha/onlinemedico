@@ -10,7 +10,7 @@ class NewAddress extends React.Component {
     this.cusstate=React.createRef(); 
     this.cuszip=React.createRef(); 
 }
-   addshipping=()=>{
+addedshipping=()=>{
       const addshippingaddress={
         customername: this.cusname.current.value,
         mobile: this.cusmobile.current.value,
@@ -132,7 +132,7 @@ class NewAddress extends React.Component {
                 </label>
               </div>
               <div className="submit-button">
-                <button type="submit" class="btn btn-info" onClick={this.addshipping}>
+                <button type="submit" class="btn btn-info" onClick={this.addedshipping}>
                   {canedit ? "Update Address" : "Add Address"}
                 </button>
               </div>
