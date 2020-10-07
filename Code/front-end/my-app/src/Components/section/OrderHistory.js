@@ -34,9 +34,9 @@ const OrderHistory = (props) => {
     if(returnItem == true){
         return <ReturnItem returnArray = {cardInfo}/>
     }
-    // if(reviewStatus==true){
-    //     return <Review orderedArray = { cardInfo }/>
-    // }
+    if(reviewStatus==true){
+        return <Review orderedArray = { cardInfo }/>
+    }
     else{
     // const renderCard = (card, index) => {
         return (
@@ -74,7 +74,7 @@ const OrderHistory = (props) => {
                             </div>
                             <div className='row'>
                             <Link to="/onlinemedico/orderDetails" className='reciept'>Order Details</Link>
-                                {/* <p className='reciept'>Order Details </p> */}
+                               
                             </div>
                         </div>
 
