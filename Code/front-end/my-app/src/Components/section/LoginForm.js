@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
           document.getElementById("error").innerHTML = "";
           const {addName} = this.context;
           addName(res.data.data[0].firstName);
-          this.props.history.push("/onlinemedico/product");
+          this.props.history.push("/onlinemedico/home");
         }
        else if (res.data.message === "Adminsuccess") {
           //document.getElementById("error").innerHTML = ""
