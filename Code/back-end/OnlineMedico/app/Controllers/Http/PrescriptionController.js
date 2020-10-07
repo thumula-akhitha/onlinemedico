@@ -5,7 +5,7 @@ class PrescriptionController {
    // This method is used for file upload for prescription.
     async fileUploader({ request, response, auth }) {
       console.log("enteererer")
-    const scenarioFiles = {}
+    let scenarioFiles = {},names
     
      await request.multipart.file('file', {}, async function (file) {
           const fileContent = await getStream.buffer(file.stream)
@@ -16,24 +16,18 @@ class PrescriptionController {
             
          
       })
-      await request.multipart.field((name,value)=>{
+      await request.multipart.field((name1,value)=>{
      
-        scenarioFiles.email = value
+        scenarioFiles.email = `${value}`
         
-        console.log("good valueee " +name + " "+value )
+        console.log("good valueee " +name1 + " "+value)
       });
-     await  request.multipart.field((date,value)=>{
-        scenarioFiles.dob = value
-        
-        console.log("good valueee " +date + " "+value )
-      });
-     
-     
+    
     
       await request.multipart.process()
     
       // now all files have been processed
-      await use('Database').table('files').insert(scenarioFiles)
+      await use('Database').table('prescription').insert(scenarioFiles)
         return 'File uploaded';
     }
 }

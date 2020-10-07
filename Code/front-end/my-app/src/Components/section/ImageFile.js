@@ -19,22 +19,22 @@ class ImageFile extends Component {
     }
     
     fileuploader = () => {
-        confirmAlert({
-            title: 'Confirm to submit',
-            message: 'Are you sure to do this.',
-          });
+        // confirmAlert({
+        //     title: 'Confirm to submit',
+        //     message: 'Are you sure to do this.',
+        //   });
         let request = {
             email: document.getElementById('exampleInputEmail1').value,
             dob: document.getElementById('dob').value,
             fullname: document.getElementById('examplename').value
         }
+        //console.log(fullname);
         let k = document.getElementById('exampleInputEmail1').value;
         let k1 = document.getElementById('dob').value;
-        console.log(fullname);
         const data = new FormData();
         data.append("file",this.state.selectedFile)
-        data.append("name",k)
-        data.append("date",k1)
+        data.append("name1",k)
+       // data.append("date",k1)
         axios.post('http://127.0.0.1:3333/onlinemedico/uploadPrescription', data, 
             {
                 onUploadProgress: progressEvent => {
@@ -45,11 +45,11 @@ class ImageFile extends Component {
                 console.log(res);
             }).catch(err=> console.log("error occurred"))
 
-      NotificationManager.success('we have received your prescription','you will get an message from us regarding accepting of your prescription',8000);
-      setTimeout(()=>{
-        document.getElementById('exampleInputEmail1').value = " ",
-        document.getElementById('dob').value = " "
-    },8000);
+    //   NotificationManager.success('we have received your prescription','you will get an message from us regarding accepting of your prescription',8000);
+    //   setTimeout(()=>{
+    //     document.getElementById('exampleInputEmail1').value = " ",
+    //     document.getElementById('dob').value = " "
+    // },8000);
     }
     render() {
         let uploadbutton = null;      
