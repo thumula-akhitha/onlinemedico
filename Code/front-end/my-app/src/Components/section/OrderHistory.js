@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 // import Review from './Review';
 import Tracking from './Tracking ';
 import {Link} from 'react-router-dom';
-// import ReturnItem from './ReturnItem';
+import ReturnItem from './ReturnItem';
 
 
 
@@ -31,9 +31,9 @@ const OrderHistory = (props) => {
     {
         return <Tracking trackingArray= {cardInfo}/>
     }
-    // if(returnItem == true){
-    //     return <ReturnItem returnArray = {cardInfo}/>
-    // }
+    if(returnItem == true){
+        return <ReturnItem returnArray = {cardInfo}/>
+    }
     // if(reviewStatus==true){
     //     return <Review orderedArray = { cardInfo }/>
     // }

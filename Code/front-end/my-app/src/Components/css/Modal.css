@@ -1,0 +1,15 @@
+.returnConfirm{
+  color:black;
+  margin-left: 14em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.returnMail{
+  color:black;
+  padding-left: 76px;
+    font-size: 21px;
+}
+.returnCard{
+  width: 50em;
+  height: 18em;
+}
