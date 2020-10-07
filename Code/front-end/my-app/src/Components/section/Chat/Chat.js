@@ -20,15 +20,10 @@ class Chat extends React.Component {
             text: 'Hi, Welcome to OnlineMedico.'
           }
         }
-       
-      
-      
       ],
         name :" "
     }
-    
-    // this.prodctLink=React.createRef();
-    // this.productChat=React.createRef();
+
     this.ws = Ws('ws://localhost:3333')
      this.ws.connect()
     this.ws.on('open', () => {
@@ -67,23 +62,6 @@ addName(){
     temp: !this.state.temp
   })
   return;
-  //   this.chat= this.ws.subscribe(`chat:${this.prodctLink.current.value}`)
-  //   this.chat.on('message', (message) => {
-  //     console.log("messageeeeee " +message.value)
-      
-  //     const a = {}
-  //   a.author = 'them';
-  //   a.type = 'text';
-  //   a.data={}
-  //   a.data.text = message.value
-  //  // const k2  = this.state.value.push(a)
-  // // const a =  [...this.state.value, a]
-  //     this.setState({
-  //         value:  [...this.state.value, a],
-  //         name : message.name
-  //     })
-  //     })
-   
 }
 handleChange(event) {
   const {name} = this.context;
@@ -123,7 +101,7 @@ render() {
 <div>
       <Launcher
         agentProfile={{
-          teamName: 'react-chat-window',
+          teamName: 'Chat with us!!!',
           imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
         }}
         onMessageWasSent={(e)=>{this.handleChange(e)}}

@@ -11,8 +11,6 @@ import axios from 'axios';
 ///import {DataContext} from '../Context';
  
 const Checkout = (props) => {
-  
- 
   const [values, setValues] = useState([]);
   const [card, setCard] = useState({
     nameOnCard: "",
