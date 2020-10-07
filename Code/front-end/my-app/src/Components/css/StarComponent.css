@@ -1,4 +1,11 @@
 .starrating{
+    /* font-size: 2em !important;
+    color:lightgray; */
     font-size: 2em;
-    color:lightgray;
+    display: inline-block;
+}
+.closeImg{
+    width: 10px;
+    margin-left: 31em;
+    margin-top: -80px;
 }
