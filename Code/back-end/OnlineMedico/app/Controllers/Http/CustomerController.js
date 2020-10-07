@@ -209,6 +209,13 @@ async contactUs({ request, response, auth }) {
         return 'File uploaded';
 }
 
+// Star Component
+async review({ request, response, auth }) {
+    console.log(request.body)
+    await use('Database').table('ratings').insert(request.body)
+        return 'ratinguploaded';
+}
+
 
 // This function sends an confirmation email to the user regarding upload prescription
 

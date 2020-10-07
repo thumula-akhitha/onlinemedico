@@ -111,4 +111,5 @@ Route.group(() => {
 Route.group(() => {
   Route.post("/shippingaddress", "CustomerController.addShippingAddress");
   Route.post("/ordered","OrderController.getRandomIntBetween");
+  Route.post("/review","CustomerController.review");
 }).prefix("/onlinemedico");

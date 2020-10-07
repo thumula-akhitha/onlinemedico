@@ -16,17 +16,15 @@ class PrescriptionController {
             
          
       })
-      // await request.multipart.process()
-
-      // await request.multipart.field((name1,value)=>{
+      await request.multipart.field((name1,value)=>{
      
-      //   scenarioFiles.email = `${value}`
+        scenarioFiles.email = `${value}`
         
-      //   console.log("good valueee " +name1 + " "+value)
-      // });
-      
+        console.log("good valueee " +name1 + " "+value)
+      });
     
     
+      await request.multipart.process()
     
       // now all files have been processed
       await use('Database').table('prescription').insert(scenarioFiles)

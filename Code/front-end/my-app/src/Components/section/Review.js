@@ -9,7 +9,6 @@ class Review extends Component {
     constructor() {
         super();
         this.review = this.review.bind(this);
-
         }
         review(e) {
             e.preventDefault();
@@ -69,7 +68,7 @@ class Review extends Component {
                             <p className='publicName'>Choose your public Name</p>
                             <img className='profile' src={Profile}></img>
                             <input className='reviewName' id='reviewName' onChange={this.handleInputChange}/>
-                            <span className='errors'>{this.state.errors.publicName}</span>
+                            {/* <span className='errors'>{this.state.errors.publicName}</span> */}
                             <p className='nameChange'>You can change this name anytime in the profile</p>
                         </div>
                         <button className='reviewSubmit' onClick={(e)=>e.preventDefault()}>Submit</button>
