@@ -5,6 +5,7 @@ import {Route,Redirect} from "react-router-dom";
 import Cart from './section/Cart';
 import Contact from './section/Contact';
 import Shipping from './section/Shipping';
+
 import Upload from './section/ImageFile';
 import Star from './section/StarComponent';
 import OrderHistory from './section/OrderHistory';
@@ -40,6 +41,7 @@ export class Section extends Component {
                 <Route path="/onlinemedico/product" component={Products} exact />
                 <Route path="/onlinemedico/product/:id" component={Details} />
                 <Route path="/onlinemedico/cart" component={Cart} />
+                <Route path="/onlinemedico/home" component={Home} />
                 <Route path="/onlinemedico/contact" component={Contact}/>
                 <Route path="/onlinemedico/upload" component={Upload} exact/>
                 <Route path="/onlinemedico/shipping" component={Shipping}/>

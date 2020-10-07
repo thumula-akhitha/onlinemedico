@@ -38,18 +38,19 @@ export class Header extends Component {
         <nav>
           <ul className={toggle ? "toggle" : ""}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/onlinemedico/home">Home</Link>
             </li>
             <li>
               <Link to="/onlinemedico/product">Product</Link>
             </li>
-            <li>
-              <Link to="/onlinemedico/contact">Contact</Link>
-            </li>
+            
             <li>
               <Link to="/onlinemedico/upload">UploadPrescription</Link>
             </li>
-           
+            <li>
+              <Link to="/onlinemedico/contact">Contact</Link>
+            </li>
+            
             <li className="close" onClick={this.menuToggle}>
               <img src={Close} alt="" width="20" />
             </li>
