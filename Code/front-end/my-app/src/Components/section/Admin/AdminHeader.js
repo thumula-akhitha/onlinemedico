@@ -34,7 +34,7 @@ export class AdminHeader extends Component {
                     <ul className={toggle ? "toggle" : ""}>
                         <li><Link to="/mainadmin/product">Product</Link></li>
                         <li><Link to="/mainadmin/addproducts">Add Products</Link></li>
-                        <li><Link to="/mainadmin/ChatUs">ChatUs</Link></li>
+                        <li><Link to="">Orders</Link></li>
                         <li><Link to="/mainadmin/logout">Logout</Link></li>
                         <li className="close" onClick={this.menuToggle}>
                             <img src={Close} alt="" width="20"/>

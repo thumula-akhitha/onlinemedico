@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Products from '../Products';
+import Products from './AdminProduct';
 import {Route} from "react-router-dom";
 import AdminPage from './AdminPage';
 import Logout from '../Logout';
