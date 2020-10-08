@@ -1,0 +1,55 @@
+.editProfileHeader{
+    width: 35em;
+    margin-left: 18em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.nameEditLabel{
+    margin-left: 2em;
+
+}
+.accountTitle{
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 5em;
+    margin-top: 18px;
+    margin-bottom: 27px;
+}
+.editName{
+    border: 2px solid lightgray;
+    margin-left: -83px;
+    border-style: 2px solid black;
+    border-radius: 7px;
+}
+.emailEditLabel{
+    margin-left: 2em;
+}
+.editEmail{
+    border: 2px solid lightgray;
+    margin-left: -83px;
+    border-style: 2px solid black;
+    border-radius: 7px;
+
+}
+.editContactLabel{
+    margin-left: 2em;
+}
+.editContact{
+    border: 2px solid lightgray;
+    margin-left: -83px;
+    border-style: 2px solid black;
+    border-radius: 7px;
+}
+.accountText
+{
+    margin-top: 3em;
+    margin-left: 2em;
+}
+.saveProfile{
+    margin-left: 10em;
+    margin-top: 2em;
+    width: 9em;
+    height: 42px;
+    border-radius: 9px;
+    background-color:  #52ce89;
+}
