@@ -19,10 +19,10 @@ class ImageFile extends Component {
     }
     
     fileuploader = () => {
-        // confirmAlert({
-        //     title: 'Confirm to submit',
-        //     message: 'Are you sure to do this.',
-        //   });
+        confirmAlert({
+            title: 'Confirm to submit',
+            message: 'Are you sure to do this.',
+          });
         let request = {
             email: document.getElementById('exampleInputEmail1').value,
             dob: document.getElementById('dob').value,
@@ -45,11 +45,11 @@ class ImageFile extends Component {
                 console.log(res);
             }).catch(err=> console.log("error occurred"))
 
-    //   NotificationManager.success('we have received your prescription','you will get an message from us regarding accepting of your prescription',8000);
-    //   setTimeout(()=>{
-    //     document.getElementById('exampleInputEmail1').value = " ",
-    //     document.getElementById('dob').value = " "
-    // },8000);
+      NotificationManager.success('we have received your prescription','you will get an message from us regarding accepting of your prescription',8000);
+      setTimeout(()=>{
+        document.getElementById('exampleInputEmail1').value = " ",
+        document.getElementById('dob').value = " "
+    },8000);
     }
     render() {
         let uploadbutton = null;      
@@ -81,7 +81,7 @@ class ImageFile extends Component {
                 <div className="upload-btn">
                     {uploadbutton}
                 </div>
-                <button onClick={this.orderGenerator}>clickme!</button>
+    
                 </div>
                         
         )

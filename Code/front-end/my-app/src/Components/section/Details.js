@@ -4,19 +4,30 @@ import {Link} from 'react-router-dom';
 import '../css/Details.css';
 
 
-export class Details extends Component {
-    static contextType = DataContext;
-    state = {
-        product: []
+class Details extends Component {
+    constructor(props){
+        console.log("constuctorrr")
+        super(props);
+        this.state = {
+            product : []
+        }
     }
+    static contextType = DataContext;
+    // state = {
+    //     product: []
+    // }
 
     getProduct = () =>{
+        console.log("etnereddddddddddddd")
         if(this.props.match.params.id){
-            const res = this.context.products;
-            const data = res.filter(item =>{
-                return item.id === this.props.match.params.id
-            })
-            this.setState({product: data})
+            console.log("etnereddddddddddddd")
+            const {products} = this.context;
+            console.log(products)
+           // this.data = products.filter(item => item.id === this.props.match.params.id)
+            this.data = products[this.props.match.params.id]
+            console.log("dataaa")
+            console.log(this.data)
+            this.setState({product: this.data})
         }
     };
 
@@ -32,22 +43,22 @@ export class Details extends Component {
         return (
             <div>
                 {
-                    product.map(item =>(
-                        <div className="details" key={item.id}>
-                            <img src={item.src} alt=""/>
+                    
+                        <div className="details" key={product.id}>
+                            <img src={product.src} alt=""/>
                             <div className="box">
                                 <div className="row">
-                                    <h2>{item.title}</h2>
-                                    <span>${item.price}</span>
+                                    <h2>{product.title}</h2>
+                                    <span>${product.price}</span>
                                 </div>
-                                <p>{item.description}</p>
+                                <p>{product.description}</p>
                                
-                                <Link to="/onlinemedico/cart" className="cart" onClick={() => addCart(item.id)}>
+                                <Link to="/onlinemedico/cart" className="cart" onClick={() => addCart(product.id)}>
                                     Add to cart
                                 </Link>
                             </div>
                         </div>
-                    ))
+                   
                 }
             </div>
         )

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {DataContext} from '../Context'
 import '../css/Product.css'
 import axios from 'axios';
+import {FaSearch} from "react-icons/fa"
 
 
 export class Products extends Component {
@@ -56,12 +57,12 @@ export class Products extends Component {
                {
                    products.map(product =>(
                        <div id="card" key={product.id}>
-                           <Link to={`/product/${product.id}`}>
+                           <Link to={`${this.props.match.path}/${product.id}`}>
                                <img src={product.src} alt=""/>
                            </Link>
                            <div className="content">
                                <h3>
-                                   <Link to={`/product/${product.id}`}>{product.title}</Link>
+                                   <Link to={`${this.props.match.path}/${product.id}`}>{product.title}</Link>
                                </h3>
                                <span>${product.price}</span>
                                <span><p>{product.description}</p></span>

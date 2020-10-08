@@ -44,6 +44,13 @@ export class DataProvider extends Component{
         ],
         selectedAddress:{},
         products:[
+        //     {   id:'1',
+        //     title:'paracetamol',
+        //     price:'4.99',
+        //     src:'https://i.dailymail.co.uk/1s/2020/08/03/13/31507884-0-image-a-18_1596458510405.jpg',
+        //     description:'Fever and bodypains',
+        //     count: 1
+        // }
             // {   id:'11',
             //     title:'paracetamol',
             //     price:'4.99',

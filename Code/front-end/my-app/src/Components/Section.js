@@ -25,6 +25,7 @@ import Logout from '../Components/section/Logout';
 import OrderDetails from '../Components/section/OrderDetails'; 
 import PastOrder from '../Components/section/PastOrder';
 import Home from '../Components/section/Home';
+import OrderSuccess from '../Components/section/OrderSuccess';
 
 export class Section extends Component {
     render() {
@@ -39,7 +40,7 @@ export class Section extends Component {
             <section >  
                 <Route path="/onlinemedico/home" component={Home} />                                                       
                 <Route path="/onlinemedico/product" component={Products} exact />
-                <Route path="/onlinemedico/product/:id" component={Details} />
+                <Route path="/onlinemedico/product/:id" component={Details} exact/>
                 <Route path="/onlinemedico/cart" component={Cart} />
                 <Route path="/onlinemedico/home" component={Home} />
                 <Route path="/onlinemedico/contact" component={Contact}/>
@@ -59,6 +60,8 @@ export class Section extends Component {
                 <Route path="/onlinemedico/checkcart" component={CheckoutCart}/>
                 <Route path="/onlinemedico/pastOrder" component={PastOrder}/>
                 <Route path="/onlinemedico/logout" component={Logout}/>
+                <Route path="/onlinemedico/ordersuccess" component={OrderSuccess}/>
+
             </section>
             <Route path="/onlinemedico" component={Footer}/> 	
             </div>
