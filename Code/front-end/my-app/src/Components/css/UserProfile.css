@@ -1,0 +1,41 @@
+.profileBody
+{
+    width: 38em;
+    margin-left: 17em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    height: 25em;
+    border-radius: 15px;
+}
+.nameLabel
+{    padding-left: 6em;}
+.profileName{
+    padding-bottom: 1em;
+}
+.profileTitle{
+    margin-left: 10em;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+.changePwd{
+    margin-left: 5em;
+    margin-top: 1em;
+    border-radius: 6px;
+    background-color:  #52ce89;
+    border: none;
+    height: 42px;
+    width: 150px;
+}
+.editProfile{
+    border: none;
+    margin-left: 13em;
+    /* margin-top: 1em; */
+    top: 19em;
+    position: absolute;
+    width: 8em;
+    height: 42px;
+    background-color: #52ce89;
+    border-radius: 7px;
+}

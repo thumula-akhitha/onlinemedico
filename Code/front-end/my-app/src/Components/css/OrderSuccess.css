@@ -1,0 +1,50 @@
+.thanksConfirm{
+    text-align: center;
+    margin-top: 1em;
+}
+.SuccessOrder{
+    margin-left: 8em;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    font-size: 21px;
+}
+.paymnt{
+    margin-left: 8em;
+    /* margin-top: 0em; */
+    margin-bottom: 3em;
+    font-size: 21px;
+}
+.deliveryDate{
+    position: absolute;
+    top: 321px;
+    left: 37em;
+    font-size: 21px;
+}
+.shipAddr
+{
+    position: absolute;
+    top: 18em;
+    font-size: 21px;
+    left: 37em;
+}
+.thanksAddrs
+{
+    margin-left: 39em;
+    margin-top: -131px;
+}
+.orderdet{
+        color: #0066ff;
+}
+
+.confirmPara{
+    font-size: 20px;
+}
+.successImg{
+    width: 42px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.OrderHeading{
+    background-color: ghostwhite;
+    height:29em;
+}
