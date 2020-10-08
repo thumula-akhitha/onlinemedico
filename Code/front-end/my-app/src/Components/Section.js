@@ -42,7 +42,6 @@ export class Section extends Component {
                 <Route path="/onlinemedico/product" component={Products} exact />
                 <Route path="/onlinemedico/product/:id" component={Details} exact/>
                 <Route path="/onlinemedico/cart" component={Cart} />
-                <Route path="/onlinemedico/home" component={Home} />
                 <Route path="/onlinemedico/contact" component={Contact}/>
                 <Route path="/onlinemedico/upload" component={Upload} exact/>
                 <Route path="/onlinemedico/shipping" component={Shipping}/>

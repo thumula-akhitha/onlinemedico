@@ -57,7 +57,8 @@ class ImageFile extends Component {
             console.log('please enter all values')
             uploadbutton = <button className="btn up-btn FileLabel" onClick={() => { this.fileuploader() }}>upload</button>
         }
-        return (            
+        return (  
+            <form>         
             <div className="image-div">
                 <input className="image-text form-control form-control-lg" type="text" value={this.state.FileName || ''} placeholder="prescription.png" />
                 <input type="file" style={{ display: "none" }} key="" onChange={this.fileSelectHandler} ref={fileInput => this.fileInput = fileInput} />
@@ -83,6 +84,7 @@ class ImageFile extends Component {
                 </div>
     
                 </div>
+                </form> 
                         
         )
     }

@@ -57,7 +57,7 @@ const Home = (props) => {
                     <div className='carousal-caption'>
                         <h3 className='sale' style={saleStyle} >SALE</h3>
                         <p style={saleTextSTyle}>20% Discount on all products</p>
-                        <a className="btn btn-primary" id='shopbtn' href="#" role="button" onClick={()=>setShowProducts(true)}>See products</a>
+                        <a className="btn btn-primary" id='shopbtn' href="http://localhost:3000/onlinemedico/product" role="button" onClick={()=>setShowProducts(true)}>See products</a>
                     </div>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -72,7 +72,7 @@ const Home = (props) => {
                     <div className='babyCare'>
                         <h3 className='baby'>Baby care</h3>
                         <p className='babyCareDesc'>Natures nourishing care for baby's delicate skin</p>
-                        <a className="btn btn-primary" id='BabyCareBtn' href="#" role="button" onClick={()=>setShowProducts(true)}>Shop Now</a>
+                        <a className="btn btn-primary" id='BabyCareBtn' href="http://localhost:3000/onlinemedico/product" role="button" onClick={()=>setShowProducts(true)}>Shop Now</a>
                     </div>
                 </Carousel.Caption>
                
@@ -87,7 +87,7 @@ const Home = (props) => {
                     <h3>Hurry Up</h3>
                     <p>
                         Flat 5% off on skin care products</p>
-                        <a className="btn btn-primary" id='viewMore' href="#" role="button" onClick={()=>setShowProducts(true)}>View products</a>
+                        <a className="btn btn-primary" id='viewMore' href="http://localhost:3000/onlinemedico/product" role="button" onClick={()=>setShowProducts(true)}>View products</a>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
