@@ -10,6 +10,8 @@ import Upload from './section/ImageFile';
 import Star from './section/StarComponent';
 import OrderHistory from './section/OrderHistory';
 import AdminPage from '../Components/section/Admin/AdminPage';
+import AdminProduct from '../Components/section/Admin/AdminProduct';
+
 import Admin from '../Components/section/Admin/Admin';
 import Chat from '../Components/section/Chat/Chat';
 import Tracking from './section/Tracking ';

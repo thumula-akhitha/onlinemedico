@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Products from './AdminProduct';
+import AdminProdcts from './AdminProduct';
 import {Route} from "react-router-dom";
 import AdminPage from './AdminPage';
 import Logout from '../Logout';
@@ -11,7 +11,7 @@ export class AdminSection extends Component {
         return (
             <section >
                 <Route path="/mainadmin/addproducts" component={AdminPage}  />                            
-                <Route path="/mainadmin/product" component={Products} exact />
+                <Route path="/mainadmin/product" component={AdminProdcts} exact />
                 <Route path="/mainadmin/ChatUs" component={Chat} exact/>
                 <Route path="/mainadmin/logout" component={Logout} exact />
                 <Route path="/mainadmin/adminOrder" component={AdminOrder} exact />
