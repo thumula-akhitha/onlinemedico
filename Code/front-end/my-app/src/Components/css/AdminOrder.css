@@ -1,0 +1,51 @@
+.adminDate{
+    line-height: 2.5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+.adminDel{
+    line-height: 2.5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+#adStatus{
+    color:green;
+
+}
+.adminOrdrid{
+    line-height: 2.5em; 
+}
+.adminButton{
+    color:#318fab !important;
+    text-decoration: underline !important;
+}
+.adminCard{
+    background-color: white !important;
+    border-bottom: 1px solid #00000070 !important;
+    
+    margin-bottom: 0 !important;
+   }
+.adminTrash{
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    padding-top: 1.5px !important;
+    padding-bottom: 0 !important;
+    margin-left: 20px!important ;
+    margin-bottom: 9px;
+    border:0 !important;
+    background: white !important;
+    color:black !important;
+    
+}
+.a-1{
+    font-weight: 600;
+    /* text-decoration: underline; */
+}
+.a-2{
+    border: 1px solid #0000007a;
+    border-radius: 1em;
+    padding: 10px;
+    margin-right: 10em;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    font-weight: 480;
+}

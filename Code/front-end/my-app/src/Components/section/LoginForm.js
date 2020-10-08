@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
           //document.getElementById("error").innerHTML = ""
           const {addName} = this.context;
           addName(res.data.data[0].firstName);
-          this.props.history.push("/mainadmin");
+          this.props.history.push("/mainadmin/product");
         } else if (res.data.message === "failure") {
           document.getElementById("error").innerHTML =
             "Incorrect username and password";
@@ -104,6 +104,7 @@ class LoginForm extends React.Component {
             </div>
           </div>
         </div>
+        
       </div>
     );
   }

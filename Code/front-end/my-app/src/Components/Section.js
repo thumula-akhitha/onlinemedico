@@ -10,6 +10,8 @@ import Upload from './section/ImageFile';
 import Star from './section/StarComponent';
 import OrderHistory from './section/OrderHistory';
 import AdminPage from '../Components/section/Admin/AdminPage';
+import AdminProduct from '../Components/section/Admin/AdminProduct';
+
 import Admin from '../Components/section/Admin/Admin';
 import Chat from '../Components/section/Chat/Chat';
 import Tracking from './section/Tracking ';
@@ -26,6 +28,7 @@ import OrderDetails from '../Components/section/OrderDetails';
 import PastOrder from '../Components/section/PastOrder';
 import Home from '../Components/section/Home';
 import OrderSuccess from '../Components/section/OrderSuccess';
+import userProfile from '../Components/section/UserProfile';
 
 export class Section extends Component {
     render() {
@@ -60,7 +63,7 @@ export class Section extends Component {
                 <Route path="/onlinemedico/pastOrder" component={PastOrder}/>
                 <Route path="/onlinemedico/logout" component={Logout}/>
                 <Route path="/onlinemedico/ordersuccess" component={OrderSuccess}/>
-
+                <Route path="/onlinemedico/UserProfile" component={userProfile}/>
             </section>
             <Route path="/onlinemedico" component={Footer}/> 	
             </div>
