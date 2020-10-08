@@ -61,7 +61,7 @@ export class Footer extends Component {
                         </p>
                       <ul className='MyAccountList'>
                       <li className='MyAccountList'><Link to="/onlinemedico/contact" className='contactList'>Contact</Link></li>
-                      <li className='MyAccountList'><Link to="/onlinemedico/Account" className='contactList'>My Account</Link></li>
+                      <li className='MyAccountList'><Link to="/onlinemedico/UserProfile" className='contactList'>My Account</Link></li>
                       <li className='MyAccountList'><Link to="/onlinemedico/about" className='contactList'>About Us</Link></li>
                       </ul>
                         <div class="footer-icons">

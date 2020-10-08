@@ -6,7 +6,7 @@
 }
 .nameEditLabel{
     margin-left: 2em;
-
+    font-weight: bold;
 }
 .accountTitle{
     font-size: 28px;
@@ -23,6 +23,7 @@
 }
 .emailEditLabel{
     margin-left: 2em;
+    font-weight: bold;
 }
 .editEmail{
     border: 2px solid lightgray;
@@ -33,6 +34,7 @@
 }
 .editContactLabel{
     margin-left: 2em;
+    font-weight: bold;
 }
 .editContact{
     border: 2px solid lightgray;

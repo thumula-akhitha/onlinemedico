@@ -8,7 +8,9 @@
     border-radius: 15px;
 }
 .nameLabel
-{    padding-left: 6em;}
+{    padding-left: 6em;
+    font-weight: bold;
+}
 .profileName{
     padding-bottom: 1em;
 }
@@ -29,13 +31,12 @@
     width: 150px;
 }
 .editProfile{
+    margin-left: 77px;
     border: none;
-    margin-left: 13em;
-    /* margin-top: 1em; */
-    top: 19em;
     position: absolute;
     width: 8em;
     height: 42px;
     background-color: #52ce89;
     border-radius: 7px;
+    margin-top: 16px;
 }

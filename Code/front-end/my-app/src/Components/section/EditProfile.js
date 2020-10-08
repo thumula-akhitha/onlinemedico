@@ -1,15 +1,17 @@
 import React, { useState, Component } from 'react';
 import { Card } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 import '../css/EditProfile.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 
 const saveChanges=()=>{
-    alert('Updated profile successfully')
+    NotificationManager.success('Success','your profile is updated successfully',8000);
 }
 class EditProfile extends Component {
     constructor (props) {
         super(props);
-        this.state = {
-           
+        this.state = {           
             name:props.userInfoArray[0].fullname,
             mail:props.userInfoArray[0].email,
             mobile:props.userInfoArray[0].contact,
@@ -20,6 +22,7 @@ class EditProfile extends Component {
         this.setState({
             [event.target.name] : event.target.value
       })
+
     }
    
     render(){
@@ -64,12 +67,13 @@ class EditProfile extends Component {
 
                         </div>
                     </div>
-                    <button className='saveProfile' onClick={saveChanges}>Save Changes</button>
 
+                    <button className='saveProfile' onClick={saveChanges}>Save Changes</button>
 
                 </Card.Text>
 
             </Card.Body>
+            <NotificationContainer/>
         </Card>
 
         )

@@ -7,9 +7,9 @@ import EditProfile from './EditProfile';
 const userProfile = (props) => {
     const userInfo = [
         {
-                fullname:'Shravani',
-                email:'A@b.com',
-                contact:'9000789654'
+                fullname:'Akhitha Tumula',
+                email:'akhitha.adams@gmail.com',
+                contact:'6605281016'
         },
     ];
     const[showPwdPage,setshowPwdPage]=useState(false);
@@ -28,7 +28,7 @@ const userProfile = (props) => {
                 <Card.Text>
                     <div className='row profileName' >
                         <div className='col-4 nameLabel'>
-                            <p>Full Name</p>
+                            <p>Full Name   :</p>
                         </div>
                         <div className='col-8'>
                             <p>{user.fullname}</p>
@@ -36,7 +36,7 @@ const userProfile = (props) => {
                     </div>
                     <div className='row profileName'>
                         <div className='col-4 nameLabel'>
-                            <p>Email Id</p>
+                            <p>Email Id    :</p>
                         </div>
                         <div className='col-8'>
                             <p>{user.email}</p>
@@ -44,20 +44,23 @@ const userProfile = (props) => {
                     </div>
                     <div className='row profileName'>
                         <div className='col-4 nameLabel'>
-                            <p>Contact Number</p>
+                            <p>Contact Number   :</p>
                         </div>
                         <div className='col-8'>
                             <p>{user.contact}</p>
                         </div>
                     </div>
+                    <span>
                     <button className='changePwd'
                     onClick={()=>setshowPwdPage(true)}
                     >Change Password</button>
                     <button className='editProfile'
                     onClick={()=>setShowEditPage(true)}
                     >Edit Profile</button>
+                    </span>
                 </Card.Text>
             </Card.Body>
+            
         </Card>
 
         ))

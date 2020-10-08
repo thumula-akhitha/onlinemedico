@@ -66,7 +66,7 @@ export class Header extends Component {
             <DropdownButton id="dropdown-basic-button" title={
         <span><FaUser style={{marginBottom:"4px",marginRight:"3px"}}/>My Account</span>}>
             {/* <img src={profile}/> */}
-              <Dropdown.Item href="http://localhost:3000/onlinemedico">
+              <Dropdown.Item href="http://localhost:3000/onlinemedico/UserProfile">
                 My Profile
               </Dropdown.Item>
               <Dropdown.Item href="http://localhost:3000/onlinemedico/pastOrder">Previous Orders</Dropdown.Item>
