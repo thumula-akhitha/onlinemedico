@@ -39,7 +39,7 @@ export class Section extends Component {
             <section >  
                 <Route path="/onlinemedico/home" component={Home} />                                                       
                 <Route path="/onlinemedico/product" component={Products} exact />
-                <Route path="/onlinemedico/product/:id" component={Details} />
+                <Route path="/onlinemedico/product/:id" component={Details} exact/>
                 <Route path="/onlinemedico/cart" component={Cart} />
                 <Route path="/onlinemedico/home" component={Home} />
                 <Route path="/onlinemedico/contact" component={Contact}/>
