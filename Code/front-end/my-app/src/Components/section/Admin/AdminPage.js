@@ -30,8 +30,9 @@ class AdminPage extends Component {
         .then(res=>{
         console.log(res);
         console.log(res.data);
+        NotificationManager.success('success','Added product to the products', 8000);
     }) 
-        NotificationManager.success(' ','Added product to the products', 11000);
+        
 
       }
     render() {

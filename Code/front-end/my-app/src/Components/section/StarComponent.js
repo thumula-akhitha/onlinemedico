@@ -31,7 +31,7 @@ class StarComponent extends Component {
     // make db call
    
     axios
-      .post("http://127.0.0.1:3333/review/user/starRating",{rating:nextValue})
+      .post("http://127.0.0.1:3333/onlinemedico/review",{rating:nextValue})
       .then((res) => {
         console.log(res.data)
       })

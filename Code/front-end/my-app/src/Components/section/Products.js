@@ -5,6 +5,7 @@ import '../css/Product.css'
 import axios from 'axios';
 import {FaSearch} from "react-icons/fa"
 
+
 export class Products extends Component {
     constructor(props){
         super(props);
@@ -64,9 +65,10 @@ export class Products extends Component {
                                    <Link to={`${this.props.match.path}/${product.id}`}>{product.title}</Link>
                                </h3>
                                <span>${product.price}</span>
-                               <p>{product.description}</p>
-
+                               <span><p>{product.description}</p></span>
+                               <div>
                                <button className="productButton" onClick={()=> addCart(product.id)}>Add to cart</button>
+                               </div>         
                            </div>
                        </div>
                    ))
