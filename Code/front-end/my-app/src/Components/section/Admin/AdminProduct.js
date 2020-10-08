@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {DataContext} from '../../Context'
 import '../../css/Product.css'
+import ChatIn from '../Chat/Chat';
 import axios from 'axios';
 import {FaSearch} from "react-icons/fa"
 
@@ -72,6 +73,8 @@ export class AdminProduct extends Component {
                    ))
                }
             </div>
+
+            <ChatIn></ChatIn>
             </div>
         )
     }
