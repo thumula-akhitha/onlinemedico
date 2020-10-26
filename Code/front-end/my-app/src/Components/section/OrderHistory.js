@@ -5,6 +5,7 @@ import Review from './Review';
 import Tracking from './Tracking ';
 import {Link} from 'react-router-dom';
 import ReturnItem from './ReturnItem';
+import EditOrder from './EditOrder';
 
 
 
@@ -26,6 +27,7 @@ const OrderHistory = (props) => {
     const [reviewStatus,setReviewStatus]=useState(false);
     const [trackStatus,setTrackStatus]=useState(false);
     const [returnItem,setReturnItem]=useState(false);
+    const [editOrder,setEditOrder]=useState(false);
     if(trackStatus==true)
     {
         return <Tracking trackingArray= {cardInfo}/>
@@ -35,6 +37,9 @@ const OrderHistory = (props) => {
     }
     if(reviewStatus==true){
         return <Review orderedArray = { cardInfo }/>
+    }
+    if(editOrder==true){
+        return <EditOrder returnArray={cardInfo}/>
     }
     else{
     // const renderCard = (card, index) => {
@@ -113,7 +118,10 @@ const OrderHistory = (props) => {
                                 >Write a product review</button>
                             </div>
                             <div className='row'>
-                                <button type="button" className='btn btn-primary cancel'>Edit/Cancel order</button>
+                                <button type="button" 
+                                className='btn btn-primary cancel'
+                                onClick={()=>setEditOrder(true)}
+                                >Edit/Cancel order</button>
                             </div>
 
                         </div>

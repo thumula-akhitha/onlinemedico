@@ -32,12 +32,20 @@
    margin-bottom: 3em;
    background-color: cadetblue;
  }
+ .skinPara{
+  color: white;
+ }
+ .sale{
+  font-weight: bolder;
+  font-family: serif;
+  font-size: 3em
+ }
  .accept
  {
-   margin-left: 16em;
-   margin-top: 3em;
-   font-weight: 900;
-   font-size: 20px;
+  margin-left: 14em;
+  margin-top: 3em;
+  font-weight: 900;
+  font-size: 25px;
  }
  .hyvee{
    width: 9em;

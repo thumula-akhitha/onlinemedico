@@ -55,7 +55,9 @@ const Home = (props) => {
                 />
                 <Carousel.Caption>
                     <div className='carousal-caption'>
-                        <h3 className='sale' style={saleStyle} >SALE</h3>
+                        <h3 className='sale' 
+                        // style={saleStyle}
+                         >SALE</h3>
                         <p style={saleTextSTyle}>20% Discount on all products</p>
                         <a className="btn btn-primary" id='shopbtn' href="http://localhost:3000/onlinemedico/product" role="button" onClick={()=>setShowProducts(true)}>See products</a>
                     </div>
@@ -85,7 +87,7 @@ const Home = (props) => {
                 />
                 <Carousel.Caption className='skincare'>
                     <h3>Hurry Up</h3>
-                    <p>
+                    <p className='skinPara'>
                         Flat 5% off on skin care products</p>
                         <a className="btn btn-primary" id='viewMore' href="http://localhost:3000/onlinemedico/product" role="button" onClick={()=>setShowProducts(true)}>View products</a>
                 </Carousel.Caption>
