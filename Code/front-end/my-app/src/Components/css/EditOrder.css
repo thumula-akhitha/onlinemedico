@@ -1,0 +1,45 @@
+.paracetomalImg
+{
+    width: 192px;
+    margin-left: 9em;
+    height: 127px;
+}
+.radioImages
+{
+    margin-left: 10em;
+}
+.productname
+{
+    position: absolute;
+    top: 11em;
+    left: 41em;
+}
+.secondproduct
+{
+    position: absolute;
+    top: 20em;
+    left: 33em;
+    font-size: 20px;
+}
+.thirdproduct{
+    position: absolute;
+    top: 29em;
+    left: 34.5em;
+    font-size: 19px;
+}
+.cancelProduct
+{
+    position: absolute;
+    top: 47em;
+    width: 20em;
+    height: 5em;
+}
+.cancelbtn{
+    margin-left: 30em;
+    margin-top: 8em;
+    width: 9em;
+    height: 38px;
+    border-radius: 5px;
+    margin-bottom: 2em;
+    background-color: mediumseagreen;
+}

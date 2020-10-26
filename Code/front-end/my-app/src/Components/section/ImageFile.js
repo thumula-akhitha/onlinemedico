@@ -6,9 +6,7 @@ import {
   NotificationManager,
 } from "react-notifications";
 import "react-notifications/lib/notifications.css";
-// import { confirmAlert } from 'react-confirm-alert'; // Import
-// import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-//let uploadbutton=null;
+
 class ImageFile extends Component {
   state = {
     selectedFile: null,
@@ -20,19 +18,9 @@ class ImageFile extends Component {
       FileName: event.target.files[0].name,
     });
   };
-//   uploadClick(e){
-//       e.preventDefault()
-//     if (this.state.selectedFile) {
-//       console.log("please enter all values");
-//       uploadbutton = (
-       
-//       );
-//     }
-    
-//   }
-//   
-fileuploader(e)  {
-    e.preventDefault();
+   
+fileuploader=()=>{
+   
     let request = {
       email: document.getElementById("exampleInputEmail1").value,
       dob: document.getElementById("dob").value,
@@ -61,18 +49,23 @@ fileuploader(e)  {
     NotificationManager.success(
       "we have received your prescription",
       "you will get an message from us regarding accepting of your prescription",
-      18000
+      8000
     );
-    //   setTimeout(()=>{
-    //     document.getElementById('exampleInputEmail1').value = " ",
-    //     document.getElementById('dob').value = " "
-    // },11000);
+      setTimeout(()=>{
+        document.getElementById('exampleInputEmail1').value = " ",
+        document.getElementById('dob').value = " "
+        document.getElementById('examplename').value=" "
+    },1000);
   };
   render() {
-    //uploadbutton = null;
+    let uploadbutton = null;      
+    if (this.state.selectedFile) {
+        console.log('please enter all values')
+        uploadbutton = <button className="btn up-btn FileLabel" onClick={() => { this.fileuploader() }}>upload</button>
+    }
     return (
       <div>
-        <form onsubmit={(e)=>{e.preventDefault()}}>
+        
           <div className="image-div">
             <input
               className="image-text form-control form-control-lg"
@@ -133,15 +126,12 @@ fileuploader(e)  {
               </div>
             </div>
 
-            <div className="upload-btn"> <button type="submit"
-          className="btn up-btn FileLabel"
-          
-        >
-          upload
-        </button></div>
+            <div className="upload-btn">
+                    {uploadbutton}
+                </div>
             <NotificationContainer />
           </div>
-        </form>
+        
       </div>
     );
   }

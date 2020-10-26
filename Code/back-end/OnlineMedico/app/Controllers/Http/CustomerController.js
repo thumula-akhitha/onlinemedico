@@ -9,6 +9,7 @@ const { validateAll } = use("Validator");
 const logger = use("Logger");
 var nodeoutlook = require('nodejs-nodemailer-outlook')
 const nodemailer = require('nodemailer');
+const Database = use('Database')
 
 class CustomerController {
     //This route is used for signup 
@@ -184,11 +185,16 @@ async addAddress({ auth, request, response, params }) {
     return response.status(200).json(addressData);
 }
 async addCard({ auth, request, response, params }) {
-
     const card = request.all();
     card.customerId = params.customerId
     cardData = await CardDetail.create(card);
     return response.status(200).json(cardData);
+}
+async contactReview({ auth, request, response, params }){
+    console.log("enteredjjkhk")
+    const query = await Database.select('*').from('contactuses')
+    return response.status(200).json(query);
+    
 }
 async addProduct({ auth, request, response, params }) {
     console.log(request.body);

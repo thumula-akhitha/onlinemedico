@@ -74,7 +74,7 @@ export class AdminProduct extends Component {
                }
             </div>
 
-            <ChatIn></ChatIn>
+            {/* <ChatIn></ChatIn> */}
             </div>
         )
     }

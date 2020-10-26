@@ -22,9 +22,9 @@ export class DataProvider extends Component{
             {
                 id: '123',
                 newAddress: {
-                    firstname: 'John',
+                    firstname: 'Akhitha Tumula',
                     mobile: '9898989898',
-                    address1: '1121 N College Dr',
+                    address1: '1115 N College Dr',
                     address2: 'Apt L',
                     state: 'Maryville',
                     zip: '64468'
@@ -33,12 +33,12 @@ export class DataProvider extends Component{
             {
                 id: '234',
                 newAddress: {
-                    firstname: 'Kevin',
+                    firstname: 'Kavya',
                     mobile: '0000000000',
-                    address1: '8445 Walbrook Dr ',
+                    address1: '115N College Drive ',
                     address2: 'Apt M',
                     state: 'TN',
-                    zip: '37923'
+                    zip: '64468'
                 }
             }
         ],
