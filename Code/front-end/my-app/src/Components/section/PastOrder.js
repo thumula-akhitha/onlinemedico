@@ -47,25 +47,25 @@ class PastOrder extends Component {
       <Image id="orderImage" src={require("../images/tablet.jpg")}  rounded />
     </Col>
 <Col>September 30</Col>
-<Col className="orderNumber"><Link to="/onlinemedico/history">987654</Link></Col>
+<Col className="orderNumber"><Link to="/onlinemedico/history">W09B2345BVC5</Link></Col>
 <Col style={{color:"Green"}}><h5>Pending</h5></Col>
    </Row>
-   <Row className="orderDetails">
+   {/* <Row className="orderDetails">
    <Col md={1} >
       <Image id="orderImage" src={require("../images/tablet.jpg")}  rounded />
     </Col>
 <Col>September 30</Col>
 <Col className="orderNumber"><Link to="/onlinemedico/history">998767</Link></Col>
 <Col style={{color:"Green"}}><h5>Pending</h5></Col>
-   </Row>
-   <Row className="orderDetails">
+   </Row> */}
+   {/* <Row className="orderDetails">
    <Col md={1} >
       <Image id="orderImage" src={require("../images/tablet.jpg")}  rounded />
     </Col>
 <Col>September 30</Col>
 <Col className="orderNumber"><Link to="/onlinemedico/history">786598</Link></Col>
 <Col style={{color:"Green"}}><h5>Pending</h5></Col>
-   </Row>
+   </Row> */}
    </Container>
     )
   }

@@ -67,6 +67,7 @@ Route.group(() => {
   Route.get("/order/:orderId", "CustomerController.forgotPassword");
   Route.post("/updateOrders/:orderId", "CustomerController.newPassword");
   Route.delete("/orders/:orderId", "CustomerController.newPassword");
+  Route.get("/contactReview","CustomerController.contactReview");
 }).prefix("/onlinemedico");
 
 /*

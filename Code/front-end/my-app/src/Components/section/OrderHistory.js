@@ -12,14 +12,15 @@ const OrderHistory = (props) => {
     const cardInfo = [
         {
             image: require("../images/tablet.jpg"),
-            title: "IRESSA",
-            text: "Cold tablet",
+          // image : require("https://mk0ehealtheletsj3t14.kinstacdn.com/wp-content/uploads/2020/05/Paracetamol.jpg"),
+            title: "Paracetamol",
+            text: "It can treat minor aches and pains, and reduces fever",
             sold: 'Walmart',
             price: '20$',
             status: 'Delivered',
-            date: 'Aug 2nd 2020',
-            name: 'Shravs',
-            orderId: 'G34DC12334',
+            date: 'OCT 08th 2020',
+            name: 'Akhitha',
+            orderId: 'W09B2345BVC5',
             address: '1121 N collge Dr'
         },
     ];
@@ -93,6 +94,7 @@ const OrderHistory = (props) => {
                             <p className='cost'>{cd.price}</p>
                             <button type="button" className="btn btn-primary buyAgainBtn">Buy it again</button>
                         </div>
+                        
                         <div className='col-5 track-col-5'>
                             <div className='row'>
                             <button type="button" className='btn btn-primary track'
@@ -112,9 +114,9 @@ const OrderHistory = (props) => {
                                 onClick={()=>setReviewStatus(true)}
                                 >Write a product review</button>
                             </div>
-                            <div className='row'>
+                            {/* <div className='row'>
                                 <button type="button" className='btn btn-primary cancel'>Edit/Cancel order</button>
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>

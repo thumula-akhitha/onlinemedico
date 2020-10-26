@@ -10,6 +10,10 @@ class Review extends Component {
         super();
         this.review = this.review.bind(this);
         }
+        clickHandler(e){
+        e.preventDefault();
+        alert('Review Submitted succesfully');
+        }
         review(e) {
             e.preventDefault();
             let request = {
@@ -71,7 +75,7 @@ class Review extends Component {
                             {/* <span className='errors'>{this.state.errors.publicName}</span> */}
                             <p className='nameChange'>You can change this name anytime in the profile</p>
                         </div>
-                        <button className='reviewSubmit' onClick={(e)=>e.preventDefault()}>Submit</button>
+                        <button className='reviewSubmit' onClick={this.clickHandler}>Submit</button>
                     </div>
                 </div>
             </form>

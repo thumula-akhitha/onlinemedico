@@ -1,0 +1,16 @@
+.adminrequestdiv{
+    margin-left: 10em;
+    margin-top: 1em;
+    width : 50em;
+    padding : 4em;
+}
+.requestrow{
+    background: linear-gradient(#c2e2d3,#ecf1ef);
+    border-radius: 10px;
+    margin-bottom:1em;
+    padding : 1em;
+}
+.reqp{
+    font-family: 'Source Sans Pro', sans-serif;;
+    font-weight: 800;
+}

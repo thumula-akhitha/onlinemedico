@@ -27,7 +27,7 @@ class OrderSuccess extends Component{
                 </div>
                 <div className='deliveryDate'>
                     <p className='Delievery'>Delivery</p>
-                    <p className='dateEst'>Est.Delivery:Oct 24</p>
+                    <p className='dateEst'>Est.Delivery:Oct 08</p>
                 </div>
                 {/* <div className='Adder'>
                     <p className='shipAddr'>Shipping Address</p>
