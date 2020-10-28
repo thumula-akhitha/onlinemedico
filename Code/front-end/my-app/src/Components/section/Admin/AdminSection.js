@@ -11,7 +11,7 @@ import ChatUs from './ChatUs';
 export class AdminSection extends Component {
     render() {
         return (
-            <section >
+            <section style ={{"minHeight":"350px"}}>
                 <Route path="/mainadmin/userrequest" component={AdminRequest}/>
                 <Route path="/mainadmin/addproducts" component={AdminPage}/>                            
                 <Route path="/mainadmin/product" component={AdminProdcts} exact />

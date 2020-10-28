@@ -22,7 +22,7 @@ export class ChatUs extends Component {
         ],
         names: [
             {
-              name : "duplicate",
+              name : "admin",
               count:1,
               open:false,
               value :[
@@ -79,7 +79,8 @@ export class ChatUs extends Component {
                     }
                 })
            this.setState({
-               names : this.state.names
+               names : this.state.names,
+               count: this.state.count+1
            })
 
   }
@@ -147,6 +148,7 @@ export class ChatUs extends Component {
   addChat(k){
       console.log("add chattt")
       const countValue = this.state.names.indexOf(k)
+      const c = this.state.names[countValue].count
       this.state.names[countValue].count = 0;
       this.state.names.map((k,index)=>{
              if(index == countValue){
@@ -157,12 +159,14 @@ export class ChatUs extends Component {
              }
 
       })
-
+            console.log("count value")
+            console.log(c)
         this.setState({
             temp: true,
             value:k.value,
             name:k.name,
-            names : this.state.names
+            names : this.state.names,
+            count: this.state.count-c
         })
   }
   handleChange(event) {
@@ -196,7 +200,7 @@ export class ChatUs extends Component {
 {
                    this.state.names.map(product =>(
                        <div>
-                      <span><li style={{ "backgroundColor":"#D3D3D3","fontSize":"22px","marginBottom":"15px"}}
+                      <span><li style={{ "backgroundColor":"#D3D3D3","fontSize":"22px","marginBottom":"15px","cursor":"pointer"}}
                        onClick={()=> this.addChat(product) }>{product.name} <span style={{"color":"green"}}> {product.count}</span></li>
                        </span>
                        </div>
@@ -211,11 +215,11 @@ export class ChatUs extends Component {
               messageList={this.state.value}
               handleClick={()=>{this.addName()} }
               isOpen = {this.state.temp}
-            //   newMessagesCount = {this.state.count}
+              newMessagesCount = {this.state.count}
               showEmoji
             />
           </div>
         )
     }
 }
-export default ChatUs
+export default ChatUs 
