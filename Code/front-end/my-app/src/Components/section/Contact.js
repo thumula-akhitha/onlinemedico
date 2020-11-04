@@ -7,7 +7,7 @@ import helpcenter from '../images/helpcenter.PNG';
 import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-
+import moment from 'moment';
 
 // import classes from './Contact.css';
 
@@ -34,8 +34,10 @@ class Contact extends Component {
       firstName : this.firstName.current.value,
       lastName : this.lastName.current.value,
       emailId : this.emailId.current.value,
-      comment : this.comment.current.value
-    }
+      comment : this.comment.current.value,
+      time : moment(new Date()).format('MMMM Do YYYY, h:mm:ss a'),
+    } 
+    
     console.log(this.firstName.current.value)
     axios.defaults.headers.post['Content-Type'] = 'application/json';
     axios.post(`http://127.0.0.1:3333/onlinemedico/user/contactUs`, user )
@@ -49,7 +51,7 @@ class Contact extends Component {
       this.lastName.current.value=" ";
       this.emailId.current.value=" ";
       this.comment.current.value=" ";
-    },8000);
+    },4000);
   }
   render() {
     return (

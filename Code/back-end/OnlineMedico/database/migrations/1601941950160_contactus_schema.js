@@ -11,6 +11,7 @@ class ContactusSchema extends Schema {
       table.string('lastName').notNullable()
       table.string('emailId').notNullable()
       table.string('comment').notNullable()
+      table.string('time').notNullable()
       table.timestamps()
     })
   }

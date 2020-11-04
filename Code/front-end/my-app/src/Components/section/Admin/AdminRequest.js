@@ -28,7 +28,9 @@ class AdminRequest extends Component {
                    <p className="reqp col-6">Email ID:</p>  
                    <span className="col-6">{r.emailId}</span>                                  
                    <p className="reqp col-6">User Comment:</p>  
-                   <span className="col-6">{r.comment}</span>        
+                   <span className="col-6">{r.comment}</span>     
+                   <p className="reqp col-6">Time of Request:</p>  
+                   <span className="col-6">{r.time}</span>        
                    </div>
                     )}
                    
