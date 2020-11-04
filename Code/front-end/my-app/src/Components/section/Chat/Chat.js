@@ -3,6 +3,7 @@ import regeneratorRuntime from "regenerator-runtime";
 import "babel-polyfill";
 import './Chat.css';
 import {DataContext} from '../../Context'
+import moment from 'moment';
 import Ws from '@adonisjs/websocket-client'
 
 import {Launcher} from 'react-chat-window'
@@ -44,7 +45,7 @@ componentDidMount(){
   a.author = 'them';
   a.type = 'text';
   a.data={}
-  a.data.text = message.value
+  a.data.text =<div> {message.value} <p style={{"paddingLeft":"134px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p></div>
  // const k2  = this.state.value.push(a)
 // const a =  [...this.state.value, a]
     this.setState({

@@ -3,6 +3,7 @@ import "babel-polyfill";
 import '../Chat/Chat.css';
 import {DataContext} from '../../Context'
 import Ws from '@adonisjs/websocket-client'
+import moment from 'moment';
 import {Launcher} from 'react-chat-window'
 
 export class ChatUs extends Component {
@@ -60,7 +61,8 @@ export class ChatUs extends Component {
     a.author = 'them';
     a.type = 'text';
     a.data={}
-    a.data.text = message.value
+   // console.log(moment().utcOffset('+05:30').format('hh:mm:ss a'))
+    a.data.text = <div> {message.value} <p style={{"paddingLeft":"134px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p></div>
     console.log(message.name)
    
   if(this.state.names.some(person => person.name == message.name)){
