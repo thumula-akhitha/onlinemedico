@@ -47,11 +47,7 @@ export class Products extends Component {
             <div>
             <div className="input-group product-search">
             <input type="text" class="form-control" placeholder="Search product" value={this.state.value} onChange={(e) => {this.handleChange(e)}} />
-            {/* <div className="input-group-append">
-                <button className="btn btn-secondary" type="button">
-                    <i className="fa fa-search"><FaSearch/></i>
-                </button>
-            </div> */}
+           
             </div>
             <div id="product">
                {

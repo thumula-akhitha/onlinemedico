@@ -17,20 +17,7 @@ class MedicineController {
                         .orWhere('description', 'like', '%' + params.medicineCode + '%')
                 })
                 .fetch();
-    //    // } else {
-    //         const courses = await Medicine.query()
-    //         .where('medicineId', params.MedicineCode)
-    //         .fetch();
-    //     }
-
-        // console.log(courses.rows)
-        // if (courses == null) {
-        //     logger.error("CourseController-searchCourse, course not found");
-        //     return response.status(404).json({
-        //         message: "Medicine not found",
-        //     });
-        // }
-       // logger.debug("CourseController-searchCourse, Succesfully retrived Products");
+    
         return response.ok(product);
     }
 //Adds the medicine to database
