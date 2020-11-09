@@ -85,7 +85,7 @@ class EditProfile extends Component {
                                 <lable className='emailEditLabel'>Email:</lable>
                             </div>
                             <div className='col'>
-                                <input type='email' id='mail' name="mail" className='editEmail'
+                                <input type='email' name="mail" className='editEmail'
                                     defaultValue={this.state.editInfo.email}
                                     onChange={()=>this.handleChange.bind(this)} />
                             </div>
