@@ -7,6 +7,7 @@ export class DataProvider extends Component{
         this.state = {
             id: uuidv(),
             name : "admin",
+            userDetails: {},
             canedit: false,
             addr: {
                 firstname: "",
@@ -121,6 +122,13 @@ export class DataProvider extends Component{
         }
         this.handleChangeAddress = this.handleChangeAddress.bind(this);
 
+    }
+    addUserDetails = (obj)=>{
+         this.setState({
+             userDetails : obj
+         })
+         console.log("add userDetails")
+         console.log(this.state.userDetails)
     }
     addCart = (id) => {
         alert("Product is added to cart")
@@ -305,12 +313,12 @@ console.log(selectedAddress);
    
 
     render() {
-        const {products,cart,total,addresses, addr, id, canedit,selectedAddress,name} = this.state;
-        const {addCart,reduction,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addProduct,updateProducts,addName} = this;
+        const {products,cart,total,addresses, addr, id, canedit,selectedAddress,name,userDetails} = this.state;
+        const {addCart,reduction,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addUserDetails,addProduct,updateProducts,addName} = this;
         return (
             <DataContext.Provider 
-            value={{products, addCart, cart, reduction,increase,removeProduct,total,getTotal,name,
-                addAddress, addresses, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts,addName}}>
+            value={{products,userDetails, addCart, cart, reduction,increase,removeProduct,total,getTotal,name,
+                addAddress, addUserDetails,addresses, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts,addName}}>
                 {this.props.children}
             </DataContext.Provider>
         )

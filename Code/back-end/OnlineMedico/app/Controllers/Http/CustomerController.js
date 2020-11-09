@@ -2,6 +2,7 @@
 const Customer = use("App/Models/Customer");
 const Address = use("App/Models/Address");
 const CardDetail = use("App/Models/CardDetail");
+const _  = use('lodash');
 const Hash = use('Hash')
 const getStream = use('get-stream')
 const Helpers = use('Helpers');
@@ -201,6 +202,18 @@ async addProduct({ auth, request, response, params }) {
     await use('Database').table('medicines').insert(request.body)
     return 'added products';
 
+}
+async updateProfile({request,response,auth,params}){
+    console.log("entered updated profile")
+    console.log('request body',request.body);
+    let userDetails = request.body;
+    let user = await Customer.find(params.userID)
+    user = _.merge(user,userDetails);
+    await user.save();
+    console.log('after',request.body)
+
+//    const query= await use('Database').select('*').from('customer')
+//    console.log(query)
 }
 
 async addShippingAddress({request, response }) {
