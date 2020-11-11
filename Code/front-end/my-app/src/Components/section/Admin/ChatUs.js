@@ -202,8 +202,18 @@ export class ChatUs extends Component {
 {
                    this.state.names.map(product =>(
                        <div>
-                      <span><li style={{ "backgroundColor":"#D3D3D3","fontSize":"22px","marginBottom":"15px","cursor":"pointer"}}
-                       onClick={()=> this.addChat(product) }>{product.name} <span style={{"color":"green"}}> {product.count}</span></li>
+                      <span><li style={{"fontSize":"22px","marginBottom":"15px","cursor":"pointer"}}
+                       onClick={()=> this.addChat(product) }>{product.name}  <span style={{
+                        "background-color":"#4e8cff",
+                        "font-size":"18px",
+                        "color":"black",        
+                        "border-radius":"50%",
+                        "display":"inline-block",
+                        "width":"25px",
+                        "height":"25px",
+                        "text-align":"center",
+                        "margin":"0"
+                        }}>{product.count}</span></li>
                        </span>
                        </div>
                    ))}
