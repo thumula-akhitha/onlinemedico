@@ -1,0 +1,93 @@
+.order{
+    padding-left: 5em;
+    padding-top: 5em;
+    padding-right: 5em;
+
+}
+.subview{
+    padding-left: 12em;
+    padding-top: 2em;
+}
+.para{
+    padding-left: 20em;
+    position: absolute;
+    top: 13em;
+}
+.time{
+    padding-left: 20em;
+    position: absolute;
+    top: 15em;   
+}
+.cost{
+    color:tomato;
+}
+.custName{
+    color:blue;
+}
+.reciept{
+    color:blue;
+}
+.orderItem{
+    width: 16em;
+    height: 10em;
+    margin-top: 3em;
+}
+.orderTitle{
+    margin-top:1em;
+}
+
+.buyAgainBtn{
+    height: 53px;
+    width: 12em;
+    margin-top: 1em;
+}
+.card-header .row {
+    padding:0px !important
+}
+.track{
+    width: 18em;
+    background-color: revert;
+    color: black;
+    height: 47px;
+    border-color: lightgray;
+  
+}
+.track-col-5{
+    padding-left:80px;
+}
+p{
+    margin-bottom: 0rem; 
+    font-family: serif; 
+}
+.review{
+    width:18em;
+    background-color: revert;
+    height: 50px;
+    color:black;
+    border-color: lightgray;
+}
+
+.cancel{
+    width:18em;
+    background-color:revert;
+    color:black;
+    height: 50px;
+    border-color: lightgray;
+}
+.view{
+    width:18em;
+    background-color: revert;
+    height: 50px;
+    color:black;
+    border-color: lightgray; 
+}
+.replace{
+    width:18em;
+    background-color:revert;
+    height: 50px;
+    color:black;
+    border-color: lightgray;
+}
+.total{
+    
+}

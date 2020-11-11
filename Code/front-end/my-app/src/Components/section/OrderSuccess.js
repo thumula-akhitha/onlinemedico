@@ -23,11 +23,11 @@ class OrderSuccess extends Component{
                 </div>
                 <div className='paymnt'>
                     <p className='paymntTotal'>Payment Total</p>
-                    <p className='amtTotal'>$50.98</p>
+                    <p className='amtTotal'>$19.85</p>
                 </div>
                 <div className='deliveryDate'>
                     <p className='Delievery'>Delivery</p>
-                    <p className='dateEst'>Est.Delivery:Oct 08</p>
+                    <p className='dateEst'>Est.Delivery:Nov 17</p>
                 </div>
                 {/* <div className='Adder'>
                     <p className='shipAddr'>Shipping Address</p>

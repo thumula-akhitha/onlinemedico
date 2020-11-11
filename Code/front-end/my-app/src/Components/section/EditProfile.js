@@ -7,45 +7,72 @@ import { DataContext } from '../Context'
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 
 
-
+const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 class EditProfile extends Component {
     static contextType = DataContext;
     // constructor(props){
     //     super(props);
     state = {
-            editInfo:{}
-        //     name: props.userInfoArray[0].fullname,
-        //     mail: props.userInfoArray[0].email,
-        //     mobile: props.userInfoArray[0].contact,
+            editInfo:{},
+            errors:{
+                name:'',
+                email:'',
+                mobile:''
+
+            }
         };
-        //this.handleChange=this.handleChange.bind(this);
-    
-    
-        
-        // this.editprofile=this.editprofile.bind(this);
-      
     handleChange(event) {
-        // if(isNaN(event)){
-        //     this.setState({
-                
-        //     })
-        // }
-        // else{
+        event.preventDefault();
+    //     const { name, value } = event.target;
+    //     let errors = this.state.errors;
+    //     switch (name) {
+    //       case 'name':
+    //         errors.name =
+    //           value.match(/^[a-zA-Z][a-zA-Z\s]*$/)
+    //             ? ''
+    //             : 'Only letters are allowed';
+    //         break;
+    //         case 'email':
+    //             errors.email =
+    //             validEmailRegex.test(value)
+    //               ? ''
+    //               : 'Email is not valid!';
+    //           break;
+    //         case 'mobile':
+    //     errors.mobile =
+    //       value.match(/^[0-9]*$/) && value.length == 10
+    //         ? '' : 'Length must be 10 & Only digits are allowed';
+
+    //     break;
+    //   default:
+    //     break;
+    //     }
         this.setState({
             [event.target.name]: event.target.value
         })
-    
-
-    }
+        }
      saveChanges(e){
-
+        const { errors } = this.state;
         NotificationManager.success('Success', 'your profile is updated successfully', 8000);
          // e.preventDefault();
          let request = {
             firstName: document.getElementById("name").value,
-            email: document.getElementById("mail").value,
+            email: document.getElementById("mails").value,
             contactNumber: document.getElementById("mobile").value,
         }
+        errors.name=
+        request.firstName.match(/^[a-zA-Z][a-zA-Z\s]*$/)?'':'Only letters are allowed'
+        let name=errors.name
+        this.setState({name:name})
+        errors.email=
+        validEmailRegex.test(request.email)?'':'Email is not valid!';
+        let mail=errors.email
+        this.setState({mail:mail})
+        errors.mobile=
+        request.contactNumber.match(/^[0-9]*$/) && request.contactNumber.length == 10
+          ? '' : 'Length must be 10 & Only digits are allowed';
+          let mobile=errors.mobile
+          this.setState({mobile:mobile});
         axios.post(`http://127.0.0.1:3333/onlinemedico/user/updateProfile/${this.state.editInfo.id}`, request)
         .then((res) => {
                 console.log(res.body)
@@ -63,6 +90,7 @@ class EditProfile extends Component {
        
     }
     render() {
+        const { errors } = this.state;
         console.log(this.props.userInfoArray)
         return (
             <Card className='editProfileHeader'>
@@ -74,32 +102,69 @@ class EditProfile extends Component {
                                 <lable className='nameEditLabel'>Full Name:</lable>
                             </div>
                             <div className='col'>
-                                <input type='text' id='name' name="name" className='editName'
+                                <input type='text' id='name' name="firstName" className='editName'
                                     defaultValue={this.state.editInfo.firstName}
                                     onChange={()=>this.handleChange.bind(this)}
-                                />
+                            />                               
                             </div>
+                           
                         </div>
+                        <div className="row">
+                            <div className="col-4"></div>
+                            <div className="col">
+                        
+                                 {errors.name.length > 0 &&
+                                <span className='editerrors'>{errors.name}</span>
+                                }
+                                
+                                </div>
+                                </div>
                         <div className='row'>
                             <div className='col'>
                                 <lable className='emailEditLabel'>Email:</lable>
                             </div>
                             <div className='col'>
-                                <input type='email' name="mail" className='editEmail'
+                                <input type='email' id='mails'name="email" className='editEmail'
                                     defaultValue={this.state.editInfo.email}
                                     onChange={()=>this.handleChange.bind(this)} />
+                                   
                             </div>
+                           
                         </div>
+                        <div className="row">
+                            <div className="col-4"></div>
+                            <div className="col">
+                        
+                            {errors.email.length > 0 &&
+                                <span className='editerrors'>{errors.email}</span>}
+                                
+                                
+                                </div>
+                                </div>
+                        
                         <div className='row'>
                             <div className='col'>
                                 <lable className='editContactLabel'>Contact Number:</lable>
                             </div>
                             <div className='col'>
-                                <input type='text' id='mobile' name="mobile" className='editContact'
+                                <input type='text' id='mobile' name="contactNumber" className='editContact'
                                     defaultValue={this.state.editInfo.contactNumber}
                                     onChange={()=>this.handleChange.bind(this)} />
+                                   
                             </div>
+                            
                         </div>
+                        <div className="row">
+                            <div className="col-4"></div>
+                            <div className="col">
+                        
+                            {errors.mobile.length > 0 &&
+                                    <span className='editerrors'>{errors.mobile}</span>}
+                                
+                                
+                                </div>
+                                </div>
+                        
                         <button className='saveProfile' onClick={()=>this.saveChanges()}>Save Changes</button>
 
                     </Card.Text>

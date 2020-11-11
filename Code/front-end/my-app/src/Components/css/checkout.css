@@ -74,7 +74,7 @@
 .check-cart {
   text-align: center;
   margin-top: 1px;
-  margin-left: 2em;
+  margin-left: 69px;
   height: 20em;
   background-image: linear-gradient(rgb(120, 170, 165), rgb(209, 196, 196));
   border-radius:10px;
@@ -120,6 +120,8 @@ tr {
 }
 .cards {
   display: flex;
+  margin-top: 1em;
+  margin-left: 63px;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -148,7 +150,7 @@ input[type="number"] {
   overflow-y: scroll;
   height:33em;
   width: 32em;
-  margin-left:4.5em;
+  margin-left: 3.5em;
   background-color: #fff;
   border: 1px solid lightgray;
   border-radius : 5px;
