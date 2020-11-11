@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import '../css/OrderSuccess.css';
+import {DataContext} from '../Context';
 import Address from './address';
 import {Link} from 'react-router-dom';
 
 
 const success=require('../images/success.JPG');
 class OrderSuccess extends Component{
+    componentDidMount(){
+        const {cart}=this.context;
+        console.log("suces page")
+        console.log(cart)
+       // this.context.getTotal();
+    }
     render(){
         return(
             <div className='OrderHeading'>
