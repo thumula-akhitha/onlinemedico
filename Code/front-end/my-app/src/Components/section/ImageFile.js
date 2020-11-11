@@ -19,13 +19,12 @@ class ImageFile extends Component {
     });
   };
    
-fileuploader=()=>{
-   
-    let request = {
-      email: document.getElementById("exampleInputEmail1").value,
-      dob: document.getElementById("dob").value,
-      fullname: document.getElementById("examplename").value,
-    };
+fileuploader=()=>{   
+    // let request = {
+    //   email: document.getElementById("exampleInputEmail1").value,
+    //   dob: document.getElementById("dob").value,
+    //   fullname: document.getElementById("examplename").value,
+    // };
     //console.log(fullname);
     let k = document.getElementById("exampleInputEmail1").value;
     const data = new FormData();
@@ -64,6 +63,7 @@ fileuploader=()=>{
         uploadbutton = <button className="btn up-btn FileLabel" onClick={() => { this.fileuploader() }}>upload</button>
     }
     return (
+      <form>
       <div>
         
           <div className="image-div">
@@ -133,6 +133,7 @@ fileuploader=()=>{
           </div>
         
       </div>
+      </form>
     );
   }
 }
