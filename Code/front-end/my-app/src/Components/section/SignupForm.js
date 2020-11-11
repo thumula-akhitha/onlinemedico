@@ -102,7 +102,7 @@ axios.post('http://127.0.0.1:3333/onlinemedico/user/signup', request)
         document.getElementById("errors").innerHTML = "Email Already Exists"    
       }
       else {
-        this.props.history.push('/onlinemedico/login');
+        this.props.history.push('/login');
       }
       
     })

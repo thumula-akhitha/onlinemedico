@@ -239,6 +239,7 @@ async review({ request, response, auth }) {
 // This function sends an confirmation email to the user regarding upload prescription
 
 async uploadConfirmation({ request, response, auth }) {
+    console.log("cameeeeeeeeeeeeeeeeeeeeeeeee")
     const { email } = request.body;
     const emailConfirmation = await Customer.query().where("email", "=", email).fetch();
     if (emailConfirmation.toJSON().length > 0) {
