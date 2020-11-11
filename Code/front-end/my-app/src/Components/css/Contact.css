@@ -159,6 +159,9 @@ font-size: 35px;
   background-color: #1e90ff;
 
 }
+.errors{
+  color:red;
+}
 .btnIn{
   margin-left: 593px;
   margin-top: -70px;

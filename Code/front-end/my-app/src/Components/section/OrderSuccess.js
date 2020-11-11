@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import '../css/OrderSuccess.css';
+import {DataContext} from '../Context';
 import Address from './address';
 import {Link} from 'react-router-dom';
 
 
 const success=require('../images/success.JPG');
 class OrderSuccess extends Component{
+    componentDidMount(){
+        const {cart}=this.context;
+        console.log("suces page")
+        console.log(cart)
+       // this.context.getTotal();
+    }
     render(){
         return(
             <div className='OrderHeading'>
@@ -23,11 +30,11 @@ class OrderSuccess extends Component{
                 </div>
                 <div className='paymnt'>
                     <p className='paymntTotal'>Payment Total</p>
-                    <p className='amtTotal'>$50.98</p>
+                    <p className='amtTotal'>$19.85</p>
                 </div>
                 <div className='deliveryDate'>
                     <p className='Delievery'>Delivery</p>
-                    <p className='dateEst'>Est.Delivery:Oct 08</p>
+                    <p className='dateEst'>Est.Delivery:Nov 17</p>
                 </div>
                 {/* <div className='Adder'>
                     <p className='shipAddr'>Shipping Address</p>

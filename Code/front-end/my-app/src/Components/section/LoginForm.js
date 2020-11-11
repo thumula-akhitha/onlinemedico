@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {DataContext} from '../Context'
 import logo from "../images/medicine.png";
 import "../css/Login.css";
+
 import AdminHeader from "../section/Admin/AdminHeader";
 class LoginForm extends React.Component {
   constructor(props) {
@@ -24,7 +25,9 @@ class LoginForm extends React.Component {
         if (res.data.message === "success") {
           document.getElementById("error").innerHTML = "";
           const {addName} = this.context;
+          const {addUserDetails} = this.context
           addName(res.data.data[0].firstName);
+          addUserDetails(res.data.data[0])
           this.props.history.push("/onlinemedico/home");
         }
        else if (res.data.message === "Adminsuccess") {

@@ -34,12 +34,37 @@
     width: 20em;
     height: 5em;
 }
-.cancelbtn{
-    margin-left: 30em;
-    margin-top: 8em;
+.editbtn{
+    margin-left: 17em;
+    margin-top: 3em;
     width: 9em;
     height: 38px;
     border-radius: 5px;
     margin-bottom: 2em;
     background-color: mediumseagreen;
+}
+.amounts{
+    margin-left: 50em;
+}
+.amounts .count{
+    width: 40px;
+    height: 30px;
+    border: 1px solid #555;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+.amounts span{
+    color: crimson;
+    padding: 0 20px;
+}
+.cancelbtn{
+    margin-left: 19em;
+    margin-top: 7em;
+    width: 9em;
+    height: 38px;
+    border-radius: 5px;
+    margin-bottom: 2em;
+    background-color: mediumseagreen;
+
 }

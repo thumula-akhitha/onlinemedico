@@ -28,7 +28,9 @@ import OrderDetails from '../Components/section/OrderDetails';
 import PastOrder from '../Components/section/PastOrder';
 import Home from '../Components/section/Home';
 import OrderSuccess from '../Components/section/OrderSuccess';
-import userProfile from '../Components/section/UserProfile';
+import UserProfile from '../Components/section/UserProfile';
+import EditProfile from '../Components/section/EditProfile';
+
 
 export class Section extends Component {
     render() {
@@ -57,13 +59,14 @@ export class Section extends Component {
                 <Route path="/onlinemedico/sign" component={SignIn}/>
                 <Route path="/onlinemedico/forgot" component={Forgot}/>
                 <Route path="/onlinemedico/reset" component={Reset}/>
+                <Route path="/onlinemedico/edituserprofile" component={EditProfile}/>
                 <Route path="/onlinemedico/checkout" component={Checkout}/>
                 <Route path="/onlinemedico/orderDetails" component={OrderDetails}/>
                 <Route path="/onlinemedico/checkcart" component={CheckoutCart}/>
                 <Route path="/onlinemedico/pastOrder" component={PastOrder}/>
-                <Route path="/onlinemedico/logout" component={Logout}/>
+                <Route path="/logout" component={Logout}/>
                 <Route path="/onlinemedico/ordersuccess" component={OrderSuccess}/>
-                <Route path="/onlinemedico/UserProfile" component={userProfile}/>
+                <Route path="/onlinemedico/UserProfile" component={UserProfile} exact/>
             </section>
             <Route path="/onlinemedico" component={Footer}/> 	
             </div>

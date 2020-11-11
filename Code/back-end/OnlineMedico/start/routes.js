@@ -1,5 +1,7 @@
 'use strict'
 
+const CustomerController = require('../app/Controllers/Http/CustomerController');
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -29,6 +31,7 @@ Route.group(() => {
   Route.post("/login", "CustomerController.login");
   Route.post("/forgotpassword", "CustomerController.forgotPassword");
   Route.post("/newpassword", "CustomerController.newPassword");
+  Route.post("/updateProfile/:userID","CustomerController.updateProfile");
 }).prefix("/onlinemedico/user");
 
 
@@ -47,6 +50,7 @@ Route.group(() => {
   Route.post("/card-details/:customerId", "CustomerController.addCard");
   Route.get("/address/:customerId", "CustomerController.newPassword");
   Route.get("/card-details/:customerId", "CustomerController.newPassword");
+  Route.get("/userDetails/:userId", "CustomerController.getDetails");
   Route.post("/addProduct", "CustomerController.addProduct");
   Route.post("/contactUs", "CustomerController.contactUs");
 

@@ -8,7 +8,6 @@ import '../../css/AdminOrder.css';
 
 
 class AdminOrder extends Component {
-   
       render() {
         return (
           <div>
@@ -19,10 +18,10 @@ class AdminOrder extends Component {
               <Row>
                 <Col className="adminOrdrid">
                <Accordion.Toggle as={Button} className="adminButton" variant="link" eventKey="0" >
-               <FaCaretRight />#9876534567
+               <FaCaretRight />W09B2345BVC5
                 </Accordion.Toggle>
                 </Col>
-                <Col className="adminDate"><b>Order Date: </b> 09/20/2020</Col><Col className="adminDate"><b>Status:</b><span id="adStatus"><b>Shipped</b></span></Col>
+                <Col className="adminDate"><b>Order Date: </b> 11/11/2020</Col><Col className="adminDate"><b>Status:</b><span id="adStatus"><b>Processing</b></span></Col>
                 <Col className="adminDel"><Button className="adminTrash" variant="secondary"><FaTrashAlt /></Button> </Col>
                 </Row>
               </Card.Header>
@@ -31,17 +30,17 @@ class AdminOrder extends Component {
                   <Row>
                   <Col>
                    <div className="a-1"><p>Shipping Information: </p></div>
-                  <div className="a-2"><p>Rohan Bandari<br />1121 N College Dr<br />Horizons West Apartment 2<br /></p></div></Col>
+                  <div className="a-2"><p>Akhitha Tumula<br />1115N College Dr<br />Apt L<br /></p></div></Col>
                   <Col>
                   <div className="a-1"><p>Contact Information: </p></div>
-                  <div className="a-2"><p>Rohan Bandari<br />rohan@gmail.com<br />9876543456<br /></p></div></Col>
+                  <div className="a-2"><p>Akhitha Tumula<br />akhitha.tumula@gmail.com<br />9898989898<br /></p></div></Col>
                   </Row>
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
             </Accordion>
 
-            <Accordion>
+            {/* <Accordion>
             <Card>
               <Card.Header className="adminCard">
               <Row>
@@ -96,7 +95,7 @@ class AdminOrder extends Component {
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
-            </Accordion>
+            </Accordion> */}
 
             </div>
             

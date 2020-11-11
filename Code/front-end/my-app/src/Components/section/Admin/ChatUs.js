@@ -62,7 +62,7 @@ export class ChatUs extends Component {
     a.type = 'text';
     a.data={}
    // console.log(moment().utcOffset('+05:30').format('hh:mm:ss a'))
-    a.data.text = <div> {message.value} <p style={{"paddingLeft":"134px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p></div>
+    a.data.text = <div>  <p style={{"paddingLeft":"134px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p> {message.value}</div>
     console.log(message.name)
    
   if(this.state.names.some(person => person.name == message.name)){
@@ -202,8 +202,18 @@ export class ChatUs extends Component {
 {
                    this.state.names.map(product =>(
                        <div>
-                      <span><li style={{ "backgroundColor":"#D3D3D3","fontSize":"22px","marginBottom":"15px","cursor":"pointer"}}
-                       onClick={()=> this.addChat(product) }>{product.name} <span style={{"color":"green"}}> {product.count}</span></li>
+                      <span><li style={{"fontSize":"22px","marginBottom":"15px","cursor":"pointer"}}
+                       onClick={()=> this.addChat(product) }>{product.name}  <span style={{
+                        "background-color":"#4e8cff",
+                        "font-size":"18px",
+                        "color":"black",        
+                        "border-radius":"50%",
+                        "display":"inline-block",
+                        "width":"25px",
+                        "height":"25px",
+                        "text-align":"center",
+                        "margin":"0"
+                        }}>{product.count}</span></li>
                        </span>
                        </div>
                    ))}
