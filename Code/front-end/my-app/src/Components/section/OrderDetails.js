@@ -15,7 +15,7 @@ render(){
        <Col md="7" className="summaryDiv"> 
            
                <div className="orderSummary1">
-               <p><b>Order Date</b>: October 10,2020</p>
+               <p><b>Order Date</b>: November 11,2020</p>
                <p><b>Order Number</b>: W09B2345BVC5</p>
                <p><b>Total</b>: $19.85</p>
                </div>

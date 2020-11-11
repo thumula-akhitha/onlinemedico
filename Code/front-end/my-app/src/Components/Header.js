@@ -73,10 +73,10 @@ export class Header extends Component {
               </Dropdown.Item>
               <Dropdown.Item>
               <Link to='/onlinemedico/pastOrder'
-              >Previous Orders
+              >My Orders
               </Link>
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Current Orders</Dropdown.Item>
+             
               <Dropdown.Item>
                 <Link to='/logout'
               >Logout
