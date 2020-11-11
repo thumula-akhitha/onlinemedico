@@ -109,9 +109,9 @@ const OrderHistory = (props) => {
                                  onClick={()=>setReturnItem(true)}
                                 >Return or replace items</button>
                             </div>
-                            <div className='row'>
+                            {/* <div className='row'>
                                 <button type="button" className='btn btn-primary view' >View your order</button>
-                            </div>
+                            </div> */}
                             <div className='row'>
                                 <button type="button" className='btn btn-primary review' 
                                 onClick={()=>setReviewStatus(true)}

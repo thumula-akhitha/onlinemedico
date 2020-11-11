@@ -4,9 +4,26 @@
     margin-top: 2em;
     margin-bottom: 2em;
 }
+.row{
+    padding-bottom:10px;
+}
 .nameEditLabel{
     margin-left: 2em;
     font-weight: bold;
+}
+.editEmail{
+    width: 252px;
+}
+.edit-errors-p{
+    padding-right:5px;
+}
+.editerrors{
+    font-size:12px;
+    color:red;
+    /* width: 19em;
+    position: absolute;
+    top:4em;
+    left:-5em */
 }
 .accountTitle{
     font-size: 28px;

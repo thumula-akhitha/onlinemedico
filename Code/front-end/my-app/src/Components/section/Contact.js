@@ -23,12 +23,27 @@ const ImgStyle = {
 class Contact extends Component {
   constructor(props) {
     super(props);
+    this.state={
+      firstName:null,
+      lastname:null,
+      email:null,
+      comment:null,
+      errors:{
+        firstName:'',
+        lastName:'',
+        email:'',
+        comment:''
+      }
+    }
+   
     this.firstName = React.createRef();
     this.lastName = React.createRef();
     this.emailId = React.createRef();
     this.comment = React.createRef();
   }
-   handleClick = () => {
+ 
+   handleClick = (event) => {
+    const { errors } = this.state; 
     console.log("entereddd");
     const user ={
       firstName : this.firstName.current.value,
@@ -37,14 +52,38 @@ class Contact extends Component {
       comment : this.comment.current.value,
       time : moment(new Date()).format('MMMM Do YYYY, h:mm:ss a'),
     } 
-    
-    console.log(this.firstName.current.value)
-    axios.defaults.headers.post['Content-Type'] = 'application/json';
-    axios.post(`http://127.0.0.1:3333/onlinemedico/user/contactUs`, user )
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
+    if(this.firstName.current.value==='' )
+    {
+      errors.firstName='enter firstname'
+    }
+    else{
+      errors.firstName=''
+    }
+    let firname=errors.firstName;
+    this.setState({firname:firname})
+    if(this.lastName.current.value ==='')
+    {
+      errors.lastName='please enter last name' 
+    }
+    else{
+      errors.lastName=''
+    }
+    let lastnme= errors.lastName
+    this.setState({lastnme:lastnme})
+    if(this.emailId.current.value==='')
+    {
+      errors.email='Please enter email address'
+    }
+    else{
+      errors.email=''
+    }
+    let mailAddr=errors.email;
+    this.setState({mailAddr:mailAddr})
+    if(this.comment.current.value==='')
+    {
+    errors.comment='Please provide your comment'
+    }
+         else{
       NotificationManager.info('Our Team will contact you soon','we have received your message',8000);
       setTimeout(()=>{
       this.firstName.current.value=" ";
@@ -53,8 +92,28 @@ class Contact extends Component {
       this.comment.current.value=" ";
     },4000);
   }
+    let comm=errors.comment;
+    this.setState({comm:comm})
+     //   else{
+  //     NotificationManager.info('Our Team will contact you soon','we have received your message',8000);
+  //     setTimeout(()=>{
+  //     this.firstName.current.value=" ";
+  //     this.lastName.current.value=" ";
+  //     this.emailId.current.value=" ";
+  //     this.comment.current.value=" ";
+  //   },4000);
+  // }   
+    console.log(this.firstName.current.value)
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
+    axios.post(`http://127.0.0.1:3333/onlinemedico/user/contactUs`, user )
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+    }
   render() {
-    return (
+    const { errors } = this.state;
+    return ( 
       <div className='container-fluid'>
         <div className='contact'>
           <p className='parahelp'>Need Help?</p>
@@ -70,7 +129,9 @@ class Contact extends Component {
                     <label className="fname">First Name</label>
                   </div>
                   <div class="col-70">
-                    <input className="firstname" type="text" id="fname" name="firstname" placeholder="Your name.." ref={this.firstName} required/>
+                    <input className="firstname" type="text" id="fname" name="firstname" placeholder="Your name.."ref={this.firstName} required/>
+                    {errors.firstName.length > 0 &&
+                <span className='errors'>{errors.firstName}</span>}
                   </div>
                 </div>
                 <div class="row">
@@ -79,6 +140,8 @@ class Contact extends Component {
                   </div>
                   <div class="col-80">
                     <input className='lastName' type="text" id="lname" name="lastname" placeholder="Your last name.." ref={this.lastName} required/>
+                    {errors.lastName.length > 0 &&
+                <span className='errors'>{errors.lastName}</span>}
                   </div>
                 </div>
                 <div class="row">
@@ -87,6 +150,8 @@ class Contact extends Component {
                   </div>
                   <div class="col-80">
                     <input className='emailid' type='text' id='email' name='email' placeholder='Email' ref={this.emailId} required />
+                    {errors.email.length > 0 &&
+                <span className='errors'>{errors.email}</span>}
                   </div>
                 </div>
                 <div class="row">
@@ -95,6 +160,8 @@ class Contact extends Component {
                   </div>
                   <div class="col-80">
                     <textarea className='commentArea' id="comment" name="Comment" placeholder="Your comments here.." ref={this.comment}></textarea>
+                    {errors.comment.length > 0 &&
+                <span className='errors'>{errors.comment}</span>}
                   </div>
                 </div>
                 <div class="row">

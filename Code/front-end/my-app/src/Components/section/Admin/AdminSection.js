@@ -7,6 +7,7 @@ import Chat from '../Chat/Chat';
 import AdminOrder from './AdminOrder';
 import AdminRequest from './AdminRequest';
 import ChatUs from './ChatUs';
+import AdminCustOrder from './AdminCustOrder';
 
 export class AdminSection extends Component {
     render() {
@@ -18,6 +19,7 @@ export class AdminSection extends Component {
                 <Route path="/mainadmin/ChatUs" component={ChatUs} exact/>
                 <Route path="/mainadmin/logout" component={Logout} exact />
                 <Route path="/mainadmin/adminOrder" component={AdminOrder} exact />
+                <Route path ='/mainadmin/admincustorder' component ={AdminCustOrder} exact/>
             </section>
             
         )

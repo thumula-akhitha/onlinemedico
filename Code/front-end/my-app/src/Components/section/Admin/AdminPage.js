@@ -16,6 +16,7 @@ class AdminPage extends Component {
         this.productDesc=React.createRef(); 
     }
       addedAlert(){
+      //  event.preventDefault();
          // console.log(this.productCode.current.value)
           const addProduct={
             src: this.prodctLink.current.value,
@@ -24,6 +25,7 @@ class AdminPage extends Component {
             count: this.productQuantity.current.value,
             description: this.productDesc.current.value
           }
+
           console.log(addProduct.productCost);
         axios.defaults.headers.post['Content-Type']='application/json';
         axios.post(`http://127.0.0.1:3333/onlinemedico/user/addProduct`,addProduct)
