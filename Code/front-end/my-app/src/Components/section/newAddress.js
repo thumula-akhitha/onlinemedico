@@ -1,6 +1,8 @@
 import React from "react";
 import axios from 'axios';
+import { DataContext } from '../Context'
 class NewAddress extends React.Component {
+  static contextType = DataContext;
   constructor() {
     super();
      this.cusname=React.createRef();
@@ -11,20 +13,25 @@ class NewAddress extends React.Component {
     this.cuszip=React.createRef(); 
 }
 addedshipping=()=>{
+  console.log("new address")
+  const { userDetails } = this.context
+  console.log(userDetails.id)
       const addshippingaddress={
-        customername: this.cusname.current.value,
+        firstname: this.cusname.current.value,
         mobile: this.cusmobile.current.value,
         address1: this.cusaddress1.current.value,
         address2: this.cusaddress2.current.value,
         state: this.cusstate.current.value,
-        zip: this.cuszip.current.value
+        zip: this.cuszip.current.value,
+        customerId : userDetails.id
+
       }
     axios.defaults.headers.post['Content-Type']='application/json';
-    axios.post(`http://127.0.0.1:3333/onlinemedico/shippingaddress`,addshippingaddress)
-    .then(res=>{
-    console.log(res);
-    console.log(res.data);
-}) 
+      axios.post(`http://127.0.0.1:3333/onlinemedico/user/address`,addshippingaddress)
+      .then(res=>{
+      console.log(res);
+      console.log(res.data);
+  }) 
   }
   render() {
     const { addr, handleChange, handleSubmit, canedit } = this.props;

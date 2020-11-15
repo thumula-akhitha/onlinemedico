@@ -9,11 +9,17 @@ class Order extends Model {
         return 'id'
       }
     user(){
-        return this.hasOne("App/Models/Customer", "id", "id")
+        return this.hasOne("App/Models/Customer", "customerId", "id")
 }
 order_medicines() {
-    return this.belongsToMany("App/Models/Medicine", "id", "id", "id", "id")
+    return this.belongsToMany("App/Models/Medicine", "orderId", "medicineId", "id", "id")
         .pivotTable('order_medicines').withPivot(["quantity"]);
+}
+order_card(){
+    return this.hasOne("App/Models/CardDetail", "cardId", "id")
+}
+order_address(){
+    return this.hasOne("App/Models/Address", "addressId", "id")
 }
 }
 

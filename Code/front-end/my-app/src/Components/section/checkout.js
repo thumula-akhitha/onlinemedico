@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "../css/checkout.css";
+import axios from 'axios';
 import {FaShoppingCart,FaMoneyBill,FaCreditCard, FaCheck} from "react-icons/fa" 
 import CheckoutCart from "./checkoutcart";
 import { v1 as uuidv } from "uuid";
@@ -7,10 +8,12 @@ import Card from "./cards";
 import Address from "./address";
 import NewCard from "./newCard";
 import {Link} from 'react-router-dom';
+import { DataContext } from '../Context'
 ///import {DataContext} from '../Context';
  import OrderSuccess from './OrderSuccess';
 
 const Checkout = (props) => {
+  const { userDetails } = useContext(DataContext)
   const [values, setValues] = useState([]);
   const [card, setCard] = useState({
     nameOnCard: "",
@@ -31,10 +34,21 @@ const Checkout = (props) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("aadd card")
+    console.log(userDetails)
     const newCard = {
       id: id,
       CardAdded: card
     };
+    const k = {
+      ...card, customerId: userDetails.id
+    }
+    console.log(k)
+    axios.post(`http://127.0.0.1:3333/onlinemedico/user/card-details`,k)
+    .then(res=>{
+    console.log(res);
+    console.log(res.data);
+}) 
    
 
     // console.log(newCard);

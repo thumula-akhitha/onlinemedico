@@ -46,9 +46,9 @@ class PrescriptionController {
 
         var mailOptions = {
           from: "onlinemedico782@gmail.com",
-          to: "akhitha.adams@gmail.com",
+          to: "mandapallisatish64@gmail.com",
           subject: "Confirmation regarding your prescription",
-          html: `<p style="font-size:18px; font-weight:bold;">Hi Akhitha,</p><p style="font-size:18px;">your prescription is approved and order has been placed successfully</p>`,
+          html: `<p style="font-size:18px; font-weight:bold;">Hi Satish,</p><p style="font-size:18px;">your prescription is approved and order has been placed successfully</p>`,
           text: "",
         };
         await transporter.sendMail(mailOptions, function (error, info) {

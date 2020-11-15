@@ -179,17 +179,26 @@ class CustomerController {
 }
 
 async addAddress({ auth, request, response, params }) {
-
+             console.log("camee")
     const address = request.all();
-    address.customerId = params.customerId
+    console.log(address)
+    //address.customerId = params.customerId
     addressData = await Address.create(address);
-    return response.status(200).json(addressData);
+    return response.json({
+        status: 'success',
+        message: "address updated success"
+    })
 }
 async addCard({ auth, request, response, params }) {
     const card = request.all();
-    card.customerId = params.customerId
+    console.log("add card")
+    console.log(card)
+   // card.customerId = params.customerId
     cardData = await CardDetail.create(card);
-    return response.status(200).json(cardData);
+    return response.json({
+        status: 'success',
+        message: "card updated success"
+    })
 }
 async contactReview({ auth, request, response, params }){
     console.log("enteredjjkhk")

@@ -46,8 +46,8 @@ Route.group(() => {
 */
 Route.group(() => {
   
-  Route.post("/address/:customerId", "CustomerController.addAddress");
-  Route.post("/card-details/:customerId", "CustomerController.addCard");
+  Route.post("/address", "CustomerController.addAddress");
+  Route.post("/card-details", "CustomerController.addCard");
   Route.get("/address/:customerId", "CustomerController.newPassword");
   Route.get("/card-details/:customerId", "CustomerController.newPassword");
   Route.get("/userDetails/:userId", "CustomerController.getDetails");
@@ -66,12 +66,12 @@ Route.group(() => {
 */
 
 Route.group(() => {
-  Route.get("/orders", "CustomerController.signup");
-  Route.post("/order", "CustomerController.login");
-  Route.get("/order/:orderId", "CustomerController.forgotPassword");
-  Route.post("/updateOrders/:orderId", "CustomerController.newPassword");
-  Route.delete("/orders/:orderId", "CustomerController.newPassword");
-  Route.get("/contactReview","CustomerController.contactReview");
+  Route.get("/orders", "OrderController.getAllOrders");
+  Route.post("/createOrder", "OrderController.createOrder");
+  Route.get("/activeOrders", "OrderController.getActiveOrders");
+  Route.get("/pastOrders", "OrderController.getPastOrders");
+  Route.get("/orders/:orderId", "OrderController.getOrder");
+ 
 }).prefix("/onlinemedico");
 
 /*

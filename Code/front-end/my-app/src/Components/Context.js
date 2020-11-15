@@ -9,6 +9,7 @@ export class DataProvider extends Component{
             name : "admin",
             userDetails: {},
             canedit: false,
+            orders:{},
             addr: {
                 firstname: "",
                 mobile: "",
@@ -129,6 +130,13 @@ export class DataProvider extends Component{
          })
          console.log("add userDetails")
          console.log(this.state.userDetails)
+    }
+    addOrder = (value) => {
+        this.setState({
+            orders: value
+        })
+        console.log("from context")
+        console.log(this.state.orders)
     }
     addCart = (id) => {
         alert("Product is added to cart")
@@ -313,12 +321,12 @@ console.log(selectedAddress);
    
 
     render() {
-        const {products,cart,total,addresses, addr, id, canedit,selectedAddress,name,userDetails} = this.state;
-        const {addCart,reduction,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addUserDetails,addProduct,updateProducts,addName} = this;
+        const {products,cart,total,addresses, orders,addr, id, canedit,selectedAddress,name,userDetails} = this.state;
+        const {addCart,reduction,addOrder,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addUserDetails,addProduct,updateProducts,addName} = this;
         return (
             <DataContext.Provider 
             value={{products,userDetails, addCart, cart, reduction,increase,removeProduct,total,getTotal,name,
-                addAddress, addUserDetails,addresses, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts,addName}}>
+                addAddress, addUserDetails,addOrder,addresses,orders, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts,addName}}>
                 {this.props.children}
             </DataContext.Provider>
         )
