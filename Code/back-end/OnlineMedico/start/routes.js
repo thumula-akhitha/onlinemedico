@@ -71,6 +71,7 @@ Route.group(() => {
   Route.get("/activeOrders", "OrderController.getActiveOrders");
   Route.get("/pastOrders", "OrderController.getPastOrders");
   Route.get("/orders/:orderId", "OrderController.getOrder");
+  Route.get("/cancelOrder/:orderId", "OrderController.cancelOrder");
  
 }).prefix("/onlinemedico");
 
