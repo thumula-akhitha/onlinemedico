@@ -4,6 +4,12 @@
     padding-right: 5em;
 
 }
+.card-title{
+    margin-bottom:0em;
+}
+.his-6{
+    margin-top:4em;
+}
 .subview{
     padding-left: 12em;
     padding-top: 2em;
@@ -21,9 +27,6 @@
 .cost{
     color:tomato;
 }
-.custName{
-    color:blue;
-}
 .reciept{
     color:blue;
 }
@@ -32,13 +35,11 @@
     height: 10em;
     margin-top: 3em;
 }
-.orderTitle{
-    margin-top:1em;
-}
+
 
 .buyAgainBtn{
     height: 53px;
-    width: 12em;
+    width: 18em;
     margin-top: 1em;
 }
 .card-header .row {
@@ -53,7 +54,7 @@
   
 }
 .track-col-5{
-    padding-left:80px;
+    margin-top:3em;
 }
 p{
     margin-bottom: 0rem; 
@@ -87,7 +88,4 @@ p{
     height: 50px;
     color:black;
     border-color: lightgray;
-}
-.total{
-    
 }
