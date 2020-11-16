@@ -12,8 +12,7 @@
 
 }
 .orderNumber{
-    text-decoration: underline;
-    color: #006c7c;
+    color: rgb(31, 139, 31);
 }
 .orderDetails{
     padding: 10px !important;
