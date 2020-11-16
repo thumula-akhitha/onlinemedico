@@ -51,7 +51,7 @@ export class Section extends Component {
                 <Route path="/onlinemedico/upload" component={Upload} exact/>
                 <Route path="/onlinemedico/shipping" component={Shipping}/>
                 <Route path="/onlinemedico/star" component={Star}/>
-                <Route path="/onlinemedico/history" component={OrderHistory}/>
+                <Route path="/onlinemedico/history/:id" component={OrderHistory}/>
                 <Route path="/onlinemedico/admin" component={AdminPage}/>
                 <Route path="/onlinemedico/ChatUs" component={Chat}/>
                 <Route path="/onlinemedico/track" component={Tracking}/>
