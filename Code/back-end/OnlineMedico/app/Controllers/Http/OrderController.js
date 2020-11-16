@@ -6,6 +6,8 @@ class OrderController {
      const k = request.all();
     //console.log(k)
     const orderData = k.order;
+    let random = Math.floor(1000000000 + Math.random() * 9000000000);
+    orderData.orderId = random
     const orderCreated = await Order.create(orderData);
     
     await orderCreated.order_medicines().attach(k.medicines, (medicine) => {
