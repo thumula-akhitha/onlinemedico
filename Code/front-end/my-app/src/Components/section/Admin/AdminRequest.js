@@ -7,7 +7,7 @@ class AdminRequest extends Component {
         review : []
     }
       componentDidMount(){
-        axios.get(`http://127.0.0.1:3333/onlinemedico/contactReview`)
+        axios.get(`http://127.0.0.1:3333/onlinemedico/user/contactReview`)
         .then(res=>{
         console.log(res);
         console.log(res.data);
