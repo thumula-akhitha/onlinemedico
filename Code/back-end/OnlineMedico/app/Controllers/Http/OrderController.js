@@ -36,6 +36,19 @@ class OrderController {
   
   return response.json(order);
   }
+  async getOrderStatus({ request, response, auth,params }) {
+    const order = await Order.find(params.id);
+    order.status = params.orderStatus;
+    await order.save()
+  //  const order = await Order.query().where("id", "=", params.orderId).with('order_medicines').with('order_card').with('order_address').fetch();
+  
+  return response.json(order);
+  }
+  async getOrderFilter({ request, response, auth,params }) {
+    const order = await Order.query().where("status", "=", params.orderName).with('order_medicines').with('order_card').with('order_address').fetch();
+  
+  return response.json(order);
+  }
   async cancelOrder({ request, response, auth,params }) {
     const order = await Order.find(params.orderId)
     await order.delete();

@@ -1,8 +1,10 @@
 import React, {useState } from 'react';
 import { Card } from 'react-bootstrap';
+import {useHistory,Redirect} from 'react-router-dom';
 import Backdrop from '@material-ui/core/Backdrop';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from './Modal';
+import Toast from 'light-toast';
 import "../css/Return.css";
 import { withRouter } from 'react-router'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
@@ -10,6 +12,7 @@ import 'react-notifications/lib/notifications.css';
 
 const returnItem = (props) => {
     const [open, setOpen] = useState(false);
+    const history=useHistory();
     const useStyles = makeStyles((theme) => ({
         backdrop: {
           zIndex: theme.zIndex.drawer + 1,
@@ -21,8 +24,13 @@ const returnItem = (props) => {
       const handleToggle=(e)=>{  
         e.preventDefault();
         console.log('rddc ')   
-     NotificationManager.success('Return placed succesfully','',5000)
-     setInterval(()=>props.history.push('/onlinemedico/pastOrder'),2000)   
+        Toast.info('Order Returned Successfully', 2000, () => {
+            history.push('/onlinemedico/pastOrder')
+            console.log("camee")
+            // do something after the toast disappears
+          });
+     //NotificationManager.success('Return placed succesfully','',5000)
+    // setInterval(()=>props.history.push('/onlinemedico/pastOrder'),2000)   
     }
     return (
         <div className='returnHead'>
@@ -54,9 +62,9 @@ const returnItem = (props) => {
                     </form>
             </Card.Text>  
         </Card>
-        <NotificationContainer/>
+       
         </div>
     )
 
 }
-export default withRouter(returnItem);
+export default returnItem;
