@@ -27,7 +27,9 @@ class PastOrder extends Component {
   }
   render() {
     return (
+     
       <Container id="orderContainer">
+        
         <Row >
           <Col md="9"><h4>Past Orders</h4></Col>
           <Col md="1">View By: </Col>
@@ -54,6 +56,8 @@ class PastOrder extends Component {
      <Col><Link to={`/onlinemedico/history/${od.id}`}>{moment(od.created_at).format('MMMM Do YYYY, h:mm a')}</Link></Col>
    <Col className="orderNumber">${od.total}</Col>
    <Col style={{color:"Green"}}><h5>{od.status}</h5></Col>
+   {od.order_address.firstName}
+   
     </Row>
    )}   
    </Container>
