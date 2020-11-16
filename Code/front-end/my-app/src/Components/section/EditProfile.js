@@ -23,30 +23,6 @@ class EditProfile extends Component {
         };
     handleChange(event) {
         event.preventDefault();
-    //     const { name, value } = event.target;
-    //     let errors = this.state.errors;
-    //     switch (name) {
-    //       case 'name':
-    //         errors.name =
-    //           value.match(/^[a-zA-Z][a-zA-Z\s]*$/)
-    //             ? ''
-    //             : 'Only letters are allowed';
-    //         break;
-    //         case 'email':
-    //             errors.email =
-    //             validEmailRegex.test(value)
-    //               ? ''
-    //               : 'Email is not valid!';
-    //           break;
-    //         case 'mobile':
-    //     errors.mobile =
-    //       value.match(/^[0-9]*$/) && value.length == 10
-    //         ? '' : 'Length must be 10 & Only digits are allowed';
-
-    //     break;
-    //   default:
-    //     break;
-    //     }
         this.setState({
             [event.target.name]: event.target.value
         })
