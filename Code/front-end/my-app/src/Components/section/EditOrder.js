@@ -92,17 +92,8 @@ class EditOrder extends Component {
                             onChange={this.handleChange}
                         />
                         <label htmlFor={e.id}>{e.label}</label>
-                        {/* <div className='amounts'>
-                            <button className="count" onClick={() => reduction(e.id)}> - </button>
-                            <span>{e.count}</span>
-                            <button className="count" onClick={() => increase(e.id)}> + </button>
-                        </div> */}
-
                     </div>
-
                 ))}
-                 {/* <h3>Total: ${Math.floor(total* 100) / 100}</h3> */}
-
                 <button className='editbtn' onClick={this.handleClick}>EDIT</button>
                 {/* <button className='cancelbtn' onClick={this.handleCancel}>CANCEL</button> */}
             </div>

@@ -43,6 +43,10 @@ class OrderSuccess extends Component{
        // this.context.getTotal();
     }
     render(){
+        const { orders } = this.context
+        const tax=orders.total-((orders.total)*(5/100))
+        const taxtotal=orders.total-tax
+        const orderTotal=taxtotal+orders.total
         return(
             //const {cart,total}=this.context;
             <div className='OrderHeading'>
@@ -60,7 +64,7 @@ class OrderSuccess extends Component{
                 </div>
                 <div className='paymnt'>
                     <p className='paymntTotal'>Payment Total</p>
-                    <p className='amtTotal'>$19.85</p>
+        <p className='amtTotal'>{orderTotal}</p>
                 </div>
                 <div className='deliveryDate'>
                     <p className='Delievery'>Delivery</p>
