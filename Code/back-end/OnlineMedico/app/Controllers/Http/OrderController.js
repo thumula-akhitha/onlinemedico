@@ -13,7 +13,7 @@ class OrderController {
     await orderCreated.order_medicines().attach(k.medicines, (medicine) => {
       medicine.quantity = 1;
   });
-  const order = await Order.query().where("id", "=", orderCreated.toJSON().id).with('order_medicines').with('order_card').with('order_address').fetch();
+  const order = await Order.query().where("id", "=", orderCreated.toJSON().id).with('order_medicines').with('order_card').with('order_address').with('user').fetch();
   console.log(order.toJSON())
   return response.json(order);
   }

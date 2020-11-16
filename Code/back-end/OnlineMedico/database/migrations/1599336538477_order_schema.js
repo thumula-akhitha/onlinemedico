@@ -12,6 +12,7 @@ class OrderSchema extends Schema {
       table.integer('cardId').unsigned().notNullable()
       table.foreign('cardId').references('card_details.id').onDelete('cascade')
       table.string('status').notNullable()
+      table.string('orderId').notNullable()
       table.integer('total').notNullable()
       table.integer('customerId', 10).unsigned().notNullable()
       table.foreign('customerId').references('customers.id').onDelete('cascade')
