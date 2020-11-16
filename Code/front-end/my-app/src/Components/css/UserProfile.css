@@ -30,6 +30,10 @@
     height: 42px;
     width: 150px;
 }
+.changePwd a{
+    color:black;
+}
+
 .editProfile{
     margin-left: 77px;
     border: none;
@@ -39,4 +43,7 @@
     background-color: #52ce89;
     border-radius: 7px;
     margin-top: 16px;
+}
+.editProfile a {
+ color:black;
 }
