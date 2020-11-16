@@ -35,19 +35,6 @@ class Review extends Component {
             <form >
                 <div className='reviewPage'>
                     <p className='reviewTitle'>Create Review</p>
-                    <div className='imageCard'>
-                        <div className='row'>
-                            <div className='col-5'>
-                                {this.props.orderedArray.map(
-                                    orderimage => { return (<img src={orderimage.image} width='131px' height='100px' />) }
-                                )}
-                            </div>
-                            <div className='col-7'>
-                                {this.props.orderedArray[0].title}
-                              
-                            </div>
-                        </div>
-                    </div>
                     <div className='otherFeatures'>
                         <div className='overallReview'>
                             <p className='overall'>Overall rating</p>

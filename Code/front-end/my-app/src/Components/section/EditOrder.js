@@ -1,107 +1,59 @@
-import React, { Component } from 'react'
-import '../css/EditOrder.css';
-import { DataContext } from '../Context';
-import axios from 'axios';
+import React, {useState } from 'react';
+import { Card } from 'react-bootstrap';
+import Backdrop from '@material-ui/core/Backdrop';
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from './Modal';
+import {useHistory} from 'react-router-dom';
+import "../css/Return.css";
+// import { withRouter } from 'react-router'
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
-const selectedImage = () => {
-    alert('Succesfully canceled your order')
 
-}
-const paracetomal = require('../images/paracetomal.jpg')
-const tablet = require('../images/tablet.jpg')
-const panadol = require('../images/panadol.jpg')
-const imgStyle = {
-    marginBottom: '3em',
-    marginTop: '4em',
-    width: '192px',
-    marginLeft: '6em',
-    height: '126px'
-}
-const paraImageStyle = {
-    width: '192px',
-    marginLeft: '6em',
-    height: '127px'
-}
-const panadolStyle = {
-    width: '192px',
-    marginLeft: '6em',
-    height: '127px'
 
-}
-class EditOrder extends Component {
-    static contextType = DataContext;
-    state = {
-        list: [
-            {
-                id: 1,
-                label: <img style={imgStyle} src={tablet} />,
-                value: false,
-                count: 2
-
-            },
-            {
-                id: 2,
-                label: <img style={paraImageStyle} src={paracetomal} />,
-                value: false,
-                count: 3
-            },
-            {
-                id: 3,
-                label: <img style={panadolStyle} src={panadol} />,
-                value: false,
-                count: 2
-            },
-        ]
-    };
+const returnItem = (props) => {
+    const history=useHistory();
+   const handleToggle=(e)=>{  
+       e.preventDefault();
+       console.log('rddc ')   
+        // history.push('/onlinemedico/pastOrder')
+    NotificationManager.success('Order Cancelled Succesfully','',5000)
+    history.goBack()
    
-    handleChange = e => {
-        const id = e.target.id;
-        const item = e.target.name;
-        const isChecked = e.target.checked;
-        this.setState(prevState => {
-            return {
-                list: prevState.list.map(
-                    li => (li.id === +id ? {
-                        ...li,
-                        value: !li.value
-                    } : li)
-                )
-            };
-        });
-    };
-    handleCancel(){
-        alert('Cancelled your order');
-    }
-    handleClick = () => {
-        this.setState(prevState => {
-            return {
-                list: prevState.list.filter(li => !li.value)
-            };
-        });
-    };
-    render() {
-        const { increase, reduction, removeProduct, total } = this.context;
-        return (
-            <div className="App">
-                {this.state.list.map(e => (
-                    <div key={e.id}>
-                        <input
-                            type="checkbox"
-                            id={e.id}
-                            checked={e.value}
-                            onChange={this.handleChange}
-                        />
-                        <label htmlFor={e.id}>{e.label}</label>
-                    </div>
-                ))}
-                <button className='editbtn' onClick={this.handleClick}>EDIT</button>
-                {/* <button className='cancelbtn' onClick={this.handleCancel}>CANCEL</button> */}
-            </div>
-        );
-    }
+   }
 
+    return (
+        <div className='returnHead'>
+        <p className='returnPara'>  If you are returning multiple items from one order, 
+        you can avoid additional return fees by returning them together.</p>
+        <Card className='returnItemHeader'>
+            <Card.Text>
+                <form>
+                <div className='row'>
+                    <div className='col'>
+                    <label>Please give reason for return</label>
+                    </div>
+                    <div className='col'>
+                    <input type='text' className='returnReason'/>
+                    </div>
+                </div>
+                <div className='row'>
+                    <div className='col'>
+                    <label>Provide account details for refund</label>
+                    </div>
+                    <div className='col'>
+                    <input type='text' className='refundDetails'  />
+                    </div>
+                </div>
+                <button className='nextbtn'
+                    onClick={handleToggle}
+                    >CANCEL ORDER</button>
+                    </form>
+            </Card.Text>
+        </Card>
+        <NotificationContainer />
+        </div>
+    )
 
 }
-
-
-export default EditOrder;
+export default returnItem;

@@ -95,28 +95,45 @@ const OrderHistory = (props) => {
                         </div>
                         <div className='col-5 track-col-5'>
                             <div className='row'>
-                            <button type="button" className='btn btn-primary track'
-                                onClick={() => setTrackStatus(true)}
-                                >Track package</button>
+                                {
+                                    orderHistory.status==='delivered'?'':
+                                    <button type="button" className='btn btn-primary track'
+                                        onClick={() => setTrackStatus(true)}
+                                        >Track package</button>
+                                }
+                                  
+                            
                             </div>
                             <div className='row'>
-                                <button type="button" className='btn btn-primary replace' 
-                                 onClick={()=>setReturnItem(true)}
-                                >Return or replace items</button>
+                                {
+                                      orderHistory.status==='delivered'?
+                                      <button type="button" className='btn btn-primary replace' 
+                                      onClick={()=>setReturnItem(true)}
+                                     >Return or replace items</button>:''
+                                }
+                                
                             </div>
                             {/* <div className='row'>
                                 <button type="button" className='btn btn-primary view' >View your order</button>
                             </div> */}
                             <div className='row'>
-                                <button type="button" className='btn btn-primary review' 
-                                onClick={()=>setReviewStatus(true)}
-                                >Write a product review</button>
+                                {
+                                    orderHistory.status==='delivered'?
+                                    <button type="button" className='btn btn-primary review' 
+                                    onClick={()=>setReviewStatus(true)}
+                                    >Write a product review</button>:''
+                                }
+                               
                             </div>
                             <div className='row'>
-                                <button type="button" 
-                                className='btn btn-primary cancel'
-                                onClick={()=>setEditOrder(true)}
-                                >Edit/Cancel order</button>
+                                {
+                                     orderHistory.status!='delivered'?
+                                     <button type="button" 
+                                     className='btn btn-primary cancel'
+                                     onClick={()=>setEditOrder(true)}
+                                     >Cancel order</button>:''     
+                                }
+                              
                             </div>
 
                         </div>

@@ -18,7 +18,7 @@ class OrderSuccess extends Component{
         const order = {}
         order.addressId = 1;
         order.cardId = 1;
-        order.status = "pending";
+        order.status = "confirmed";
         order.customerId = 1;
         order.total = total;
         const medicine = cart.map((value) =>  value.id)
