@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import {Row, Col,Container,Form,Image} from "react-bootstrap";
 import "../css/PastOrder.css";
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 import "../images/tablet.jpg"
+import moment from 'moment';
 
 
 class PastOrder extends Component {
@@ -10,16 +12,24 @@ class PastOrder extends Component {
     super(props);
 
   }
-//    orderGenerator = () => {
-//     axios.post('http://127.0.0.1:3333/onlinemedico/ordered','') 
-//         .then(response => {
-//             console.log(response);
-//         }).catch(err=> console.log("error occurred"))
-
-// }
+  state={
+    OrderDetails : []
+    } 
+  componentDidMount(){
+    console.log("entered component function")
+    axios.get('http://127.0.0.1:3333/onlinemedico/orders').then(res=>{
+      console.log(res.data)
+      this.setState({OrderDetails:res.data})
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
   render() {
     return (
+     
       <Container id="orderContainer">
+        
         <Row >
           <Col md="9"><h4>Past Orders</h4></Col>
           <Col md="1">View By: </Col>
@@ -35,23 +45,21 @@ class PastOrder extends Component {
   </Form.Group>
   </Form>
   </Col>
-        </Row>
+  </Row>
    <Row className="orderHeader">
-       <Col md="1"></Col>
      <Col>Order Date</Col>
-     <Col>Order Number</Col>
+     <Col>Order Total</Col>
      <Col>Order Status</Col>
    </Row>
-   <Row className="orderDetails">
-   <Col md={1} >
-      <Image id="orderImage" src={require("../images/tablet.jpg")}  rounded />
-    </Col>
-<Col>November 11</Col>
-<Col className="orderNumber"><Link to="/onlinemedico/history">987654</Link></Col>
-<Col style={{color:"Green"}}><h5>Pending</h5></Col>
-   </Row>
-  
+   {this.state.OrderDetails.map(od=>
+     <Row className="orderDetails">
+     <Col><Link to={`/onlinemedico/history/${od.id}`}>{moment(od.created_at).format('MMMM Do YYYY, h:mm a')}</Link></Col>
+   <Col className="orderNumber">${od.total}</Col>
+   <Col style={{color:"Green"}}><h5>{od.status}</h5></Col>
+   {od.order_address.firstName}
    
+    </Row>
+   )}   
    </Container>
     )
   }

@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react';
+import React, { Component,useState, useEffect } from 'react';
 import  '../css/OrderHistory.css';
 import { Card } from 'react-bootstrap';
 import Review from './Review';
@@ -6,75 +6,70 @@ import Tracking from './Tracking ';
 import {Link} from 'react-router-dom';
 import ReturnItem from './ReturnItem';
 import EditOrder from './EditOrder';
-
-
-
-const OrderHistory = (props) => {
-    const cardInfo = [
-        {
-            image: require("../images/tablet.jpg"),
-            title: "IRESSA",
-            text: "Cold tablet",
-            sold: 'Walmart',
-            price: '20$',
-            status: 'Delivered',
-            date: 'Aug 2nd 2020',
-            name: 'Shravs',
-            orderId: 'G34DC12334',
-            address: '1121 N collge Dr'
-        },
-    ];
+import axios from 'axios';
+import moment from 'moment';
+const OrderHistory = (props) => {    
+    const [orderHistory,setorderHistory] = useState({order_address:{}});
     const [reviewStatus,setReviewStatus]=useState(false);
     const [trackStatus,setTrackStatus]=useState(false);
     const [returnItem,setReturnItem]=useState(false);
     const [editOrder,setEditOrder]=useState(false);
+    useEffect(()=>{
+        axios.get(`http://127.0.0.1:3333/onlinemedico/orders/${props.match.params.id}`).then(res=>{  
+        setorderHistory(res.data[0])
+        console.log(res.data)
+        
+    }
+        ) 
+    },[])
     if(trackStatus==true)
     {
-        return <Tracking trackingArray= {cardInfo}/>
+        return <Tracking trackingArray= {orderHistory}/>
     }
     if(returnItem == true){
-        return <ReturnItem returnArray = {cardInfo}/>
+        return <ReturnItem returnArray = {orderHistory}/>
     }
     if(reviewStatus==true){
-        return <Review orderedArray = { cardInfo }/>
+        return <Review orderedArray = { orderHistory }/>
     }
     if(editOrder==true){
-        return <EditOrder returnArray={cardInfo}/>
+        return <EditOrder returnArray={orderHistory}/>
     }
     else{
-    // const renderCard = (card, index) => {
+    
         return (
-            cardInfo.map((cd,index) =>(
+            
                 <Card className="order">
                 <Card.Header>
                     <div className='row'>
                         <div className='col-3'>
                             < div className='row'>
-                                <p className='orderedOn'>Order Placed on</p>
+                                <h5 className='orderedOn'>Order Placed on </h5>
                             </div>
                             <div className='row'>
-                                <p className='orderDate'>{cd.date}</p>
-                            </div>
-                        </div>
-                        <div className='col-3'>
-                            <div className='row'>
-                                <p>Total</p>
-                            </div>
-                            <div className='row'>
-                                <p className='totalPrice'>{cd.price}</p>
+                            {moment(orderHistory.created_at).format('MMMM Do YYYY, h:mm a')}
                             </div>
                         </div>
                         <div className='col-3'>
                             <div className='row'>
-                                <p >SHIP TO </p>
+                                <h5>Total</h5>
                             </div>
+                           
                             <div className='row'>
-                                <p className='custName'> {cd.name}</p>
+                                <p className='totalPrice'>{orderHistory.total}</p>
                             </div>
                         </div>
                         <div className='col-3'>
                             <div className='row'>
-                                <p className='orderDate'>Order# {cd.orderId} </p>
+                                <h5>SHIP TO </h5>
+                            </div>
+                            <div className='row'>
+                             <p className='custName'>{orderHistory.order_address.firstName}</p>
+                            </div>
+                        </div>
+                        <div className='col-3'>
+                            <div className='row'>
+                            <p className='orderDate'>Order#{orderHistory.orderId}</p>
                             </div>
                             <div className='row'>
                             <Link to="/onlinemedico/orderDetails" className='reciept'>Order Details</Link>
@@ -85,17 +80,17 @@ const OrderHistory = (props) => {
                     </div>
                 </Card.Header>
                 <Card.Body>
-                    <p className='status'>{cd.status}</p>
+                    <p className='status'></p>
                     <div className='row'>
                         <div className='col-4'>
-                            <Card.Img className='orderItem' src={cd.image}/>
+                            <Card.Img className='orderItem' />
                         </div>
                         <div className='col-3'>
-                            <Card.Title className='orderTitle'>{cd.title}</Card.Title>
-                            <Card.Text> {cd.text} </Card.Text>
-                            <p>Sold by:{cd.sold}</p>
+                            <Card.Title className='orderTitle'></Card.Title>
+                            <Card.Text>  </Card.Text>
+                            <p>Sold by:</p>
                             <p>Return eligible for 30 days after order</p>
-                            <p className='cost'>{cd.price}</p>
+                            <p className='cost'></p>
                             <button type="button" className="btn btn-primary buyAgainBtn">Buy it again</button>
                         </div>
                         <div className='col-5 track-col-5'>
@@ -130,7 +125,7 @@ const OrderHistory = (props) => {
                 </Card.Body>
 
             </Card>
-            ))
+          
 
         );
     };
