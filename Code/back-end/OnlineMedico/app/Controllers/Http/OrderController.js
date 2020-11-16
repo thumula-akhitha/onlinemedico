@@ -36,6 +36,11 @@ class OrderController {
   
   return response.json(order);
   }
+  async cancelOrder({ request, response, auth,params }) {
+    const order = await Order.find(params.orderId)
+    await order.delete();
+  return response.json(order);
+  }
 
     async getRandomIntBetween() {
         
