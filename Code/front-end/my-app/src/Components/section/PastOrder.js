@@ -25,22 +25,33 @@ class PastOrder extends Component {
       console.log(err)
     })
   }
+  handleChange(e) {
+    console.log(e.target.value)
+    if(e.target.value != "select"){
+    axios.get(`http://127.0.0.1:3333/onlinemedico/ordersFilter/${e.target.value}`).then(res=>{
+      console.log(res.data)
+      this.setState({OrderDetails:res.data})
+    })
+  }
+  }
   render() {
     return (
      
       <Container id="orderContainer">
         
         <Row >
-          <Col md="9"><h4>Past Orders</h4></Col>
-          <Col md="1">View By: </Col>
+          <Col md="8"><h4>Past Orders</h4></Col>
+          <Col md="2">Filter By Status: </Col>
           <Col md="2">
           <Form>
   <Form.Group controlId="exampleForm.SelectCustomSizeSm">
     {/* <Form.Label>View By:</Form.Label> */}
-    <Form.Control as="select" size="md" custom>
-      <option>last 30 days</option>
-      <option>last 60 days</option>
-      <option>last 90 days</option>
+    <Form.Control as="select" onChange={(e) => {this.handleChange(e)}} size="md" >
+       <option value="select">Select Option</option>
+      <option value="confirmed">confirmed</option>
+      <option value="pending">pending</option>
+      
+      <option value="delivered">Delivered</option>
       </Form.Control>
   </Form.Group>
   </Form>

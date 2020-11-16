@@ -1,14 +1,18 @@
 import React, {useState } from 'react';
 import { Card } from 'react-bootstrap';
+import {useHistory,Redirect} from 'react-router-dom';
 import Backdrop from '@material-ui/core/Backdrop';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from './Modal';
-import "../css/Return.css";;
-
-
+import Toast from 'light-toast';
+import "../css/Return.css";
+import { withRouter } from 'react-router'
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 const returnItem = (props) => {
     const [open, setOpen] = useState(false);
+    const history=useHistory();
     const useStyles = makeStyles((theme) => ({
         backdrop: {
           zIndex: theme.zIndex.drawer + 1,
@@ -16,24 +20,18 @@ const returnItem = (props) => {
         },
       }));
     const classes = useStyles();
-    const handleClose = () => {
-        setOpen(false);
-      };
-      const handleToggle = (e) => {
-        e.preventDefault();
-        setOpen(!open);
-      };
    
-const imgstyle={
-    marginBottom: '3em',
-    marginTop: '4em',
-    width:'131px',
-    height:'100px'
-}
-const titleStyle={
-    marginTop: '6em',
-    marginLeft: '8em'
-}
+      const handleToggle=(e)=>{  
+        e.preventDefault();
+        console.log('rddc ')   
+        Toast.info('Order Returned Successfully', 2000, () => {
+            history.push('/onlinemedico/pastOrder')
+            console.log("camee")
+            // do something after the toast disappears
+          });
+     //NotificationManager.success('Return placed succesfully','',5000)
+    // setInterval(()=>props.history.push('/onlinemedico/pastOrder'),2000)   
+    }
     return (
         <div className='returnHead'>
         <p className='returnPara'>  If you are returning multiple items from one order, 
@@ -41,16 +39,7 @@ const titleStyle={
         <Card className='returnItemHeader'>
             <Card.Text>
                 <form>
-                <div className='row'>
-                    <div className='col'>
-                    {props.returnArray.map(
-                    returnimage => { return (<img style={imgstyle} src={returnimage.image}  />) }
-                )}
-                    </div>
-                    <div className='col' style={titleStyle}>
-                    {props.returnArray.map(returnItemName => `${returnItemName.title}`)}
-                    </div>
-                </div>
+
               
                 <div className='row'>
                     <div className='col'>
@@ -65,17 +54,15 @@ const titleStyle={
                     <label>Provide account details for refund</label>
                     </div>
                     <div className='col'>
-                    <input type='text' className='refundDetails'  />
+                    <input type='text' className='refundDetails'/>
                     </div>
                 </div>
                 <button className='nextbtn'
                     onClick={handleToggle}>Confirm Return</button>
                     </form>
-            </Card.Text>
-            <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
-        <Modal color="grey" />
-      </Backdrop>
+            </Card.Text>  
         </Card>
+       
         </div>
     )
 

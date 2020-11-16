@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 
 import Stepper from '@material-ui/core/Stepper';
@@ -38,23 +38,21 @@ const tracking = (props) => {
     const [activeStep, setActiveStep] = React.useState(0);
     const steps = getSteps();
 
-    const handleNext = () => {
-
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-
-    };
-
-    const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    };
-
-    //   const handleNext = () => {
-    //     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    //   };
-
-    const handleReset = () => {
-        setActiveStep(0);
-    };
+    
+    useEffect(()=>{
+        const steps = getSteps();
+        console.log('track',props.trackingArray.status)
+        if(props.trackingArray.status==='delivered'){
+            setActiveStep(2);
+        }
+        else if(props.trackingArray.status==='pending'){
+            setActiveStep(1);
+        }
+        else{
+            setActiveStep(0);
+        }
+    }
+    )
     return (
         track.map((card, index) => (
             <Card className='trackcard'>
@@ -104,22 +102,12 @@ const tracking = (props) => {
                         {activeStep === steps.length ? (
                             <div>
                                 <p className='instructions'>All steps completed</p>
-                                <Button onClick={handleReset}>Reset</Button>
+                               
                             </div>
                         ) : (
                                 <div>
                                     <Typography className='instructions'>{getStepContent(activeStep)}</Typography>
                                     <div>
-                                        <Button
-                                            disabled={activeStep === 0}
-                                            onClick={handleBack}
-                                            className='backButton'
-                                        >
-                                            Back
-              </Button>
-                                        <Button variant="contained" color="primary" onClick={handleNext}>
-                                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                                        </Button>
                                     </div>
                                 </div>
                             )}

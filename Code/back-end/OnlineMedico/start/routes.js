@@ -53,6 +53,7 @@ Route.group(() => {
   Route.get("/userDetails/:userId", "CustomerController.getDetails");
   Route.post("/addProduct", "CustomerController.addProduct");
   Route.post("/contactUs", "CustomerController.contactUs");
+  Route.get("/contactReview", "CustomerController.contactReview");
 
 }).prefix("/onlinemedico/user")//.middleware("auth");
 
@@ -71,6 +72,8 @@ Route.group(() => {
   Route.get("/activeOrders", "OrderController.getActiveOrders");
   Route.get("/pastOrders", "OrderController.getPastOrders");
   Route.get("/orders/:orderId", "OrderController.getOrder");
+  Route.get("/ordersFilter/:orderName", "OrderController.getOrderFilter");
+  Route.get("/orderStatus/:id/:orderStatus", "OrderController.getOrderStatus");
   Route.get("/cancelOrder/:orderId", "OrderController.cancelOrder");
  
 }).prefix("/onlinemedico");

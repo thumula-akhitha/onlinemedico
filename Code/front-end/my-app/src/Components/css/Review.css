@@ -1,8 +1,8 @@
 .reviewPage{
     border-style: groove;
-    margin-left: 3em;
-    margin-right: 3em;
-    margin-top: 2em;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 3em;
     margin-bottom: 2em;
 }
 .errors {
@@ -18,11 +18,12 @@
     background-color: white;
 }
 .reviewTitle{
-    padding-left: 14em;
-    font-size: 20px;
+    padding-left: 16em;
+    margin-bottom: 3em;
+    font-size: 28px;
     font-family: sans-serif;
     font-weight: bolder;
-    padding-top: 5em;
+    padding-top: 2em;
 }
 .overallReview
 {
