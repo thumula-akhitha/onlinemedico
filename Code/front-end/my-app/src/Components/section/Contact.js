@@ -61,14 +61,20 @@ class Contact extends Component {
     {
       errors.firstName='enter firstname'
     }
+    else if(!this.firstName.current.value.match(/^[a-zA-Z][a-zA-Z\s]*$/)){
+      errors.firstName='Only letters are allowed'
+    }
     else{
       errors.firstName=''
     }
     let firname=errors.firstName;
     this.setState({firname:firname})
-    if(this.lastName.current.value ==='')
+    if(this.lastName.current.value ==='' )
     {
       errors.lastName='please enter last name' 
+    }
+    else if(!this.lastName.current.value.match(/^[a-zA-Z][a-zA-Z\s]*$/)){
+      errors.lastName='Only letters are allowed'
     }
     else{
       errors.lastName=''
@@ -89,7 +95,8 @@ class Contact extends Component {
     errors.comment='Please provide your comment'
     }
          else{
-      NotificationManager.info('Our Team will contact you soon','we have received your message',8000);
+           errors.comment=''
+      NotificationManager.info('Our Team will contact you soon','we have received your message',4000);
       setTimeout(()=>{
       this.firstName.current.value=" ";
       this.lastName.current.value=" ";

@@ -31,9 +31,9 @@ class OrderDetails extends Component {
           <Col md="7" className="summaryDiv">
 
             <div className="orderSummary1">
-              <p><b>Order Date</b>:{ moment(orders.order_address.created_at).format('MMMM Do YYYY, h:mm a')}</p>
-    <p><b>Order Number</b>: {orders.order_address.orderId}</p>
-              <p><b>Total</b>{orders.orderTotal}</p>
+              <p><b>Order Date</b><br/>{ moment(orders.created_at).format('MMMM Do YYYY')}</p>
+    <p><b>Order Number</b><br/> {orders.orderId}</p>
+              <p><b>Total</b><br/>{orderTotal}</p>
             </div>
             <div className="orderSummary2">
               <p><b>Ship To</b></p>
@@ -69,7 +69,7 @@ class OrderDetails extends Component {
               <p>{orders.order_address.zip}</p>
               </div>
             <div className="p-1"><p>Contact Information</p></div>
-    <div className="orderSummary"><p>{userDetails.firstName}<br />{userDetails.email}<br />{userDetails.contactNumber}<br /></p></div>
+    <div className="orderSummary"><p>{orders.user.firstName}<br />{orders.user.email}<br />{orders.user.contactNumber}<br /></p></div>
           </Col>
         </Row>
       </Container>

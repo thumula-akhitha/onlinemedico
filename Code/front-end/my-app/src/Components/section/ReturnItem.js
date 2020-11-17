@@ -25,7 +25,7 @@ const returnItem = (props) => {
       const handleToggle=(e)=>{  
         e.preventDefault();
         console.log('rddc ')   
-        Toast.info('Order Returned Successfully', 2000, () => {
+        Toast.success('Order Returned Successfully', 2000, () => {
           axios
           .get(`http://127.0.0.1:3333/onlinemedico/orderStatus/${props.returnArray.id}/return`)
           .then((res) => {
