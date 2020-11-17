@@ -10,7 +10,7 @@ const success=require('../images/success.JPG');
 class OrderSuccess extends Component{
     static contextType = DataContext;
     componentDidMount(){
-        const {cart,selectedAddress,userDetails,total,addOrder}=this.context;
+        const {cart,selectedAddress,userDetails,total,addOrder,clearCart}=this.context;
         console.log("suces page")
         console.log(cart)
         console.log(selectedAddress)
@@ -22,10 +22,12 @@ class OrderSuccess extends Component{
         order.customerId = 1;
         order.total = total;
         const medicine = cart.map((value) =>  value.id)
+        const count = cart.map((value) =>  value.count)
         console.log(medicine)
         const totalOrder = {
             order : order,
-            medicines: medicine
+            medicines: medicine,
+            count:count
         }
         console.log(totalOrder)
         console.log("cameeeeee")
@@ -35,6 +37,7 @@ class OrderSuccess extends Component{
        // console.log(res);
         console.log(res.data);
         addOrder(res.data[0])
+        clearCart()
     }) 
 
 
