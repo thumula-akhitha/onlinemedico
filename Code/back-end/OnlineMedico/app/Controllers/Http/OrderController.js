@@ -6,12 +6,15 @@ class OrderController {
      const k = request.all();
     //console.log(k)
     const orderData = k.order;
+    let count = k.count;
+    let i =0;
     let random = Math.floor(1000000000 + Math.random() * 9000000000);
     orderData.orderId = random
     const orderCreated = await Order.create(orderData);
     
     await orderCreated.order_medicines().attach(k.medicines, (medicine) => {
-      medicine.quantity = 1;
+      medicine.quantity = count[i];
+      i++;
   });
   const order = await Order.query().where("id", "=", orderCreated.toJSON().id).with('order_medicines').with('order_card').with('order_address').with('user').fetch();
   console.log(order.toJSON())
