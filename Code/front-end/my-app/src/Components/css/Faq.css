@@ -1,0 +1,21 @@
+.faq{
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.row-title-text{
+    padding-left: 1.5em;
+    padding-right:0em;
+}
+section .faq-body{
+    padding:46px 54px;
+}
+section .faq-title{
+    padding: 0em;
+    padding: 1.5em;
+}
+section .faq-title h2{
+    margin-left: 1.5em;
+    padding: 13px;
+}

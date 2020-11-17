@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../images/contact.jpg';
 import '../css/Contact.css';
+import { Link } from "react-router-dom";
 import chat from '../images/chat.PNG';
 import ChatIn from './Chat/Chat';
 import helpcenter from '../images/helpcenter.PNG';
@@ -8,8 +9,8 @@ import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import moment from 'moment';
+import * as Scroll from 'react-scroll';
 
-// import classes from './Contact.css';
 
 const ImgStyle = {
   width: '71em',
@@ -20,6 +21,7 @@ const ImgStyle = {
   paddingBottom: '2em'
 
 }
+let scroll    = Scroll.animateScroll;
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +44,9 @@ class Contact extends Component {
     this.comment = React.createRef();
   }
  
+  scrollToBottom=()=> {
+    scroll.scrollToBottom();
+  }
    handleClick = (event) => {
     const { errors } = this.state; 
     console.log("entereddd");
@@ -179,7 +184,7 @@ class Contact extends Component {
                     <img src={helpcenter} alt="logo" width="40px" height="30px" />
                   </div>
                   <div className='col-10'>
-                    <a href=''>Help center</a>
+                  <Link onClick={this.scrollToBottom}>Help center</Link>
                   </div>
                 </div>
               </div>
@@ -188,7 +193,7 @@ class Contact extends Component {
                   <img src={chat} alt="logo" width="40px" height="30px" />
                 </div>
                 <div className='col-10'>
-                  <a href=''>Get Support</a>
+                  <Link to='/onlinemedico/faq'>FAQ</Link>
                 </div>
               </div>
             </div>
