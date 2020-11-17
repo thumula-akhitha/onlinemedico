@@ -21,7 +21,7 @@ class MedicineSeeder {
       {
         id: 1,
         title: 'paracetamol',
-        description: 'Paracetamol (acetaminophen) is a pain reliever and a fever reducer. The exact mechanism of action of is not known.',
+        description: 'Paracetamol is a pain reliever and a fever reducer.',
         price: 5,
         count: 1,
         src: 'https://cdn.shopify.com/s/files/1/1346/8165/products/1129154_1400x.jpg?v=1575891053',
@@ -30,7 +30,7 @@ class MedicineSeeder {
       {
         id: 2,
         title: 'nytQuill',
-        description: 'Nyquil Cold & Flu is a combination medicine used to treat headache, fever.',
+        description: 'Nyquil Cold & Flu is used to treat headache, fever.',
         price: 12,
         count: 1,
         src: 'https://cdn.shopify.com/s/files/1/0086/7821/1642/products/IMG_1449_480x480.jpg?v=1580943657',
@@ -38,11 +38,11 @@ class MedicineSeeder {
       },
       {
         id: 3,
-        title: 'paracetamol',
-        description: 'Paracetamol (acetaminophen) is a pain reliever and a fever reducer. The exact mechanism of action of is not known.',
-        price: 5,
+        title: 'Homeopathic tonic',
+        description: "Syrup is an overall tonic for your baby's health.",
+        price: 7.99,
         count: 1,
-        src: 'https://cdn.shopify.com/s/files/1/1346/8165/products/1129154_1400x.jpg?v=1575891053',
+        src: 'https://3.imimg.com/data3/OQ/RY/FCP-5047705/images-baby_cure-500x500.jpg',
         
       },
       {
@@ -63,10 +63,10 @@ class MedicineSeeder {
           },
            {
                 id:6,
-                title:'Migraine',
-                price:4.99,
-                src:'https://www.dollargeneral.com/media/catalog/product/cache/6e5ff7de2a46bb5e4325e62839d28016/d/g/dghl_migraine_relief_50ct_2.jpg',
-                description:'Migraine Reliever',
+                title:'Baby wipes',
+                price:7.99,
+                src:'https://cdn.boundtree.com/emp/products/D1329_515Wx515H_8814032257054',
+                description:' cleanses the poop off a babys bottom without damaging the skin',
                 count: 1,
             },
              {
@@ -85,6 +85,14 @@ class MedicineSeeder {
                 description:"rapid pain,fever reliever",
                 count: 1,
             },
+            {
+              id:9,
+                title:'Baby Nasal Aspirator',
+                price:15.99,
+                src:"https://ae01.alicdn.com/kf/HTB1IrmbVVzqK1RjSZFCq6zbxVXaK/Newborn-Baby-Nasal-Aspirator-Set-Straw-Brush-Feeding-Medicine-Device-Snot-Nose-Shit-Cleaner-Nose-Aspirator.jpg_Q90.jpg_.webp",
+                description:"Device to remove mucus from baby's nose",
+                count: 1,
+            }
     ]
     await Database.insert(eventlog).into('medicines')
       

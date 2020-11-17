@@ -20,15 +20,28 @@ class CustomerSeeder {
     const eventlog = [
       {
         id: 1,
-        title: 'paracetamol',
-        description: 'Paracetamol (acetaminophen) is a pain reliever and a fever reducer. The exact mechanism of action of is not known.',
-        price: 5,
-        count: 1,
-        src: 'https://cdn.shopify.com/s/files/1/1346/8165/products/1129154_1400x.jpg?v=1575891053',
+        firstName: 'Goutham',
+        lastName: 'kumar',
+        contactNumber: '9441585134',
+        email: 'user@gmail.com',
+        password: 'User@1234',
+        role:'user'
+        
+      },
+      {
+        id: 2,
+        firstName: 'Rishi',
+        lastName: 'kumar',
+        contactNumber: '9441203257',
+        email: 'admin@gmail.com',
+        password: 'Admin@1234',
+        role:'admin'
         
       }
+
+
     ]
-    await Database.insert(eventlog).into('medicines')
+    await Database.insert(eventlog).into('customers')
   }
 }
 
