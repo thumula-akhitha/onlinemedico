@@ -19,12 +19,10 @@ class ImageFile extends Component {
     });
   };
    
-fileuploader=()=>{   
-    // let request = {
-    //   email: document.getElementById("exampleInputEmail1").value,
-    //   dob: document.getElementById("dob").value,
-    //   fullname: document.getElementById("examplename").value,
-    // };
+fileuploader=()=>{      
+      let email= document.getElementById("exampleInputEmail1").value;
+      let dob= document.getElementById("dob").value;
+      let fullname= document.getElementById("examplename").value;
     //console.log(fullname);
     let k = document.getElementById("exampleInputEmail1").value;
     const data = new FormData();
@@ -43,18 +41,22 @@ fileuploader=()=>{
       })
       .then((res) => {
         console.log(res);
+        if(email!=""||dob!=""||fullname!=""){
+          NotificationManager.success(
+            "we have received your prescription",
+            "you will get an message from us regarding accepting of your prescription",
+            8000
+          );
+            setTimeout(()=>{
+              document.getElementById('exampleInputEmail1').value = " ",
+              document.getElementById('dob').value = " "
+              document.getElementById('examplename').value=" "
+          },1000);
+        
+        }
       })
       .catch((err) => console.log("error occurred"));
-    NotificationManager.success(
-      "we have received your prescription",
-      "you will get an message from us regarding accepting of your prescription",
-      8000
-    );
-      setTimeout(()=>{
-        document.getElementById('exampleInputEmail1').value = " ",
-        document.getElementById('dob').value = " "
-        document.getElementById('examplename').value=" "
-    },1000);
+    
   };
   render() {
     let uploadbutton = null;      

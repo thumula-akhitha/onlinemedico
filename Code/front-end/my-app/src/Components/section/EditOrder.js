@@ -3,7 +3,9 @@ import { Card } from 'react-bootstrap';
 import Backdrop from '@material-ui/core/Backdrop';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from './Modal';
-import {useHistory} from 'react-router-dom';
+import axios from "axios";
+import Toast from 'light-toast';
+import {useHistory,Redirect} from 'react-router-dom';
 import "../css/Return.css";
 // import { withRouter } from 'react-router'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
@@ -13,12 +15,27 @@ import 'react-notifications/lib/notifications.css';
 
 const returnItem = (props) => {
     const history=useHistory();
+   console.log(props.returnArray.id)
    const handleToggle=(e)=>{  
        e.preventDefault();
        console.log('rddc ')   
         // history.push('/onlinemedico/pastOrder')
-    NotificationManager.success('Order Cancelled Succesfully','',5000)
-    history.goBack()
+        Toast.success('Order Cancelled Successfully', 2000, () => {
+            axios
+            .get(`http://127.0.0.1:3333/onlinemedico/cancelOrder/${props.returnArray.id}`)
+            .then((res) => {
+             console.log("sucessfully deleted")
+             history.push('/onlinemedico/pastOrder')
+            });
+           
+            console.log("camee")
+            
+            //<Redirect to='/onlinemedico/pastOrder' />
+           
+            // do something after the toast disappears
+          });
+   // NotificationManager.success('Order Cancelled Succesfully','',5000)
+   // history.goBack()
    
    }
 

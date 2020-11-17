@@ -23,9 +23,18 @@ class UserProfile extends Component {
     componentDidMount() {
         console.log("etnereredfdf")
         const { userDetails } = this.context
-        this.setState({
-            userInfo: userDetails
-        })
+        axios
+        .get(`http://127.0.0.1:3333/onlinemedico/user/userDetails/${userDetails.id}`)
+        .then((res) => {
+            this.setState({
+                userInfo: res.data[0]
+            })
+        //  console.log("sucessfully deleted")
+        //  history.push('/onlinemedico/pastOrder')
+        });
+        // this.setState({
+        //     userInfo: userDetails
+        // })
         console.log(this.state.userInfo)
     }
     pwdchangeHandler = () => {

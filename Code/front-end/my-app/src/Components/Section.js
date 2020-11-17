@@ -64,7 +64,7 @@ export class Section extends Component {
                 <Route path="/onlinemedico/checkout" component={Checkout}/>
                 <Route path="/onlinemedico/orderDetails" component={OrderDetails}/>
                 <Route path="/onlinemedico/checkcart" component={CheckoutCart}/>
-                <Route path="/onlinemedico/pastOrder" component={PastOrder}/>
+                <Route path="/onlinemedico/pastOrder" component={PastOrder} exact/>
                 <Route path="/logout" component={Logout}/>
                 <Route path='/onlinemedico/faq' component={Faq}/>
                 <Route path="/onlinemedico/ordersuccess" component={OrderSuccess}/>

@@ -10,8 +10,10 @@ import { NotificationContainer, NotificationManager } from 'react-notifications'
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 class EditProfile extends Component {
     static contextType = DataContext;
-    // constructor(props){
-    //     super(props);
+    constructor(props){
+        super(props);
+    }
+    //     
     state = {
             editInfo:{},
             errors:{
@@ -29,7 +31,7 @@ class EditProfile extends Component {
         }
      saveChanges(e){
         const { errors } = this.state;
-        NotificationManager.success('Success', 'your profile is updated successfully', 8000);
+        NotificationManager.success('Success', 'your profile is updated successfully', 3000);
          // e.preventDefault();
          let request = {
             firstName: document.getElementById("name").value,
@@ -52,6 +54,10 @@ class EditProfile extends Component {
         axios.post(`http://127.0.0.1:3333/onlinemedico/user/updateProfile/${this.state.editInfo.id}`, request)
         .then((res) => {
                 console.log(res.body)
+                setTimeout(()=>{
+                    this.props.history.push('/onlinemedico/UserProfile')
+                },2000)
+               
             })
             .catch((err) => {
                 console.log(err);
