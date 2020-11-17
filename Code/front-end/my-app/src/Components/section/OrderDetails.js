@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Row, Col, Container, Form } from "react-bootstrap";
 import "../css/OrderDetails.css";
 import { Link } from 'react-router-dom';
-import { DataContext } from '../Context'
+import { DataContext } from '../Context';
+import moment from 'moment';
+
 
 
 class OrderDetails extends Component {
@@ -29,9 +31,9 @@ class OrderDetails extends Component {
           <Col md="7" className="summaryDiv">
 
             <div className="orderSummary1">
-              <p><b>Order Date</b>: November 11,2020</p>
-              <p><b>Order Number</b>: W09B2345BVC5</p>
-              <p><b>Total</b>{orders.total}</p>
+              <p><b>Order Date</b><br/>{ moment(orders.created_at).format('MMMM Do YYYY')}</p>
+    <p><b>Order Number</b><br/> {orders.orderId}</p>
+              <p><b>Total</b><br/>{orderTotal}</p>
             </div>
             <div className="orderSummary2">
               <p><b>Ship To</b></p>
@@ -67,7 +69,7 @@ class OrderDetails extends Component {
               <p>{orders.order_address.zip}</p>
               </div>
             <div className="p-1"><p>Contact Information</p></div>
-    <div className="orderSummary"><p>{userDetails.firstName}<br />{userDetails.email}<br />{userDetails.contactNumber}<br /></p></div>
+    <div className="orderSummary"><p>{orders.user.firstName}<br />{orders.user.email}<br />{orders.user.contactNumber}<br /></p></div>
           </Col>
         </Row>
       </Container>

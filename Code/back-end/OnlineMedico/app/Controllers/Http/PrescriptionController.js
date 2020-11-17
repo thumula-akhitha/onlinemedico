@@ -9,26 +9,29 @@ const Database = use("Database");
 class PrescriptionController {
   // This method is used for file upload for prescription.
   async fileUploader({ request, response, auth }) {
+    console.log("this is prescription")
     try {
-      let scenarioFiles = {
-        email: "akhitha.adams@gmail.com",
+      let scenarioFiles1 = {
+        email: "mandapallisatish64@gmail.com",
       };
-      // await request.multipart.file("file", {}, async function (file) {
-      //   const fileContent = await getStream.buffer(file.stream);
-      //   scenarioFiles.fileContent = fileContent;
-      //   scenarioFiles.name = file.clientName;
-      //   scenarioFiles.type = `${file.type}/${this.subtype}`;
-      // });
+      let scenarioFiles = { };
+      await request.multipart.file("file", {}, async function (file) {
+        console.log("camee into prescription")
+        const fileContent = await getStream.buffer(file.stream);
+        scenarioFiles.fileContent = fileContent;
+        scenarioFiles.name = file.clientName;
+       
+      });
 
-      // await request.multipart.field((name1, value) => {
-      //   console.log("cameee prescription controller");
-      //   scenarioFiles.email = `${value}`;
-      //   console.log("good hellooooo valueee " + name1 + " " + value);
-      //   console.log(value);
-      // });
+      await request.multipart.field((name1, value) => {
+        console.log("cameee prescription controller");
+        scenarioFiles.email = `${value}`;
+        console.log("good hellooooo valueee " + name1 + " " + value);
+        console.log(value);
+      });
 
-      // await request.multipart.process();
-      // await use("Database").table("prescription").insert(scenarioFiles);
+      await request.multipart.process();
+      await use("Database").table("prescription").insert(scenarioFiles);
 
       // // const emailConfirmation = await Customer.query().where("email", "=", ).fetch();
       // // console.log(emailConfirmation)
@@ -46,7 +49,7 @@ class PrescriptionController {
 
         var mailOptions = {
           from: "onlinemedico782@gmail.com",
-          to: "mandapallisatish64@gmail.com",
+          to:scenarioFiles.email,
           subject: "Confirmation regarding your prescription",
           html: `<p style="font-size:18px; font-weight:bold;">Hi Satish,</p><p style="font-size:18px;">your prescription is approved and order has been placed successfully</p>`,
           text: "",

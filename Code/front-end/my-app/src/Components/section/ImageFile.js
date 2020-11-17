@@ -41,12 +41,13 @@ fileuploader=()=>{
       })
       .then((res) => {
         console.log(res);
+        NotificationManager.success(
+          "we have received your prescription",
+          "you will get an message from us regarding accepting of your prescription",
+          3000
+        );
         if(email!=""||dob!=""||fullname!=""){
-          NotificationManager.success(
-            "we have received your prescription",
-            "you will get an message from us regarding accepting of your prescription",
-            8000
-          );
+         
             setTimeout(()=>{
               document.getElementById('exampleInputEmail1').value = " ",
               document.getElementById('dob').value = " "

@@ -5,6 +5,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from './Modal';
 import Toast from 'light-toast';
+import axios from "axios";
 import "../css/Return.css";
 import { withRouter } from 'react-router'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
@@ -24,10 +25,14 @@ const returnItem = (props) => {
       const handleToggle=(e)=>{  
         e.preventDefault();
         console.log('rddc ')   
-        Toast.info('Order Returned Successfully', 2000, () => {
-            history.push('/onlinemedico/pastOrder')
-            console.log("camee")
-            // do something after the toast disappears
+        Toast.success('Order Returned Successfully', 2000, () => {
+          axios
+          .get(`http://127.0.0.1:3333/onlinemedico/orderStatus/${props.returnArray.id}/return`)
+          .then((res) => {
+           console.log("sucessfully deleted")
+           history.push('/onlinemedico/pastOrder')
+          });
+           
           });
      //NotificationManager.success('Return placed succesfully','',5000)
     // setInterval(()=>props.history.push('/onlinemedico/pastOrder'),2000)   

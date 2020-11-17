@@ -11,12 +11,12 @@ import Star from './section/StarComponent';
 import OrderHistory from './section/OrderHistory';
 import AdminPage from '../Components/section/Admin/AdminPage';
 import AdminProduct from '../Components/section/Admin/AdminProduct';
-
+// import Footer from './Footer';
 import Admin from '../Components/section/Admin/Admin';
 import Chat from '../Components/section/Chat/Chat';
 import Tracking from './section/Tracking ';
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 import Login from '../Components/section/LoginForm';
 import SignIn from '../Components/section/SignupForm';
 import Forgot from '../Components/section/ForgotPassword';
@@ -30,6 +30,7 @@ import Home from '../Components/section/Home';
 import OrderSuccess from '../Components/section/OrderSuccess';
 import UserProfile from '../Components/section/UserProfile';
 import EditProfile from '../Components/section/EditProfile';
+import Faq from './section/Faqpage';
 
 
 export class Section extends Component {
@@ -65,7 +66,9 @@ export class Section extends Component {
                 <Route path="/onlinemedico/checkcart" component={CheckoutCart}/>
                 <Route path="/onlinemedico/pastOrder" component={PastOrder} exact/>
                 <Route path="/logout" component={Logout}/>
+                <Route path='/onlinemedico/faq' component={Faq}/>
                 <Route path="/onlinemedico/ordersuccess" component={OrderSuccess}/>
+                <Route path='/onlinemedico/footer' component={Footer}/>
                 <Route path="/onlinemedico/UserProfile" component={UserProfile} exact/>
             </section>
             <Route path="/onlinemedico" component={Footer}/> 	

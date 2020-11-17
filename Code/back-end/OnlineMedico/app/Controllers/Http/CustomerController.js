@@ -92,7 +92,10 @@ class CustomerController {
         }
 
     }
-
+    async getDetails({ request, response, auth ,params}) {
+        const customerRecord = await Customer.query().where("id", "=", params.userId).fetch();
+        return response.json(customerRecord);
+    }
     // This method is used to generate email when user forgots password.
     async forgotPassword({ request, response, auth }) {
         const { email } = request.body;

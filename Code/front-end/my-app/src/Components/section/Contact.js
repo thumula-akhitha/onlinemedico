@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../images/contact.jpg';
 import '../css/Contact.css';
+import { Link } from "react-router-dom";
 import chat from '../images/chat.PNG';
 import ChatIn from './Chat/Chat';
 import helpcenter from '../images/helpcenter.PNG';
@@ -8,14 +9,15 @@ import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import moment from 'moment';
+import * as Scroll from 'react-scroll';
 
-// import classes from './Contact.css';
 
 const ImgStyle = {
   width: '71em',
   height: '30em',
   paddingLeft: '7em',
 }
+let scroll    = Scroll.animateScroll;
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -38,6 +40,9 @@ class Contact extends Component {
     this.comment = React.createRef();
   }
  
+  scrollToBottom=()=> {
+    scroll.scrollToBottom();
+  }
    handleClick = (event) => {
     const { errors } = this.state; 
     console.log("entereddd");
@@ -52,14 +57,20 @@ class Contact extends Component {
     {
       errors.firstName='enter firstname'
     }
+    else if(!this.firstName.current.value.match(/^[a-zA-Z][a-zA-Z\s]*$/)){
+      errors.firstName='Only letters are allowed'
+    }
     else{
       errors.firstName=''
     }
     let firname=errors.firstName;
     this.setState({firname:firname})
-    if(this.lastName.current.value ==='')
+    if(this.lastName.current.value ==='' )
     {
       errors.lastName='please enter last name' 
+    }
+    else if(!this.lastName.current.value.match(/^[a-zA-Z][a-zA-Z\s]*$/)){
+      errors.lastName='Only letters are allowed'
     }
     else{
       errors.lastName=''
@@ -80,7 +91,8 @@ class Contact extends Component {
     errors.comment='Please provide your comment'
     }
          else{
-      NotificationManager.info('Our Team will contact you soon','we have received your message',8000);
+           errors.comment=''
+      NotificationManager.info('Our Team will contact you soon','we have received your message',4000);
       setTimeout(()=>{
       this.firstName.current.value=" ";
       this.lastName.current.value=" ";
@@ -175,7 +187,7 @@ class Contact extends Component {
                     <img src={helpcenter} alt="logo" width="40px" height="30px" />
                   </div>
                   <div className='col-10'>
-                    <a href=''>Help center</a>
+                  <Link onClick={this.scrollToBottom}>Help center</Link>
                   </div>
                 </div>
               </div>
@@ -184,7 +196,7 @@ class Contact extends Component {
                   <img src={chat} alt="logo" width="40px" height="30px" />
                 </div>
                 <div className='col-10'>
-                  <a href=''>Get Support</a>
+                  <Link to='/onlinemedico/faq'>FAQ</Link>
                 </div>
               </div>
             </div>

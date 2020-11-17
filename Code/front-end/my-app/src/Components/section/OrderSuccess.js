@@ -4,13 +4,13 @@ import {DataContext} from '../Context';
 import Address from './address';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-
+import moment from 'moment';
 
 const success=require('../images/success.JPG');
 class OrderSuccess extends Component{
     static contextType = DataContext;
     componentDidMount(){
-        const {cart,selectedAddress,userDetails,total,addOrder}=this.context;
+        const {cart,selectedAddress,userDetails,total,addOrder,clearCart}=this.context;
         console.log("suces page")
         console.log(cart)
         console.log(selectedAddress)
@@ -22,10 +22,12 @@ class OrderSuccess extends Component{
         order.customerId = 1;
         order.total = total;
         const medicine = cart.map((value) =>  value.id)
+        const count = cart.map((value) =>  value.count)
         console.log(medicine)
         const totalOrder = {
             order : order,
-            medicines: medicine
+            medicines: medicine,
+            count:count
         }
         console.log(totalOrder)
         console.log("cameeeeee")
@@ -35,6 +37,7 @@ class OrderSuccess extends Component{
        // console.log(res);
         console.log(res.data);
         addOrder(res.data[0])
+        clearCart()
     }) 
 
 
@@ -47,6 +50,9 @@ class OrderSuccess extends Component{
         const tax=orders.total-((orders.total)*(5/100))
         const taxtotal=orders.total-tax
         const orderTotal=taxtotal+orders.total
+        let newDate=moment(orders.created_at,"DD-MM-YYYY")
+        let newDate1=newDate.add(7, 'days')
+        console.log('success',newDate1)
         return(
             //const {cart,total}=this.context;
             <div className='OrderHeading'>
@@ -57,7 +63,7 @@ class OrderSuccess extends Component{
                 </div>
                 <div className='SuccessOrder'>
                     <p>Order Number</p>
-                    <p>W09B2345BVC5</p>
+        <p>{orders.orderId}</p>
                     <Link to ="./orderDetails">
                     <p className='orderdet'>View Order Details</p>
                     </Link>
@@ -68,7 +74,7 @@ class OrderSuccess extends Component{
                 </div>
                 <div className='deliveryDate'>
                     <p className='Delievery'>Delivery</p>
-                    <p className='dateEst'>Est.Delivery:Nov 17</p>
+        <p className='dateEst'>{moment(orders.created_at,"YYYY-MM-DD").add('days', 7).format('YYYY-MM-DD')}</p>
                 </div>
                 {/* <div className='Adder'>
                     <p className='shipAddr'>Shipping Address</p>

@@ -48,10 +48,10 @@ class PastOrder extends Component {
     {/* <Form.Label>View By:</Form.Label> */}
     <Form.Control as="select" onChange={(e) => {this.handleChange(e)}} size="md" >
        <option value="select">Select Option</option>
-      <option value="confirmed">confirmed</option>
-      <option value="pending">pending</option>
-      
+      <option value="confirmed">Confirmed</option>
+      <option value="pending">Pending</option>
       <option value="delivered">Delivered</option>
+      <option value="returned">Returned</option>
       </Form.Control>
   </Form.Group>
   </Form>
