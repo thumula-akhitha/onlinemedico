@@ -13,13 +13,16 @@ class PastOrder extends Component {
 
   }
   state={
-    OrderDetails : []
+    OrderDetails : [],
+    orderDetailsData:[],
+    tempValue: false
     } 
   componentDidMount(){
     console.log("entered component function")
     axios.get('http://127.0.0.1:3333/onlinemedico/orders').then(res=>{
       console.log(res.data)
-      this.setState({OrderDetails:res.data})
+      this.setState({OrderDetails:res.data,
+      orderDetailsData:res.data})
     })
     .catch((err)=>{
       console.log(err)
@@ -30,7 +33,21 @@ class PastOrder extends Component {
     if(e.target.value != "select"){
     axios.get(`http://127.0.0.1:3333/onlinemedico/ordersFilter/${e.target.value}`).then(res=>{
       console.log(res.data)
-      this.setState({OrderDetails:res.data})
+      if(res.data.length == 0){
+        this.setState({
+          OrderDetails:[],
+          tempValue : !this.state.tempValue
+        })
+      }
+      else {
+      this.setState({OrderDetails:res.data, tempValue : !this.state.tempValue})
+      }
+    })
+  }
+  else {
+    this.setState({
+      OrderDetails:this.state.orderDetailsData,
+      tempValue : !this.state.tempValue
     })
   }
   }
@@ -50,7 +67,7 @@ class PastOrder extends Component {
        <option value="select">Select Option</option>
       <option value="confirmed">Confirmed</option>
       <option value="pending">Pending</option>
-      <option value="delivered">Delivered</option>
+      <option value="completed">Delivered</option>
       <option value="returned">Returned</option>
       </Form.Control>
   </Form.Group>
@@ -67,10 +84,11 @@ class PastOrder extends Component {
      <Col><Link to={`/onlinemedico/history/${od.id}`}>{moment(od.created_at).format('MMMM Do YYYY, h:mm a')}</Link></Col>
    <Col className="orderNumber">${od.total}</Col>
    <Col style={{color:"Green"}}><h5>{od.status}</h5></Col>
-   {od.order_address.firstName}
+   
    
     </Row>
-   )}   
+   )}  
+   {this.state.tempValue == true ? <p> There are no orders with this filter</p> : ''} 
    </Container>
     )
   }

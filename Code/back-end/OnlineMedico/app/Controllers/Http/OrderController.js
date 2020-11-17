@@ -21,11 +21,11 @@ class OrderController {
   return response.json(order);
   }
   async getAllOrders({ request, response, auth }) {
-    const order = await Order.query().select('*').with('order_medicines').with('order_card').with('order_address').fetch();
+    const order = await Order.query().select('*').with('order_medicines').with('order_card').with('order_address').orderBy('created_at','desc').fetch();
     return response.json(order);
   }
   async getPastOrders({ request, response, auth }) {
-    const order = await Order.query().where("status", "=","completed").with('order_medicines').with('order_card').with('order_address').fetch();
+    const order = await Order.query().where("status", "=","completed").with('order_medicines').with('order_card').with('order_address').orderBy('created_at','desc').fetch();
   
   return response.json(order);
   }
@@ -50,7 +50,7 @@ class OrderController {
   //return response.json(order);
   }
   async getOrderFilter({ request, response, auth,params }) {
-    const order = await Order.query().where("status", "=", params.orderName).with('order_medicines').with('order_card').with('order_address').fetch();
+    const order = await Order.query().where("status", "=", params.orderName).with('order_medicines').with('order_card').with('order_address').orderBy('created_at','desc').fetch();
   
   return response.json(order);
   }
