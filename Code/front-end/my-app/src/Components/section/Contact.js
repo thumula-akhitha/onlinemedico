@@ -14,11 +14,7 @@ import moment from 'moment';
 const ImgStyle = {
   width: '71em',
   height: '30em',
-  paddingLeft: '5em',
-  paddingRight: '5em',
-  paddingTop: '5em',
-  paddingBottom: '2em'
-
+  paddingLeft: '7em',
 }
 class Contact extends Component {
   constructor(props) {
@@ -124,47 +120,47 @@ class Contact extends Component {
           <div className='row'>
             <div className='postcard'>
               <div className="col-6">
-                <div class="row">
-                  <div class="col-30">
+                <div className="row">
+                  <div className="col-30">
                     <label className="fname">First Name</label>
                   </div>
-                  <div class="col-70">
+                  <div className="col-70">
                     <input className="firstname" type="text" id="fname" name="firstname" placeholder="Your name.."ref={this.firstName} required/>
                     {errors.firstName.length > 0 &&
                 <span className='errors'>{errors.firstName}</span>}
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-20">
+                <div className="row">
+                  <div className="col-20">
                     <label className="lname">Last Name</label>
                   </div>
-                  <div class="col-80">
+                  <div className="col-80">
                     <input className='lastName' type="text" id="lname" name="lastname" placeholder="Your last name.." ref={this.lastName} required/>
                     {errors.lastName.length > 0 &&
                 <span className='errors'>{errors.lastName}</span>}
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-20">
+                <div className="row">
+                  <div className="col-20">
                     <label className='email'>Email ID</label>
                   </div>
-                  <div class="col-80">
+                  <div className="col-80">
                     <input className='emailid' type='text' id='email' name='email' placeholder='Email' ref={this.emailId} required />
                     {errors.email.length > 0 &&
                 <span className='errors'>{errors.email}</span>}
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-20">
+                <div className="row">
+                  <div className="col-20">
                     <label className='comment'>Comment</label>
                   </div>
-                  <div class="col-80">
+                  <div className="col-80">
                     <textarea className='commentArea' id="comment" name="Comment" placeholder="Your comments here.." ref={this.comment}></textarea>
                     {errors.comment.length > 0 &&
                 <span className='errors'>{errors.comment}</span>}
                   </div>
                 </div>
-                <div class="row">
+                <div className="row">
                   <input className='contactSubmit' type="submit" value="Submit" onClick={this.handleClick} />
                 </div>
                 <NotificationContainer/>

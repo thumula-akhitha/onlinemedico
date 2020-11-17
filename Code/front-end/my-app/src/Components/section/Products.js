@@ -46,7 +46,7 @@ export class Products extends Component {
         return (
             <div>
             <div className="input-group product-search">
-            <input type="text" class="form-control" placeholder="Search product" value={this.state.value} onChange={(e) => {this.handleChange(e)}} />
+            <input type="text" className="form-control" placeholder="Search product" value={this.state.value} onChange={(e) => {this.handleChange(e)}} />
            
             </div>
             <div id="product">

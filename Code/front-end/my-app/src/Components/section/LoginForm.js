@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import {DataContext} from '../Context'
 import logo from "../images/medicine.png";
 import "../css/Login.css";
-
-import AdminHeader from "../section/Admin/AdminHeader";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);

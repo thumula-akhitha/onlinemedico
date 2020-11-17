@@ -20,7 +20,7 @@ class MedicineSeeder {
     const eventlog = [
       {
         id: 1,
-        title: 'paracetamol',
+        title: 'Paracetamol',
         description: 'Paracetamol (acetaminophen) is a pain reliever and a fever reducer. The exact mechanism of action of is not known.',
         price: 5,
         count: 1,
@@ -29,7 +29,7 @@ class MedicineSeeder {
       },
       {
         id: 2,
-        title: 'nytQuill',
+        title: 'NytQuill',
         description: 'Nyquil Cold & Flu is a combination medicine used to treat headache, fever.',
         price: 12,
         count: 1,
@@ -38,7 +38,7 @@ class MedicineSeeder {
       },
       {
         id: 3,
-        title: 'paracetamol',
+        title: 'Paracetamol',
         description: 'Paracetamol (acetaminophen) is a pain reliever and a fever reducer. The exact mechanism of action of is not known.',
         price: 5,
         count: 1,

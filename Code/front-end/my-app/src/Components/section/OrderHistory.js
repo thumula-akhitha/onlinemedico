@@ -87,7 +87,7 @@ const OrderHistory = (props) => {
           <div className="row">
             <div className="col-7">
               {orderHistory.order_medicines.map((r) => (
-                <div className="row">
+                <div className="row" key={r.id}>
                   <div className="col-7">
                     <Card.Img className="orderItem" src={r.src} />
                   </div>

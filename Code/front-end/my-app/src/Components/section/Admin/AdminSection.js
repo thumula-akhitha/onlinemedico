@@ -8,6 +8,7 @@ import AdminOrder from './AdminOrder';
 import AdminRequest from './AdminRequest';
 import ChatUs from './ChatUs';
 import AdminCustOrder from './AdminCustOrder';
+import AdminOrderDetails from './AdminOrderDetails';
 
 export class AdminSection extends Component {
     render() {
@@ -20,6 +21,7 @@ export class AdminSection extends Component {
                 <Route path="/mainadmin/logout" component={Logout} exact />
                 <Route path="/mainadmin/adminOrder" component={AdminOrder} exact />
                 <Route path ='/mainadmin/admincustorder' component ={AdminCustOrder} exact/>
+                <Route path='/mainadmin/adminhistory/:id' component={AdminOrderDetails}/>
             </section>
             
         )

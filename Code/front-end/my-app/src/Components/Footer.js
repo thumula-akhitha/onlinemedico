@@ -17,9 +17,9 @@ export class Footer extends Component {
 
         return (
             <div>
-                <footer class="footer-distributed">
+                <footer className="footer-distributed">
 
-                    <div class="footer-left">
+                    <div className="footer-left">
                         <div className='footerHEading'>
                         <div>
                             <h4 className='signMeUp'> SIGN ME UP</h4>
@@ -38,7 +38,7 @@ export class Footer extends Component {
                         </div>
                       
                     </div>
-                    <div class="footer-center">
+                    <div className="footer-center">
                         <p className='contactheader'>Contact information</p>
                         <div className='location'>
                             <FaMapMarker />
@@ -54,9 +54,9 @@ export class Footer extends Component {
                         </div>
                     </div>
 
-                    <div class="footer-right">
+                    <div className="footer-right">
 
-                        <p class="footer-company-about">
+                        <p className="footer-company-about">
                             <span className='aboutCompany'>About the company</span>
                         </p>
                       <ul className='MyAccountList'>
@@ -64,7 +64,7 @@ export class Footer extends Component {
                       <li className='MyAccountList'><Link to="/onlinemedico/UserProfile" className='contactList'>My Account</Link></li>
                       <li className='MyAccountList'><Link to="/onlinemedico/about" className='contactList'>About Us</Link></li>
                       </ul>
-                        <div class="footer-icons">
+                        <div className="footer-icons">
                             <a href="#"><FaFacebook /></a>
                             <a href="#"><FaTwitter /></a>
                             <a href="#"><FaLinkedin /></a>
@@ -74,7 +74,7 @@ export class Footer extends Component {
 
                     </div>
                     <div>
-                    <p class="footer-company-name">OnlineMedico © 2020 <span>All rights reserved</span></p>
+                    <p className="footer-company-name">OnlineMedico © 2020 <span>All rights reserved</span></p>
                     </div>
                     <div className='worksTime'>
                     <p className='workingHours'>Working Days/Hours</p>

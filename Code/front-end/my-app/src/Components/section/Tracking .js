@@ -1,10 +1,9 @@
-import React, { Component, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import '../css/Tracking.css';
 
@@ -40,7 +39,6 @@ const tracking = (props) => {
 
     
     useEffect(()=>{
-        const steps = getSteps();
         console.log('track',props.trackingArray.status)
         if(props.trackingArray.status==='delivered'){
             setActiveStep(2);

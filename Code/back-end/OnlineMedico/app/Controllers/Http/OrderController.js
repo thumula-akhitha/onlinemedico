@@ -32,7 +32,7 @@ class OrderController {
   return response.json(order);
   }
   async getOrder({ request, response, auth,params }) {
-    const order = await Order.query().where("id", "=", params.orderId).with('order_medicines').with('order_card').with('order_address').fetch();
+    const order = await Order.query().where("id", "=", params.orderId).with('order_medicines').with('order_card').with('order_address').with('user').fetch();
   
   return response.json(order);
   }
@@ -40,9 +40,11 @@ class OrderController {
     const order = await Order.find(params.id);
     order.status = params.orderStatus;
     await order.save()
+    const orderData = await Order.query().select('*').with('order_medicines').with('order_card').with('order_address').fetch();
+    return response.json(orderData);
   //  const order = await Order.query().where("id", "=", params.orderId).with('order_medicines').with('order_card').with('order_address').fetch();
   
-  return response.json(order);
+  //return response.json(order);
   }
   async getOrderFilter({ request, response, auth,params }) {
     const order = await Order.query().where("status", "=", params.orderName).with('order_medicines').with('order_card').with('order_address').fetch();

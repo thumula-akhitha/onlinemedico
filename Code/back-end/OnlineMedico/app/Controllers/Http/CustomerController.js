@@ -16,11 +16,13 @@ class CustomerController {
     //This route is used for signup 
     async signup({ request, response, auth }) {
         const userData = request.body
+        console.log(userData)
         const customer = await Customer.query().where("email", "=", userData.email).fetch();
         console.log(customer.toJSON().length)
         if (customer.toJSON().length == 0) {
-            userData.password = await Hash.make(userData.password);
+            //userData.password = await Hash.make(userData.password);
             try {
+                userData.role="user"
                 const user = await Customer.create(userData)
                 return response.json({
                     message: 'success',

@@ -88,7 +88,8 @@ class SignupForm extends React.Component {
 signup(e){
   e.preventDefault();
   let request = {
-    fullName: document.getElementById('fullName').value,
+    firstName: document.getElementById('fullName').value.split(' ')[0],
+    lastName: document.getElementById('fullName').value.split(' ')[1],
     password: document.getElementById('cpassword').value,
     email: document.getElementById('email').value,
     contactNumber: document.getElementById('contact_number').value
