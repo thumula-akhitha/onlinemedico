@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { v1 as uuidv } from "uuid";
+import {
+    NotificationContainer,
+    NotificationManager,
+  } from "react-notifications";
+import "react-notifications/lib/notifications.css";
 export const DataContext = React.createContext();
+
 export class DataProvider extends Component{
     constructor() {
         super();
@@ -146,18 +152,27 @@ export class DataProvider extends Component{
         //console.log(this.state.orders)
     }
     addCart = (id) => {
-        alert("Product is added to cart")
+       
         const { products, cart } = this.state;
         const check = cart.every(item => {
             return item.id !== id
         })
         if (check) {
+            NotificationManager.success(
+                "",
+                "Product added to the cart",
+                1000
+              );
             const data = products.filter(product => {
                 return product.id === id
             })
             this.setState({ cart: [...cart, ...data] })
         } else {
-            alert("The product has been added to cart.")
+            NotificationManager.info(
+                "",
+                "Product has been added to the cart",
+                1000
+              );
         }
     };
     addProduct = (k) => {
@@ -335,7 +350,12 @@ console.log(selectedAddress);
             value={{products,userDetails,clearCart, addCart, cart, reduction,increase,removeProduct,total,getTotal,name,
                 addAddress, addUserDetails,addOrder,addresses,orders, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts,addName}}>
                 {this.props.children}
+            
+                <NotificationContainer />
+
             </DataContext.Provider>
+           
         )
+        
     }
 }

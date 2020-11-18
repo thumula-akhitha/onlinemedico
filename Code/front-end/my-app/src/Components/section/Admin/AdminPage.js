@@ -2,8 +2,11 @@ import { Card } from 'react-bootstrap';
 import React, { Component} from 'react';
 import axios from 'axios';
 import '../../css/Admin.css';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
-import 'react-notifications/lib/notifications.css';
+import {
+    NotificationContainer,
+    NotificationManager,
+  } from "react-notifications";
+  import "react-notifications/lib/notifications.css";
 
 
 class AdminPage extends Component {
@@ -15,9 +18,11 @@ class AdminPage extends Component {
         this.productQuantity=React.createRef(); 
         this.productDesc=React.createRef(); 
     }
+    formPreventDefault = (e) => {
+        e.preventDefault();
+      };
+    
       addedAlert(){
-      //  event.preventDefault();
-         // console.log(this.productCode.current.value)
           const addProduct={
             src: this.prodctLink.current.value,
             title: this.productName.current.value,
@@ -30,12 +35,13 @@ class AdminPage extends Component {
         axios.defaults.headers.post['Content-Type']='application/json';
         axios.post(`http://127.0.0.1:3333/onlinemedico/user/addProduct`,addProduct)
         .then(res=>{
-        console.log(res);
-        console.log(res.data);
-        NotificationManager.success('success','Added product to the products', 8000);
+        NotificationManager.success('success','Added product to the products',5000);
     }) 
-        
-
+    this.prodctLink.current.value=" ";
+    this.productName.current.value=" ";
+    this.productCost.current.value=" ";
+    this.productQuantity.current.value=" ";
+    this.productDesc.current.value=" ";
       }
     render() {
             return (
@@ -43,7 +49,7 @@ class AdminPage extends Component {
                     <Card.Title className='addTitle'>Enter Product Details to add into the database</Card.Title>
                     <Card.Text className='cardText'>
                         {/* <div className={classes.addItem}> */}
-                        <form>
+                        <form onSubmit={this.formPreventDefault}>
                         <div className='row'>
                             <div className='col'>
                                 <label>Enter product name</label>

@@ -4,10 +4,11 @@
 .cardText{
     border-style: groove;
     width:57em;
-    margin-left: 8em !important;
+    margin-left: 13em !important;
     padding-top: 70px;
     padding-left: 158px;
     padding-right: 348px;
+    margin-bottom:2em;
    
 }
 .admnaddItem{
@@ -19,9 +20,9 @@
     border-style: hidden;
 }
 .addTitle{
-    margin-left: 20em;
+    margin-left: 24em;
     padding-top: 3em;
-    margin-bottom: 2em;
+    margin-bottom:2em;
     font-family: serif;
     font-weight: bold;
 }
