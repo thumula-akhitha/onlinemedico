@@ -25,9 +25,9 @@ class PrescriptionController {
 
       await request.multipart.field((name1, value) => {
         console.log("cameee prescription controller");
-        console.log(typeof value)
+       // console.log(typeof value)
                let m = JSON.parse(value)
-        console.log(m.name)
+        //console.log(m.name)
         scenarioFiles.email = `${m.email}`;
         scenarioFiles.fullname = `${m.name}`
         scenarioFiles.dob = `${m.dob}`

@@ -2,8 +2,8 @@
     height: calc(100% - 200px) !important;
 }
 .sc-message--text{
-    padding-top: 5px !important;
+    padding-top:3px !important;
     padding-left:17px !important;
-    padding-right:17px !important;
+    padding-right:0px !important;
     padding-bottom:10px !important;
 }

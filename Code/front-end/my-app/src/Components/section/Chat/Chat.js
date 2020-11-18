@@ -45,7 +45,7 @@ componentDidMount(){
   a.author = 'them';
   a.type = 'text';
   a.data={}
-  a.data.text =<div> {message.value} <p style={{"paddingLeft":"147px","marginTop":"-10px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p></div>
+  a.data.text =<div>  <p style={{"paddingLeft":"144px","marginTop":"-10px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p>{message.value}</div>
  // const k2  = this.state.value.push(a)
 // const a =  [...this.state.value, a]
     this.setState({
@@ -69,7 +69,7 @@ handleChange(event) {
   console.log("valueee" + event.data.text)
     this.chat.emit('message', {
       name : name,
-      value:event.data.text,
+      value: event.data.text ,
       first: this.state.name
     })
   //  const k1  = this.state.value.push(event)
