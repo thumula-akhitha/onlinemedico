@@ -36,18 +36,18 @@ class PastOrder extends Component {
       if(res.data.length == 0){
         this.setState({
           OrderDetails:[],
-          tempValue : !this.state.tempValue
+          tempValue : true
         })
       }
       else {
-      this.setState({OrderDetails:res.data, tempValue : !this.state.tempValue})
+      this.setState({OrderDetails:res.data, tempValue : false})
       }
     })
   }
   else {
     this.setState({
       OrderDetails:this.state.orderDetailsData,
-      tempValue : !this.state.tempValue
+      tempValue : false
     })
   }
   }
@@ -67,8 +67,8 @@ class PastOrder extends Component {
        <option value="select">Select Option</option>
       <option value="confirmed">Confirmed</option>
       <option value="pending">Pending</option>
-      <option value="completed">Delivered</option>
-      <option value="returned">Returned</option>
+      <option value="delivered">Delivered</option>
+      <option value="return">Returned</option>
       </Form.Control>
   </Form.Group>
   </Form>

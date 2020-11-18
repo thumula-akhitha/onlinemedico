@@ -209,6 +209,7 @@ export class DataProvider extends Component{
     };
     addInitialAddress = (m) => {
         console.log("added addresses")
+        this.setState({ addresses: []})
           m.map(k=> {
             const id1 = k.id;
             delete k.id;
