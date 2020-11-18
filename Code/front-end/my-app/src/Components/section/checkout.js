@@ -65,7 +65,17 @@ const Checkout = (props) => {
       cvv: ""
     });
   };
-  
+  const paymentHandler =(e)=>{
+    console.log('dcvgfdszxxx',card)
+    e.preventDefault();
+    console.log(values.isChecked)
+    if(values.length > 0 || values.isChecked){
+      props.history.push("/onlinemedico/ordersuccess");
+    }
+    else{
+      alert("Please add card")
+    }
+  }
    
   return (
     <div className="checkout">
@@ -113,9 +123,11 @@ const Checkout = (props) => {
               )}
             </div>
             <div className="block">
-            <Link to="/onlinemedico/ordersuccess"><button>
+            <Link to="/onlinemedico/ordersuccess">
+              <button onClick={paymentHandler}>
               Make Payment
-              </button></Link> 
+              </button>
+            </Link> 
              
             </div>
           </div>
