@@ -57,7 +57,6 @@ class EditProfile extends Component {
                 setTimeout(()=>{
                     this.props.history.push('/onlinemedico/UserProfile')
                 },2000)
-               
             })
             .catch((err) => {
                 console.log(err);
