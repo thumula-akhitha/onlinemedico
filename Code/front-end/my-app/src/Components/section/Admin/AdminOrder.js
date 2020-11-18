@@ -73,7 +73,7 @@ class AdminOrder extends Component {
                   <option value="select">Select Option</option>
                   <option value="confirmed">confirmed</option>
                   <option value="pending">pending</option>
-                  <option value="returned">returned</option>
+                  <option value="return">returned</option>
                   <option value="delivered">Delivered</option>
                 </Form.Control>
               </Form.Group>
