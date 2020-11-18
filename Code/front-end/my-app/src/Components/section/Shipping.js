@@ -17,7 +17,7 @@ const Shipping = (props) => {
   const handleSubmit = (e) => {
 
     e.preventDefault();
-    addAddress();
+   // addAddress();
   };
   const handleEdit = (eid) => {
     console.log(eid);

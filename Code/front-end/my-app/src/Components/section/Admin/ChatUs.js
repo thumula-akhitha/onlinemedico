@@ -62,7 +62,7 @@ export class ChatUs extends Component {
     a.type = 'text';
     a.data={}
    // console.log(moment().utcOffset('+05:30').format('hh:mm:ss a'))
-    a.data.text = <div>  <p style={{"paddingLeft":"134px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p> {message.value}</div>
+    a.data.text = <div>  <p style={{"paddingLeft":"147px","marginTop":"-10px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p> {message.value}</div>
     console.log(message.name)
    
   if(this.state.names.some(person => person.name == message.name)){

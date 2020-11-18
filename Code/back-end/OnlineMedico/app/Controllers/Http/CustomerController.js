@@ -186,12 +186,15 @@ class CustomerController {
 async addAddress({ auth, request, response, params }) {
              console.log("camee")
     const address = request.all();
-    console.log(address)
+  //  console.log(address)
     //address.customerId = params.customerId
-    addressData = await Address.create(address);
+   const addressData = await Address.create(address);
+   console.log("changed addresss")
+    console.log(addressData.toJSON())
     return response.json({
         status: 'success',
-        message: "address updated success"
+        message: "address updated success",
+        data : addressData.toJSON()
     })
 }
 async addCard({ auth, request, response, params }) {
@@ -247,6 +250,11 @@ async review({ request, response, auth }) {
     console.log(request.body)
     await use('Database').table('ratings').insert(request.body)
         return 'ratinguploaded';
+}
+
+async getAddress({ request, response, auth }) {
+    const addressData = await Address.query().select('id','firstname','mobile','address1','address2','state','zip').fetch();
+    return response.json(addressData);
 }
 
 

@@ -48,7 +48,7 @@ Route.group(() => {
   
   Route.post("/address", "CustomerController.addAddress");
   Route.post("/card-details", "CustomerController.addCard");
-  Route.get("/address/:customerId", "CustomerController.newPassword");
+  Route.get("/addressData", "CustomerController.getAddress");
   Route.get("/card-details/:customerId", "CustomerController.newPassword");
   Route.get("/userDetails/:userId", "CustomerController.getDetails");
   Route.post("/addProduct", "CustomerController.addProduct");

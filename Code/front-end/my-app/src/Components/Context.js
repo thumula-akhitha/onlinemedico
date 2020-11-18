@@ -21,28 +21,28 @@ export class DataProvider extends Component{
             cart: [],
         total: 0,
         addresses: [
-            {
-                id: '123',
-                newAddress: {
-                    firstname: 'Akhitha Tumula',
-                    mobile: '9898989898',
-                    address1: '1115 N College Dr',
-                    address2: 'Apt L',
-                    state: 'Maryville',
-                    zip: '64468'
-                }
-            },
-            {
-                id: '234',
-                newAddress: {
-                    firstname: 'Kavya',
-                    mobile: '0000000000',
-                    address1: '115N College Drive ',
-                    address2: 'Apt M',
-                    state: 'TN',
-                    zip: '64468'
-                }
-            }
+            // {
+            //     id: '123',
+            //     newAddress: {
+            //         firstname: 'Akhitha Tumula',
+            //         mobile: '9898989898',
+            //         address1: '1115 N College Dr',
+            //         address2: 'Apt L',
+            //         state: 'Maryville',
+            //         zip: '64468'
+            //     }
+            // },
+            // {
+            //     id: '234',
+            //     newAddress: {
+            //         firstname: 'Kavya',
+            //         mobile: '0000000000',
+            //         address1: '115N College Drive ',
+            //         address2: 'Apt M',
+            //         state: 'TN',
+            //         zip: '64468'
+            //     }
+            // }
         ],
         selectedAddress:{},
         products:[
@@ -192,6 +192,20 @@ export class DataProvider extends Component{
         })
         console.log(addr);
     };
+    addInitialAddress = (m) => {
+        console.log("added addresses")
+          m.map(k=> {
+            const id1 = k.id;
+            delete k.id;
+            const newaddr = {
+                id: id1,
+                newAddress: k
+    
+            };
+            this.setState({ addresses: [...this.state.addresses, newaddr], canedit: false });
+
+          })
+    }
     handleSelectAddress=(sid)=>{
         const {addresses,selectedAddress}=this.state;
         const selectedAddr=addresses.find(addr=>addr.id===sid);
@@ -199,11 +213,18 @@ export class DataProvider extends Component{
         this.setState({selectedAddress:selectedAddr});
 console.log(selectedAddress);
     }
-    addAddress = () => {
+    addAddress = (k) => {
+        console.log("contect address")
         const { addresses, id, addr, canedit } = this.state;
+        const id1 = k.id;
+        delete k.id;
+        delete k.customerId;
+        delete k.created_at;
+        delete k.updated_at;
+        
         const newaddr = {
-            id: id,
-            newAddress: addr
+            id: id1,
+            newAddress: k
 
         };
         console.log(newaddr);
@@ -329,11 +350,11 @@ console.log(selectedAddress);
 
     render() {
         const {products,cart,total,addresses, orders,addr, id, canedit,selectedAddress,name,userDetails} = this.state;
-        const {addCart,clearCart,reduction,addOrder,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addUserDetails,addProduct,updateProducts,addName} = this;
+        const {addCart,clearCart,addInitialAddress,reduction,addOrder,increase,removeProduct,getTotal,addAddress, deleteAddress, editAddress, handleChangeAddress ,handleSelectAddress,addUserDetails,addProduct,updateProducts,addName} = this;
         return (
             <DataContext.Provider 
             value={{products,userDetails,clearCart, addCart, cart, reduction,increase,removeProduct,total,getTotal,name,
-                addAddress, addUserDetails,addOrder,addresses,orders, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts,addName}}>
+                addAddress, addUserDetails,addInitialAddress,addOrder,addresses,orders, deleteAddress, editAddress, addr, id, canedit, handleChangeAddress,handleSelectAddress,selectedAddress,addProduct,updateProducts,addName}}>
                 {this.props.children}
             </DataContext.Provider>
         )

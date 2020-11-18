@@ -45,7 +45,7 @@ componentDidMount(){
   a.author = 'them';
   a.type = 'text';
   a.data={}
-  a.data.text =<div> {message.value} <p style={{"paddingLeft":"134px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p></div>
+  a.data.text =<div> {message.value} <p style={{"paddingLeft":"147px","marginTop":"-10px","color":"rgb(62 44 44 / 0.7)"}}> {moment().utcOffset('').format('HH:mm')} </p></div>
  // const k2  = this.state.value.push(a)
 // const a =  [...this.state.value, a]
     this.setState({

@@ -14,7 +14,7 @@ class NewAddress extends React.Component {
 }
 addedshipping=()=>{
   console.log("new address")
-  const { userDetails } = this.context
+  const { userDetails,addAddress} = this.context
   console.log(userDetails.id)
       const addshippingaddress={
         firstname: this.cusname.current.value,
@@ -31,6 +31,7 @@ addedshipping=()=>{
       .then(res=>{
       console.log(res);
       console.log(res.data);
+      addAddress(res.data.data)
   }) 
   }
   render() {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {DataContext} from '../Context';
 import {Link} from 'react-router-dom';
 import '../css/Details.css';
+import axios from 'axios';
 import '../css/Cart.css';
 
 export class Cart extends Component {
@@ -9,6 +10,14 @@ export class Cart extends Component {
 
     componentDidMount(){
         this.context.getTotal();
+        const {addInitialAddress} =  this.context;
+        axios.get('http://127.0.0.1:3333/onlinemedico/user/addressData').then(res=>{
+            console.log(res.data)
+            addInitialAddress(res.data)
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
     }
     
     render() {

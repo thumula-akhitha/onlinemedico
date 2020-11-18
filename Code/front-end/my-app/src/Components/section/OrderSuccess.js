@@ -16,7 +16,7 @@ class OrderSuccess extends Component{
         console.log(selectedAddress)
         console.log(total)
         const order = {}
-        order.addressId = 1;
+        order.addressId = selectedAddress.id;
         order.cardId = 1;
         order.status = "confirmed";
         order.customerId = 1;
