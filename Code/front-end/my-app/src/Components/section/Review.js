@@ -4,6 +4,7 @@ import { Card } from 'react-bootstrap';
 import StarComponent from './StarComponent';
 import Profile from '../images/Profile.PNG';
 import axios from "axios";
+import Toast from 'light-toast';
 
 class Review extends Component {
     constructor() {
@@ -12,7 +13,18 @@ class Review extends Component {
         }
         clickHandler(e){
         e.preventDefault();
-        alert('Review Submitted succesfully');
+       let headline=document.getElementById("headline").value
+       let likeDislike=document.getElementById("likeDislike").value
+        let reviewName=document.getElementById("reviewName").value
+        if(headline==='' || reviewName==='' || likeDislike===''){
+            alert('please provide all the fields')
+        }
+        else{
+            Toast.success('Review Submitted Successfully', 2000);
+
+        }
+
+       
         }
         review(e) {
             e.preventDefault();
