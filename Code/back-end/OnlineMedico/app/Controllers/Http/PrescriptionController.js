@@ -16,7 +16,7 @@ class PrescriptionController {
       };
       let scenarioFiles = { };
       await request.multipart.file("file", {}, async function (file) {
-        console.log("camee into prescription")
+        console.log("camee into filee")
         const fileContent = await getStream.buffer(file.stream);
         scenarioFiles.fileContent = fileContent;
         scenarioFiles.name = file.clientName;
@@ -25,9 +25,15 @@ class PrescriptionController {
 
       await request.multipart.field((name1, value) => {
         console.log("cameee prescription controller");
-        scenarioFiles.email = `${value}`;
-        console.log("good hellooooo valueee " + name1 + " " + value);
-        console.log(value);
+        console.log(typeof value)
+               let m = JSON.parse(value)
+        console.log(m.name)
+        scenarioFiles.email = `${m.email}`;
+        scenarioFiles.fullname = `${m.name}`
+        scenarioFiles.dob = `${m.dob}`
+
+       // console.log("good hellooooo valueee " + name1 + " " + value);
+       // console.log(value);
       });
 
       await request.multipart.process();
@@ -36,7 +42,7 @@ class PrescriptionController {
       // // const emailConfirmation = await Customer.query().where("email", "=", ).fetch();
       // // console.log(emailConfirmation)
 
-      console.log("===scenarioFiles", scenarioFiles);
+      //console.log("===scenarioFiles", scenarioFiles);
 
       if (scenarioFiles.email) {
         var transporter = nodemailer.createTransport({
@@ -51,7 +57,7 @@ class PrescriptionController {
           from: "onlinemedico782@gmail.com",
           to:scenarioFiles.email,
           subject: "Confirmation regarding your prescription",
-          html: `<p style="font-size:18px; font-weight:bold;">Hi Satish,</p><p style="font-size:18px;">your prescription is approved and order has been placed successfully</p>`,
+          html: `<p style="font-size:18px; font-weight:bold;">Hi ${scenarioFiles.fullname},</p><p style="font-size:18px;">your prescription is approved and order has been placed successfully</p>`,
           text: "",
         };
         await transporter.sendMail(mailOptions, function (error, info) {
@@ -83,8 +89,9 @@ class PrescriptionController {
       });
     }
 
-    return "File uploaded";
+    return response.json("success");
   }
+
 }
 
 module.exports = PrescriptionController;

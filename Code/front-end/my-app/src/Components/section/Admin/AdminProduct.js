@@ -21,11 +21,7 @@ export class AdminProduct extends Component {
         axios.get(`http://127.0.0.1:3333/onlinemedico/search/${event.target.value}`)
         .then(res => {
           const {addProduct} = this.context;
-          console.log("products page");
-          console.log(res.data);
           addProduct(res.data);
-          // const persons = res.data;
-          // this.setState({ persons });
         })
 
       }
@@ -33,11 +29,7 @@ export class AdminProduct extends Component {
         axios.get(`http://127.0.0.1:3333/onlinemedico/medicines`)
           .then(res => {
             const {addProduct} = this.context;
-            console.log("products page");
-            console.log(res.data);
             addProduct(res.data);
-            // const persons = res.data;
-            // this.setState({ persons });
           })
       }
 

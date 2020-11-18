@@ -16,10 +16,16 @@ import 'react-notifications/lib/notifications.css';
 const returnItem = (props) => {
     const history=useHistory();
    console.log(props.returnArray.id)
+//   console.log('cancelreson',this.returnReason.value)
    const handleToggle=(e)=>{  
        e.preventDefault();
-       console.log('rddc ')   
-        // history.push('/onlinemedico/pastOrder')
+        let reason = document.getElementById('returnReason').value;
+        let reason2 = document.getElementById('refundDetails').value;
+        console.log(reason,reason2);
+        if(reason===""||reason2===""){
+            alert('Please provide cancel reason')
+        }
+        else{
         Toast.success('Order Cancelled Successfully', 2000, () => {
             axios
             .get(`http://127.0.0.1:3333/onlinemedico/cancelOrder/${props.returnArray.id}`)
@@ -30,28 +36,26 @@ const returnItem = (props) => {
            
             console.log("camee")
             
-            //<Redirect to='/onlinemedico/pastOrder' />
-           
-            // do something after the toast disappears
           });
+        }
    // NotificationManager.success('Order Cancelled Succesfully','',5000)
    // history.goBack()
    
    }
+  
 
     return (
         <div className='returnHead'>
-        <p className='returnPara'>  If you are returning multiple items from one order, 
-        you can avoid additional return fees by returning them together.</p>
+        <p className='returnPara'>  Cancel your order before it is delivered.</p>
+        <form>
         <Card className='returnItemHeader'>
             <Card.Text>
-                <form>
                 <div className='row'>
                     <div className='col'>
-                    <label>Please give reason for return</label>
+                    <label>Please give reason for cancel</label>
                     </div>
                     <div className='col'>
-                    <input type='text' className='returnReason'/>
+                    <input type='text' className='returnReason' name='returnReason' id='returnReason' required/>
                     </div>
                 </div>
                 <div className='row'>
@@ -59,15 +63,16 @@ const returnItem = (props) => {
                     <label>Provide account details for refund</label>
                     </div>
                     <div className='col'>
-                    <input type='text' className='refundDetails'  />
+                    <input type='text' className='refundDetails' name='refundDetails' id='refundDetails' required />
                     </div>
                 </div>
                 <button className='nextbtn'
                     onClick={handleToggle}
                     >CANCEL ORDER</button>
-                    </form>
+                  
             </Card.Text>
         </Card>
+        </form>
         <NotificationContainer />
         </div>
     )

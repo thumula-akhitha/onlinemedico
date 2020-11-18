@@ -105,7 +105,7 @@ const OrderHistory = (props) => {
             <div className="col-5 track-col-5">
               <div className="row">
               {
-                                    orderHistory.status==='delivered' ||  orderHistory.status!='returned' && orderHistory.status!='confirmed' && orderHistory.status!='pending' ?'':
+                                    orderHistory.status==='delivered' ||  orderHistory.status==='returned' && orderHistory.status!='confirmed' && orderHistory.status!='pending' ?'':
                                     <button type="button" className='btn btn-primary track'
                                         onClick={() => setTrackStatus(true)}
                                         >Track package</button>
@@ -131,11 +131,11 @@ const OrderHistory = (props) => {
               </div>
               <div className="row">
               {
-                                     orderHistory.status!='delivered' && orderHistory.status==='returned' || orderHistory.status==='confirmed' || orderHistory.status==='pending'?
+                                     orderHistory.status!='delivered' && orderHistory.status!='returned' || orderHistory.status==='confirmed' || orderHistory.status==='pending'?
                                      <button type="button" 
                                      className='btn btn-primary cancel'
                                      onClick={()=>setEditOrder(true)}
-                                     >Cancel order</button>:''     
+                                     >Cancel Order</button>:''     
                                 }
               </div>
               {/* <div className="row">

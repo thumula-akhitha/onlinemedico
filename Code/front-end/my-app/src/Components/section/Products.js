@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import {DataContext} from '../Context'
 import '../css/Product.css'
 import axios from 'axios';
-import {FaSearch} from "react-icons/fa"
 
 
 export class Products extends Component {

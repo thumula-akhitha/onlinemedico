@@ -26,6 +26,10 @@
     <img src="Images/satishkumar_Photo.jpg" alt="drawing" width="125" height="160"/>
 
 
+### About OnlineMedico
+1. Our project Online medico is a website that will help people find their medication and buy them easily.The drug provider will add the medicine that are available in store and general users will buy the products online from the providers.
+2. Users can also upload prescription to get the medicine delivered to their address.
+Once the order is placed they can track the package from the website itself.
 ## Profile Links
 1. [Akhitha Tumula](https://github.com/thumula-akhitha)
 2. [Rohan Bhandari](https://github.com/rohan6471)

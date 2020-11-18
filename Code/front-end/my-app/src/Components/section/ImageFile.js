@@ -18,16 +18,26 @@ class ImageFile extends Component {
       FileName: event.target.files[0].name,
     });
   };
-   
-fileuploader=()=>{      
-      let email= document.getElementById("exampleInputEmail1").value;
-      let dob= document.getElementById("dob").value;
-      let fullname= document.getElementById("examplename").value;
+
+  formPreventDefault = (e) => {
+    e.preventDefault();
+  };
+
+  fileuploader = () => {
+    let email = document.getElementById("exampleInputEmail1").value;
+    let dob = document.getElementById("dob").value;
+    let fullname = document.getElementById("examplename").value;
     //console.log(fullname);
     let k = document.getElementById("exampleInputEmail1").value;
     const data = new FormData();
     data.append("file", this.state.selectedFile);
-    data.append("name1", k);
+    let k1 = {};
+    k1.name = fullname;
+    k1.email = k;
+    k1.dob = dob;
+    console.log(k1);
+    data.append("name1", JSON.stringify(k1));
+
     // data.append("date",k1)
     axios
       .post("http://127.0.0.1:3333/onlinemedico/uploadPrescription", data, {
@@ -40,35 +50,43 @@ fileuploader=()=>{
         },
       })
       .then((res) => {
-        console.log(res);
-        NotificationManager.success(
-          "we have received your prescription",
-          "you will get an message from us regarding accepting of your prescription",
-          3000
-        );
-        if(email!=""||dob!=""||fullname!=""){
-         
-            setTimeout(()=>{
-              document.getElementById('exampleInputEmail1').value = " ",
-              document.getElementById('dob').value = " "
-              document.getElementById('examplename').value=" "
-          },1000);
-        
+        console.log("hellooooooooooooo");
+        if (email != " " || dob != " " || fullname != " ") {
+          console.log("hello");
+          NotificationManager.success(
+            "we have received your prescription",
+            "you will get an message from us regarding accepting of your prescription",
+            5000
+          );
+          this.setState({
+            selectedFile: null,
+            FileName: null,
+          });
+          document.getElementById("exampleInputEmail1").value = "";
+          document.getElementById("dob").value = "";
+          document.getElementById("examplename").value = "";
         }
       })
       .catch((err) => console.log("error occurred"));
-    
   };
   render() {
-    let uploadbutton = null;      
+    let uploadbutton = null;
     if (this.state.selectedFile) {
-        console.log('please enter all values')
-        uploadbutton = <button className="btn up-btn FileLabel" onClick={() => { this.fileuploader() }}>upload</button>
+      console.log("please enter all values");
+      uploadbutton = (
+        <button
+          className="btn up-btn FileLabel"
+          onClick={() => {
+            this.fileuploader();
+          }}
+        >
+          upload
+        </button>
+      );
     }
     return (
-      <form>
-      <div>
-        
+      <form onSubmit={this.formPreventDefault}>
+        <div>
           <div className="image-div">
             <input
               className="image-text form-control form-control-lg"
@@ -129,13 +147,10 @@ fileuploader=()=>{
               </div>
             </div>
 
-            <div className="upload-btn">
-                    {uploadbutton}
-                </div>
+            <div className="upload-btn">{uploadbutton}</div>
             <NotificationContainer />
           </div>
-        
-      </div>
+        </div>
       </form>
     );
   }

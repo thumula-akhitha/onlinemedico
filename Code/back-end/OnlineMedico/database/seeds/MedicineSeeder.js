@@ -20,7 +20,7 @@ class MedicineSeeder {
     const eventlog = [
       {
         id: 1,
-        title: 'paracetamol',
+        title: 'Paracetamol',
         description: 'Paracetamol is a pain reliever and a fever reducer.',
         price: 5,
         count: 1,
@@ -29,7 +29,7 @@ class MedicineSeeder {
       },
       {
         id: 2,
-        title: 'nytQuill',
+        title: 'NytQuill',
         description: 'Nyquil Cold & Flu is used to treat headache, fever.',
         price: 12,
         count: 1,
@@ -92,7 +92,32 @@ class MedicineSeeder {
                 src:"https://ae01.alicdn.com/kf/HTB1IrmbVVzqK1RjSZFCq6zbxVXaK/Newborn-Baby-Nasal-Aspirator-Set-Straw-Brush-Feeding-Medicine-Device-Snot-Nose-Shit-Cleaner-Nose-Aspirator.jpg_Q90.jpg_.webp",
                 description:"Device to remove mucus from baby's nose",
                 count: 1,
+            },
+            {
+              id:10,
+                title:'Vitamin C Tablets',
+                price:2.99,
+                src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTiNOCkuULSPbb_i7GblGV-DOmIhjUx0RVP6svFz8D6q5dwTmezfUfA2Vrh7ugEdECgHXSgg&usqp=CAc",
+                description:"Boost your immunity",
+                count: 1,
+            },
+            {
+              id:11,
+                title:'Johnsons Baby Product',
+                price:3.25,
+                src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0yOopwZbUU_qGHpUREOfaQQ07OFNqIl6nqC8RUOsNIrfLr8lSLjNtmstmBLfcxLMBtz6BbpY&usqp=CAc",
+                description:"Mositurizing products for baby",
+                count: 1,
+            },
+            {
+              id:12,
+                title:'Systane Lubricant Eye Drops',
+                price:10.97,
+                src:"https://i5.walmartimages.com/asr/02e21621-3214-47c4-9634-c4b04310dda7.b12b4006a572b4f128ae4f2366b0c9ec.jpeg?odnHeight=200&odnWidth=200&odnBg=ffffff",
+                description:"Ultra High Performing Dry Eye Relief",
+                count: 1,
             }
+
     ]
     await Database.insert(eventlog).into('medicines')
       
