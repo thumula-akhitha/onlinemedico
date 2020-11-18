@@ -6,6 +6,7 @@ import {DataContext} from '../Context';
 import {Link} from 'react-router-dom';
 const Shipping = (props) => {
   const dataContext = useContext(DataContext);
+  const {selectedAddress}=dataContext;
   const {addAddress,addresses,deleteAddress,editAddress,handleChangeAddress,handleSelectAddress,addr,id,canedit} = dataContext;
   const handleSelectAddress1=(sid)=>{
     handleSelectAddress(sid);
@@ -28,7 +29,18 @@ const Shipping = (props) => {
     console.log(rid);
     deleteAddress(rid);
   };
-  
+  const shippingHandler=(e)=>{
+    e.preventDefault();
+    console.log('shipping',addresses.length)
+    if(selectedAddress.newAddress || addresses.isChecked ){
+      props.history.push('/onlinemedico/checkout');
+    }
+    else{
+      alert('please select address');
+    }
+
+
+  }
 
   return (    
     <div className="shipping">
@@ -61,9 +73,10 @@ const Shipping = (props) => {
           </div>
           <div className="endbuttons">
             <div className="checkout">
-            <Link to="/onlinemedico/checkout">
-            <button type="button" class="btn btn-outline-success">
-             Payment</button></Link>
+            {/* <Link to="/onlinemedico/checkout"> */}
+            <button type="button" class="btn btn-outline-success" onClick={shippingHandler}>
+             Payment</button>
+             {/* </Link> */}
             </div>
           </div>
         </div>

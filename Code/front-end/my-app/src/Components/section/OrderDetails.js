@@ -17,23 +17,25 @@ class OrderDetails extends Component {
     // this.setState({userInfo:orders})
     console.log('orderdetails', orders)
   }
-  
+
   render() {
-    const {userDetails}=this.context
-    console.log('details',userDetails)
+    const shipCharges=2
+    const { userDetails } = this.context
+    console.log('details', userDetails)
     const { orders } = this.context
-   const tax=orders.total-((orders.total)*(5/100))
-   const taxtotal=orders.total-tax
-   const orderTotal=taxtotal+orders.total
+    const tax = orders.total - ((orders.total) * (5 / 100))
+    const taxtotal = orders.total - tax
+    const orderTotal = taxtotal + orders.total+shipCharges
+  
     return (
       <Container className="orderContainer">
         <Row>
           <Col md="7" className="summaryDiv">
 
             <div className="orderSummary1">
-              <p><b>Order Date</b><br/>{ moment(orders.created_at).format('MMMM Do YYYY')}</p>
-    <p><b>Order Number</b><br/> {orders.orderId}</p>
-              <p><b>Total</b><br/>{orderTotal}</p>
+              <p><b>Order Date</b><br />{moment(orders.created_at).format('MMMM Do YYYY')}</p>
+              <p><b>Order Number</b><br /> {orders.orderId}</p>
+              <p><b>Total</b><br />{orderTotal}</p>
             </div>
             <div className="orderSummary2">
               <p><b>Ship To</b></p>
@@ -45,17 +47,17 @@ class OrderDetails extends Component {
               <p>{orders.order_address.zip}</p>
             </div>
             <div className="orderSummary3">
-          <div className="orderSummary"><p><b>Status: {orders.status}</b></p><p>Shipment 1 0f 1</p></div>
-              <div className="orderSummary"><p>Tracking Number</p><p>#98765434567</p></div>
+              <div className="orderSummary"><p><b>Status: {orders.status}</b></p><p>Shipment 1 0f 1</p></div>
+              <div className="orderSummary"><p>Tracking Number</p><p>{orders.orderId}</p></div>
             </div>
 
           </Col>
           <Col md="4" className="summaryDiv2">
             <div className="p-1"><p>Order Summary</p></div>
             <div className="p-2">
-    <div className="orderSummary"><p>SubTotal:</p><p>{orders.total}</p></div>
+              <div className="orderSummary"><p>SubTotal:</p><p>{orders.total}</p></div>
               <div className="orderSummary"><p>Discounts/Coupon</p><p>$0</p></div>
-              <div className="orderSummary"><p>Shipping and Handling</p><p>$2.00</p></div>
+    <div className="orderSummary"><p>Shipping and Handling</p><p>${shipCharges}</p></div>
               <div className="orderSummary"><p>tax</p><p>{Math.round(taxtotal * 100) / 100}</p></div>
               <div className="orderSummary"><p>Total:</p><p>{orderTotal}</p></div>
             </div>
@@ -63,13 +65,13 @@ class OrderDetails extends Component {
             <div className="p-3"><p>Total may not reflect returns, cancelled items, or other charge backs to your credit card.</p></div>
             <div className="p-1"><p>Shipping Information</p></div>
             <div className="orderSummary">
-            <p>{orders.order_address.firstName}</p>
+              <p>{orders.order_address.firstName}</p>
               <p>{orders.order_address.address1}</p>
               <p>{orders.order_address.state}</p>
               <p>{orders.order_address.zip}</p>
-              </div>
+            </div>
             <div className="p-1"><p>Contact Information</p></div>
-    <div className="orderSummary"><p>{orders.user.firstName}<br />{orders.user.email}<br />{orders.user.contactNumber}<br /></p></div>
+            <div className="orderSummary"><p>{orders.user.firstName}<br />{orders.user.email}<br />{orders.user.contactNumber}<br /></p></div>
           </Col>
         </Row>
       </Container>

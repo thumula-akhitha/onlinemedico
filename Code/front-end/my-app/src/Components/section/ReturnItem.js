@@ -24,7 +24,13 @@ const returnItem = (props) => {
    
       const handleToggle=(e)=>{  
         e.preventDefault();
-        console.log('rddc ')   
+        console.log('rddc ')  
+        let reason = document.getElementById('returnReason').value;
+        let reason2 = document.getElementById('refundDetails').value;
+        if(reason==='' || reason2===''){ 
+        alert('provide return reason')
+        }
+        else{
         Toast.success('Order Returned Successfully', 2000, () => {
           axios
           .get(`http://127.0.0.1:3333/onlinemedico/orderStatus/${props.returnArray.id}/return`)
@@ -34,6 +40,9 @@ const returnItem = (props) => {
           });
            
           });
+        }
+        
+       
      //NotificationManager.success('Return placed succesfully','',5000)
     // setInterval(()=>props.history.push('/onlinemedico/pastOrder'),2000)   
     }
@@ -51,7 +60,7 @@ const returnItem = (props) => {
                     <label>Please give reason for return</label>
                     </div>
                     <div className='col'>
-                    <input type='text' className='returnReason'/>
+                    <input type='text' className='returnReason' id='returnReason'/>
                     </div>
                 </div>
                 <div className='row'>
@@ -59,7 +68,7 @@ const returnItem = (props) => {
                     <label>Provide account details for refund</label>
                     </div>
                     <div className='col'>
-                    <input type='text' className='refundDetails'/>
+                    <input type='text' className='refundDetails' id='refundDetails'/>
                     </div>
                 </div>
                 <button className='nextbtn'
