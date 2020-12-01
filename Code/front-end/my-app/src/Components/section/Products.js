@@ -9,23 +9,45 @@ export class Products extends Component {
     constructor(props){
         super(props);
         this.state = {
-            value : ""
+            value : "",
+            productsData:[],
+            tempValue:false
         }
     }
     static contextType = DataContext;
     handleChange(event) {
-        console.log("entered searh product")
-        console.log(event.target.value)
+        const {addProduct} = this.context;
+      
         this.setState({value: event.target.value});
+        if(event.target.value != ''){
+           
         axios.get(`http://127.0.0.1:3333/onlinemedico/search/${event.target.value}`)
         .then(res => {
-          const {addProduct} = this.context;
+         
           console.log("products page");
+         if(res.data.length>0){
+            this.setState({
+                tempValue:false
+            })
           console.log(res.data);
           addProduct(res.data);
+         }
+         else {
+             this.setState({
+                 tempValue:true
+             })
+         }
           // const persons = res.data;
           // this.setState({ persons });
         })
+    }
+    else {
+        this.setState({
+            tempValue:false
+        })
+        addProduct(this.state.productsData)
+
+    }
 
       }
     componentDidMount() {
@@ -35,6 +57,9 @@ export class Products extends Component {
             console.log("products page");
             console.log(res.data);
             addProduct(res.data);
+            this.setState({
+                productsData:res.data
+            })
             // const persons = res.data;
             // this.setState({ persons });
           })
@@ -69,6 +94,7 @@ export class Products extends Component {
                    ))
                }
             </div>
+            {this.state.tempValue == true ? <p> There are no products with this filter</p> : ''} 
             </div>
         )
     }
