@@ -38,12 +38,11 @@ export class Section extends Component {
         return (
             <div>	
             <Route path="/onlinemedico" component={Header}  />
-            <Route path="/mainadmin" component={Admin}  />  
-            
+            <Route path="/mainadmin" component={Admin}  />              
             <Route path="/" exact>
                      <Redirect to="/login" />
             </Route> 
-            <Route path="/logout" component={Logout}/>
+            
             <section >  
                 <Route path="/onlinemedico/home" component={Home} />                                                       
                 <Route path="/onlinemedico/product" component={Products} exact />
@@ -58,6 +57,7 @@ export class Section extends Component {
                 <Route path="/onlinemedico/ChatUs" component={Chat}/>
                 <Route path="/onlinemedico/track" component={Tracking}/>
                 <Route path="/login" component={Login}/>
+                <Route path="/logout" component={Logout}/>
                 <Route path="/onlinemedico/sign" component={SignIn}/>
                 <Route path="/onlinemedico/forgot" component={Forgot}/>
                 <Route path="/onlinemedico/reset" component={Reset}/>
@@ -65,8 +65,7 @@ export class Section extends Component {
                 <Route path="/onlinemedico/checkout" component={Checkout}/>
                 <Route path="/onlinemedico/orderDetails" component={OrderDetails}/>
                 <Route path="/onlinemedico/checkcart" component={CheckoutCart}/>
-                <Route path="/onlinemedico/pastOrder" component={PastOrder} exact/>
-               
+                <Route path="/onlinemedico/pastOrder" component={PastOrder} exact/>               
                 <Route path='/onlinemedico/faq' component={Faq}/>
                 <Route path="/onlinemedico/ordersuccess" component={OrderSuccess}/>
                 <Route path='/onlinemedico/footer' component={Footer}/>

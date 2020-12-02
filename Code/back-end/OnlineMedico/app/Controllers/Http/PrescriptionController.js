@@ -55,7 +55,7 @@ class PrescriptionController {
 
         var mailOptions = {
           from: "onlinemedico782@gmail.com",
-          to:scenarioFiles.email,
+          to:"akhitha.adams@gmail.com",
           subject: "Confirmation regarding your prescription",
           html: `<p style="font-size:18px; font-weight:bold;">Hi ${scenarioFiles.fullname},</p><p style="font-size:18px;">your prescription is approved and order has been placed successfully</p>`,
           text: "",
