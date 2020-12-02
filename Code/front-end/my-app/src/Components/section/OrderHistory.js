@@ -105,7 +105,7 @@ const OrderHistory = (props) => {
             <div className="col-5 track-col-5">
               <div className="row">
               {
-                                    orderHistory.status==='delivered' ||  orderHistory.status==='returned' && orderHistory.status!='confirmed' && orderHistory.status!='pending' ?'':
+                                    orderHistory.status==='delivered' ||  orderHistory.status==='return' && orderHistory.status!='confirmed' && orderHistory.status!='pending' ?'':
                                     <button type="button" className='btn btn-primary track'
                                         onClick={() => setTrackStatus(true)}
                                         >Track package</button>
@@ -113,7 +113,7 @@ const OrderHistory = (props) => {
               </div>
               <div className="row">
               {
-                                      orderHistory.status==='delivered' && orderHistory.status!='returned'?
+                                      orderHistory.status==='delivered' && orderHistory.status!='return'?
                                       <button type="button" className='btn btn-primary replace' 
                                       onClick={()=>setReturnItem(true)}
                                      >Return or replace items</button>:''
@@ -123,7 +123,7 @@ const OrderHistory = (props) => {
              
               <div className="row">
               {
-                                    orderHistory.status==='delivered' && orderHistory.status!='returned'?
+                                    orderHistory.status==='delivered' && orderHistory.status!='return'?
                                     <button type="button" className='btn btn-primary review' 
                                     onClick={()=>setReviewStatus(true)}
                                     >Write a product review</button>:''
@@ -131,7 +131,7 @@ const OrderHistory = (props) => {
               </div>
               <div className="row">
               {
-                                     orderHistory.status!='delivered' && orderHistory.status!='returned' || orderHistory.status==='confirmed' || orderHistory.status==='pending'?
+                                     orderHistory.status!='delivered' && orderHistory.status!='return' || orderHistory.status==='confirmed' || orderHistory.status==='pending'?
                                      <button type="button" 
                                      className='btn btn-primary cancel'
                                      onClick={()=>setEditOrder(true)}
