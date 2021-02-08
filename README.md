@@ -13,7 +13,7 @@
 
     <img src="Images/Rethima.jpeg" alt="Rethima" width="100"/>
 
-4. Kavya Reddy Mylapurapu
+4. Kavya
 
    
 5. Sravani Jaidi
