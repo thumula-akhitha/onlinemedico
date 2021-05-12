@@ -39,7 +39,7 @@
     "lodash": "^4.17.20",
     "mysql": "^2.18.1",
     "nodejs-nodemailer-outlook": "^1.2.3",
-    "nodemailer": "^6.4.10",
+    "nodemailer": "^6.4.16",
     "util": "^0.12.2"
   },
   "devDependencies": {},
