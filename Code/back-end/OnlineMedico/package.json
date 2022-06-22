@@ -32,7 +32,7 @@
     "@adonisjs/websocket": "^1.0.12",
     "Validator": "^1.0.8",
     "adonis-websocket": "^1.0.4",
-    "async": "^3.2.0",
+    "async": "^3.2.2",
     "bluebird": "^3.7.2",
     "g": "^2.0.1",
     "got": "^10.7.0",
